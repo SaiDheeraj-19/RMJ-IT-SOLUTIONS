@@ -21,19 +21,19 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RMJ IT Solutions | Institutional Scaling & Implementation",
+  title: "RMJ IT Solutions PVT LTD | Institutional Scaling & Implementation",
   description: "Bespoke IT infrastructure and program operations for large-scale institutional initiatives. Precision implementation for sustainable impact.",
   openGraph: {
-    title: "RMJ IT Solutions | Institutional Scaling",
+    title: "RMJ IT Solutions PVT LTD | Institutional Scaling",
     description: "Architecting the future of institutional infrastructure.",
     url: "https://rmjit.com",
-    siteName: "RMJ IT Solutions",
+    siteName: "RMJ IT Solutions PVT LTD",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RMJ IT Solutions",
+    title: "RMJ IT Solutions PVT LTD ",
     description: "Architecting the future of institutional infrastructure.",
   },
   icons: {
