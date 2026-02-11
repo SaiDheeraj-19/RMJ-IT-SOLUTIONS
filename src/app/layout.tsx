@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     title: "RMJ IT Solutions",
     description: "Architecting the future of institutional infrastructure.",
   },
+  icons: {
+    icon: "/icon.jpeg",
+  },
 };
 
 export default function RootLayout({
