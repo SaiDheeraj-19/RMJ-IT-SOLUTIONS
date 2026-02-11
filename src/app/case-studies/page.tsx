@@ -9,22 +9,28 @@ import HorizontalLine from "@/components/ui/HorizontalLine";
 
 const impacts = [
     {
-        title: "Digital Campus Infrastructure Rollout.",
-        sector: "Academic Sector",
-        desc: "Modernizing administrative workflows for massive-scale educational institutions. We achieved 100% real-time synchronization across 80+ campuses.",
-        metrics: ["80+ Campuses", "500k+ Daily Users", "40% Cost Reduction"]
+        title: "The Zero-Downtime Campus Migration.",
+        sector: "Academic Sector (80+ Campuses)",
+        desc: "Fragmented student records across legacy servers were causing 15% annual data loss. We architected a hybrid-cloud student-lifecycle ecosystem with real-time edge synchronization.",
+        metrics: ["0 mins Downtime", "3.2M Records Migrated", "100% Data Integrity"],
+        problem: "Legacy infrastructure failures during peak enrollment periods.",
+        tech: "Next.js, Go, PostgreSQL, AWS Lambda, Kubernetes"
     },
     {
-        title: "Automated Corporate Operations Ecosystem.",
-        sector: "Enterprise Sector",
-        desc: "Bridging the gap between manual business logic and scalable digital operations for high-growth corporate organizations. Streamlined ERP reduced processing time by 65%.",
-        metrics: ["65% Faster Ops", "99.9% Uptime", "3.2M Records/Day"]
+        title: "Enterprise ERP Modernization.",
+        sector: "Logistics & Corporate Operations",
+        desc: "Manual ERP entry was costing $15k/month in billing errors. We deployed a custom automated ERP with real-time shipment tracking and automated financial reconciliation.",
+        metrics: ["99.8% Billing Accuracy", "40% Cycle Speedup", "$180k Annual Savings"],
+        problem: "Bottlenecks in manual audit trails and shipment validation.",
+        tech: "React, Node.js, Redis, Docker, GCP"
     },
     {
-        title: "Regional Strategic Expansion Ecosystem.",
-        sector: "Digital Growth",
-        desc: "Deploying comprehensive analytical frameworks to catalyze business reach. Scaled digital presence from zero to national-scale brand positioning within 12 months.",
-        metrics: ["12 Mo. Scale", "200% Reach Growth", "Zero Data Leaks"]
+        title: "National Identity Support Automation.",
+        sector: "Public Sector (Government)",
+        desc: "Citizen support channels were overwhelmed with 50k+ daily queries. We implemented a secure NLP support layer that resolved 70% of tier-1 inquiries autonomously.",
+        metrics: ["70% Auto-Resolution", "24/7 Availability", "99.9% Security Uptime"],
+        problem: "Operational paralysis due to resource shortages and inquiry volume.",
+        tech: "Python, TensorFlow, Azure Cognitive Services, FastAPI"
     }
 ];
 

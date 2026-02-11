@@ -9,24 +9,24 @@ import HorizontalLine from "@/components/ui/HorizontalLine";
 
 const capabilitySuites = [
     {
-        title: "Platform Engineering",
-        desc: "Building mission-critical web applications designed to handle complex business logic and institutional-scale user demand with absolute resilience. We extract, transform, and deploy your operational model into secure frameworks.",
-        points: ["Scalable Architecture", "Systemic Integration", "Microservices Design", "Cloud Optimization"]
+        title: "Enterprise Platform Engineering",
+        desc: "Convert legacy technological silos into high-performance web ecosystems. We architect platforms for universities and enterprises that require 60% reduction in operational overhead and sub-second latency for global-scale user bases.",
+        points: ["Scalable Architecture Consolidations", "Legacy-to-Cloud Modernization", "High-Availability Node Cluster Design", "SOC2/ISO Compliance Frameworks"]
     },
     {
-        title: "Mobile Architecture & Delivery",
-        desc: "Developing analytical mobile applications designed to be understood, adopted, and used at national scale. We deliver premium iOS and Android ecosystems built for engagement.",
-        points: ["iOS Native Development", "Android Ecosystems", "UX/UI Institutional Design", "API Resilience"]
+        title: "National-Scale Mobile Architecture",
+        desc: "Delivering biometric-secure, offline-first mobile applications for field operations and student lifecycles. Our apps maintain 98.9% crash-free sessions across millions of daily active users.",
+        points: ["Biometric Access Controls", "Offline-First Operational Sync", "Multi-Tenant Deployment Structures", "API-Driven Engagement Models"]
     },
     {
         title: "Institutional OS (Digital Campus)",
-        desc: "Our specialized academic suite designed to modernize educational administration. We automate attendance, academic records, and recruitment through a unified digital backbone.",
-        points: ["Attendance Automation", "Academic Analytics", "Placement Coordination", "Program Monitoring"]
+        desc: "A programmable operating system for large-scale institutions. Automate administrative records, financial reconciliation, and student recruitment to reduce processing cycles from days to minutes.",
+        points: ["Real-time Academic Sync", "Automated Recruitment Funnels", "Predictive Analytics Forecasts", "Governance & Audit Transparency"]
     },
     {
-        title: "Strategic Growth Ecosystems",
-        desc: "Comprehensive digital marketing solutions focused on institutional reach and national-scale engagement through data-driven strategies.",
-        points: ["Search Engine Optimization", "Social Media Strategy", "Email Automation", "Brand Positioning"]
+        title: "AI & Autonomous Operations",
+        desc: "Deploying predictive models to identify operational bottlenecks before they occur. From dropout risk forecasting in academics to pattern-based security threats in finance.",
+        points: ["Natural Language Support Blocks", "Predictive Retention Modeling", "Fraud & Threat Recognition", "Automated Resource Allocation"]
     }
 ];
 

@@ -46,24 +46,23 @@ const systems = [
 
 export default function Capabilities() {
     return (
-        <Section className="bg-[#1a1a1a] text-white relative overflow-hidden py-32">
+        <Section className="bg-gradient-to-b from-[#f0ebe3] to-[#e8e0d4] text-[#1a1a1a] relative overflow-hidden py-32">
             {/* Background Effects */}
-            <div className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] bg-brand/5 rounded-full blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
-
+            <div className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] bg-brand/10 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-stone-400/10 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="max-w-[1400px] mx-auto relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/10 pb-12">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-[#1a1a1a]/10 pb-12">
                     <div>
                         <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-6 block">
                             Core Modules
                         </span>
                         <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-display leading-[1] font-bold tracking-tight">
-                            Engineered for <br /> <span className="text-white/40">Continuity.</span>
+                            Engineered for <br /> <span className="text-[#1a1a1a]/30">Continuity.</span>
                         </h2>
                     </div>
                     <div className="hidden md:block">
-                        <p className="text-white/60 max-w-sm text-right text-lg leading-relaxed">
+                        <p className="text-[#605040] max-w-sm text-right text-lg leading-relaxed">
                             We don&apos;t just build features.<br />We architect complete digital ecosystems.
                         </p>
                     </div>
@@ -77,7 +76,7 @@ export default function Capabilities() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-10%" }}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                                className="group relative h-[450px] rounded-3xl overflow-hidden bg-stone-900 border border-white/5 hover:border-brand/30 transition-colors duration-500"
+                                className="group relative h-[450px] rounded-3xl overflow-hidden bg-[#2a2520] border border-[#3a3530]/60 hover:border-brand/40 transition-colors duration-500 shadow-xl"
                             >
                                 {/* Background Image with Overlay */}
                                 <div className="absolute inset-0 z-0">
@@ -85,9 +84,9 @@ export default function Capabilities() {
                                         src={item.image}
                                         alt={item.title}
                                         fill
-                                        className="object-cover opacity-30 group-hover:scale-105 transition-transform duration-[1.5s] ease-out grayscale group-hover:grayscale-0 group-hover:opacity-50"
+                                        className="object-cover opacity-25 group-hover:scale-105 transition-transform duration-[1.5s] ease-out grayscale group-hover:grayscale-0 group-hover:opacity-40"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#2a2520] via-[#2a2520]/70 to-transparent" />
                                 </div>
 
                                 {/* Content */}
@@ -101,7 +100,7 @@ export default function Capabilities() {
                                     <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-stone-200 group-hover:text-white">
                                         {item.title}
                                     </h3>
-                                    <p className="text-white/70 text-base mb-8 max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed">
+                                    <p className="text-white/60 text-base mb-8 max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed">
                                         {item.description}
                                     </p>
 

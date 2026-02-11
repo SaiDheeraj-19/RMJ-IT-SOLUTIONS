@@ -7,6 +7,7 @@ import OurApproach from "@/components/sections/OurApproach";
 import Capabilities from "@/components/sections/Capabilities";
 import SectorsImpact from "@/components/sections/SectorsImpact";
 import WhyRMJIT from "@/components/sections/WhyRMJIT";
+import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <OurApproach />
       <WhyRMJIT />
       <SectorsImpact />
+      <FAQ />
       <CTA />
       <Footer />
     </main>

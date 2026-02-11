@@ -53,13 +53,13 @@ export default function WhoWeAre() {
                     <div className="max-w-[1000px] mb-24">
                         <TextReveal
                             as="h2"
-                            text="We are the implementation partner for organizations that require absolute reliability."
+                            text="We are the engineering foundation for organizations that require zero-failure execution."
                             className="text-[clamp(2.5rem,5vw,4.5rem)] font-display leading-[1.05] font-bold tracking-tight text-[#1a1a1a]"
                             delay={0.2}
                         />
                         <div className="mt-8 max-w-2xl">
                             <p className="text-xl text-[#606060] leading-relaxed">
-                                RMJIT is not a typical dev shop. We are a Program Operations Partner. We bridge the gap between high-level strategy and ground-level execution, ensuring that complex initiatives succeed at scale.
+                                RMJ IT is not a generic agency. We are a <span className="text-[#1a1a1a] font-bold italic">Strategic Operations Partner</span>. We specialize in architecting the digital backbone for institutions where technical failure isn&apos;t just an inconvenience—it&apos;s a risk to mission-critical continuity.
                             </p>
                         </div>
                     </div>

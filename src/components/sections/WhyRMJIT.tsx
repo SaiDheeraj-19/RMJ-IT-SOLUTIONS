@@ -6,10 +6,11 @@ import TextReveal from "@/components/animations/TextReveal";
 import HorizontalLine from "@/components/ui/HorizontalLine";
 
 const differentiators = [
-    { title: "Institutional DNA", desc: "We understand the nuanced hierarchies, compliance requirements, and operational cadences of large-scale institutions." },
-    { title: "Operational Discipline", desc: "Our code is clean. Our documentation is exhaustive. Our rollouts are military-grade. We do not tolerate chaos." },
-    { title: "Scale Without Ceiling", desc: "Architectures designed from Day 1 to handle sudden surges in user load without degradation." },
-    { title: "Long-Horizon Partnership", desc: "We are not a vendor for a project. We are a partner for a program. We build for the next decade." }
+    { title: "Institutional DNA", desc: "We operate with an understanding of complex bureaucratic hierarchies and compliance mandates. We don't build features; we build organizational stability." },
+    { title: "The 24-Hour Pulse", desc: "Our global operation centers provide 24/7 monitoring. Your mission-critical infrastructure is managed and protected while the world sleeps." },
+    { title: "Security-First Engineering", desc: "Security is the foundation, not an add-on. Every line of code is architected for SOC2 and ISO 27001 readiness from Day 1." },
+    { title: "Fractional Technical Leadership", desc: "Every engagement is steered by a senior architect with 15+ years of institutional experience, ensuring strategy aligns with ground-level code." },
+    { title: "Gated Milestone Delivery", desc: "We follow a precision-based delivery model. Our 'Execution over Innovation' philosophy ensures we hit every hard deployment deadline without fail." }
 ];
 
 export default function WhyRMJIT() {
@@ -56,6 +57,36 @@ export default function WhyRMJIT() {
                             </p>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="mt-32 pt-16 border-t border-stone-200">
+                    <span className="text-[10px] uppercase tracking-[0.4em] font-black text-stone-400 mb-12 block">
+                        Enterprise Stack
+                    </span>
+                    <div className="flex flex-wrap gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        {["AWS", "Google Cloud", "Kubernetes", "Next.js", "PostgreSQL", "React Native", "TensorFlow", "Redis"].map((tech) => (
+                            <span key={tech} className="text-xl font-display font-bold text-[#1a1a1a]">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+                <div className="mt-32 pt-16 border-t border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                    <div className="lg:col-span-4">
+                        <span className="text-[10px] uppercase tracking-[0.4em] font-black text-stone-400 mb-12 block">
+                            Technical Governance
+                        </span>
+                        <h3 className="text-3xl font-display font-bold text-[#1a1a1a] leading-tight">
+                            Every engagement is steered by senior architectural oversight.
+                        </h3>
+                    </div>
+                    <div className="lg:col-span-8">
+                        <p className="text-xl text-[#606060] leading-relaxed italic border-l-4 border-brand pl-8">
+                            &quot;Our mission is to eliminate technical risk for the world&apos;s most critical institutions. We don&apos;t just build systems; we build organizational continuity. RMJ IT exists to ensure that your digital backbone is as resilient as your vision.&quot;
+                        </p>
+                        <div className="mt-8 pl-8">
+                            <span className="block text-lg font-bold text-[#1a1a1a]">Lead Architect</span>
+                            <span className="text-sm text-stone-400 uppercase tracking-widest font-bold">Governance & Strategy</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Section>
