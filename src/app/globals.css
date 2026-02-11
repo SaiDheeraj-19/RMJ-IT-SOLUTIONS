@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #f5f5f5;
+  --color-foreground: #1a1a1a;
+  --color-brand: #816729;
+  /* Brass/Laiton */
+  --color-surface: #efefef;
+  --color-surface-dark: #e4e4e4;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), var(--font-inter), ui-sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5f5f5;
+  --foreground: #1a1a1a;
+  --brand-rgb: 129, 103, 41;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  /* Ventriloc Body */
+  line-height: 1.33;
+  /* Ventriloc Body */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Valid selection styles */
+::selection {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+/* Precise Heading Styles to match Ventriloc */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  /* Ventriloc H1: -1.32px on 66px ~ -0.02em */
+  line-height: 0.91;
+  /* Ventriloc H1: 60px/66px */
+  font-size: clamp(3rem, 5vw, 66px);
+  /* Scaled to max 66px per Ventriloc */
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  /* Ventriloc H2: -0.8px on 40px ~ -0.02em */
+  line-height: 1.2;
+  /* Ventriloc H2: 48px/40px */
+  font-size: clamp(2rem, 4vw, 40px);
+  /* Scaled to max 40px per Ventriloc */
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.text-consulting-h1 {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+}
+
+.text-consulting-h2 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+.text-consulting-body {
+  font-size: 1.5rem;
+  max-width: 874px;
+  line-height: 1.4;
+  color: #505050;
+}
+
+/* Lenis mandatory styles for smooth scroll */
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+/* Animation utilities */
+.overflow-hidden-reveal {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-up {
+  transform: translateY(100%);
+  animation: revealUp 1.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes revealUp {
+  to {
+    transform: translateY(0);
+  }
 }
