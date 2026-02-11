@@ -110,17 +110,20 @@ export default function ContactPage() {
                         transition={{ duration: 1 }}
                     >
                         <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-12 block">
-                            Engagement
+                            Contact Us
                         </span>
-                        <div className="mb-16">
+                        <div className="mb-8">
                             <TextReveal
                                 as="h1"
-                                text="Initiate your"
+                                text="Start with a Free"
                                 className="text-[clamp(4rem,10vw,8rem)] font-display leading-[0.9] tracking-tighter font-bold"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Intervention.</span>
+                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Technical Audit.</span>
                         </div>
+                        <p className="text-xl text-[#606060] max-w-xl leading-relaxed">
+                            Tell us about your system and we&apos;ll deliver a written assessment with a prioritized roadmap within 14 days — at no cost.
+                        </p>
                     </motion.div>
                 </div>
             </section>
@@ -131,33 +134,59 @@ export default function ContactPage() {
                         <form id="contact-form" action={handleSubmit} className="space-y-12">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Identity</label>
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Full Name</label>
                                     <input
                                         name="name"
                                         required
                                         type="text"
-                                        placeholder="Full Name"
+                                        placeholder="Your name"
                                         className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display"
                                     />
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Institutional Email</label>
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Work Email</label>
                                     <input
                                         name="email"
                                         required
                                         type="email"
-                                        placeholder="email@firm.com"
+                                        placeholder="you@organization.com"
                                         className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display"
                                     />
                                 </div>
                             </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                <div className="space-y-4">
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Organization</label>
+                                    <input
+                                        name="organization"
+                                        type="text"
+                                        placeholder="University / Company / Agency"
+                                        className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display"
+                                    />
+                                </div>
+                                <div className="space-y-4">
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Service Needed</label>
+                                    <select
+                                        name="service"
+                                        className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display text-[#606060] appearance-none"
+                                    >
+                                        <option value="">Select a service</option>
+                                        <option value="web">Web Application Development</option>
+                                        <option value="mobile">Mobile App Development</option>
+                                        <option value="erp">Digital Campus / ERP Systems</option>
+                                        <option value="ai">AI & Process Automation</option>
+                                        <option value="cloud">Cloud Infrastructure & IT Consulting</option>
+                                        <option value="audit">Technical Audit Only</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div className="space-y-4">
-                                <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Program Details</label>
+                                <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Project Details</label>
                                 <textarea
                                     name="requirements"
                                     required
                                     rows={4}
-                                    placeholder="Briefly describe your current infrastructure or the specific bottleneck you'd like us to audit..."
+                                    placeholder="Describe your current system, the problem you're facing, or the project you need built..."
                                     className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display resize-none"
                                 />
                             </div>
@@ -177,7 +206,7 @@ export default function ContactPage() {
                                 type="submit"
                                 className="px-16 py-8 bg-[#1a1a1a] text-stone-50 rounded-full text-xs uppercase tracking-[0.4em] font-black hover:bg-brand transition-all shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {isSubmitting ? "Initiating..." : "Submit Engagement"}
+                                {isSubmitting ? "Submitting..." : "Request Free Audit"}
                             </button>
                         </form>
                     </div>

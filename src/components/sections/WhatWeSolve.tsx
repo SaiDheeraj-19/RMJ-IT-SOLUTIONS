@@ -7,25 +7,25 @@ import { ArrowUpRight, Activity, Shield, Layers } from "lucide-react";
 
 const pillars = [
     {
-        title: "Scaling Digital Programs",
-        description: "We eliminate technical debt and execution bottlenecks, ensuring your institutional programs scale without friction.",
+        title: "Structured Delivery Process",
+        description: "Every engagement follows a 6-phase framework: Discovery → Architecture → Build → QA → Deploy → Scale. Gated milestones and weekly stakeholder reviews ensure alignment with your operational KPIs.",
         icon: Activity,
-        stat: "100%",
-        statLabel: "Technical Success Rate"
+        stat: "6-Phase",
+        statLabel: "Delivery Framework"
     },
     {
-        title: "Institutional Reliability",
-        description: "Zero-downtime operations for systems that serve millions. We manage the complexity so you can focus on the mission.",
+        title: "Institutional-Grade Technology",
+        description: "We deploy on AWS and GCP with automated failover, real-time monitoring, and SOC2-aligned security controls. Our stack handles 10,000+ concurrent users with sub-200ms response times.",
         icon: Layers,
-        stat: "99.9%",
-        statLabel: "Observed Uptime"
+        stat: "<200ms",
+        statLabel: "Avg. Response Time"
     },
     {
-        title: "Compliance & Security",
-        description: "Architecting secure, compliant environments that exceed global standards for data privacy and institutional integrity.",
+        title: "Domain-Specific Experience",
+        description: "3+ years focused on university campus systems, government portals, and mid-size enterprise applications. We understand compliance mandates, academic calendar constraints, and public sector procurement cycles.",
         icon: Shield,
-        stat: "Zero",
-        statLabel: "Critical Vulnerabilities"
+        stat: "3+",
+        statLabel: "Years Focused Delivery"
     }
 ];
 
@@ -45,26 +45,25 @@ export default function WhoWeAre() {
                 >
                     <div className="mb-0 flex items-center justify-between">
                         <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-12 block">
-                            Who We Are
+                            Why Institutions Choose Us
                         </span>
-
                     </div>
 
                     <div className="max-w-[1000px] mb-24">
                         <TextReveal
                             as="h2"
-                            text="We are the engineering foundation for organizations that require zero-failure execution."
+                            text="Digital systems that run without failure — built by a team that understands your sector."
                             className="text-[clamp(2.5rem,5vw,4.5rem)] font-display leading-[1.05] font-bold tracking-tight text-[#1a1a1a]"
                             delay={0.2}
                         />
                         <div className="mt-8 max-w-2xl">
                             <p className="text-xl text-[#606060] leading-relaxed">
-                                RMJ IT is not a generic agency. We are a <span className="text-[#1a1a1a] font-bold italic">Strategic Operations Partner</span>. We specialize in architecting the digital backbone for institutions where technical failure isn&apos;t just an inconvenience—it&apos;s a risk to mission-critical continuity.
+                                RMJ IT is a <span className="text-[#1a1a1a] font-bold italic">full-cycle technology partner</span> for universities, government agencies, and mid-size enterprises. We handle everything from system architecture to post-launch operations — so your team stays focused on outcomes, not infrastructure.
                             </p>
                         </div>
                     </div>
 
-                    {/* Interactive Pillars Grid */}
+                    {/* 3 Authority Anchors */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-stone-200 pt-16">
                         {pillars.map((item, index) => (
                             <motion.div

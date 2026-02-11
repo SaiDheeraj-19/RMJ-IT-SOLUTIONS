@@ -7,22 +7,22 @@ import Link from "next/link";
 
 const sectors = [
     {
-        title: "Academic Programs",
-        description: "Executing large-scale student lifecycle management and digital campus initiatives.",
+        title: "Universities & Education",
+        description: "Student lifecycle platforms, admission portals, examination management, and campus ERP systems designed for multi-campus deployments serving thousands of students and faculty.",
         icon: GraduationCap,
         highlight: "Primary Focus"
     },
     {
-        title: "Enterprise Transformation",
-        description: "Streamlining complex corporate hierarchies and optimizing resource allocation through custom ERPs.",
+        title: "Mid-Size Enterprises",
+        description: "Operations dashboards, automated invoicing, CRM integrations, and workforce management tools for companies scaling from 200 to 2,000 employees.",
         icon: Briefcase,
-        highlight: "Strategic"
+        highlight: "Growth Segment"
     },
     {
         title: "Government & Public Sector",
-        description: "Deploying secure, compliant infrastructure for state-level programs and citizen services.",
+        description: "Secure citizen services portals, grievance management automation, and document verification systems built for high-traffic environments with strict compliance requirements.",
         icon: Landmark,
-        highlight: "High Impact"
+        highlight: "High Security"
     }
 ];
 
@@ -88,20 +88,20 @@ export default function SectorsImpact() {
                 {/* Stat Bar */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 border-t border-[#1a1a1a]/10 pt-16 opacity-60 hover:opacity-100 transition-opacity duration-500">
                     <div>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">10M+</div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Total Users Supported</div>
+                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">6-Phase</div>
+                        <div className="text-[10px] uppercase font-bold text-stone-500">Delivery Framework</div>
                     </div>
                     <div>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">99.99%</div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Operational Uptime</div>
+                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">99.9%</div>
+                        <div className="text-[10px] uppercase font-bold text-stone-500">Target Uptime SLA</div>
                     </div>
                     <div>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">Audit-Ready</div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Compliance Standard</div>
+                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">SOC2</div>
+                        <div className="text-[10px] uppercase font-bold text-stone-500">Aligned Security</div>
                     </div>
                     <div>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">24/7</div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Global Operations</div>
+                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">14 Days</div>
+                        <div className="text-[10px] uppercase font-bold text-stone-500">Free Audit Turnaround</div>
                     </div>
                 </div>
             </div>

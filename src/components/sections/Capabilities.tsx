@@ -8,37 +8,37 @@ import Link from "next/link";
 
 const systems = [
     {
-        title: "Website Development",
-        description: "Building mission-critical web applications designed to handle complex business logic and institutional-scale user demand with absolute resilience.",
-        tags: ["Scalable Architecture", "React/Next.js", "Systemic Integration"],
+        title: "Web Application Development",
+        description: "Student portals, internal dashboards, and public-facing platforms that handle 10k+ concurrent sessions. We solve slow legacy systems, fragmented data access, and manual reporting bottlenecks.",
+        tags: ["Next.js / React", "PostgreSQL", "REST & GraphQL APIs"],
         image: "/images/services/web.png",
         href: "/services/web"
     },
     {
-        title: "Android & iOS Apps",
-        description: "Native and cross-platform mobile solutions designed to be adopted at national scale. Premium iOS and Android ecosystems built for engagement.",
-        tags: ["Native iOS", "Native Android", "React Native"],
+        title: "Mobile Applications",
+        description: "Campus navigation, attendance tracking, and citizen-service apps used daily by thousands. We reduce paper-based workflows by 80% and increase user adoption within 60 days of launch.",
+        tags: ["React Native", "iOS / Android", "Offline-First"],
         image: "/images/services/mobile.png",
         href: "/services/mobile"
     },
     {
-        title: "Digital Marketing",
-        description: "Comprehensive growth solutions focused on institutional reach and national-scale engagement through data-driven digital strategies.",
-        tags: ["SEO", "Performance Marketing", "Social Strategy"],
+        title: "Digital Campus & ERP Systems",
+        description: "End-to-end campus digitization: admissions, fee management, timetable automation, and examination workflows. We replace manual Excel-based operations with integrated, real-time systems.",
+        tags: ["ERP Design", "Role-Based Access", "API Middleware"],
         image: "/images/services/marketing.png",
         href: "/services/marketing"
     },
     {
-        title: "AI & Analytics",
-        description: "Transforming raw data into actionable intelligence. Predictive models and automation systems that future-proof your institution.",
-        tags: ["Predictive Analytics", "Machine Learning", "Data Mining"],
+        title: "AI & Process Automation",
+        description: "Document verification that took 3 weeks now runs in 4 hours. We build OCR pipelines, automated grading tools, and predictive analytics dashboards tailored to institutional data.",
+        tags: ["Python / TensorFlow", "NLP Pipelines", "Custom ML Models"],
         image: "/images/services/ai.png",
         href: "/services/ai"
     },
     {
-        title: "Cloud Solutions",
-        description: "Resilient digital infrastructure. We deploy zero-trust cloud architectures that handle millions of requests with absolute security.",
-        tags: ["AWS/Azure", "Cloud Native", "Zero Trust"],
+        title: "Cloud Infrastructure & IT Consulting",
+        description: "We migrate on-premise systems to AWS/GCP with automated failover, real-time monitoring, and SOC2-aligned security. Typical migration: 60 days, zero data loss, 40% cost reduction.",
+        tags: ["AWS / GCP", "Terraform / Docker", "24/7 Monitoring"],
         image: "/images/services/cloud.png",
         href: "/services/cloud"
     }
@@ -100,7 +100,7 @@ export default function Capabilities() {
                                     <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-stone-200 group-hover:text-white">
                                         {item.title}
                                     </h3>
-                                    <p className="text-white/60 text-base mb-8 max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed">
+                                    <p className="text-white/70 text-base mb-8 max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed">
                                         {item.description}
                                     </p>
 
