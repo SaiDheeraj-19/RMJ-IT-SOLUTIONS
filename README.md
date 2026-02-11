@@ -73,5 +73,5 @@ src/
 
 <p align="center">
   <b>Built for Performance. Designed for Impact.</b><br>
-  Developed by RMJ IT SOLUTIONS Team.
+  Developed by R SAI DHEERAJ
 </p>
