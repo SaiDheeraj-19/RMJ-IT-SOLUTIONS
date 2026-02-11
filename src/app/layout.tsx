@@ -21,39 +21,40 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RMJ IT Solutions PVT LTD | Institutional Scaling & Implementation",
-  description: "Bespoke IT infrastructure and program operations for large-scale institutional initiatives. Precision implementation for sustainable impact.",
+  title: "RMJ IT SOLUTIONS | Institutional Technology & Program Operations",
+  description: "We build, enable, and operate technology-driven programs at institutional scale. Specializing in digital campus infrastructure, enterprise transformation, and high-stakes IT operations.",
+  keywords: ["IT Solutions", "Digital Transformation", "ERP Integration", "Cloud Support", "Cybersecurity", "Institutional IT", "Digital Campus"],
+  authors: [{ name: "RMJ IT SOLUTIONS" }],
   openGraph: {
-    title: "RMJ IT Solutions PVT LTD | Institutional Scaling",
-    description: "Architecting the future of institutional infrastructure.",
+    title: "RMJ IT SOLUTIONS | Professional IT Operations",
+    description: "Global-grade digital infrastructure for organizations that cannot afford to fail.",
+    type: "website",
     url: "https://rmjit.com",
     siteName: "RMJ IT Solutions PVT LTD",
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RMJ IT Solutions PVT LTD ",
-    description: "Architecting the future of institutional infrastructure.",
+    title: "RMJ IT SOLUTIONS | Institutional IT",
+    description: "We build, enable, and operate technology-driven programs at institutional scale.",
   },
   icons: {
-    icon: "/icon.jpeg",
-  },
+    icon: "/icon.png",
+  }
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${instrument.variable} ${dmMono.variable} font-sans antialiased bg-[#f5f5f5] text-[#202020]`}
-      >
+    <html lang="en" className={`${inter.variable} ${instrument.variable} ${dmMono.variable} scroll-smooth`}>
+      <body className="antialiased selection:bg-brand selection:text-white overflow-x-hidden font-sans bg-[#f5f5f5] text-[#1a1a1a]">
         <Preloader />
         <SmoothScroll>
-          {children}
+          <div id="root-content" className="flex flex-col min-h-screen">
+            {children}
+          </div>
         </SmoothScroll>
       </body>
     </html>

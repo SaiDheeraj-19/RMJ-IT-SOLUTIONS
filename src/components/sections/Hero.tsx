@@ -33,15 +33,9 @@ export default function Hero() {
                         transition={{ duration: 1 }}
                     >
                         <div className="mb-8 relative">
-                            <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: "100px" }}
-                                transition={{ delay: 0.5, duration: 1, ease: "circOut" }}
-                                className="h-1 bg-brand absolute -top-8 left-0"
-                            />
                             <TextReveal
                                 as="h1"
-                                text="We build, enable, and operate technology-driven programs at institutional scale."
+                                text="Engineering The Future Of Institutional Infrastructure."
                                 className="text-[clamp(3.5rem,7vw,6.5rem)] font-display leading-[0.92] font-bold tracking-tight text-[#1a1a1a]"
                                 delay={0.2}
                             />
@@ -50,7 +44,7 @@ export default function Hero() {
                         <div className="mb-12 max-w-xl pl-2">
                             <TextReveal
                                 as="p"
-                                text="Global-grade digital infrastructure for organizations that cannot afford to fail."
+                                text="We bridge the gap between high-level strategy and ground-level execution for universities, enterprises, and public sectors."
                                 className="text-[18px] font-normal text-[#505050] leading-[1.4]"
                                 delay={0.8}
                             />
@@ -63,7 +57,7 @@ export default function Hero() {
                                 transition={{ delay: 1.2, duration: 0.8 }}
                                 className="group px-10 py-5 bg-[#1a1a1a] text-stone-50 rounded-full text-[15px] font-medium hover:bg-brand transition-all duration-300 shadow-xl flex items-center gap-3 overflow-hidden relative"
                             >
-                                <span className="relative z-10 text-white">Start a Conversation</span>
+                                <span className="relative z-10 text-white">Request a Free Technical Audit</span>
                                 <ArrowRight size={16} className="relative z-10 text-white group-hover:translate-x-1 transition-transform" />
                                 <div className="absolute inset-0 bg-brand translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                             </motion.button>

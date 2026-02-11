@@ -24,12 +24,12 @@ export default function CTA() {
                     </span>
 
                     <Link href="/contact" className="group block">
-                        <h2 className="text-[clamp(3.5rem,10vw,8rem)] font-display font-medium leading-[0.9] tracking-tighter mb-16 text-black group-hover:scale-[1.01] transition-transform duration-700 ease-out max-w-5xl mx-auto">
-                            Let's discuss your <br /> <span className="italic text-white font-bold">next initiative.</span>
+                        <h2 className="text-[clamp(3.5rem,10vw,8rem)] font-display font-medium leading-[0.9] tracking-tighter mb-16 text-black group-hover:scale-[1.01] transition-transform duration-700 ease-out max-w-6xl mx-auto">
+                            Secure your <br /> <span className="italic text-white font-bold">technical roadmap.</span>
                         </h2>
 
                         <div className="inline-flex items-center gap-4 px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-sm uppercase tracking-widest font-black hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 shadow-2xl group-hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)]">
-                            Schedule a Briefing
+                            Request a Free Audit
                             <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
                         </div>
                     </Link>

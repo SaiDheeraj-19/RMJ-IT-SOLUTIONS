@@ -2,29 +2,49 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
     {
-        name: "Firm",
-        href: "/about",
+        name: "Capability",
+        href: "/services",
         dropdown: [
-            { title: "About Us", href: "/about", description: "Our mission and values" },
-            { title: "Team", href: "/team", description: "Meet the experts" },
-            { title: "Careers", href: "/careers", description: "Join our team" },
-            { title: "Contact", href: "/contact", description: "Get in touch" }
+            { title: "Web Platforms", href: "/services/web", description: "Mission-critical applications" },
+            { title: "Mobile Ecosystems", href: "/services/mobile", description: "iOS & Android delivery" },
+            { title: "AI & Analytics", href: "/services/ai", description: "Autonomous capability suites" },
+            { title: "Cloud Systems", href: "/services/cloud", description: "Resilient infrastructure" },
+            { title: "Digital Marketing", href: "/services/marketing", description: "Strategic institutional scale" }
         ]
     },
-
     {
         name: "Impact",
         href: "/case-studies",
         dropdown: [
-            { title: "Case Studies", href: "/case-studies", description: "Real world results" },
-            { title: "Clients", href: "/clients", description: "Who we work with" },
-            { title: "Testimonials", href: "/testimonials", description: "Client feedback" }
+            { title: "All Case Studies", href: "/case-studies", description: "Institutionalized results" },
+            { title: "Strategic Growth", href: "/services/marketing", description: "Digital reach at scale" },
+            { title: "Systemic Impact", href: "/services/automation", description: "Programmatic operations" }
+        ]
+    },
+    {
+        name: "Sectors",
+        href: "/#sectors",
+        dropdown: [
+            { title: "Academic Programs", href: "/case-studies", description: "Higher education focus" },
+            { title: "Enterprise Systems", href: "/services/web", description: "Corporate transformation" },
+            { title: "Public Sector", href: "/about", description: "Government initiatives" }
+        ]
+    },
+    {
+        name: "Firm",
+        href: "/about",
+        dropdown: [
+            { title: "Philosophy", href: "/about", description: "Our institutional DNA" },
+            { title: "Methodology", href: "/#approach", description: "The RMJ IT approach" },
+            { title: "Engagement", href: "/contact", description: "Initiate intervention" },
+            { title: "Privacy & Terms", href: "/privacy", description: "Legal & compliance" }
         ]
     },
 ];
@@ -82,14 +102,21 @@ export default function Navbar() {
     return (
         <motion.nav
             initial={{ y: 0 }}
-            animate={{ y: isVisible ? 0 : -100 }}
+            animate={{ y: isVisible ? 0 : -200 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex items-center justify-between pointer-events-none"
+            className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex items-center justify-between pointer-events-none"
+            aria-label="Main Navigation"
         >
-            <Link href="/" className="pointer-events-auto flex items-center gap-2 group">
-                <span className="font-display text-4xl font-black tracking-tighter text-[#1a1a1a] uppercase leading-none group-hover:opacity-70 transition-opacity">
-                    RMJ IT<span className="text-brand">.</span><span className="lowercase text-base font-bold text-[#C3B091]">solutions</span>
-                </span>
+            <Link href="/" className="pointer-events-auto flex items-center group flex-shrink-0" aria-label="RMJ IT Solutions Home">
+                <div className="relative h-20 w-40 md:h-24 md:w-52 mix-blend-multiply flex items-center">
+                    <Image
+                        src="/rmjit-logo.png"
+                        alt="RMJ IT SOLUTIONS"
+                        fill
+                        className="object-contain object-left"
+                        priority
+                    />
+                </div>
             </Link>
 
             {/* Center Menu Pill - Only visible on scroll or desktop */}
@@ -171,6 +198,8 @@ export default function Navbar() {
             <button
                 className="md:hidden p-3 bg-white rounded-full shadow-lg pointer-events-auto text-[#1a1a1a]"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
             >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>

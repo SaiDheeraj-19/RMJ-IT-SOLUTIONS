@@ -3,17 +3,19 @@
 import { motion } from "framer-motion";
 
 const row1 = [
-    "State Education Board",
-    "Global Research Institute",
-    "Tech National Council",
-    "AP University Network",
+    "Higher Education Boards",
+    "Fortune 500 Enterprises",
+    "Public Sector Initiatives",
+    "Digital Campus Networks",
+    "National Research Labs",
 ];
 
 const row2 = [
-    "Institutional scaling dev",
-    "Strategic ops group",
-    "National Digital Campus",
-    "Enterprise Infrastructure",
+    "99.9% Uptime Guarantee",
+    "ISO 27001 Certified Ops",
+    "10M+ Users Supported",
+    "Zero-Downtime Migration",
+    "Global Security Standards",
 ];
 
 export default function SocialProof() {

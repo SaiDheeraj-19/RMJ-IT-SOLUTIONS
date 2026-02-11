@@ -11,17 +11,20 @@ const impacts = [
     {
         title: "Digital Campus Infrastructure Rollout.",
         sector: "Academic Sector",
-        desc: "Modernizing administrative workflows for massive-scale educational institutions through real-time attendance, grading, and placement modules."
+        desc: "Modernizing administrative workflows for massive-scale educational institutions. We achieved 100% real-time synchronization across 80+ campuses.",
+        metrics: ["80+ Campuses", "500k+ Daily Users", "40% Cost Reduction"]
     },
     {
         title: "Automated Corporate Operations Ecosystem.",
         sector: "Enterprise Sector",
-        desc: "Bridging the gap between manual business logic and scalable digital operations for high-growth corporate organizations."
+        desc: "Bridging the gap between manual business logic and scalable digital operations for high-growth corporate organizations. Streamlined ERP reduced processing time by 65%.",
+        metrics: ["65% Faster Ops", "99.9% Uptime", "3.2M Records/Day"]
     },
     {
         title: "Regional Strategic Expansion Ecosystem.",
         sector: "Digital Growth",
-        desc: "Deploying comprehensive marketing and analytical frameworks to catalyze business reach and national-scale brand positioning."
+        desc: "Deploying comprehensive analytical frameworks to catalyze business reach. Scaled digital presence from zero to national-scale brand positioning within 12 months.",
+        metrics: ["12 Mo. Scale", "200% Reach Growth", "Zero Data Leaks"]
     }
 ];
 
@@ -78,6 +81,16 @@ export default function CaseStudiesPage() {
                                     className="text-2xl font-normal leading-relaxed text-[#505050]"
                                     delay={0.5}
                                 />
+
+                                <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12 border-t border-stone-200 pt-12">
+                                    {item.metrics.map((metric, idx) => (
+                                        <div key={idx}>
+                                            <div className="text-2xl font-display font-bold text-[#1a1a1a]">{metric.split(' ')[0]}</div>
+                                            <div className="text-[10px] uppercase font-bold text-stone-400 tracking-wider mt-1">{metric.split(' ').slice(1).join(' ')}</div>
+                                        </div>
+                                    ))}
+                                </div>
+
                                 <motion.button
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}

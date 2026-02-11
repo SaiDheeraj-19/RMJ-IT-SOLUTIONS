@@ -7,25 +7,25 @@ import { ArrowUpRight, Activity, Shield, Layers } from "lucide-react";
 
 const pillars = [
     {
-        title: "Execution Capability",
-        description: "We move beyond theory to deliver end-to-end technology rollouts that function in the real world.",
+        title: "Scaling Digital Programs",
+        description: "We eliminate technical debt and execution bottlenecks, ensuring your institutional programs scale without friction.",
         icon: Activity,
         stat: "100%",
-        statLabel: "Deployment Rate"
+        statLabel: "Technical Success Rate"
     },
     {
-        title: "Operational Excellence",
-        description: "Technology is only as good as its adoption. We manage the human side of digital transformation.",
+        title: "Institutional Reliability",
+        description: "Zero-downtime operations for systems that serve millions. We manage the complexity so you can focus on the mission.",
         icon: Layers,
-        stat: "Zero",
-        statLabel: "Downtime Tolerance"
+        stat: "99.9%",
+        statLabel: "Observed Uptime"
     },
     {
-        title: "Long-term Scale",
-        description: "Building sustainable, modular systems designed to evolve over decades, not quarters.",
+        title: "Compliance & Security",
+        description: "Architecting secure, compliant environments that exceed global standards for data privacy and institutional integrity.",
         icon: Shield,
-        stat: "10Yr+",
-        statLabel: "System Lifespan"
+        stat: "Zero",
+        statLabel: "Critical Vulnerabilities"
     }
 ];
 

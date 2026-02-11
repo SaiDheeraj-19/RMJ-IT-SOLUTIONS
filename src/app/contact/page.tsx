@@ -70,10 +70,10 @@ export default function ContactPage() {
                                 transition={{ delay: 0.4 }}
                             >
                                 <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-[#1a1a1a] leading-tight mb-6 tracking-tighter">
-                                    Engagement <br /> <span className="italic text-brand">Initiated.</span>
+                                    Audit Request <br /> <span className="italic text-brand">Received.</span>
                                 </h2>
                                 <p className="text-stone-500 text-lg md:text-xl max-w-md mx-auto mb-12 leading-relaxed">
-                                    Your institutional requirements have been received. Our architects will review and reach out shortly.
+                                    Your institutional requirements have been received. Our architects will prepare your technical roadmap and reach out shortly.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -157,7 +157,7 @@ export default function ContactPage() {
                                     name="requirements"
                                     required
                                     rows={4}
-                                    placeholder="Describe your institutional requirements..."
+                                    placeholder="Briefly describe your current infrastructure or the specific bottleneck you'd like us to audit..."
                                     className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display resize-none"
                                 />
                             </div>
