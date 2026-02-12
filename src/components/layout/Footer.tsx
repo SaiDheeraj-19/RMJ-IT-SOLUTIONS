@@ -1,79 +1,92 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-[#f5f5f5] pt-24 pb-12 px-6 md:px-12 border-t border-black/5">
+        <footer className="bg-[#f5f5f5] pt-20 pb-10 px-6 md:px-12 border-t border-black/5 overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 items-start">
-                    {/* About Summary */}
-                    <div className="lg:col-span-5 pr-8">
-                        <Link href="/" className="text-[20px] font-black uppercase tracking-[0.2em] mb-8 block text-[#1a1a1a]">
-                            RMJ IT Solutions
-                        </Link>
-                        <p className="text-[17px] text-[#505050] leading-relaxed mb-8 max-w-sm">
-                            We engineer digital infrastructure for educational institutions, mid-size enterprises, and startups. Confident systems built for scale.
-                        </p>
-                        <div className="flex gap-4">
-                            <Link href="#" className="p-3 rounded-full bg-white border border-stone-200 hover:border-brand hover:text-brand transition-colors text-stone-500">
-                                <Linkedin size={18} />
-                            </Link>
-                            <Link href="#" className="p-3 rounded-full bg-white border border-stone-200 hover:border-brand hover:text-brand transition-colors text-stone-500">
-                                <Github size={18} />
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-start">
+                    <div className="lg:col-span-4">
+                        <div className="mb-8">
+                            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand mb-6 block">
+                                Ready to start?
+                            </span>
+                            <Link href="/contact" className="group block">
+                                <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-display font-bold text-[#1a1a1a] leading-[1.1] tracking-tight group-hover:text-brand transition-colors duration-500">
+                                    Get your free <br /> technical audit.
+                                </h2>
                             </Link>
                         </div>
                     </div>
 
-                    {/* Links Grid */}
-                    <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div>
-                            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-stone-400 mb-6">Services</h4>
-                            <ul className="space-y-4">
-                                <li><Link href="/services/erp" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Digital Systems Engineering</Link></li>
-                                <li><Link href="/services/cloud" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Cloud & Infrastructure</Link></li>
-                                <li><Link href="/services/web" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Custom Web Applications</Link></li>
-                                <li><Link href="/services/security" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Security Optimization</Link></li>
-                            </ul>
+                    <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <div className="space-y-8">
+                            <div>
+                                <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 mb-4">Services</h4>
+                                <ul className="space-y-3">
+                                    <li><Link href="/services/web" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Website Development</Link></li>
+                                    <li><Link href="/services/mobile" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Android & iOS Apps</Link></li>
+                                    <li><Link href="/services/marketing" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Digital Marketing</Link></li>
+                                    <li><Link href="/services/ai" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">AI & Analytics</Link></li>
+                                    <li><Link href="/services/cloud" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Cloud Solutions</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div>
+                                <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 mb-4">Social</h4>
+                                <ul className="space-y-3">
+                                    <li><Link href="#" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">LinkedIn</Link></li>
+                                    <li><Link href="#" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Instagram</Link></li>
+                                    <li><Link href="#" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Twitter</Link></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 mb-4">Company</h4>
+                                <ul className="space-y-3">
+                                    <li><Link href="/about" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">About Us</Link></li>
+                                    <li><Link href="/case-studies" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Case Studies</Link></li>
+                                    <li><Link href="/contact" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Contact Us</Link></li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div>
-                            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-stone-400 mb-6">Company</h4>
-                            <ul className="space-y-4">
-                                <li><Link href="/about" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">About Us</Link></li>
-                                <li><Link href="/case-studies" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Case Studies</Link></li>
-                                <li><Link href="/process" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Process</Link></li>
-                                <li><Link href="/contact" className="text-[15px] font-medium text-[#1a1a1a] hover:text-brand transition-colors">Contact</Link></li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-stone-400 mb-6">Connect</h4>
-                            <ul className="space-y-4 text-[15px] font-medium text-[#1a1a1a]">
-                                <li className="flex items-start gap-3">
-                                    <Mail size={16} className="text-brand shrink-0 mt-1" />
-                                    <Link href="mailto:support@rmjit.com" className="hover:text-brand transition-colors">support@rmjit.com</Link>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <MapPin size={16} className="text-brand shrink-0 mt-1" />
-                                    <span>
-                                        Kurnool, Andhra Pradesh<br />
-                                        India
-                                    </span>
-                                </li>
-                            </ul>
+                            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 mb-4">Contact Us</h4>
+                            <div className="space-y-6 text-[15px] font-medium text-[#1a1a1a]">
+                                <div>
+                                    <span className="block font-bold mb-2 uppercase tracking-wide">RMJ IT SOLUTIONS</span>
+                                    <Link href="https://maps.google.com" target="_blank" className="hover:text-brand transition-colors leading-relaxed block text-[#505050]">
+                                        86/326-2, DOCTORS COLONY,<br />
+                                        REVENUE WARD NO 86,<br />
+                                        KURNOOL, Kurnool,<br />
+                                        Andhra Pradesh, 518002
+                                    </Link>
+                                </div>
+                                <div className="space-y-2 text-[#505050]">
+                                    <p><span className="text-stone-400 font-bold text-[10px] uppercase tracking-wider block mb-0.5">Phone</span> <Link href="tel:+918639756899" className="hover:text-brand transition-colors text-[#1a1a1a]">+91 8639756899</Link></p>
+                                    <p><span className="text-stone-400 font-bold text-[10px] uppercase tracking-wider block mb-0.5">Email</span> <Link href="mailto:support@rmjit.com" className="hover:text-brand transition-colors text-[#1a1a1a]">support@rmjit.com</Link></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-[0.1em] font-bold text-stone-400">
-                    <span>© {currentYear} RMJ IT Solutions.</span>
-                    <div className="flex gap-8">
-                        <Link href="/privacy" className="hover:text-brand transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-brand transition-colors">Terms of Use</Link>
+                <div className="flex flex-col w-full">
+                    <span className="font-display text-[13.5vw] font-bold text-[#e5e5e5] leading-[0.8] tracking-tighter uppercase select-none block text-center mix-blend-multiply pointer-events-none translate-y-4">
+                        RMJ IT SOLUTIONS .
+                    </span>
+
+                    <div className="border-t border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 w-full">
+                        <span>© {currentYear}</span>
+                        <div className="flex gap-8">
+                            <Link href="/privacy" className="hover:text-brand transition-colors">Privacy Policy</Link>
+                            <Link href="/terms" className="hover:text-brand transition-colors">Terms of Use</Link>
+                        </div>
                     </div>
                 </div>
             </div>
