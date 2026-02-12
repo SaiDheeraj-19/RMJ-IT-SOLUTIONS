@@ -7,30 +7,37 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-white pt-32 pb-12 px-10 md:px-20 border-t border-slate-100 overflow-hidden relative">
+        <footer className="bg-white pt-40 pb-16 px-10 md:px-20 border-t border-slate-100 overflow-hidden relative">
             {/* Subtle Aura */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand/10 to-transparent" />
 
+            {/* Massive Background Text - Perfectly Centered Relative to Viewport */}
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03] flex justify-center">
+                <span className="text-[16vw] font-display font-black text-slate-900 leading-none tracking-tighter uppercase whitespace-nowrap block translate-y-1/2">
+                    RMJ SOLUTIONS
+                </span>
+            </div>
+
             <div className="max-w-[1400px] mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-32 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 mb-32 items-start">
                     {/* Left Brand Block */}
-                    <div className="lg:col-span-4 space-y-12">
-                        <div className="space-y-6">
+                    <div className="lg:col-span-5">
+                        <div className="space-y-8 max-w-sm">
                             <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand block font-mono">
                                 {`// ARCHITECTURAL PARTNER`}
                             </span>
                             <Link href="/contact" className="group block">
-                                <h2 className="text-[clamp(2.1rem,4vw,3.2rem)] font-display font-bold text-slate-900 leading-[1.1] tracking-tighter group-hover:text-brand transition-colors duration-500">
-                                    Engineering systems <br /> that institutions rely on.
+                                <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-display font-bold text-slate-900 leading-[1.05] tracking-tighter group-hover:text-brand transition-colors duration-500">
+                                    Engineering systems <br /> that institutions trust.
                                 </h2>
                             </Link>
                         </div>
                     </div>
 
                     {/* Navigation Columns */}
-                    <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-12">
+                    <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-12">
                         {/* Services */}
-                        <div className="space-y-8">
+                        <div className="space-y-10">
                             <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">Capabilities</h4>
                             <ul className="space-y-4">
                                 {['Digital Systems', 'Cloud Ops', 'Web Portals', 'Institutional AI'].map((link) => (
@@ -44,7 +51,7 @@ export default function Footer() {
                         </div>
 
                         {/* Company */}
-                        <div className="space-y-8">
+                        <div className="space-y-10">
                             <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">Company</h4>
                             <ul className="space-y-4">
                                 {[
@@ -61,23 +68,9 @@ export default function Footer() {
                             </ul>
                         </div>
 
-                        {/* Social */}
-                        <div className="space-y-8">
-                            <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">Connect</h4>
-                            <ul className="space-y-4">
-                                {['LinkedIn', 'Instagram', 'Twitter'].map((link) => (
-                                    <li key={link}>
-                                        <Link href="#" className="text-sm font-bold text-slate-600 hover:text-brand transition-colors tracking-tight">
-                                            {link}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
                         {/* Technical Contact */}
-                        <div className="space-y-8">
-                            <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">Audit Context</h4>
+                        <div className="space-y-10">
+                            <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">Network Hub</h4>
                             <div className="space-y-6">
                                 <Link href="tel:+918639756899" className="flex items-center gap-3 text-sm font-black text-slate-900 hover:text-brand transition-colors">
                                     <Phone size={14} className="text-brand" /> +91 86397 56899
@@ -100,15 +93,8 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Massive Background Text - Architectural Style - Outside flex but inside relative footer */}
-                <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
-                    <span className="text-[15vw] font-display font-black text-slate-900 leading-none tracking-tighter uppercase whitespace-nowrap block translate-y-1/2">
-                        RMJ SOLUTIONS
-                    </span>
-                </div>
-
-                {/* Bottom Legal Section */}
-                <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+                {/* Bottom Legal Section - Perfectly Aligned */}
+                <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-12">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
                         © {currentYear} RMJ IT SOLUTIONS. ALL RIGHTS RESERVED.
                     </span>
