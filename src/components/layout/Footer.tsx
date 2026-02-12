@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -20,15 +20,10 @@ export default function Footer() {
                                 {`// ARCHITECTURAL PARTNER`}
                             </span>
                             <Link href="/contact" className="group block">
-                                <h2 className="text-[clamp(2rem,4vw,3rem)] font-display font-bold text-slate-900 leading-[1.1] tracking-tighter group-hover:text-brand transition-colors duration-500">
+                                <h2 className="text-[clamp(2.1rem,4vw,3.2rem)] font-display font-bold text-slate-900 leading-[1.1] tracking-tighter group-hover:text-brand transition-colors duration-500">
                                     Engineering systems <br /> that institutions rely on.
                                 </h2>
                             </Link>
-                        </div>
-
-                        <div className="flex items-center gap-3 text-slate-400">
-                            <ShieldCheck className="w-5 h-5 text-brand" />
-                            <span className="text-[10px] uppercase font-black tracking-widest font-mono">SOC2 & GDPR Framework Ready</span>
                         </div>
                     </div>
 
@@ -105,22 +100,20 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Massive Background Text - Architectural Style - Outside flex but inside relative footer */}
+                <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
+                    <span className="text-[15vw] font-display font-black text-slate-900 leading-none tracking-tighter uppercase whitespace-nowrap block translate-y-1/2">
+                        RMJ SOLUTIONS
+                    </span>
+                </div>
+
                 {/* Bottom Legal Section */}
-                <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-12">
-                    <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-                            © {currentYear} RMJ IT SOLUTIONS. ALL RIGHTS RESERVED.
-                        </span>
-                    </div>
+                <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                        © {currentYear} RMJ IT SOLUTIONS. ALL RIGHTS RESERVED.
+                    </span>
 
-                    {/* Massive Background Text - Architectural Style */}
-                    <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
-                        <span className="text-[15vw] font-display font-black text-slate-900 leading-none tracking-tighter uppercase whitespace-nowrap block translate-y-8">
-                            RMJ SOLUTIONS
-                        </span>
-                    </div>
-
-                    <div className="flex gap-10 relative z-10">
+                    <div className="flex gap-10">
                         <Link href="/privacy" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand transition-colors">Terms of Use</Link>
                     </div>
