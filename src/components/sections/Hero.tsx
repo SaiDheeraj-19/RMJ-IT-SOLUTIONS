@@ -58,14 +58,14 @@ export default function Hero() {
                             transition={{ delay: 0.5 }}
                             className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono"
                         >
-                            {`// ESTABLISHED CERTAINTY`}
+                            {`// GLOBAL INSTITUTIONAL STANDARDS`}
                         </motion.span>
 
                         <div className="mb-8">
                             <TextReveal
                                 as="h1"
-                                text="Engineering digital infrastructure that institutions trust blindly."
-                                className="text-[clamp(2.8rem,5vw,5.5rem)] font-display leading-[0.95] font-bold tracking-tighter text-slate-900"
+                                text="Defining the Standard for Digital Sovereignty."
+                                className="text-[clamp(2.8rem,5.5vw,5.5rem)] font-display leading-[0.9] font-bold tracking-tighter text-slate-900"
                                 delay={0.2}
                             />
                         </div>
@@ -73,7 +73,7 @@ export default function Hero() {
                         <div className="mb-14 max-w-xl">
                             <TextReveal
                                 as="p"
-                                text="We architect systems where failure is mathematically impossible. We replace fragmented tools with high-trust engineering, designed for absolute institutional reliability."
+                                text="We engineer high-stakes digital infrastructure for the world's most demanding institutions. Where legacy firms offer 'software,' we deliver architectural certainty and structural resilience."
                                 className="text-xl font-medium text-slate-500 leading-relaxed"
                                 delay={0.8}
                             />
@@ -83,49 +83,77 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-6">
                             <Link href="/contact" id="hero-cta-primary">
                                 <motion.button
-                                    whileHover={{ scale: 1.05, x: 5 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="group px-12 py-6 bg-slate-900 text-white rounded-full text-xs uppercase tracking-[0.3em] font-black hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10 flex items-center gap-4"
+                                    whileHover={{ scale: 1.02, x: 5 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="group px-12 py-6 bg-slate-900 text-white rounded-full text-[11px] uppercase tracking-[0.4em] font-black hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10 flex items-center gap-4"
                                 >
-                                    Initiate Consultation
+                                    Initiate Structural Audit
                                 </motion.button>
                             </Link>
                             <Link href="#approach" id="hero-cta-secondary">
                                 <motion.button
-                                    whileHover={{ scale: 1.05, x: -5 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="px-10 py-6 bg-white border border-slate-200 text-slate-900 rounded-full text-xs uppercase tracking-[0.3em] font-black hover:border-brand hover:text-brand transition-all duration-500 flex items-center gap-4"
+                                    whileHover={{ scale: 1.02, x: -5 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="px-10 py-6 bg-white border border-slate-200 text-slate-900 rounded-full text-[11px] uppercase tracking-[0.4em] font-black hover:border-brand hover:text-brand transition-all duration-500 flex items-center gap-4"
                                 >
-                                    The Framework
+                                    The Core Philosophy
                                 </motion.button>
                             </Link>
                         </div>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, rotateY: 20, scale: 0.9 }}
-                        whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-                        className="hidden lg:block relative h-[650px] w-full perspective-1000"
-                    >
+                    <div className="hidden lg:block relative h-[700px] w-full perspective-2000">
                         <motion.div
-                            animate={{
-                                y: [-10, 10, -10],
-                                rotate: [-1, 1, -1]
-                            }}
-                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                            initial={{ opacity: 0, rotateY: 30, scale: 0.8, x: 100 }}
+                            animate={{ opacity: 1, rotateY: 5, scale: 1, x: 0 }}
+                            transition={{ duration: 2, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
                             className="w-full h-full relative"
                         >
-                            <Image
-                                src="/images/company-cuate.svg"
-                                alt="Digital Infrastructure Illustration"
-                                fill
-                                className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
-                                priority
-                            />
+                            {/* Abstract Geometric Elements - Replacing standard illustration with 'Enterprise Luxury' visuals */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="relative w-[500px] h-[500px]">
+                                    {/* Layered Architectural Elements */}
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                                        className="absolute inset-0 border-[0.5px] border-slate-200 rounded-[4rem] opacity-20"
+                                    />
+                                    <motion.div
+                                        animate={{ rotate: -360 }}
+                                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                                        className="absolute inset-4 border-[0.5px] border-brand/20 rounded-[3.5rem] opacity-30"
+                                    />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-[300px] h-[300px] relative">
+                                            <Image
+                                                src="/images/company-cuate.svg"
+                                                alt="Institutional Engineering"
+                                                fill
+                                                className="object-contain filter grayscale opacity-80 contrast-125"
+                                                priority
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Floating Data Points */}
+                                    {[0, 1, 2, 3].map((i) => (
+                                        <motion.div
+                                            key={i}
+                                            animate={{
+                                                y: [-20, 20, -20],
+                                                opacity: [0.3, 0.6, 0.3]
+                                            }}
+                                            transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
+                                            className={`absolute w-3 h-3 bg-brand rounded-full blur-[4px]`}
+                                            style={{
+                                                top: `${20 + i * 20}%`,
+                                                left: `${10 + i * 25}%`
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
                         </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

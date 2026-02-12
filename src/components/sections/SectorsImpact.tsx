@@ -9,56 +9,56 @@ const phases = [
     {
         num: "01",
         icon: <Timer className="w-5 h-5" />,
-        title: "Discovery & System Audit",
-        description: "We don't guess. We audit your existing infrastructure, map data flows, and define technical requirements before writing a single line of code.",
-        duration: "Strategy Phase",
-        deliverable: "Architecture Audit Report"
+        title: "Deterministic Discovery",
+        description: "We eliminate ambiguity via structural auditing. Our engineers map institutional logic into a deterministic requirements matrix before a single byte is generated.",
+        duration: "Strategic Audit",
+        deliverable: "Digital Sovereignty Blueprint"
     },
     {
         num: "02",
         icon: <FileCode className="w-5 h-5" />,
-        title: "Architecture & Technical Design",
-        description: "We blueprint the entire system—database schema, API contracts, security model, and cloud infrastructure. You approve the engineering plan.",
-        duration: "Design Phase",
-        deliverable: "System Blueprint & Tech Spec"
+        title: "Foundational Architecture",
+        description: "Designing for the decades. We blueprint high-availability schemas and cryptographic orchestration layers that form the core structural integrity of your organization.",
+        duration: "Architectural Gating",
+        deliverable: "Hardened Tech Specification"
     },
     {
         num: "03",
         icon: <Zap className="w-5 h-5" />,
-        title: "Agile Development",
-        description: "Bi-weekly sprints with tangible demos. You see working software every 14 days. CI/CD pipelines and automated testing are active from day one.",
-        duration: "Development Phase",
-        deliverable: "Production-Ready Codebase"
+        title: "Precision Engineering",
+        description: "Execution with mathematical rigour. We utilize automated orchestration and deterministic CI/CD pipelines to ensure every sprint delivers production-grade certainty.",
+        duration: "Engineering Sprint",
+        deliverable: "High-Integrity Codebase"
     },
     {
         num: "04",
         icon: <ShieldCheck className="w-5 h-5" />,
-        title: "QA & Security Testing",
-        description: "Rigorous stress testing, vulnerability scanning (OWASP Top 10), and cross-device validation. Nothing goes to production without passing 100% of test cases.",
-        duration: "Audit Phase",
-        deliverable: "QA Validation Report"
+        title: "Verifiable Assurance",
+        description: "Beyond QA. We perform adversarial stress testing and kernel-level vulnerability auditing to verify that every protocol meets our rigorous institutional standard.",
+        duration: "Assurance Gating",
+        deliverable: "Structural Integrity Report"
     },
     {
         num: "05",
         icon: <Server className="w-5 h-5" />,
-        title: "Deployment & Migration",
-        description: "Zero-downtime deployment strategy. We handle data migration, DNS cutover, and SSL configuration with a rollback plan in place.",
-        duration: "Launch Phase",
-        deliverable: "Live Production Environment"
+        title: "Institutional Orchestration",
+        description: "The zero-risk cutover. We manage global DNS orchestration and multi-regional data migration with mission-critical precision and zero single points of failure.",
+        duration: "Strategic Rollout",
+        deliverable: "Live Hardened Infrastructure"
     },
     {
         num: "06",
         icon: <CheckCircle2 className="w-5 h-5" />,
-        title: "Stabilization & Handover",
-        description: "We stay on for 30 days post-launch to monitor performance, fix edge cases, and train your internal team. Full documentation is transferred.",
-        duration: "Ongoing",
-        deliverable: "Operator Manuals & Repo Access"
+        title: "Sustained Stabilization",
+        description: "We provide post-deployment structural monitoring and institutional handover, ensuring your internal teams are prepared to maintain global standards.",
+        duration: "Sustained Ops",
+        deliverable: "Operational Continuity Manual"
     }
 ];
 
 export default function ProcessTimeline() {
     return (
-        <Section className="bg-white text-[#0f172a] py-40">
+        <Section className="bg-white text-[#0f172a] py-40 border-t border-slate-100">
             <div className="max-w-[1400px] mx-auto">
                 <div className="mb-32 flex flex-col md:flex-row justify-between items-end gap-12">
                     <div className="max-w-2xl">
@@ -66,20 +66,20 @@ export default function ProcessTimeline() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-10 block font-mono"
+                            className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono"
                         >
-                            {`// DELIVERY FRAMEWORK`}
+                            {`// STRATEGIC ORCHESTRATION FRAMEWORK`}
                         </motion.span>
                         <TextReveal
                             as="h2"
-                            text="Engineered for Certainty."
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display leading-[0.95] font-bold tracking-tighter text-slate-900"
+                            text="Architecture Defined by Precision."
+                            className="text-[clamp(2.5rem,5vw,5rem)] font-display leading-[0.9] font-bold tracking-tighter text-slate-900"
                             delay={0.1}
                         />
                     </div>
                     <div className="max-w-md pb-4">
                         <p className="text-xl text-slate-500 font-medium leading-relaxed">
-                            We replaced the &quot;black box&quot; of development with a transparent, milestone-gated process. You know exactly what&apos;s being built, when it ships, and why it works.
+                            We have replaced the uncertainties of standard development with a gated, milestone-driven delivery protocol. We don&apos;t just build software; we engineer institutional certainty.
                         </p>
                     </div>
                 </div>

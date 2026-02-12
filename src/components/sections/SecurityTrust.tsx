@@ -8,34 +8,34 @@ import { ShieldCheck, Lock, Globe, Server, CheckCircle, Database } from "lucide-
 const trustPoints = [
     {
         icon: <ShieldCheck className="w-8 h-8" />,
-        title: "SOC2 Compliance Readiness",
-        desc: "Architecture designed to meet the highest standards of security and data privacy."
+        title: "Cryptographic Integrity",
+        desc: "Architecture designed to military-grade specifications, ensuring absolute data sovereignity and verifiable audit trails."
     },
     {
         icon: <Lock className="w-8 h-8" />,
-        title: "End-to-End Encryption",
-        desc: "State-of-the-art AES-256 encryption for data at rest and TLS 1.3 for data in transit."
+        title: "Structural Hardening",
+        desc: "Automated vulnerability orchestration and zero-trust perimeter protocols embedded at the kernel level."
     },
     {
         icon: <Globe className="w-8 h-8" />,
-        title: "GDPR & HIPAA Alignment",
-        desc: "Built-in data sovereignity and privacy-by-design principles for sensitive institutional data."
+        title: "Global Compliance Nodes",
+        desc: "Hardware-level alignment with NIST, SOC2 Type II, and GDPR framework requirements for institutional data."
     },
     {
         icon: <Server className="w-8 h-8" />,
-        title: "Enterprise Uptime SLA",
-        desc: "Redundant cloud infrastructure with automatic failover and zero single points of failure."
+        title: "Resilient Infrastructure",
+        desc: "Multi-regional cloud orchestration with automatic structural failover and 99.999% engineered uptime availability."
     }
 ];
 
 export default function SecurityTrust() {
     return (
-        <Section id="trust" className="bg-[#f8fafc] py-40 relative overflow-hidden">
-            {/* Architectural Grid Background */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        <Section id="trust" className="bg-[#fafafa] py-40 relative overflow-hidden">
+            {/* Precision Grid Background */}
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
                 style={{
-                    backgroundImage: `linear-gradient(#4f46e5 1px, transparent 1px), linear-gradient(90deg, #4f46e5 1px, transparent 1px)`,
-                    backgroundSize: '120px 120px',
+                    backgroundImage: `linear-gradient(#000 0.5px, transparent 0.5px), linear-gradient(90deg, #000 0.5px, transparent 0.5px)`,
+                    backgroundSize: '100px 100px',
                 }}
             />
 
@@ -46,17 +46,17 @@ export default function SecurityTrust() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block font-mono"
+                            className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono"
                         >
-                            {`// INSTITUTIONAL HARDENING`}
+                            {`// INSTITUTIONAL HARDENING PROTOCOL`}
                         </motion.span>
                         <TextReveal
                             as="h2"
-                            text="Architecture Built for Trust."
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.95] tracking-tighter mb-10"
+                            text="Architecture Defined by Certainty."
+                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter mb-10"
                         />
                         <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
-                            Safety isn&apos;t a feature; it&apos;s a requirement. We build high-trust digital infrastructure that protects your organization&apos;s most valuable asset: its data.
+                            In high-stakes environments, safety is not a feature—it is the foundation. We build hardened digital infrastructure that transforms trust into a mathematical constant.
                         </p>
                     </div>
 
@@ -67,16 +67,19 @@ export default function SecurityTrust() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                                className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] hover:shadow-2xl hover:shadow-brand/5 transition-all duration-700 group"
+                                transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                                className="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-brand/5 transition-all duration-700 group relative overflow-hidden"
                             >
-                                <div className="text-brand mb-6 group-hover:scale-110 transition-transform duration-500">
+                                <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-700">
                                     {point.icon}
                                 </div>
-                                <h3 className="text-lg font-display font-bold text-slate-900 mb-3 tracking-tight group-hover:text-brand transition-colors">
+                                <div className="text-brand mb-8 group-hover:scale-110 transition-transform duration-500">
+                                    {point.icon}
+                                </div>
+                                <h3 className="text-lg font-display font-black text-slate-900 mb-4 tracking-tight group-hover:text-brand transition-colors">
                                     {point.title}
                                 </h3>
-                                <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                                <p className="text-[13px] text-slate-500 font-medium leading-relaxed">
                                     {point.desc}
                                 </p>
                             </motion.div>

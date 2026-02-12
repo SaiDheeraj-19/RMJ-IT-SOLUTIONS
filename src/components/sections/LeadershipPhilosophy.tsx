@@ -8,21 +8,21 @@ import { useRef } from "react";
 const leadership = [
     {
         role: "Managing Director",
-        philosophy: "Certainty as a Service",
-        message: "In a world of fragmented tools and fragile code, we engineer certainty. Our mission is to stabilize institutional infrastructure so that leaders can focus on mission-critical goals without fearing system failure.",
-        gradient: "bg-gradient-to-br from-brand/10 to-transparent"
+        philosophy: "Boardroom Certainty",
+        message: "In a world of fragmented legacy systems, we deliver structural certainty. Our mission is to stabilize global institutional infrastructure so that leaders can operate with absolute strategic clarity.",
+        gradient: "bg-gradient-to-br from-brand/5 to-transparent"
     },
     {
-        role: "Technical Founder",
-        philosophy: "Architectural Integrity",
-        message: "We refuse to take shortcuts. Every line of code is an investment in durability. When a CEO looks at their infrastructure, they should feel the same confidence as when they look at a physical foundation of a building.",
-        gradient: "bg-gradient-to-br from-slate-100 to-transparent"
+        role: "Chief Architect",
+        philosophy: "Structural Integrity",
+        message: "Engineering is about the removal of doubt. We refuse to compromise on architectural durability. Every system we deploy is a long-term investment in institutional resilience.",
+        gradient: "bg-gradient-to-br from-slate-50 to-transparent"
     },
     {
-        role: "Systems Lead",
-        philosophy: "Zero-Trust Reliability",
-        message: "Our team operates with a 'security-first' soul. We don't just solve problems; we prevent them through mathematical precision and hardened orchestration patterns.",
-        gradient: "bg-gradient-to-br from-blue-50 to-transparent"
+        role: "Systems Orchestrator",
+        philosophy: "Deterministic Reliability",
+        message: "Our team operates within a zero-failure soul. We don't just solve problems; we engineer them out of existence through mathematical precision and deterministic design.",
+        gradient: "bg-gradient-to-br from-blue-50/30 to-transparent"
     }
 ];
 
@@ -36,28 +36,28 @@ export default function LeadershipPhilosophy() {
     const y = useTransform(scrollYProgress, [0, 1], [0, -120]);
 
     return (
-        <Section ref={containerRef} className="bg-white py-40 overflow-hidden relative">
+        <Section ref={containerRef} className="bg-[#fafafa] py-40 overflow-hidden relative border-y border-slate-100">
             {/* Unique Architectural Aura */}
             <motion.div style={{ y }} className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-                <div className="absolute top-[10%] left-[-5%] w-[40vw] h-[40vw] bg-brand/5 blur-[120px] rounded-full animate-pulse" />
-                <div className="absolute bottom-[10%] right-[-5%] w-[40vw] h-[40vw] bg-indigo-50 blur-[120px] rounded-full" />
+                <div className="absolute top-[10%] left-[-5%] w-[40vw] h-[40vw] bg-brand/5 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[10%] right-[-10%] w-[30vw] h-[30vw] bg-indigo-50/50 blur-[100px] rounded-full" />
             </motion.div>
 
             <div className="max-w-[1400px] mx-auto relative z-10">
-                <div className="text-center mb-32 max-w-3xl mx-auto">
+                <div className="text-center mb-32 max-w-4xl mx-auto">
                     <motion.span
                         initial={{ opacity: 0, letterSpacing: "0.2em" }}
-                        whileInView={{ opacity: 1, letterSpacing: "0.4em" }}
-                        transition={{ duration: 1 }}
-                        className="text-[10px] uppercase font-black text-brand mb-8 block font-mono"
+                        whileInView={{ opacity: 1, letterSpacing: "0.6em" }}
+                        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="text-[10px] uppercase font-black text-brand mb-10 block font-mono"
                     >
-                        {`// THE PHILOSOPHY OF CERTAINTY`}
+                        {`// THE CERTAINTY FRAMEWORK`}
                     </motion.span>
-                    <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.95] tracking-tighter mb-10">
-                        Engineering trust <br /> from the <span className="italic text-brand text-glow">Boardroom down.</span>
+                    <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter mb-10">
+                        Institutional engineering <br /> for the <span className="italic text-brand">Decades ahead.</span>
                     </h2>
-                    <p className="text-xl text-slate-500 font-medium leading-relaxed">
-                        We don&apos;t just deliver code; we deliver peace of mind. Our leadership team has architected systems for high-stakes environments where reliability is the only acceptable metric.
+                    <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
+                        We deliver the architectural foundation for the modern enterprise. Our leadership has defined the digital standards for high-stakes environments where failure is not a metric.
                     </p>
                 </div>
 

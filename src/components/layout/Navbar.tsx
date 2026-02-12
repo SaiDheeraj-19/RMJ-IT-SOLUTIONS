@@ -9,30 +9,30 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
     {
-        name: "Services",
+        name: "Capabilities",
         href: "/services",
         dropdown: [
-            { title: "Digital Systems Engineering", href: "/services/erp", description: "ERP & campus management platforms" },
-            { title: "Cloud & Infrastructure", href: "/services/cloud", description: "AWS/GCP architecture & migration" },
-            { title: "Custom Web Applications", href: "/services/web", description: "High-performance specialized apps" },
-            { title: "Security & Performance", href: "/services/security", description: "System audits & optimization" }
+            { title: "Institutional Infrastructure", href: "/services/erp", description: "Enterprise refactoring & ecosystems" },
+            { title: "Cloud Orchestration", href: "/services/cloud", description: "High-availability technical architecture" },
+            { title: "Deterministic Web Systems", href: "/services/web", description: "High-performance specialized builds" },
+            { title: "Architectural Auditing", href: "/services/security", description: "Structural security & hardening" }
         ]
     },
     {
-        name: "Process",
+        name: "Orchestration",
         href: "/#approach",
         dropdown: [
-            { title: "How We Work", href: "/#approach", description: "6-phase delivery framework" },
-            { title: "Case Studies", href: "/case-studies", description: "Real results, documented" }
+            { title: "The Framework", href: "/#approach", description: "Deterministic delivery protocol" },
+            { title: "Strategic Evidence", href: "/case-studies", description: "Documented institutional results" }
         ]
     },
     {
-        name: "About",
+        name: "Institution",
         href: "/about",
         dropdown: [
-            { title: "Our Mission", href: "/about", description: "Why we built RMJ IT" },
-            { title: "Consultation", href: "/contact", description: "Initiate structural audit" },
-            { title: "Legal Hub", href: "/privacy", description: "Privacy & terms" }
+            { title: "The Mission", href: "/about", description: "Architecting for structural certainty" },
+            { title: "Strategic Engagement", href: "/contact", description: "Initiate institutional audit" },
+            { title: "Regulatory Hub", href: "/privacy", description: "Compliance & global standards" }
         ]
     },
 ];
@@ -162,7 +162,7 @@ export default function Navbar() {
                     id="nav-cta"
                     className="px-6 py-3 bg-brand text-white text-[11px] uppercase tracking-widest font-black rounded-full hover:bg-brand/90 hover:scale-105 transition-all duration-300 shadow-xl shadow-brand/20"
                 >
-                    Technical Consultation
+                    Strategic Advisory
                 </Link>
             </div>
 

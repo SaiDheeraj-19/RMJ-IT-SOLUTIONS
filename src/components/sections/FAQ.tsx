@@ -9,28 +9,28 @@ import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations/Mo
 
 const faqs = [
     {
-        question: "What exactly is included in the Technical Strategy Consultation?",
-        answer: "We review your current tech stack, architecture, and operational workflows. You receive a technical roadmap covering: system architecture recommendations, security gap analysis, performance optimization paths, and a prioritized phase-wise delivery plan. There is no commitment required to proceed with the build."
+        question: "What defines the Strategic Advisory phase?",
+        answer: "We conduct a comprehensive architectural audit, mapping institutional logic and operational data flows. You receive a technical roadmap defining system sovereignity, security orchestration protocols, and a multi-phase delivery matrix."
     },
     {
-        question: "We already have an IT team. Why would we need RMJ IT?",
-        answer: "We don't replace your team — we augment them. Internal IT teams are often stretched thin managing day-to-day operations. We handle large-scale builds, migrations, and specialized projects (ERP, AI, cloud) that require dedicated bandwidth and domain expertise your team may not have time for."
+        question: "How do you augment existing internal IT departments?",
+        answer: "Our role is structural augmentation. While internal teams manage existing operations, we engineer large-scale migrations, specialized ERP orchestration, and AI-driven automation layers that require dedicated, high-tier architectural bandwidth."
     },
     {
-        question: "How do you handle data privacy for government and university clients?",
-        answer: "Every deployment uses AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls with MFA, and automated vulnerability scanning in CI/CD pipelines. We support on-premise deployments and air-gapped environments when required. Our systems are designed for SOC2, ISO 27001, and GDPR readiness."
+        question: "What are your institutional data sovereignty protocols?",
+        answer: "Every deployment operates under a zero-trust architecture. We utilize AES-256 cryptographic standards, TLS 1.3 orchestration, and kernel-level vulnerability auditing. Our systems are designed for verifiable SOC2 and ISO compliance."
     },
     {
-        question: "Can you integrate with our existing legacy systems?",
-        answer: "Yes. We build custom API middleware layers that bridge legacy monolithic systems with modern applications. This allows real-time data synchronization without requiring a full system replacement. Typical integration timelines range from 4-8 weeks depending on complexity."
+        question: "How is legacy system bridge-integration handled?",
+        answer: "We engineer custom middleware logic that acts as a deterministic bridge between legacy monolithic systems and modern architectures. This ensures seamless data synchronization without compromising structural integrity."
     },
     {
-        question: "What is your typical project timeline and cost?",
-        answer: "A web application typically takes 10-16 weeks. A full campus ERP: 16-24 weeks. Costs vary based on scope, but a typical mid-size engagement ranges from ₹8-25 lakhs. We provide fixed-price or time-and-materials contracts — your choice. Every project includes a detailed scope document before we start."
+        question: "What is the typical timeframe for institutional delivery?",
+        answer: "Web architectures average 10–14 weeks. Large-scale institutional ERP deployments average 18–24 weeks. Every milestone is gated, ensuring that delivery meets the deterministic standards defined in the initial audit."
     },
     {
-        question: "What happens after deployment? Do you provide ongoing support?",
-        answer: "Yes. Every deployment includes 30 days of post-launch stabilization at no extra cost. After that, we offer monthly retainer plans covering monitoring, security patches, performance optimization, and feature additions. SLAs range from 4-hour to 24-hour response times."
+        question: "Do you provide sustained operational continuity?",
+        answer: "Yes. Every engagement includes a 30-day structural stabilization period post-deployment. We offer ongoing operational continuity plans covering security orchestration, performance auditing, and sustained architectural evolution."
     }
 ];
 
@@ -38,22 +38,22 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <Section className="bg-[#f8fafc]">
+        <Section className="bg-[#fafafa] py-40 border-t border-slate-100">
             <div className="max-w-[1000px] mx-auto">
-                <div className="mb-20">
+                <div className="mb-24">
                     <FadeIn>
-                        <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
-                            Common Questions
+                        <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono">
+                            {`// STRATEGIC ADVISORY HUB`}
                         </span>
                     </FadeIn>
                     <TextReveal
                         as="h2"
-                        text="Answers before you ask."
-                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-[#1a1a1a] tracking-tight"
+                        text="Calculated Transparency."
+                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
                     />
                     <FadeIn delay={0.3}>
-                        <p className="mt-6 text-xl text-[#606060] max-w-xl">
-                            We&apos;ve compiled the questions we hear most from IT directors, CTOs, and procurement teams evaluating technical partners.
+                        <p className="mt-8 text-xl text-slate-500 font-medium max-w-xl leading-relaxed">
+                            Frequently requested technical data and operational frameworks for institutional decision-makers.
                         </p>
                     </FadeIn>
                 </div>

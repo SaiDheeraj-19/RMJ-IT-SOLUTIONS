@@ -10,92 +10,92 @@ import { Activity, ArrowRight, Box, Cpu, Database, Layers, RefreshCw, ShieldChec
 
 const features = [
     {
-        title: "Monolith Migration",
-        desc: "We dismantle fragmented legacy tools and rebuild them into a unified, modular system that scales.",
+        title: "Enterprise Refactoring",
+        desc: "We dismantle fragmented legacy monoliths and re-engineer them into unified, high-availability ecosystems that scale with institutional growth.",
         icon: <Layers className="w-5 h-5" />
     },
     {
-        title: "Automated Data Pipelines",
-        desc: "End-to-end data flow between departments with zero manual intervention or Excel-based updates.",
+        title: "Deterministic Data Ops",
+        desc: "End-to-end orchestration of institutional data flows with zero manual intervention or data-integrity risks.",
         icon: <RefreshCw className="w-5 h-5" />
     },
     {
-        title: "Institutional ERP",
-        desc: "Customized platforms for admissions, student lifecycle, and financial management for universities.",
+        title: "Institutional Core Systems",
+        desc: "Custom-engineered platforms for high-stakes operations, financial management, and large-scale academic orchestration.",
         icon: <Box className="w-5 h-5" />
     },
     {
-        title: "Enterprise Architecture",
-        desc: "Designing systems that are ready for AI integration and handle high-volume transaction processing.",
+        title: "Board-Level Architecture",
+        desc: "Designing infrastructure that is ready for deep-tier AI integration and mission-critical transaction security.",
         icon: <Cpu className="w-5 h-5" />
     },
     {
-        title: "Data Integrity & Security",
-        desc: "State-of-the-art encryption at rest and in transit, ensuring institutional data is never compromised.",
+        title: "Cryptographic Sovereignty",
+        desc: "Military-grade encryption at rest and in transit, ensuring institutional data remains a sovereign asset.",
         icon: <ShieldCheck className="w-5 h-5" />
     },
     {
-        title: "Scalable Infrastructure",
-        desc: "Engineered to handle 10K+ concurrent users with sub-200ms response times globally.",
+        title: "Orchestrated Scaling",
+        desc: "Systems engineered for global concurrent access with sub-200ms deterministic response profiles.",
         icon: <Database className="w-5 h-5" />
     }
 ];
 
 export default function ERPPage() {
     return (
-        <main className="min-h-screen bg-[#f8fafc]">
+        <main className="min-h-screen bg-[#fafafa]">
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden">
+            <section className="relative min-h-[90vh] pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden border-b border-slate-100">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-stone-100 opacity-20"
+                    <div className="absolute inset-0 bg-slate-900/[0.02]"
                         style={{
-                            backgroundImage: `radial-gradient(#000 1px, transparent 1px)`,
+                            backgroundImage: `radial-gradient(#000 0.5px, transparent 0.5px)`,
                             backgroundSize: '40px 40px',
                         }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/50 via-[#f8fafc]/20 to-[#f8fafc]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#fafafa]" />
                 </div>
 
                 <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand mb-6 block">
-                            Service / Systems Engineering
+                        <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-8 block font-mono">
+                            {`// INSTITUTIONAL INFRASTRUCTURE`}
                         </span>
                         <TextReveal
                             as="h1"
                             text="Digital Systems Engineering."
-                            className="text-[clamp(3.2rem,7vw,5.5rem)] font-display leading-[0.9] tracking-tighter font-bold text-[#1a1a1a] mb-6"
+                            className="text-[clamp(3.2rem,7vw,5.5rem)] font-display leading-[0.9] tracking-tighter font-bold text-slate-900 mb-8"
                         />
-                        <p className="text-xl text-[#505050] max-w-xl leading-relaxed mb-8">
-                            We bridge the gap between business operations and technical scalability. We replace fragmented tools with unified digital infrastructure.
+                        <p className="text-xl text-slate-500 max-w-xl leading-relaxed mb-12 font-medium">
+                            We bridge the gap between Boardroom strategy and technical execution. We replace fragmented legacy tools with unified, deterministic digital infrastructure.
                         </p>
                         <Link
                             href="/contact"
-                            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-all duration-300 shadow-xl"
+                            className="group inline-flex items-center gap-4 px-12 py-6 bg-slate-900 text-white text-[11px] uppercase tracking-[0.4em] font-black rounded-full hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10"
                         >
-                            Schedule Technical Call
-                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                            Initiate Structural Audit
+                            <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-500" />
                         </Link>
                     </motion.div>
                 </div>
             </section>
 
             {/* Core Capabilities */}
-            <Section className="bg-white">
+            <Section className="bg-white border-b border-slate-100">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="mb-20 max-w-2xl">
-                        <span className="text-brand font-mono text-sm tracking-widest block mb-4 uppercase">{`// CORE CAPABILITIES`}</span>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1a1a] leading-tight mb-8">
-                            How we re-engineer your operations.
+                    <div className="mb-32 max-w-3xl">
+                        <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono">{`// CORE CAPABILITIES`}</span>
+                        <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter mb-10">
+                            Re-engineering operational <span className="italic text-brand">certainty.</span>
                         </h2>
-                        <p className="text-lg text-[#606060] leading-relaxed">
-                            Generic software doesn&apos;t solve unique institutional problems. We build systems that are architected around your specific workflows, ensuring long-term autonomy and performance.
+                        <p className="text-xl text-slate-500 leading-relaxed font-medium">
+                            Fragmented systems create operational doubt. We architect infrastructure around deterministic workflows, ensuring global institutional autonomy and long-term technical resilience.
                         </p>
                     </div>
 
