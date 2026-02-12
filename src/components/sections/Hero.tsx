@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -29,11 +30,12 @@ export default function Hero() {
             </div>
 
             <div className="max-w-[1400px] mx-auto w-full relative z-10">
-                <div className="max-w-[900px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1 }}
+                        className="max-w-[800px]"
                     >
                         <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-10 block">
                             Engineering Digital Infrastructure That Scales
@@ -43,7 +45,7 @@ export default function Hero() {
                             <TextReveal
                                 as="h1"
                                 text="We Architect Scalable Digital Systems for Institutions and Growth-Focused Businesses."
-                                className="text-[clamp(2.8rem,5.5vw,5rem)] font-display leading-[1] font-bold tracking-tight text-[#1a1a1a]"
+                                className="text-[clamp(2.8rem,4.5vw,5rem)] font-display leading-[1] font-bold tracking-tight text-[#1a1a1a]"
                                 delay={0.2}
                             />
                         </div>
@@ -81,6 +83,21 @@ export default function Hero() {
                                 </motion.button>
                             </Link>
                         </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9, x: 30 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        transition={{ duration: 1.2, delay: 0.4 }}
+                        className="hidden lg:block relative h-[600px] w-full"
+                    >
+                        <Image
+                            src="/images/company-cuate.svg"
+                            alt="Digital Infrastructure Illustration"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
                     </motion.div>
                 </div>
             </div>

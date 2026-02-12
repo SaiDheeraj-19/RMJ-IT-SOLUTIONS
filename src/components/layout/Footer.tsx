@@ -84,14 +84,14 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="flex flex-col w-full overflow-hidden">
-                    {/* Massive Watermark Text */}
-                    <span className="font-display text-[12vw] font-bold text-[#e5e5e5] leading-[0.8] tracking-tighter uppercase select-none block text-center pointer-events-none translate-y-4 whitespace-nowrap">
+                <div className="flex flex-col w-full overflow-hidden border-t border-black/5 pt-12">
+                    {/* Refined Brand Text */}
+                    <span className="font-display text-[6vw] font-bold text-[#e5e5e5] leading-[1] tracking-tighter uppercase select-none block text-center pointer-events-none mb-8 whitespace-nowrap">
                         RMJ IT SOLUTIONS .
                     </span>
 
                     {/* Copyright & Legal - Aligned with screenshot */}
-                    <div className="border-t border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 w-full relative z-10">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 w-full relative z-10">
                         <span>© {currentYear}</span>
                         <div className="flex gap-8">
                             <Link href="/privacy" className="hover:text-brand transition-colors">Privacy Policy</Link>
