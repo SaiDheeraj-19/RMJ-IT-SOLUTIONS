@@ -7,7 +7,14 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTASection() {
     return (
-        <Section className="bg-[#fafaf9] text-[#1a1a1a] py-32 relative overflow-hidden text-center z-10">
+        <Section id="cta" className="bg-white text-slate-800 py-32 relative overflow-hidden text-center z-10">
+            <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-[#eef2ff]/50 to-transparent pointer-events-none" />
+            {/* Subtle tech aura */}
+            <div className="absolute inset-0 opacity-[0.4]"
+                style={{
+                    backgroundImage: `radial-gradient(circle at center, white 0%, transparent 70%)`,
+                }}
+            />
             {/* Background Texture */}
             <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(45deg, #000000 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
             <div className="absolute top-[30%] left-[20%] w-[50vw] h-[50vw] bg-brand/5 rounded-full blur-[200px] pointer-events-none" />

@@ -30,11 +30,16 @@ const differentiators = [
 
 export default function DifferentiationSection() {
     return (
-        <Section className="bg-[#fffdf5] text-[#1a1a1a] py-32 relative overflow-hidden">
-            {/* Background Texture */}
-            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(#000000 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        <Section id="why" className="bg-[#f8fafc] text-[#0f172a] py-32 relative overflow-hidden">
+            {/* Architectural Grid */}
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
+                style={{
+                    backgroundImage: `linear-gradient(#4f46e5 1px, transparent 1px), linear-gradient(90deg, #4f46e5 1px, transparent 1px)`,
+                    backgroundSize: '100px 100px',
+                }}
+            />
 
-            <div className="max-w-[1200px] mx-auto relative z-10">
+            <div className="max-w-[1400px] mx-auto relative z-10">
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
                     <div className="lg:w-5/12">
                         <motion.span

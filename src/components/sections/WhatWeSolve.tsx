@@ -35,14 +35,21 @@ const painPoints = [
 
 export default function ProblemSection() {
     return (
-        <Section className="bg-white">
-            <div className="max-w-[1200px] mx-auto">
-                <div className="mb-24 max-w-3xl">
+        <Section id="solve" className="bg-[#f8fafc] py-32 relative overflow-hidden">
+            {/* Subtle tech grid for depth */}
+            <div className="absolute inset-0 opacity-[0.02]"
+                style={{
+                    backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`,
+                    backgroundSize: '40px 40px',
+                }}
+            />
+            <div className="max-w-[1200px] mx-auto relative z-10">
+                <div className="mb-24">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-10 block"
+                        className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block transition-colors duration-500"
                     >
                         The Real Problem
                     </motion.span>

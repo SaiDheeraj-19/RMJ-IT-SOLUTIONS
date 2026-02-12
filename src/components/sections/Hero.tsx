@@ -7,26 +7,41 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden bg-[#f8fafc]">
-            {/* Animated Grid Background */}
+        <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden bg-white">
+            {/* High-End Aura Background */}
             <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.4]"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 20% 30%, #eef2ff 0%, transparent 40%), radial-gradient(circle at 80% 70%, #f0f9ff 0%, transparent 40%)`,
+                    }}
+                />
                 <div className="absolute inset-0 opacity-[0.03]"
                     style={{
-                        backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
-                        backgroundSize: '60px 60px',
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)`,
+                        backgroundSize: '80px 80px',
                     }}
+                />
+                {/* Floating Soft Auras */}
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1],
+                        x: [0, 50, 0],
+                        y: [0, 30, 0]
+                    }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-[10%] left-[10%] w-[50vw] h-[50vw] bg-brand/10 rounded-full blur-[120px] pointer-events-none"
                 />
                 <motion.div
-                    className="absolute inset-0 opacity-[0.02]"
-                    style={{
-                        backgroundImage: `linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px)`,
-                        backgroundSize: '60px 60px',
+                    animate={{
+                        scale: [1.2, 1, 1.2],
+                        opacity: [0.05, 0.15, 0.05],
+                        x: [0, -40, 0],
+                        y: [0, -20, 0]
                     }}
-                    animate={{ x: [0, 60], y: [0, 60] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute bottom-[10%] right-[10%] w-[40vw] h-[40vw] bg-indigo-200/20 rounded-full blur-[100px] pointer-events-none"
                 />
-                <div className="absolute top-[20%] right-[-5%] w-[40vw] h-[40vw] bg-brand/5 rounded-full blur-[150px]" />
-                <div className="absolute bottom-[10%] left-[-10%] w-[30vw] h-[30vw] bg-stone-300/20 rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-[1400px] mx-auto w-full relative z-10">

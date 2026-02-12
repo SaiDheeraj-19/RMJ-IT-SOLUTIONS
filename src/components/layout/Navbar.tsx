@@ -160,7 +160,7 @@ export default function Navbar() {
                 <Link
                     href="/contact"
                     id="nav-cta"
-                    className="px-6 py-3 bg-[#1a1a1a] text-white text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-brand hover:scale-105 transition-all duration-300 shadow-xl"
+                    className="px-6 py-3 bg-brand text-white text-[11px] uppercase tracking-widest font-black rounded-full hover:bg-brand/90 hover:scale-105 transition-all duration-300 shadow-xl shadow-brand/20"
                 >
                     Technical Consultation
                 </Link>
@@ -218,7 +218,7 @@ export default function Navbar() {
                         >
                             <Link
                                 href="/contact"
-                                className="text-xs uppercase tracking-[0.2em] font-bold bg-[#1a1a1a] text-white px-12 py-4 rounded-full"
+                                className="text-xs uppercase tracking-[0.2em] font-black bg-brand text-white px-12 py-4 rounded-full shadow-xl shadow-brand/20"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Technical Consultation
