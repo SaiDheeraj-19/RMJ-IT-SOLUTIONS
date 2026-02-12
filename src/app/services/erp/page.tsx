@@ -6,7 +6,7 @@ import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import Link from "next/link";
-import { ArrowRight, Box, Cpu, Database, Layers, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, ArrowRight, Box, Cpu, Database, Layers, RefreshCw, ShieldCheck } from "lucide-react";
 
 const features = [
     {
@@ -122,47 +122,127 @@ export default function ERPPage() {
                 </div>
             </Section>
 
-            {/* Industrial Result Block */}
-            <Section className="bg-[#f1f5f9]">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-                    <div className="lg:col-span-6">
-                        <div className="relative h-[400px] bg-white rounded-3xl overflow-hidden border border-stone-200">
-                            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03]" />
-                            <div className="absolute inset-8 border border-brand/10 p-8 flex flex-col justify-between">
-                                <span className="text-[10px] uppercase font-bold tracking-widest text-brand">Proof of Engineering</span>
-                                <div className="space-y-4">
-                                    <div className="h-2 w-full bg-stone-100 rounded-full overflow-hidden">
-                                        <motion.div
-                                            initial={{ width: 0 }}
-                                            whileInView={{ width: "94%" }}
-                                            transition={{ duration: 2, delay: 0.5 }}
-                                            className="h-full bg-brand"
-                                        />
+            {/* Redesigned Industrial Result Block */}
+            <Section className="bg-white py-40 relative overflow-hidden">
+                {/* Ultra-subtle geometric background for architectural depth */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{
+                        backgroundImage: `linear-gradient(#4f46e5 1px, transparent 1px), linear-gradient(90deg, #4f46e5 1px, transparent 1px)`,
+                        backgroundSize: '120px 120px',
+                    }}
+                />
+
+                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-center relative z-10">
+                    <div className="lg:col-span-7">
+                        <div className="relative group">
+                            {/* Layered Dashboard Cards */}
+                            <div className="absolute -inset-4 bg-brand/5 rounded-[3rem] blur-2xl group-hover:bg-brand/10 transition-colors duration-1000" />
+
+                            <div className="relative bg-[#f8fafc] border border-slate-200 p-12 rounded-[2.5rem] shadow-2xl shadow-indigo-500/5">
+                                <div className="flex justify-between items-center mb-16">
+                                    <div className="space-y-2">
+                                        <span className="text-[10px] font-black font-mono text-brand tracking-[0.3em] uppercase opacity-70">
+                                            {`// Engineering Proof // 2024_AUDIT`}
+                                        </span>
+                                        <h4 className="text-2xl font-display font-bold text-slate-900 tracking-tight">System Autonomy Dashboard</h4>
                                     </div>
-                                    <p className="text-sm font-bold text-[#1a1a1a]">94% Reduction in Manual Data Entry</p>
+                                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm">
+                                        <Activity className="w-5 h-5 text-brand" />
+                                    </div>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="h-2 w-full bg-stone-100 rounded-full overflow-hidden">
-                                        <motion.div
-                                            initial={{ width: 0 }}
-                                            whileInView={{ width: "100%" }}
-                                            transition={{ duration: 2, delay: 0.8 }}
-                                            className="h-full bg-brand"
-                                        />
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                    {/* Metric 1 */}
+                                    <div className="space-y-6">
+                                        <div className="flex justify-between items-end">
+                                            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Efficiency</span>
+                                            <span className="text-4xl font-display font-black text-brand tracking-tighter">94%</span>
+                                        </div>
+                                        <div className="h-3 w-full bg-slate-200/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: "94%" }}
+                                                transition={{ duration: 2.5, ease: "circOut" }}
+                                                className="h-full bg-gradient-to-r from-brand to-indigo-400 rounded-full relative shadow-[0_0_15px_rgba(79,70,229,0.3)]"
+                                            >
+                                                <div className="absolute top-0 right-0 w-2 h-full bg-white/40 blur-[1px]" />
+                                            </motion.div>
+                                        </div>
+                                        <p className="text-[13px] text-slate-600 font-medium leading-relaxed">
+                                            Reduction in manual data entry cycles across institutional workflows.
+                                        </p>
                                     </div>
-                                    <p className="text-sm font-bold text-[#1a1a1a]">0% System Downtime in 24 Months</p>
+
+                                    {/* Metric 2 */}
+                                    <div className="space-y-6">
+                                        <div className="flex justify-between items-end">
+                                            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Reliability</span>
+                                            <span className="text-4xl font-display font-black text-brand tracking-tighter">0%</span>
+                                        </div>
+                                        <div className="h-3 w-full bg-slate-200/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                                            <motion.div
+                                                initial={{ width: "100%" }}
+                                                whileInView={{ width: "0%" }}
+                                                transition={{ duration: 2.5, ease: "circOut" }}
+                                                className="h-full bg-slate-200 rounded-full"
+                                            />
+                                        </div>
+                                        <p className="text-[13px] text-slate-600 font-medium leading-relaxed">
+                                            Unscheduled system downtime recorded over 24 consecutive months.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Bottom Tech Metadata */}
+                                <div className="mt-16 pt-10 border-t border-slate-200 flex flex-wrap gap-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Security Hardware: Active</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-brand" />
+                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Latency: &lt; 200ms</span>
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* Floating Accent Card */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.5 }}
+                                className="absolute -right-8 -bottom-8 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 hidden md:block"
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-brand">
+                                        <ShieldCheck className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Architecture</p>
+                                        <p className="text-sm font-bold text-slate-900 leading-none">Hardened.</p>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
-                    <div className="lg:col-span-6">
-                        <h3 className="text-4xl font-display font-bold text-[#1a1a1a] mb-8">Performance that is engineered, not promised.</h3>
-                        <p className="text-lg text-[#505050] leading-relaxed mb-8">
-                            We don&apos;t just deliver code; we deliver measurable institutional efficiency. Our systems are built to eliminate the errors, delays, and security gaps of fragmented software.
-                        </p>
-                        <Link href="/contact" className="text-brand font-black uppercase text-xs tracking-widest flex items-center gap-2 hover:gap-4 transition-all">
-                            Talk To An Architect <ArrowRight size={14} />
-                        </Link>
+
+                    <div className="lg:col-span-5 space-y-12">
+                        <div className="space-y-8">
+                            <span className="text-brand font-mono text-xs tracking-[0.3em] font-black uppercase block">{`// Engineered Results`}</span>
+                            <h3 className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.95] tracking-tight">
+                                Performance that is engineered, not promised.
+                            </h3>
+                            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                                We don&apos;t just deliver code; we deliver measurable institutional efficiency. Our systems are built to eliminate the errors, delays, and security gaps of fragmented software.
+                            </p>
+                        </div>
+
+                        <div className="pt-4">
+                            <Link href="/contact" className="group inline-flex items-center gap-4 bg-slate-900 text-white px-10 py-5 rounded-full text-xs uppercase tracking-widest font-black hover:bg-brand transition-all duration-500 shadow-xl shadow-slate-900/10">
+                                Talk To An Architect
+                                <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </Section>
