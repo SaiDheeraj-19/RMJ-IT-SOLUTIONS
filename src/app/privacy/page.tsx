@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function PrivacyPolicy() {
@@ -76,9 +77,9 @@ export default function PrivacyPolicy() {
                             </div>
 
                             <div>
-                                <h2 className="text-2xl font-display font-bold text-[#1a1a1a] mb-4">7. Contact Us</h2>
+                                <h2 className="text-2xl font-display font-bold text-[#1a1a1a] mb-4">7. Institutional Enquiries</h2>
                                 <p>
-                                    If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@rmjit.com" className="text-brand hover:underline">support@rmjit.com</a>.
+                                    If you have any questions about this Privacy Policy, please initiate an encrypted consultation request via our <Link href="/contact" className="text-brand hover:underline">Strategic Engagement</Link> portal.
                                 </p>
                             </div>
 

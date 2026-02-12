@@ -8,6 +8,7 @@ import WhyRMJIT from "@/components/sections/WhyRMJIT";
 import SecurityTrust from "@/components/sections/SecurityTrust";
 import SectorsImpact from "@/components/sections/SectorsImpact";
 import FAQ from "@/components/sections/FAQ";
+import LeadershipPhilosophy from "@/components/sections/LeadershipPhilosophy";
 import CTA from "@/components/sections/CTA";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <WhyRMJIT /> {/* Differentiation Section */}
       <SecurityTrust /> {/* Trust Section */}
       <SectorsImpact /> {/* Process Visualization */}
+      <LeadershipPhilosophy />
       <FAQ />
       <CTA />
       <Footer />

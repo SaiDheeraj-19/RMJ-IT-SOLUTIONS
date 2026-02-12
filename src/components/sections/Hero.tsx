@@ -44,73 +44,87 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="max-w-[1400px] mx-auto w-full relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="max-w-[1400px] mx-auto w-full relative z-10 pt-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                         className="max-w-[800px]"
                     >
-
+                        <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono"
+                        >
+                            {`// ESTABLISHED CERTAINTY`}
+                        </motion.span>
 
                         <div className="mb-8">
                             <TextReveal
                                 as="h1"
-                                text="We Architect Scalable Digital Systems for Institutions and Growth-Focused Businesses."
-                                className="text-[clamp(2.8rem,4.5vw,5rem)] font-display leading-[1] font-bold tracking-tight text-[#1a1a1a]"
+                                text="Engineering digital infrastructure that institutions trust blindly."
+                                className="text-[clamp(2.8rem,5vw,5.5rem)] font-display leading-[0.95] font-bold tracking-tighter text-slate-900"
                                 delay={0.2}
                             />
                         </div>
 
-                        <div className="mb-14 max-w-2xl">
+                        <div className="mb-14 max-w-xl">
                             <TextReveal
                                 as="p"
-                                text="We replace fragmented tools and legacy systems with engineered infrastructure — designed for performance, security, and long-term scalability."
-                                className="text-[19px] font-normal text-[#505050] leading-[1.7]"
+                                text="We architect systems where failure is mathematically impossible. We replace fragmented tools with high-trust engineering, designed for absolute institutional reliability."
+                                className="text-xl font-medium text-slate-500 leading-relaxed"
                                 delay={0.8}
                             />
                         </div>
 
                         {/* 2 CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-6">
                             <Link href="/contact" id="hero-cta-primary">
                                 <motion.button
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 1.2, duration: 0.8 }}
-                                    className="group px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-[15px] font-semibold hover:bg-brand transition-all duration-300 shadow-xl flex items-center gap-3 overflow-hidden relative"
+                                    whileHover={{ scale: 1.05, x: 5 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="group px-12 py-6 bg-slate-900 text-white rounded-full text-xs uppercase tracking-[0.3em] font-black hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10 flex items-center gap-4"
                                 >
-                                    <span className="relative z-10">Book Strategy Call</span>
-                                    <div className="absolute inset-0 bg-brand translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                                    Initiate Consultation
                                 </motion.button>
                             </Link>
                             <Link href="#approach" id="hero-cta-secondary">
                                 <motion.button
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 1.4, duration: 0.8 }}
-                                    className="px-8 py-5 bg-transparent border border-stone-300 text-[#1a1a1a] rounded-full text-[15px] font-semibold hover:border-brand hover:text-brand transition-all duration-300 flex items-center gap-3"
+                                    whileHover={{ scale: 1.05, x: -5 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-10 py-6 bg-white border border-slate-200 text-slate-900 rounded-full text-xs uppercase tracking-[0.3em] font-black hover:border-brand hover:text-brand transition-all duration-500 flex items-center gap-4"
                                 >
-                                    View Our Approach
+                                    The Framework
                                 </motion.button>
                             </Link>
                         </div>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9, x: 30 }}
-                        animate={{ opacity: 1, scale: 1, x: 0 }}
-                        transition={{ duration: 1.2, delay: 0.4 }}
-                        className="hidden lg:block relative h-[600px] w-full"
+                        initial={{ opacity: 0, rotateY: 20, scale: 0.9 }}
+                        whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+                        className="hidden lg:block relative h-[650px] w-full perspective-1000"
                     >
-                        <Image
-                            src="/images/company-cuate.svg"
-                            alt="Digital Infrastructure Illustration"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
+                        <motion.div
+                            animate={{
+                                y: [-10, 10, -10],
+                                rotate: [-1, 1, -1]
+                            }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-full h-full relative"
+                        >
+                            <Image
+                                src="/images/company-cuate.svg"
+                                alt="Digital Infrastructure Illustration"
+                                fill
+                                className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
+                                priority
+                            />
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>

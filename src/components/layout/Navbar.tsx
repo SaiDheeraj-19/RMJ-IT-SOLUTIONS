@@ -31,8 +31,8 @@ const navLinks = [
         href: "/about",
         dropdown: [
             { title: "Our Mission", href: "/about", description: "Why we built RMJ IT" },
-            { title: "Contact", href: "/contact", description: "Start a project" },
-            { title: "Legal", href: "/privacy", description: "Privacy & terms" }
+            { title: "Consultation", href: "/contact", description: "Initiate structural audit" },
+            { title: "Legal Hub", href: "/privacy", description: "Privacy & terms" }
         ]
     },
 ];

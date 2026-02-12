@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -71,22 +71,15 @@ export default function Footer() {
                         {/* Technical Contact */}
                         <div className="space-y-10">
                             <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">Network Hub</h4>
-                            <div className="space-y-6">
-                                <Link href="tel:+918639756899" className="flex items-center gap-3 text-sm font-black text-slate-900 hover:text-brand transition-colors">
-                                    <Phone size={14} className="text-brand" /> +91 86397 56899
-                                </Link>
-                                <Link href="mailto:support@rmjit.com" className="flex items-center gap-3 text-sm font-black text-slate-900 hover:text-brand transition-colors">
-                                    <Mail size={14} className="text-brand" /> support@rmjit.com
-                                </Link>
+                            <div className="space-y-8">
+                                <p className="text-sm font-bold text-slate-600 leading-relaxed max-w-[200px]">
+                                    Institutional access is managed via encrypted consultation protocols.
+                                </p>
                                 <Link
-                                    href="https://www.google.com/maps/search/?api=1&query=RMJ+IT+SOLUTIONS+Kurnool+Andhra+Pradesh"
-                                    target="_blank"
-                                    className="flex gap-3 text-slate-500 pt-2 leading-relaxed hover:text-brand transition-colors group"
+                                    href="/contact"
+                                    className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-brand hover:gap-4 transition-all duration-500"
                                 >
-                                    <MapPin size={14} className="text-brand shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-                                    <p className="text-[11px] font-bold uppercase tracking-wider">
-                                        Doctors Colony, <br /> Kurnool, AP
-                                    </p>
+                                    Initiate Consultation <ArrowRight size={14} />
                                 </Link>
                             </div>
                         </div>
@@ -100,8 +93,8 @@ export default function Footer() {
                     </span>
 
                     <div className="flex gap-10">
-                        <Link href="/privacy" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand transition-colors">Terms of Use</Link>
+                        <Link href="/privacy" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand transition-colors">Data Privacy</Link>
+                        <Link href="/terms" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand transition-colors">Legal Terms</Link>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import { useState } from "react";
 import { sendContactEmail } from "@/app/actions/contact";
-import { Check, ArrowRight, X, ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
+import { Check, ArrowRight, X, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -208,41 +208,45 @@ export default function ContactPage() {
                         </form>
                     </div>
 
-                    <div className="lg:col-span-5 flex flex-col gap-20">
-                        {/* Trust Signals */}
-                        <div className="p-10 bg-[#f8fafc] rounded-[3rem] border border-slate-100 space-y-12">
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4 text-brand">
-                                    <MapPin size={20} />
-                                    <span className="text-[10px] uppercase font-black tracking-widest font-mono">HQ Context</span>
-                                </div>
-                                <p className="text-xl font-display font-bold text-slate-900 leading-[1.3] tracking-tight">
-                                    RMJ IT SOLUTIONS <br />
-                                    86/326-2, Doctors Colony, <br />
-                                    Kurnool, AP, 518002
-                                </p>
-                            </div>
-
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4 text-brand">
-                                    <Mail size={20} />
-                                    <span className="text-[10px] uppercase font-black tracking-widest font-mono">Direct Technical Line</span>
-                                </div>
-                                <div className="space-y-2">
-                                    <p className="text-xl font-display font-bold text-slate-900">support@rmjit.com</p>
-                                    <p className="text-xl font-display font-bold text-slate-900">+91 8639756899</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="px-10 space-y-8">
-                            <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest">Global Standards</h4>
-                            <div className="flex flex-wrap gap-8 opacity-40">
-                                <span className="text-[11px] font-black uppercase tracking-wider">ISO 27001</span>
-                                <span className="text-[11px] font-black uppercase tracking-wider">SOC 2 READY</span>
-                                <span className="text-[11px] font-black uppercase tracking-wider">HIPAA GAP READY</span>
-                                <span className="text-[11px] font-black uppercase tracking-wider">GDPR ALIGNED</span>
-                            </div>
+                    <div className="lg:col-span-12">
+                        {/* Institutional Philosophy Section - Team Messages */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    role: "Managing Director",
+                                    message: "We don't build software; we engineer certainty. Our systems are designed to outlast the typical tech lifecycle, providing a stable foundation for institutional growth.",
+                                    gradient: "from-blue-50/50 to-indigo-50/30"
+                                },
+                                {
+                                    role: "Lead Systems Architect",
+                                    message: "Architecture is about constraints. We embrace the complexity of institutional requirements to deliver simplicity in execution and absolute reliability in performance.",
+                                    gradient: "from-brand/5 to-transparent"
+                                },
+                                {
+                                    role: "Chief Strategy Officer",
+                                    message: "Digital transformation isn't a project; it's a structural upgrade. We partner with leaders who understand that technology is the core infrastructure of the future.",
+                                    gradient: "from-stone-50 to-transparent"
+                                }
+                            ].map((member, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1, duration: 0.8 }}
+                                    className={`p-12 rounded-[3.5rem] bg-gradient-to-br ${member.gradient} border border-slate-100 relative overflow-hidden group`}
+                                >
+                                    <div className="absolute top-0 right-0 p-8 text-brand/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                        <ShieldCheck size={40} strokeWidth={1} />
+                                    </div>
+                                    <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block font-mono">
+                                        {member.role}
+                                    </span>
+                                    <p className="text-xl font-display font-medium text-slate-700 leading-relaxed italic">
+                                        "{member.message}"
+                                    </p>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </div>

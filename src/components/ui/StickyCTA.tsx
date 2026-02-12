@@ -9,7 +9,7 @@ import { ArrowRight, X } from "lucide-react";
 const slides = [
     { text: "Free 14-day audit — no commitment", cta: "Get Started", href: "/contact" },
     { text: "99.9% uptime across all deployments", cta: "Learn More", href: "/services" },
-    { text: "Talk to us — +91 8639756899", cta: "Contact Us", href: "/contact" },
+    { text: "Engineering for institutional scale", cta: "Initiate consultation", href: "/contact" },
     { text: "Built for institutions that can't afford downtime", cta: "See How", href: "/services" },
 ];
 

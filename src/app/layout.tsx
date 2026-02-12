@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "RMJ IT Solutions — Engineering Digital Infrastructure That Scales",
   description: "We architect and build digital systems for educational institutions, mid-size enterprises, and startups. Specialized in ERP, Cloud Infrastructure, and Custom Web Applications. Based in Kurnool, Andhra Pradesh.",
   keywords: ["Digital Infrastructure Engineering", "Campus ERP development", "Custom Web Applications", "Cloud Infrastructure Setup India", "IT Consulting Kurnool", "Scalable Software Systems"],
-  authors: [{ name: "RMJ IT Solutions Pvt Ltd" }],
+  authors: [{ name: "RMJ IT SOLUTIONS" }],
   robots: "index, follow",
   alternates: {
     canonical: "https://rmjit.com",
@@ -45,10 +45,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/icon.png",
-  },
-  other: {
-    "geo.region": "IN-AP",
-    "geo.placename": "Kurnool",
   }
 };
 
@@ -56,18 +52,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "RMJ IT Solutions Pvt Ltd",
+  "name": "RMJ IT SOLUTIONS",
   "url": "https://rmjit.com",
   "logo": "https://rmjit.com/rmjit-logo.png",
-  "description": "We build web platforms, mobile apps, and campus ERP systems for universities, government agencies, and enterprises.",
-  "telephone": "+918639756899",
-  "email": "support@rmjit.com",
+  "description": "Engineering digital infrastructure and scalable systems for institutions.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "86/326-2, Doctors Colony, Revenue Ward No 86",
     "addressLocality": "Kurnool",
     "addressRegion": "Andhra Pradesh",
-    "postalCode": "518002",
     "addressCountry": "IN"
   },
   "geo": {

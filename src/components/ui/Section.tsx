@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface SectionProps {
@@ -11,9 +11,10 @@ interface SectionProps {
     delay?: number;
 }
 
-export default function Section({ children, className, id, delay = 0 }: SectionProps) {
+const Section = forwardRef<HTMLElement, SectionProps>(({ children, className, id, delay = 0 }, ref) => {
     return (
         <motion.section
+            ref={ref}
             id={id}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -30,4 +31,8 @@ export default function Section({ children, className, id, delay = 0 }: SectionP
             </div>
         </motion.section>
     );
-}
+});
+
+Section.displayName = "Section";
+
+export default Section;
