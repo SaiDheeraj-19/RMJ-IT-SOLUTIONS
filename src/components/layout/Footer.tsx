@@ -13,11 +13,11 @@ export default function Footer() {
                     <div className="lg:col-span-4">
                         <div className="mb-8">
                             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand mb-6 block">
-                                Ready to start?
+                                Strategic Consultation
                             </span>
                             <Link href="/contact" className="group block">
                                 <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-display font-bold text-[#1a1a1a] leading-[1.05] tracking-tight group-hover:text-brand transition-colors duration-500">
-                                    Get your free <br /> technical audit.
+                                    Request a Technical <br /> Strategy Call.
                                 </h2>
                             </Link>
                         </div>
