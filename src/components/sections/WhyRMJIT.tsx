@@ -30,9 +30,9 @@ const differentiators = [
 
 export default function DifferentiationSection() {
     return (
-        <Section className="bg-[#1a1a1a] text-white py-32 relative overflow-hidden">
+        <Section className="bg-[#efefef] text-[#1a1a1a] py-32 relative overflow-hidden">
             {/* Background Texture */}
-            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(#000000 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
             <div className="max-w-[1200px] mx-auto relative z-10">
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
@@ -48,10 +48,10 @@ export default function DifferentiationSection() {
                         <TextReveal
                             as="h2"
                             text="We Engineer Certainty into Unpredictable Projects."
-                            className="text-[clamp(2.5rem,4.5vw,4rem)] font-display leading-[1.05] font-bold text-white mb-8"
+                            className="text-[clamp(2.5rem,4.5vw,4rem)] font-display leading-[1.05] font-bold text-[#1a1a1a] mb-8"
                             delay={0.1}
                         />
-                        <p className="text-xl text-stone-400 leading-relaxed max-w-lg mb-12">
+                        <p className="text-xl text-[#606060] leading-relaxed max-w-lg mb-12">
                             Most software projects fail due to poor communication and vague requirements. We succeed by being annoyingly specific.
                         </p>
                     </div>
@@ -68,14 +68,14 @@ export default function DifferentiationSection() {
                             >
                                 <div className="mt-1 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
                                     <div className="w-8 h-8 rounded-full bg-brand/10 flex items-center justify-center border border-brand/20 group-hover:bg-brand group-hover:border-brand transition-all">
-                                        <Check size={14} className="text-brand group-hover:text-[#1a1a1a]" />
+                                        <Check size={14} className="text-brand group-hover:text-white" />
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-brand transition-colors">
+                                    <h3 className="text-xl font-display font-bold text-[#1a1a1a] mb-3 group-hover:text-brand transition-colors">
                                         {diff.title}
                                     </h3>
-                                    <p className="text-[16px] text-stone-400 leading-relaxed max-w-xl group-hover:text-stone-300 transition-colors">
+                                    <p className="text-[16px] text-[#606060] leading-relaxed max-w-xl group-hover:text-[#1a1a1a] transition-colors">
                                         {diff.description}
                                     </p>
                                 </div>

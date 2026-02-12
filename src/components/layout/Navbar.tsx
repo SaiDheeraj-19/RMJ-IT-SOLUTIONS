@@ -184,10 +184,10 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="fixed inset-0 bg-[#1a1a1a] z-[60] flex flex-col items-center justify-center space-y-8 md:hidden pointer-events-auto"
+                        className="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 md:hidden pointer-events-auto"
                     >
                         <button
-                            className="absolute top-8 right-6 p-4 text-white/50 hover:text-white transition-colors"
+                            className="absolute top-8 right-6 p-4 text-stone-400 hover:text-brand transition-colors"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             <X size={24} />
@@ -202,7 +202,7 @@ export default function Navbar() {
                             >
                                 <Link
                                     href={link.href}
-                                    className="text-4xl font-display font-medium text-white hover:text-brand transition-colors"
+                                    className="text-4xl font-display font-medium text-[#1a1a1a] hover:text-brand transition-colors"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.name}
@@ -218,7 +218,7 @@ export default function Navbar() {
                         >
                             <Link
                                 href="/contact"
-                                className="text-xs uppercase tracking-[0.2em] font-bold bg-white text-black px-12 py-4 rounded-full"
+                                className="text-xs uppercase tracking-[0.2em] font-bold bg-[#1a1a1a] text-white px-12 py-4 rounded-full"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Technical Consultation

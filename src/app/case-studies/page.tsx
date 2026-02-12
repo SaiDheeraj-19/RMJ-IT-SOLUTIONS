@@ -137,23 +137,23 @@ export default function CaseStudiesPage() {
             ))}
 
             {/* CTA */}
-            <section className="bg-brand py-32 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
+            <section className="bg-white py-32 text-center relative overflow-hidden border-t border-stone-100">
+                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-multiply pointer-events-none" />
                 <div className="max-w-[1400px] mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-display font-bold text-white mb-4 tracking-tight">
+                        <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-display font-bold text-[#1a1a1a] mb-4 tracking-tight">
                             Solving a Complex Systems Problem?
                         </h2>
-                        <p className="text-white/70 text-xl mb-12 max-w-lg mx-auto leading-relaxed">
+                        <p className="text-[#606060] text-xl mb-12 max-w-lg mx-auto leading-relaxed">
                             If you&apos;re dealing with tech debt, fragmentation, or scalability issues, let&apos;s look at your architecture.
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block px-12 py-6 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-black rounded-full hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 shadow-2xl"
+                            className="inline-block px-12 py-6 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-black rounded-full hover:bg-brand transition-all duration-300 shadow-2xl"
                         >
                             Request a Technical Consultation
                         </Link>
