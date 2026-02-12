@@ -36,7 +36,7 @@ export default function Hero() {
                         <div className="mb-8 relative">
                             <TextReveal
                                 as="h1"
-                                text="We Build Systems That Run Your Campus, Not the Other Way Around."
+                                text="Operating the Digital Backbone of Modern Institutions."
                                 className="text-[clamp(3rem,6.5vw,5.5rem)] font-display leading-[0.95] font-bold tracking-tight text-[#1a1a1a]"
                                 delay={0.2}
                             />
@@ -45,7 +45,7 @@ export default function Hero() {
                         <div className="mb-12 max-w-xl pl-2">
                             <TextReveal
                                 as="p"
-                                text="From student portals handling 10,000+ users to ERP systems that cut admin work by 60% — we deliver technology that works on day one and scales for years."
+                                text="We engineer, deploy, and manage the high-stakes technology infrastructure that powers universities, government agencies, and global enterprises."
                                 className="text-[18px] font-normal text-[#505050] leading-[1.6]"
                                 delay={0.8}
                             />
@@ -76,17 +76,7 @@ export default function Hero() {
                             </Link>
                         </div>
 
-                        {/* Quick proof points */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 1.8, duration: 0.8 }}
-                            className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[13px] text-stone-400"
-                        >
-                            <span>✓ 14-day free audit</span>
-                            <span>✓ No lock-in contracts</span>
-                            <span>✓ 99.9% uptime SLA</span>
-                        </motion.div>
+
                     </motion.div>
                 </div>
 
@@ -114,10 +104,10 @@ export default function Hero() {
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-radial from-brand/20 to-transparent blur-[140px] -z-10 opacity-30" />
                     </motion.div>
                 </div>
-            </div>
+            </div >
 
             {/* Core Capabilities Marquee */}
-            <div className="w-full pt-16 border-t border-stone-200/60 relative z-10 overflow-hidden">
+            < div className="w-full pt-16 border-t border-stone-200/60 relative z-10 overflow-hidden" >
                 <div className="max-w-[1400px] mx-auto px-10 md:px-20 mb-8">
                     <span className="text-[10px] uppercase tracking-[0.4em] font-black text-stone-400 block">
                         What We Deploy
@@ -149,7 +139,7 @@ export default function Hero() {
                         ))}
                     </motion.div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
