@@ -90,12 +90,16 @@ export default function Footer() {
                                 <Link href="mailto:support@rmjit.com" className="flex items-center gap-3 text-sm font-black text-slate-900 hover:text-brand transition-colors">
                                     <Mail size={14} className="text-brand" /> support@rmjit.com
                                 </Link>
-                                <div className="flex gap-3 text-slate-500 pt-2 leading-relaxed">
-                                    <MapPin size={14} className="text-brand shrink-0 mt-1" />
+                                <Link
+                                    href="https://www.google.com/maps/search/?api=1&query=RMJ+IT+SOLUTIONS+Kurnool+Andhra+Pradesh"
+                                    target="_blank"
+                                    className="flex gap-3 text-slate-500 pt-2 leading-relaxed hover:text-brand transition-colors group"
+                                >
+                                    <MapPin size={14} className="text-brand shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                                     <p className="text-[11px] font-bold uppercase tracking-wider">
                                         Doctors Colony, <br /> Kurnool, AP
                                     </p>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -111,8 +115,8 @@ export default function Footer() {
 
                     {/* Massive Background Text - Architectural Style */}
                     <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
-                        <span className="text-[18vw] font-display font-black text-slate-900 leading-none tracking-tighter uppercase whitespace-nowrap block translate-y-12">
-                            RMJ ENGINEERING
+                        <span className="text-[15vw] font-display font-black text-slate-900 leading-none tracking-tighter uppercase whitespace-nowrap block translate-y-8">
+                            RMJ SOLUTIONS
                         </span>
                     </div>
 

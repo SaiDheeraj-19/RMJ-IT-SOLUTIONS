@@ -12,7 +12,7 @@ const services = [
         icon: LayoutDashboard,
         description: "ERP systems, campus management platforms, and internal dashboards tailored to complex organizational workflows.",
         audience: "Educational Institutions & Enterprises",
-        outcome: "Reduce manual data entry by 60% and unify fragmented tools.",
+        outcome: "Unify fragmented tools and automate manual data cycles.",
         link: "/services/erp"
     },
     {
@@ -28,7 +28,7 @@ const services = [
         icon: Blocks,
         description: "Focus on high-performance, secure, and interactive web platforms—not just static brochure sites.",
         audience: "SaaS Founders & Digital Brands",
-        outcome: "Fast load times (<1s) and high user retention.",
+        outcome: "Optimized performance and production-ready architecture.",
         link: "/services/web"
     },
     {

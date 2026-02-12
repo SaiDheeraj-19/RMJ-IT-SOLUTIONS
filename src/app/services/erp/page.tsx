@@ -142,7 +142,7 @@ export default function ERPPage() {
                                 <div className="flex justify-between items-center mb-16">
                                     <div className="space-y-2">
                                         <span className="text-[10px] font-black font-mono text-brand tracking-[0.3em] uppercase opacity-70">
-                                            {`// Engineering Proof // 2024_AUDIT`}
+                                            {`// SYSTEM PERFORMANCE METRICS`}
                                         </span>
                                         <h4 className="text-2xl font-display font-bold text-slate-900 tracking-tight">System Autonomy Dashboard</h4>
                                     </div>
@@ -156,12 +156,12 @@ export default function ERPPage() {
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-end">
                                             <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Efficiency</span>
-                                            <span className="text-4xl font-display font-black text-brand tracking-tighter">94%</span>
+                                            <span className="text-2xl font-display font-black text-brand tracking-tighter uppercase">High</span>
                                         </div>
                                         <div className="h-3 w-full bg-slate-200/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
                                             <motion.div
                                                 initial={{ width: 0 }}
-                                                whileInView={{ width: "94%" }}
+                                                whileInView={{ width: "100%" }}
                                                 transition={{ duration: 2.5, ease: "circOut" }}
                                                 className="h-full bg-gradient-to-r from-brand to-indigo-400 rounded-full relative shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                                             >
@@ -176,15 +176,15 @@ export default function ERPPage() {
                                     {/* Metric 2 */}
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-end">
-                                            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Reliability</span>
-                                            <span className="text-4xl font-display font-black text-brand tracking-tighter">0%</span>
+                                            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Stability</span>
+                                            <span className="text-2xl font-display font-black text-brand tracking-tighter uppercase">Active</span>
                                         </div>
                                         <div className="h-3 w-full bg-slate-200/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
                                             <motion.div
-                                                initial={{ width: "100%" }}
-                                                whileInView={{ width: "0%" }}
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: "100%" }}
                                                 transition={{ duration: 2.5, ease: "circOut" }}
-                                                className="h-full bg-slate-200 rounded-full"
+                                                className="h-full bg-brand rounded-full"
                                             />
                                         </div>
                                         <p className="text-[13px] text-slate-600 font-medium leading-relaxed">

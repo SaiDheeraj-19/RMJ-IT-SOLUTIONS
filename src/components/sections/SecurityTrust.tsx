@@ -23,7 +23,7 @@ const trustPoints = [
     },
     {
         icon: <Server className="w-8 h-8" />,
-        title: "99.99% Uptime SLA",
+        title: "Enterprise Uptime SLA",
         desc: "Redundant cloud infrastructure with automatic failover and zero single points of failure."
     }
 ];
@@ -102,7 +102,7 @@ export default function SecurityTrust() {
                         <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
                             {[
                                 { label: "Security Scans", value: "Daily", icon: <ShieldCheck className="w-4 h-4" /> },
-                                { label: "Uptime", value: "99.99%", icon: <Server className="w-4 h-4" /> },
+                                { label: "Uptime", value: "Verified", icon: <Server className="w-4 h-4" /> },
                                 { label: "Backups", value: "Hourly", icon: <Database className="w-4 h-4" /> },
                                 { label: "SSL Status", value: "A+ Grade", icon: <CheckCircle className="w-4 h-4" /> }
                             ].map((stat, i) => (

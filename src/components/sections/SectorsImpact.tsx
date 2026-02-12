@@ -11,7 +11,7 @@ const phases = [
         icon: <Timer className="w-5 h-5" />,
         title: "Discovery & System Audit",
         description: "We don't guess. We audit your existing infrastructure, map data flows, and define technical requirements before writing a single line of code.",
-        duration: "2 Weeks",
+        duration: "Strategy Phase",
         deliverable: "Architecture Audit Report"
     },
     {
@@ -19,7 +19,7 @@ const phases = [
         icon: <FileCode className="w-5 h-5" />,
         title: "Architecture & Technical Design",
         description: "We blueprint the entire system—database schema, API contracts, security model, and cloud infrastructure. You approve the engineering plan.",
-        duration: "3 Weeks",
+        duration: "Design Phase",
         deliverable: "System Blueprint & Tech Spec"
     },
     {
@@ -27,7 +27,7 @@ const phases = [
         icon: <Zap className="w-5 h-5" />,
         title: "Agile Development",
         description: "Bi-weekly sprints with tangible demos. You see working software every 14 days. CI/CD pipelines and automated testing are active from day one.",
-        duration: "8-16 Weeks",
+        duration: "Development Phase",
         deliverable: "Production-Ready Codebase"
     },
     {
@@ -35,7 +35,7 @@ const phases = [
         icon: <ShieldCheck className="w-5 h-5" />,
         title: "QA & Security Testing",
         description: "Rigorous stress testing, vulnerability scanning (OWASP Top 10), and cross-device validation. Nothing goes to production without passing 100% of test cases.",
-        duration: "2 Weeks",
+        duration: "Audit Phase",
         deliverable: "QA Validation Report"
     },
     {
@@ -43,7 +43,7 @@ const phases = [
         icon: <Server className="w-5 h-5" />,
         title: "Deployment & Migration",
         description: "Zero-downtime deployment strategy. We handle data migration, DNS cutover, and SSL configuration with a rollback plan in place.",
-        duration: "1 Week",
+        duration: "Launch Phase",
         deliverable: "Live Production Environment"
     },
     {

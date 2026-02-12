@@ -52,9 +52,7 @@ export default function Hero() {
                         transition={{ duration: 1 }}
                         className="max-w-[800px]"
                     >
-                        <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-10 block">
-                            Engineering Digital Infrastructure That Scales
-                        </span>
+
 
                         <div className="mb-8">
                             <TextReveal
