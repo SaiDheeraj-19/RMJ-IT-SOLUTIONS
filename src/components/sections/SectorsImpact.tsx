@@ -4,87 +4,130 @@ import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 
-const timeline = [
+const phases = [
     {
-        phase: "Phase 1: Discovery",
-        description: "We audit your existing systems, clarify requirements, and define measurable outcomes before any code is written.",
-        duration: "2 Weeks"
+        num: "01",
+        title: "Discovery & System Audit",
+        description: "We don't guess. We audit your existing infrastructure, map data flows, and define technical requirements before writing a single line of code.",
+        duration: "2 Weeks",
+        deliverable: "Architecture Audit Report"
     },
     {
-        phase: "Phase 2: Strategy & Design",
-        description: "System architecture, database schema, API contracts, and UX flows are finalized. You approve the blueprint.",
-        duration: "2-3 Weeks"
+        num: "02",
+        title: "Architecture & Technical Design",
+        description: "We blueprint the entire system—database schema, API contracts, security model, and cloud infrastructure. You approve the engineering plan.",
+        duration: "3 Weeks",
+        deliverable: "System Blueprint & Tech Spec"
     },
     {
-        phase: "Phase 3: Implementation",
-        description: "Agile sprints with bi-weekly demos. Code is built, reviewed, and tested iteratively. You see progress every 14 days.",
-        duration: "8-16 Weeks"
+        num: "03",
+        title: "Agile Development",
+        description: "Bi-weekly sprints with tangible demos. You see working software every 14 days. CI/CD pipelines and automated testing are active from day one.",
+        duration: "8-16 Weeks",
+        deliverable: "Production-Ready Codebase"
     },
     {
-        phase: "Phase 4: Testing & QA",
-        description: "Rigorous stress testing, security vulnerability scanning, and cross-browser validation. Nothing goes live without passing QA.",
-        duration: "2-3 Weeks"
+        num: "04",
+        title: "QA & Security Testing",
+        description: "Rigorous stress testing, vulnerability scanning (OWASP Top 10), and cross-device validation. Nothing goes to production without passing 100% of test cases.",
+        duration: "2 Weeks",
+        deliverable: "QA Validation Report"
     },
     {
-        phase: "Phase 5: Deployment",
-        description: "Zero-downtime deployment to production environment. Monitoring tools are configured for real-time alerts.",
-        duration: "1 Week"
+        num: "05",
+        title: "Deployment & Migration",
+        description: "Zero-downtime deployment strategy. We handle data migration, DNS cutover, and SSL configuration with a rollback plan in place.",
+        duration: "1 Week",
+        deliverable: "Live Production Environment"
     },
     {
-        phase: "Phase 6: Support & Scale",
-        description: "30-day stabilization period included. We monitor performance, fix edge cases, and ensure smooth adoption.",
-        duration: "Ongoing"
+        num: "06",
+        title: "Stabilization & Handover",
+        description: "We stay on for 30 days post-launch to monitor performance, fix edge cases, and train your internal team. Full documentation is transferred.",
+        duration: "Ongoing",
+        deliverable: "Operator Manuals & Repo Access"
     }
 ];
 
 export default function ProcessTimeline() {
     return (
-        <Section className="bg-[#f5f5f5] text-[#1a1a1a] relative overflow-hidden py-32">
+        <Section className="bg-white text-[#1a1a1a] py-32">
             <div className="max-w-[1200px] mx-auto">
-                <div className="mb-24 text-center">
-                    <motion.span
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-10 block"
-                    >
-                        How We Work
-                    </motion.span>
-                    <TextReveal
-                        as="h2"
-                        text="A Predictable Path to Production."
-                        className="text-[clamp(2.5rem,5vw,4.5rem)] font-display leading-[1.05] font-bold tracking-tight text-[#1a1a1a]"
-                        delay={0.1}
-                    />
+                <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-10">
+                    <div className="max-w-2xl">
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-10 block"
+                        >
+                            Delivery Framework
+                        </motion.span>
+                        <TextReveal
+                            as="h2"
+                            text="Engineered for Certainty."
+                            className="text-[clamp(2.5rem,5vw,4.5rem)] font-display leading-[1] font-bold tracking-tight text-[#1a1a1a]"
+                            delay={0.1}
+                        />
+                    </div>
+                    <div className="max-w-md pb-2">
+                        <p className="text-lg text-[#606060] leading-relaxed">
+                            We replaced the "black box" of agency development with a transparent, milestone-gated process. You know exactly what's being built, when it ships, and why it works.
+                        </p>
+                    </div>
                 </div>
 
-                <div className="relative border-l-2 border-stone-200 ml-6 md:ml-[50%] md:translate-x-[-1px]">
-                    {timeline.map((step, i) => (
+                <div className="flex flex-col">
+                    {phases.map((phase, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className={`mb-16 last:mb-0 relative md:w-[calc(50%+20px)] ${i % 2 === 0 ? "md:ml-auto md:pl-16 pl-12" : "md:mr-auto md:pr-16 md:text-right pl-12 md:pl-0"
-                                }`}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                            className="group border-t border-stone-200 hover:border-brand/50 transition-colors duration-500 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative overflow-hidden"
                         >
-                            {/* Dot on line */}
-                            <div className="absolute left-[-9px] md:left-auto md:right-auto md:top-[6px] top-[6px] w-[16px] h-[16px] rounded-full bg-white border-4 border-brand shadow-[0_0_0_4px_rgba(255,255,255,1)] z-10 md:absolute md:left-0 md:-translate-x-[50%]" />
+                            {/* Hover BG */}
+                            <div className="absolute inset-0 bg-stone-50/0 group-hover:bg-stone-50/50 transition-colors duration-500 -z-10" />
 
-                            <div className="bg-white p-8 rounded-2xl border border-stone-100 shadow-sm hover:shadow-lg hover:border-brand/20 transition-all duration-300 relative group">
-                                <span className="absolute top-4 right-4 text-[10px] font-bold text-brand bg-brand/5 px-2 py-1 rounded-md uppercase tracking-wider">
-                                    {step.duration}
+                            {/* Phase Number */}
+                            <div className="md:col-span-2">
+                                <span className="text-4xl md:text-5xl font-display font-bold text-stone-200 group-hover:text-brand transition-colors duration-500">
+                                    {phase.num}
                                 </span>
-                                <h3 className="text-xl font-display font-bold text-[#1a1a1a] mb-3 group-hover:text-brand transition-colors">
-                                    {step.phase}
+                            </div>
+
+                            {/* Content */}
+                            <div className="md:col-span-6 pr-8">
+                                <h3 className="text-2xl font-bold mb-4 text-[#1a1a1a] group-hover:text-brand transition-colors duration-300">
+                                    {phase.title}
                                 </h3>
-                                <p className="text-[#606060] text-[15px] leading-relaxed">
-                                    {step.description}
+                                <p className="text-[#606060] text-[16px] leading-relaxed max-w-xl">
+                                    {phase.description}
                                 </p>
+                            </div>
+
+                            {/* Metadata */}
+                            <div className="md:col-span-4 flex flex-col items-start md:items-end justify-between h-full gap-4 mt-4 md:mt-0">
+                                <div className="space-y-3 w-full md:text-right">
+                                    <div className="flex flex-col md:items-end">
+                                        <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400 mb-1">Duration</span>
+                                        <span className="text-[14px] font-medium text-[#1a1a1a] bg-stone-100 px-3 py-1 rounded-full w-fit">
+                                            {phase.duration}
+                                        </span>
+                                    </div>
+                                    <div className="flex flex-col md:items-end pt-2">
+                                        <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400 mb-1">Key Deliverable</span>
+                                        <span className="text-[14px] font-medium text-[#1a1a1a]">
+                                            {phase.deliverable}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
+                    {/* Final Border */}
+                    <div className="border-t border-stone-200" />
                 </div>
             </div>
         </Section>
