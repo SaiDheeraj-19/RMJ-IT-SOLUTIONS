@@ -54,7 +54,7 @@ const stages = [
 
 export default function SolutionSection() {
     return (
-        <Section id="approach" className="bg-[#f5f5f5]">
+        <Section id="approach" className="bg-[#f1f5f9]">
             <div className="max-w-[1200px] mx-auto">
                 <div className="mb-24 max-w-3xl">
                     <motion.span

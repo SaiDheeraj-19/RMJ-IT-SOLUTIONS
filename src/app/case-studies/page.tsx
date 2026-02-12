@@ -55,7 +55,7 @@ const impacts = [
 
 export default function CaseStudiesPage() {
     return (
-        <main className="min-h-screen bg-[#f5f5f5]">
+        <main className="min-h-screen bg-[#f8fafc]">
             <Navbar />
 
             <section className="min-h-[80vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20">
@@ -85,7 +85,7 @@ export default function CaseStudiesPage() {
             </section>
 
             {impacts.map((item, i) => (
-                <Section key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#efefef]"}>
+                <Section key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#f1f5f9]"}>
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
                         <div className="lg:col-span-1">
                             <HorizontalLine className="mb-12 w-12" />

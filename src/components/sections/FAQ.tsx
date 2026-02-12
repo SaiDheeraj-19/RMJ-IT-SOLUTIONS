@@ -9,8 +9,8 @@ import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations/Mo
 
 const faqs = [
     {
-        question: "What exactly is included in the Free Technical Audit?",
-        answer: "We review your current tech stack, infrastructure, and operational workflows over 14 days. You receive a written report covering: system architecture assessment, security vulnerability findings, performance bottlenecks, and a prioritized roadmap with estimated timelines and costs. There is no commitment required."
+        question: "What exactly is included in the Technical Strategy Consultation?",
+        answer: "We review your current tech stack, architecture, and operational workflows. You receive a technical roadmap covering: system architecture recommendations, security gap analysis, performance optimization paths, and a prioritized phase-wise delivery plan. There is no commitment required to proceed with the build."
     },
     {
         question: "We already have an IT team. Why would we need RMJ IT?",
@@ -38,7 +38,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <Section className="bg-white">
+        <Section className="bg-[#f8fafc]">
             <div className="max-w-[1000px] mx-auto">
                 <div className="mb-20">
                     <FadeIn>

@@ -38,7 +38,7 @@ const capabilitySuites = [
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-[#f5f5f5]">
+        <main className="min-h-screen bg-[#f8fafc]">
             <Navbar />
 
             <section className="min-h-[70vh] pt-40 flex flex-col justify-end pb-24 px-10 md:px-20">
@@ -63,14 +63,14 @@ export default function ServicesPage() {
                             </span>
                         </div>
                         <p className="text-xl text-[#505050] max-w-2xl leading-relaxed">
-                            Every project starts with a free technical audit. We scope it, estimate it, and give you a fixed quote — before any commitment.
+                            Every project starts with a Technical Strategy Call. We scope the architecture, estimate the delivery, and provide a clear roadmap — before any commitment.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
             {capabilitySuites.map((suite, i) => (
-                <Section key={i} className={i % 2 === 0 ? "bg-[#efefef]" : "bg-white"}>
+                <Section key={i} className={i % 2 === 0 ? "bg-[#f1f5f9]" : "bg-white"}>
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
                         <div className="lg:col-span-1">
                             <HorizontalLine className="mb-12 w-12" />
@@ -113,17 +113,17 @@ export default function ServicesPage() {
             ))}
 
             {/* Services CTA */}
-            <Section className="bg-gradient-to-b from-[#f0ebe3] to-[#e8e0d4] text-center">
+            <Section className="bg-[#fafaf9] text-center border-t border-stone-100">
                 <div className="max-w-2xl mx-auto">
                     <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">Next Step</span>
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight text-[#1a1a1a]">
                         Not sure which service you need?
                     </h2>
                     <p className="text-xl text-[#606060] mb-12 leading-relaxed">
-                        Start with a free audit. We&apos;ll assess your current systems and recommend the right approach — no commitment required.
+                        Start with a Technical Consultation. We&apos;ll assess your current systems and recommend the right approach — no commitment required.
                     </p>
                     <Link href="/contact" id="services-page-cta" className="group inline-flex items-center gap-3 px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-sm uppercase tracking-widest font-black hover:bg-brand transition-all duration-300 shadow-2xl">
-                        Request Free Audit
+                        Request Consultation
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>

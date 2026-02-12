@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[#f5f5f5]">
+        <main className="min-h-screen bg-[#f8fafc]">
             <Navbar />
 
             <section className="min-h-[80vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20">
@@ -36,7 +36,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <Section className="bg-[#efefef]">
+            <Section className="bg-[#f1f5f9]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
                     <div className="lg:col-span-8">
                         <h2 className="text-4xl font-display mb-12 text-[#1a1a1a] leading-tight max-w-2xl font-bold">
@@ -92,7 +92,7 @@ export default function AboutPage() {
             </Section>
 
             {/* Specific Sectors We Serve */}
-            <Section className="bg-[#efefef]">
+            <Section className="bg-[#fffdf5]">
                 <div className="max-w-[1200px] mx-auto">
                     <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-12 block">
                         Sectors We Serve

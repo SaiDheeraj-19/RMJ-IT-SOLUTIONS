@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden bg-[#f5f5f5]">
+        <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden bg-[#f8fafc]">
             {/* Animated Grid Background */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03]"

@@ -30,7 +30,7 @@ const differentiators = [
 
 export default function DifferentiationSection() {
     return (
-        <Section className="bg-[#efefef] text-[#1a1a1a] py-32 relative overflow-hidden">
+        <Section className="bg-[#fffdf5] text-[#1a1a1a] py-32 relative overflow-hidden">
             {/* Background Texture */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(#000000 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 

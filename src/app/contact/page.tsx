@@ -30,7 +30,7 @@ export default function ContactPage() {
     }
 
     return (
-        <main className="min-h-screen bg-[#f5f5f5]">
+        <main className="min-h-screen bg-[#f8fafc]">
             <Navbar />
 
             {/* Full Screen Success Overlay */}

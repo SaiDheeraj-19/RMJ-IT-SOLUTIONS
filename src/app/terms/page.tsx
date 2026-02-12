@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function TermsOfUse() {
     return (
-        <main className="min-h-screen bg-[#f5f5f5]">
+        <main className="min-h-screen bg-[#f8fafc]">
             <Navbar />
 
             <section className="pt-32 pb-20 px-6 md:px-12">
