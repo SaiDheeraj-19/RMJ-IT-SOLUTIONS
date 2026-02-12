@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function WebDevelopmentPage() {
     return (
-        <main className="min-h-screen bg-[#f5f5f5]">
+        <main className="min-h-screen bg-[#f8fafc]">
             <Navbar />
 
             {/* Hero Section */}
@@ -23,7 +23,7 @@ export default function WebDevelopmentPage() {
                         className="object-cover opacity-20"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/80 via-[#f5f5f5]/50 to-[#f5f5f5]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/80 via-[#f8fafc]/50 to-[#f8fafc]" />
                 </div>
 
                 <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -71,9 +71,9 @@ export default function WebDevelopmentPage() {
                             { title: "CMS Development", desc: "Easy-to-manage content systems like Sanity & Strapi." },
                             { title: "API Integration", desc: "Seamless connections with third-party services." }
                         ].map((item, i) => (
-                            <div key={i} className="p-6 bg-stone-50 rounded-xl hover:bg-stone-100 transition-colors border border-stone-100">
+                            <div key={i} className="p-6 bg-[#f8fafc] rounded-xl hover:bg-white transition-all duration-300 border border-stone-100 hover:shadow-xl">
                                 <h4 className="text-sm font-bold uppercase tracking-wider mb-2 text-[#1a1a1a]">{item.title}</h4>
-                                <p className="text-sm text-stone-500">{item.desc}</p>
+                                <p className="text-sm text-stone-500 leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
