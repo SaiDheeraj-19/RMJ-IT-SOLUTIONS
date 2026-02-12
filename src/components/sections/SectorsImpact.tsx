@@ -2,116 +2,89 @@
 
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
-import { ArrowUpRight, GraduationCap, Briefcase, Landmark } from "lucide-react";
-import Link from "next/link";
 import TextReveal from "@/components/animations/TextReveal";
-import { FadeIn, CountUp } from "@/components/animations/MotionEffects";
 
-const sectors = [
+const timeline = [
     {
-        title: "Universities & Education",
-        description: "Student lifecycle platforms, admission portals, exam management, and campus ERP. We've digitized multi-campus operations serving thousands of students and faculty — replacing manual processes that were costing 400+ staff hours monthly.",
-        icon: GraduationCap,
-        highlight: "Primary Focus"
+        phase: "Phase 1: Discovery",
+        description: "We audit your existing systems, clarify requirements, and define measurable outcomes before any code is written.",
+        duration: "2 Weeks"
     },
     {
-        title: "Mid-Size Enterprises",
-        description: "Operations dashboards, automated invoicing, CRM integrations, and workforce management. We help companies scaling from 200 to 2,000 employees replace disconnected tools with integrated systems that grow with them.",
-        icon: Briefcase,
-        highlight: "Growth Segment"
+        phase: "Phase 2: Strategy & Design",
+        description: "System architecture, database schema, API contracts, and UX flows are finalized. You approve the blueprint.",
+        duration: "2-3 Weeks"
     },
     {
-        title: "Government & Public Sector",
-        description: "Citizen services portals, grievance automation, and document verification systems. Built for high-traffic environments with strict compliance requirements — our systems handle 10K+ concurrent users with full audit trails.",
-        icon: Landmark,
-        highlight: "High Security"
+        phase: "Phase 3: Implementation",
+        description: "Agile sprints with bi-weekly demos. Code is built, reviewed, and tested iteratively. You see progress every 14 days.",
+        duration: "8-16 Weeks"
+    },
+    {
+        phase: "Phase 4: Testing & QA",
+        description: "Rigorous stress testing, security vulnerability scanning, and cross-browser validation. Nothing goes live without passing QA.",
+        duration: "2-3 Weeks"
+    },
+    {
+        phase: "Phase 5: Deployment",
+        description: "Zero-downtime deployment to production environment. Monitoring tools are configured for real-time alerts.",
+        duration: "1 Week"
+    },
+    {
+        phase: "Phase 6: Support & Scale",
+        description: "30-day stabilization period included. We monitor performance, fix edge cases, and ensure smooth adoption.",
+        duration: "Ongoing"
     }
 ];
 
-export default function SectorsImpact() {
+export default function ProcessTimeline() {
     return (
-        <Section className="bg-gradient-to-b from-[#e8e0d4] to-[#dfd5c7] text-[#1a1a1a] relative overflow-hidden py-32">
-            {/* Background Effects */}
-            <div className="absolute top-[30%] left-[-10%] w-[50vw] h-[50vw] bg-brand/8 rounded-full blur-[150px] pointer-events-none" />
-
-            <div className="max-w-[1400px] mx-auto z-10 relative">
-                <div className="flex flex-col lg:flex-row justify-between items-end mb-24 border-b border-[#1a1a1a]/10 pb-12">
-                    <div className="max-w-2xl">
-                        <FadeIn>
-                            <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
-                                Who We Work With
-                            </span>
-                        </FadeIn>
-                        <TextReveal
-                            as="h2"
-                            text="Three sectors. Deep expertise in each."
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display leading-[1] font-bold tracking-tight mb-8"
-                        />
-                    </div>
-                    <FadeIn delay={0.3} direction="right">
-                        <div className="flex items-center gap-4">
-                            <Link href="/case-studies" id="sectors-case-studies-cta" className="group px-8 py-4 bg-[#1a1a1a] backdrop-blur-sm border border-[#1a1a1a] rounded-full text-xs uppercase tracking-widest font-black text-white hover:bg-brand hover:border-brand transition-all duration-300 flex items-center gap-3">
-                                See Our Work
-                                <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </Link>
-                        </div>
-                    </FadeIn>
+        <Section className="bg-[#f5f5f5] text-[#1a1a1a] relative overflow-hidden py-32">
+            <div className="max-w-[1200px] mx-auto">
+                <div className="mb-24 text-center">
+                    <motion.span
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-10 block"
+                    >
+                        How We Work
+                    </motion.span>
+                    <TextReveal
+                        as="h2"
+                        text="A Predictable Path to Production."
+                        className="text-[clamp(2.5rem,5vw,4.5rem)] font-display leading-[1.05] font-bold tracking-tight text-[#1a1a1a]"
+                        delay={0.1}
+                    />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {sectors.map((sector, index) => (
+                <div className="relative border-l-2 border-stone-200 ml-6 md:ml-[50%] md:translate-x-[-1px]">
+                    {timeline.map((step, i) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.9, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                            whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                            className="group relative bg-white/60 backdrop-blur-sm border border-stone-200/80 p-10 rounded-3xl overflow-hidden hover:border-brand/40 hover:bg-white/90 transition-all duration-500 flex flex-col justify-between h-[400px] shadow-sm hover:shadow-xl hover:shadow-brand/5"
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, delay: i * 0.1 }}
+                            className={`mb-16 last:mb-0 relative md:w-[calc(50%+20px)] ${i % 2 === 0 ? "md:ml-auto md:pl-16 pl-12" : "md:mr-auto md:pr-16 md:text-right pl-12 md:pl-0"
+                                }`}
                         >
-                            <div className="relative z-10">
-                                <div className="flex justify-between items-start mb-8">
-                                    <div className="p-4 bg-brand/10 rounded-2xl group-hover:bg-brand transition-colors duration-500">
-                                        <sector.icon size={24} className="text-brand group-hover:text-white transition-colors" />
-                                    </div>
-                                    <span className="px-3 py-1 bg-[#1a1a1a]/5 rounded-full text-[9px] uppercase font-bold tracking-wider text-stone-500 border border-stone-200 group-hover:border-brand/30 group-hover:text-brand transition-colors">
-                                        {sector.highlight}
-                                    </span>
-                                </div>
+                            {/* Dot on line */}
+                            <div className="absolute left-[-9px] md:left-auto md:right-auto md:top-[6px] top-[6px] w-[16px] h-[16px] rounded-full bg-white border-4 border-brand shadow-[0_0_0_4px_rgba(255,255,255,1)] z-10 md:absolute md:left-0 md:-translate-x-[50%]" />
 
-                                <h3 className="text-2xl font-display font-bold text-[#1a1a1a] mb-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    {sector.title}
+                            <div className="bg-white p-8 rounded-2xl border border-stone-100 shadow-sm hover:shadow-lg hover:border-brand/20 transition-all duration-300 relative group">
+                                <span className="absolute top-4 right-4 text-[10px] font-bold text-brand bg-brand/5 px-2 py-1 rounded-md uppercase tracking-wider">
+                                    {step.duration}
+                                </span>
+                                <h3 className="text-xl font-display font-bold text-[#1a1a1a] mb-3 group-hover:text-brand transition-colors">
+                                    {step.phase}
                                 </h3>
-                                <div className="w-12 h-[2px] bg-stone-300 mb-6 group-hover:bg-brand group-hover:w-full transition-all duration-700 ease-out" />
-                                <p className="text-[#606060] text-base leading-relaxed max-w-sm group-hover:text-[#404040] transition-colors">
-                                    {sector.description}
+                                <p className="text-[#606060] text-[15px] leading-relaxed">
+                                    {step.description}
                                 </p>
                             </div>
-
-                            {/* Abstract Visual */}
-                            <div className="absolute right-[-20%] bottom-[-20%] w-[200px] h-[200px] bg-brand/5 rounded-full blur-[60px] group-hover:bg-brand/15 transition-colors duration-500" />
                         </motion.div>
                     ))}
-                </div>
-
-                {/* Stat Bar */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 border-t border-[#1a1a1a]/10 pt-16">
-                    <FadeIn delay={0}>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]"><CountUp target={15} suffix="+" /></div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Institutions Served</div>
-                    </FadeIn>
-                    <FadeIn delay={0.1}>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]"><CountUp target={99.9} suffix="%" decimals={1} /></div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Uptime SLA</div>
-                    </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]">₹8-25L</div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Typical Project Range</div>
-                    </FadeIn>
-                    <FadeIn delay={0.3}>
-                        <div className="text-4xl font-display font-bold mb-1 text-[#1a1a1a]"><CountUp target={14} suffix=" Days" /></div>
-                        <div className="text-[10px] uppercase font-bold text-stone-500">Free Audit Turnaround</div>
-                    </FadeIn>
                 </div>
             </div>
         </Section>

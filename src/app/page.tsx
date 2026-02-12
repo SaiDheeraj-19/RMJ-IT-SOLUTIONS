@@ -1,31 +1,25 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import SocialProof from "@/components/sections/SocialProof";
 import WhatWeSolve from "@/components/sections/WhatWeSolve";
 import OurApproach from "@/components/sections/OurApproach";
 import Capabilities from "@/components/sections/Capabilities";
 import SectorsImpact from "@/components/sections/SectorsImpact";
 import WhyRMJIT from "@/components/sections/WhyRMJIT";
-import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
-import StickyCTA from "@/components/ui/StickyCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#f5f5f5]">
       <Navbar />
       <Hero />
-      <SocialProof />
-      <WhatWeSolve />
-      <Capabilities />
-      <OurApproach />
-      <WhyRMJIT />
-      <SectorsImpact />
-      <FAQ />
+      <WhatWeSolve /> {/* Problem Section */}
+      <OurApproach /> {/* Solution Section */}
+      <Capabilities /> {/* Services Section */}
+      <WhyRMJIT /> {/* Differentiation Section */}
+      <SectorsImpact /> {/* Process Visualization */}
       <CTA />
       <Footer />
-      <StickyCTA />
     </main>
   );
 }
