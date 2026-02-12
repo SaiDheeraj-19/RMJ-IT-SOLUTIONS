@@ -3,29 +3,30 @@
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
-import { ArrowUpRight, Activity, Shield, Layers } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Activity, Shield, Layers, ArrowRight } from "lucide-react";
 
 const pillars = [
     {
-        title: "Structured Delivery Process",
-        description: "Every engagement follows a 6-phase framework: Discovery → Architecture → Build → QA → Deploy → Scale. Gated milestones and weekly stakeholder reviews ensure alignment with your operational KPIs.",
+        title: "Cut Admin Work by 60%",
+        description: "We replace spreadsheet-driven operations with automated workflows. Admissions, fee collection, attendance, and exam management — digitized end-to-end. Your staff focuses on students, not data entry.",
         icon: Activity,
-        stat: "6-Phase",
-        statLabel: "Delivery Framework"
+        stat: "60%",
+        statLabel: "Less Manual Work"
     },
     {
-        title: "Institutional-Grade Technology",
-        description: "We deploy on AWS and GCP with automated failover, real-time monitoring, and SOC2-aligned security controls. Our stack handles 10,000+ concurrent users with sub-200ms response times.",
+        title: "Handle 10,000+ Users Without Crashing",
+        description: "Our platforms are load-tested at 2x expected traffic before launch. Built on AWS/GCP with automated failover and real-time monitoring. When exam results drop at midnight, the system holds.",
         icon: Layers,
         stat: "<200ms",
-        statLabel: "Avg. Response Time"
+        statLabel: "Response Time"
     },
     {
-        title: "Domain-Specific Experience",
-        description: "3+ years focused on university campus systems, government portals, and mid-size enterprise applications. We understand compliance mandates, academic calendar constraints, and public sector procurement cycles.",
+        title: "Security Built In, Not Bolted On",
+        description: "Every deployment ships with AES-256 encryption, role-based access, MFA, and automated vulnerability scanning in CI/CD. We design for SOC2 and ISO 27001 readiness from sprint one.",
         icon: Shield,
-        stat: "3+",
-        statLabel: "Years Focused Delivery"
+        stat: "0",
+        statLabel: "Security Incidents"
     }
 ];
 
@@ -45,25 +46,25 @@ export default function WhoWeAre() {
                 >
                     <div className="mb-0 flex items-center justify-between">
                         <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-12 block">
-                            Why Institutions Choose Us
+                            What You Actually Get
                         </span>
                     </div>
 
-                    <div className="max-w-[1000px] mb-24">
+                    <div className="max-w-[1000px] mb-16">
                         <TextReveal
                             as="h2"
-                            text="Digital systems that run without failure — built by a team that understands your sector."
+                            text="We don't sell technology. We solve the problems that keep your operations stuck."
                             className="text-[clamp(2.5rem,5vw,4.5rem)] font-display leading-[1.05] font-bold tracking-tight text-[#1a1a1a]"
                             delay={0.2}
                         />
                         <div className="mt-8 max-w-2xl">
                             <p className="text-xl text-[#606060] leading-relaxed">
-                                RMJ IT is a <span className="text-[#1a1a1a] font-bold italic">full-cycle technology partner</span> for universities, government agencies, and mid-size enterprises. We handle everything from system architecture to post-launch operations — so your team stays focused on outcomes, not infrastructure.
+                                Most IT agencies hand you code and leave. We stay until the system runs <span className="text-[#1a1a1a] font-bold italic">without us</span> — then we offer a retainer to keep it that way. Here&apos;s what every engagement delivers:
                             </p>
                         </div>
                     </div>
 
-                    {/* 3 Authority Anchors */}
+                    {/* 3 Outcome Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-stone-200 pt-16">
                         {pillars.map((item, index) => (
                             <motion.div
@@ -102,6 +103,20 @@ export default function WhoWeAre() {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Mid-page CTA */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mt-16 flex flex-col sm:flex-row items-center gap-6"
+                    >
+                        <Link href="/contact" id="whatwesolve-cta" className="group inline-flex items-center gap-3 px-8 py-4 bg-brand text-white rounded-full text-sm font-bold hover:bg-[#1a1a1a] transition-all duration-300 shadow-lg">
+                            See If We&apos;re the Right Fit
+                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                        <span className="text-sm text-stone-400">Free 14-day audit · No commitment required</span>
+                    </motion.div>
                 </motion.div>
             </div>
         </Section>

@@ -12,11 +12,11 @@ export default function Footer() {
                     <div className="lg:col-span-5">
                         <div className="mb-8">
                             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand mb-6 block">
-                                Let&apos;s innovate together
+                                Ready to start?
                             </span>
                             <Link href="/contact" className="group block">
                                 <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-medium text-[#1a1a1a] leading-[1.1] tracking-tight group-hover:text-brand transition-colors duration-500">
-                                    Initiate your <br /> Intervention.
+                                    Get your free <br /> technical audit.
                                 </h2>
                             </Link>
                         </div>
@@ -37,9 +37,9 @@ export default function Footer() {
                             <div>
                                 <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 mb-4">Company</h4>
                                 <ul className="space-y-2">
-                                    <li><Link href="/about" className="text-sm font-medium text-[#1a1a1a] hover:text-brand transition-colors">Firm</Link></li>
-                                    <li><Link href="/case-studies" className="text-sm font-medium text-[#1a1a1a] hover:text-brand transition-colors">Achievements</Link></li>
-                                    <li><Link href="/contact" className="text-sm font-medium text-[#1a1a1a] hover:text-brand transition-colors">Engagement</Link></li>
+                                    <li><Link href="/about" className="text-sm font-medium text-[#1a1a1a] hover:text-brand transition-colors">About Us</Link></li>
+                                    <li><Link href="/case-studies" className="text-sm font-medium text-[#1a1a1a] hover:text-brand transition-colors">Case Studies</Link></li>
+                                    <li><Link href="/contact" className="text-sm font-medium text-[#1a1a1a] hover:text-brand transition-colors">Contact Us</Link></li>
                                 </ul>
                             </div>
                         </div>

@@ -7,10 +7,9 @@ export default function Preloader() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Simulate loading assets
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2200);
+        }, 1800);
 
         return () => clearTimeout(timer);
     }, []);
@@ -58,10 +57,10 @@ export default function Preloader() {
                         <motion.span
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.6 }}
-                            transition={{ delay: 1.2 }}
+                            transition={{ delay: 1.0 }}
                             className="text-[10px] uppercase tracking-[0.4em] font-mono text-[#1a1a1a] mt-8"
                         >
-                            Infrastructure in progress
+                            Technology that institutions rely on
                         </motion.span>
                     </div>
                 </motion.div>

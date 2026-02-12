@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, Smartphone, GraduationCap, Cloud, ShieldCheck, BarChart3, Zap, ArrowRight } from "lucide-react";
+import { Globe, Smartphone, GraduationCap, Cloud, ShieldCheck, BarChart3, Zap } from "lucide-react";
 
 const services = [
     { name: "Web Application", icon: Globe },
@@ -36,8 +36,8 @@ export default function Hero() {
                         <div className="mb-8 relative">
                             <TextReveal
                                 as="h1"
-                                text="Operating the Digital Backbone of Modern Institutions."
-                                className="text-[clamp(3.5rem,7vw,6.5rem)] font-display leading-[0.92] font-bold tracking-tight text-[#1a1a1a]"
+                                text="We Build Systems That Run Your Campus, Not the Other Way Around."
+                                className="text-[clamp(3rem,6.5vw,5.5rem)] font-display leading-[0.95] font-bold tracking-tight text-[#1a1a1a]"
                                 delay={0.2}
                             />
                         </div>
@@ -45,30 +45,52 @@ export default function Hero() {
                         <div className="mb-12 max-w-xl pl-2">
                             <TextReveal
                                 as="p"
-                                text="We engineer, deploy, and manage the high-stakes technology infrastructure that powers universities, government agencies, and global enterprises."
-                                className="text-[18px] font-normal text-[#505050] leading-[1.4]"
+                                text="From student portals handling 10,000+ users to ERP systems that cut admin work by 60% — we deliver technology that works on day one and scales for years."
+                                className="text-[18px] font-normal text-[#505050] leading-[1.6]"
                                 delay={0.8}
                             />
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-6">
-                            <Link href="/contact">
+                        {/* Dual CTA */}
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Link href="/contact" id="hero-cta-primary">
                                 <motion.button
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.2, duration: 0.8 }}
                                     className="group px-10 py-5 bg-[#1a1a1a] text-stone-50 rounded-full text-[15px] font-medium hover:bg-brand transition-all duration-300 shadow-xl flex items-center gap-3 overflow-hidden relative"
                                 >
-                                    <span className="relative z-10 text-white">Request a Free Technical Audit</span>
-                                    <ArrowRight size={16} className="relative z-10 text-white group-hover:translate-x-1 transition-transform" />
+                                    <span className="relative z-10 text-white">Contact Us →</span>
                                     <div className="absolute inset-0 bg-brand translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                                 </motion.button>
                             </Link>
+                            <Link href="/about" id="hero-cta-secondary">
+                                <motion.button
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 1.4, duration: 0.8 }}
+                                    className="group px-8 py-5 bg-transparent border border-stone-300 text-[#1a1a1a] rounded-full text-[15px] font-medium hover:border-brand hover:text-brand transition-all duration-300 flex items-center gap-3"
+                                >
+                                    <span>About Us</span>
+                                </motion.button>
+                            </Link>
                         </div>
+
+                        {/* Quick proof points */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1.8, duration: 0.8 }}
+                            className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[13px] text-stone-400"
+                        >
+                            <span>✓ 14-day free audit</span>
+                            <span>✓ No lock-in contracts</span>
+                            <span>✓ 99.9% uptime SLA</span>
+                        </motion.div>
                     </motion.div>
                 </div>
 
-                {/* Right Visuals (Premium Abstract Infrastructure) */}
+                {/* Right Visuals */}
                 <div className="lg:col-span-5 relative hidden lg:block">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
@@ -80,7 +102,7 @@ export default function Hero() {
                             <div className="relative w-[140%] h-[140%] -right-20">
                                 <Image
                                     src="/images/company-cuate.svg"
-                                    alt="Institutional IT Solutions"
+                                    alt="RMJ IT Solutions - Campus Technology Infrastructure"
                                     width={1400}
                                     height={1000}
                                     className="w-full h-auto object-contain drop-shadow-[0_40px_80px_rgba(129,103,41,0.15)]"
@@ -89,7 +111,6 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Integrated Lighting / Glow (Static for Authority) */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-radial from-brand/20 to-transparent blur-[140px] -z-10 opacity-30" />
                     </motion.div>
                 </div>
@@ -99,7 +120,7 @@ export default function Hero() {
             <div className="w-full pt-16 border-t border-stone-200/60 relative z-10 overflow-hidden">
                 <div className="max-w-[1400px] mx-auto px-10 md:px-20 mb-8">
                     <span className="text-[10px] uppercase tracking-[0.4em] font-black text-stone-400 block">
-                        Technical Ecosystem
+                        What We Deploy
                     </span>
                 </div>
 
@@ -116,7 +137,6 @@ export default function Hero() {
                             duration: 35
                         }}
                     >
-                        {/* Tripling the list for smoother infinite loop on wide screens */}
                         {[...services, ...services, ...services].map((service, i) => (
                             <div key={i} className="flex items-center gap-4 group cursor-default opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
                                 <div className="p-3 bg-white border border-stone-200 shadow-sm rounded-full text-[#1a1a1a] group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-colors duration-300">

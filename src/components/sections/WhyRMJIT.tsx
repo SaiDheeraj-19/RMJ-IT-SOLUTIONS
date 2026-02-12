@@ -3,27 +3,30 @@
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
+import { FadeIn, RevealLine, BlurIn, SlideIn } from "@/components/animations/MotionEffects";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const differentiators = [
     {
-        title: "Sector-Specific Engineering",
-        desc: "We don't build generic software. Every solution is tailored to the operational realities of universities, government agencies, and mid-size enterprises — from academic calendar constraints to public procurement compliance."
+        title: "We Know Your Sector — Not Just Code",
+        desc: "We've worked inside university admin offices. We understand NAAC compliance, academic calendar constraints, and why the dean needs that report by Friday. Our solutions work because we understand the context, not just the tech."
     },
     {
-        title: "Full-Cycle Ownership",
-        desc: "From initial system audit to post-launch operations, we own the entire delivery pipeline. No handoff gaps, no third-party dependencies. One team, one accountability chain."
+        title: "One Team. Start to Finish. No Handoffs.",
+        desc: "The architect who designs your system also reviews the code and joins your deployment call. No \"discovery team\" that disappears after the proposal. One accountability chain that you can name and call."
     },
     {
-        title: "Security as Architecture, Not Add-On",
-        desc: "Every deployment follows SOC2-aligned controls, role-based access, encrypted data at rest and in transit, and automated vulnerability scanning. Security is built into the system design, not patched on later."
+        title: "You See Working Software Every 14 Days",
+        desc: "No 6-month black boxes. We ship working features in 2-week sprints with bi-weekly demos you can test. If we're off track, you know in week 2 — not month 6."
     },
     {
-        title: "Senior-Led Delivery Teams",
-        desc: "Every project is led by a senior architect who participates in code reviews, stakeholder calls, and deployment decisions. You won't be handed off to a junior team after the sales call."
+        title: "Fixed Quotes Before You Commit",
+        desc: "After our free audit, you get a detailed scope document with a fixed price or time-and-materials estimate. You sign off on every milestone. No surprise invoices, no scope creep without your written approval."
     },
     {
-        title: "Milestone-Gated Execution",
-        desc: "We follow a structured delivery model with bi-weekly milestones, documented acceptance criteria, and stakeholder sign-off at every gate. If we miss a deadline, you'll know 2 weeks in advance — not after."
+        title: "30 Days of Free Support After Launch",
+        desc: "Every deployment includes 30 days of post-launch stabilization at no extra cost. We monitor performance, fix edge cases, and optimize based on real usage data. After that, optional monthly retainers from ₹25K/month."
     }
 ];
 
@@ -39,16 +42,18 @@ export default function WhyRMJIT() {
                             viewport={{ once: true }}
                             className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-12 block"
                         >
-                            Why RMJ IT
+                            Why Us Over Others
                         </motion.span>
                         <TextReveal
                             as="h2"
-                            text="5 reasons institutions choose us over agencies."
+                            text="What makes us different from every other agency you've talked to."
                             className="text-[clamp(3rem,6vw,5rem)] font-display font-bold mb-8 leading-[1] tracking-tight text-[#1a1a1a]"
                         />
-                        <p className="text-xl text-[#606060] leading-relaxed max-w-lg">
-                            We compete on specificity, not promises. Every differentiator below is reflected in our contracts, timelines, and delivery reports.
-                        </p>
+                        <FadeIn delay={0.3}>
+                            <p className="text-xl text-[#606060] leading-relaxed max-w-lg">
+                                Not promises — guarantees. Everything below is documented in our contracts, reflected in our delivery reports, and backed by our track record.
+                            </p>
+                        </FadeIn>
                     </div>
                 </div>
 
@@ -57,13 +62,13 @@ export default function WhyRMJIT() {
                     {differentiators.map((item, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: i * 0.1 }}
+                            transition={{ duration: 0.9, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                             className="group"
                         >
-                            <div className="w-12 h-[2px] bg-brand mb-8 group-hover:w-24 transition-all duration-500 ease-out" />
+                            <RevealLine className="!h-[2px] !bg-brand mb-8 max-w-12 group-hover:max-w-24 transition-all duration-500" delay={i * 0.12} />
                             <h3 className="text-2xl font-display font-bold text-[#1a1a1a] mb-6 tracking-tight group-hover:text-brand transition-colors">
                                 {item.title}
                             </h3>
@@ -74,29 +79,53 @@ export default function WhyRMJIT() {
                     ))}
                 </div>
 
+                {/* Mid-section CTA */}
+                <FadeIn delay={0.2} className="mt-20 pt-16 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-8">
+                    <div>
+                        <h3 className="text-2xl font-display font-bold text-[#1a1a1a] mb-2">Ready to see if we&apos;re the right fit?</h3>
+                        <p className="text-stone-500">Start with a free, no-commitment technical audit of your current systems.</p>
+                    </div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                        <Link href="/contact" id="whyrmjit-cta" className="group shrink-0 inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-sm font-bold hover:bg-brand transition-all duration-300 shadow-xl">
+                            Request Free Audit
+                            <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
+                        </Link>
+                    </motion.div>
+                </FadeIn>
+
                 {/* Tech Stack Credibility */}
-                <div className="mt-32 pt-16 border-t border-stone-200">
+                <BlurIn delay={0.2} className="mt-32 pt-16 border-t border-stone-200">
                     <span className="text-[10px] uppercase tracking-[0.4em] font-black text-stone-400 mb-12 block">
-                        Production Stack
+                        Our Production Stack
                     </span>
                     <div className="flex flex-wrap gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        {["AWS", "Google Cloud", "Kubernetes", "Next.js", "React Native", "PostgreSQL", "TensorFlow", "Redis", "Docker", "Terraform", "Node.js", "Python"].map((tech) => (
-                            <span key={tech} className="text-xl font-display font-bold text-[#1a1a1a]">{tech}</span>
+                        {["AWS", "Google Cloud", "Kubernetes", "Next.js", "React Native", "PostgreSQL", "TensorFlow", "Redis", "Docker", "Terraform", "Node.js", "Python"].map((tech, i) => (
+                            <motion.span
+                                key={tech}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                whileHover={{ scale: 1.1, color: "#816729" }}
+                                className="text-xl font-display font-bold text-[#1a1a1a] cursor-default"
+                            >
+                                {tech}
+                            </motion.span>
                         ))}
                     </div>
-                </div>
+                </BlurIn>
 
                 {/* Security & Compliance Positioning */}
-                <div className="mt-32 pt-16 border-t border-stone-200 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <FadeIn className="mt-32 pt-16 border-t border-stone-200 grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
                         <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
                             Security & Compliance
                         </span>
                         <h3 className="text-3xl font-display font-bold text-[#1a1a1a] leading-tight mb-6">
-                            Built for audit readiness from day one.
+                            Every deployment ships audit-ready.
                         </h3>
                         <p className="text-lg text-[#606060] leading-relaxed">
-                            Every RMJ IT deployment includes: encrypted data storage (AES-256), role-based access controls, automated security scanning in CI/CD pipelines, and comprehensive audit logging. We design systems that are ready for SOC2, ISO 27001, and GDPR compliance reviews — not retroactively adapted.
+                            Security isn&apos;t a checkbox we tick before launch. It&apos;s designed into the system architecture from day one. Every RMJ IT deployment includes: encrypted data storage, role-based access controls, automated security scanning, and comprehensive audit logging.
                         </p>
                     </div>
                     <div className="grid grid-cols-2 gap-8">
@@ -106,34 +135,48 @@ export default function WhyRMJIT() {
                             { label: "Vulnerability Scanning", detail: "Automated in every CI/CD pipeline" },
                             { label: "Audit Logging", detail: "Immutable logs with 12-month retention" }
                         ].map((sec, i) => (
-                            <div key={i} className="p-6 bg-white rounded-xl border border-stone-100">
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                whileHover={{ y: -4 }}
+                                className="p-6 bg-white rounded-xl border border-stone-100 hover:border-brand/30 hover:shadow-lg transition-all duration-300"
+                            >
                                 <h4 className="text-sm font-bold uppercase tracking-wider text-[#1a1a1a] mb-2">{sec.label}</h4>
                                 <p className="text-sm text-[#606060]">{sec.detail}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </FadeIn>
 
                 {/* Leadership Positioning */}
-                <div className="mt-32 pt-16 border-t border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <SlideIn from="left" className="mt-32 pt-16 border-t border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                     <div className="lg:col-span-4">
                         <span className="text-[10px] uppercase tracking-[0.4em] font-black text-stone-400 mb-12 block">
                             Leadership
                         </span>
                         <h3 className="text-3xl font-display font-bold text-[#1a1a1a] leading-tight">
-                            Senior architects lead every engagement.
+                            You work directly with senior architects. Always.
                         </h3>
                     </div>
                     <div className="lg:col-span-8">
-                        <p className="text-xl text-[#606060] leading-relaxed border-l-4 border-brand pl-8">
-                            RMJ IT was founded with a specific thesis: institutions deserve the same quality of engineering that Silicon Valley builds for itself. Our leadership team brings direct experience in campus technology systems, government IT infrastructure, and enterprise application modernization. Every client engagement is personally overseen by a senior architect — ensuring technical decisions are made by people who understand both code and organizational context.
-                        </p>
-                        <div className="mt-8 pl-8">
+                        <motion.p
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-xl text-[#606060] leading-relaxed border-l-4 border-brand pl-8"
+                        >
+                            RMJ IT was founded on a simple belief: institutions deserve the same engineering quality that top-tier SaaS companies build for themselves. Every client engagement is led and reviewed by a senior architect — someone who understands both the codebase and the organizational politics that make IT projects succeed or fail.
+                        </motion.p>
+                        <FadeIn delay={0.3} className="mt-8 pl-8">
                             <span className="block text-lg font-bold text-[#1a1a1a]">Founding Team</span>
                             <span className="text-sm text-stone-400 uppercase tracking-widest font-bold">Architecture & Strategy</span>
-                        </div>
+                        </FadeIn>
                     </div>
-                </div>
+                </SlideIn>
             </div>
         </Section>
     );

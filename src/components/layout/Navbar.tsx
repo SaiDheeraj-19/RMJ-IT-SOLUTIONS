@@ -9,42 +9,33 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
     {
-        name: "Capability",
+        name: "Services",
         href: "/services",
         dropdown: [
-            { title: "Web Platforms", href: "/services/web", description: "Mission-critical applications" },
-            { title: "Mobile Ecosystems", href: "/services/mobile", description: "iOS & Android delivery" },
-            { title: "AI & Analytics", href: "/services/ai", description: "Autonomous capability suites" },
-            { title: "Cloud Systems", href: "/services/cloud", description: "Resilient infrastructure" },
-            { title: "Digital Marketing", href: "/services/marketing", description: "Strategic institutional scale" }
+            { title: "Web Platforms", href: "/services/web", description: "Portals, dashboards & apps" },
+            { title: "Mobile Apps", href: "/services/mobile", description: "iOS & Android development" },
+            { title: "AI & Automation", href: "/services/ai", description: "ML models & process automation" },
+            { title: "Cloud & Infrastructure", href: "/services/cloud", description: "AWS/GCP migration & ops" },
+            { title: "Campus ERP", href: "/services/marketing", description: "End-to-end digitization" }
         ]
     },
     {
-        name: "Impact",
+        name: "Case Studies",
         href: "/case-studies",
         dropdown: [
-            { title: "All Case Studies", href: "/case-studies", description: "Institutionalized results" },
-            { title: "Strategic Growth", href: "/services/marketing", description: "Digital reach at scale" },
-            { title: "Systemic Impact", href: "/services/automation", description: "Programmatic operations" }
+            { title: "All Case Studies", href: "/case-studies", description: "Real results, documented" },
+            { title: "Universities", href: "/case-studies", description: "Campus system deployments" },
+            { title: "Enterprises", href: "/case-studies", description: "Operations & automation" }
         ]
     },
     {
-        name: "Sectors",
-        href: "/#sectors",
-        dropdown: [
-            { title: "Academic Programs", href: "/case-studies", description: "Higher education focus" },
-            { title: "Enterprise Systems", href: "/services/web", description: "Corporate transformation" },
-            { title: "Public Sector", href: "/about", description: "Government initiatives" }
-        ]
-    },
-    {
-        name: "Firm",
+        name: "About",
         href: "/about",
         dropdown: [
-            { title: "Philosophy", href: "/about", description: "Our institutional DNA" },
-            { title: "Methodology", href: "/#approach", description: "The RMJ IT approach" },
-            { title: "Engagement", href: "/contact", description: "Initiate intervention" },
-            { title: "Privacy & Terms", href: "/privacy", description: "Legal & compliance" }
+            { title: "Our Story", href: "/about", description: "Why we built RMJ IT" },
+            { title: "How We Work", href: "/#approach", description: "6-phase delivery process" },
+            { title: "Contact", href: "/contact", description: "Start a project" },
+            { title: "Legal", href: "/privacy", description: "Privacy & terms" }
         ]
     },
 ];
@@ -55,35 +46,23 @@ export default function Navbar() {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollY = useRef(0);
-    const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
 
-            // Clear any existing timeout
-            if (scrollTimeout.current) {
-                clearTimeout(scrollTimeout.current);
-            }
+            // Determine if scrolling down
+            const isScrollingDown = currentScrollY > lastScrollY.current;
 
+            // Only toggle visibility if scrolled past 50px
             if (currentScrollY > 50) {
-                // Hide immediately when scrolling down
-                if (currentScrollY > lastScrollY.current && !isAtBottom) {
+                if (isScrollingDown) {
                     setIsVisible(false);
+                } else {
+                    setIsVisible(true);
                 }
-                // Set a timeout to show the navbar after scrolling stops
-                scrollTimeout.current = setTimeout(() => {
-                    if (!isAtBottom) {
-                        setIsVisible(true);
-                    }
-                }, 200); // Show after 200ms of no scrolling
             } else {
-                setIsVisible(true); // Always show at top
-            }
-
-            if (isAtBottom) {
-                setIsVisible(false); // Still hide at bottom
+                setIsVisible(true);
             }
 
             lastScrollY.current = currentScrollY;
@@ -91,12 +70,7 @@ export default function Navbar() {
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            if (scrollTimeout.current) {
-                clearTimeout(scrollTimeout.current);
-            }
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
@@ -188,9 +162,10 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-6 pointer-events-auto">
                 <Link
                     href="/contact"
+                    id="nav-cta"
                     className="px-6 py-3 bg-[#1a1a1a] text-white text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-brand hover:scale-105 transition-all duration-300 shadow-xl"
                 >
-                    Partner
+                    Get Free Audit
                 </Link>
             </div>
 

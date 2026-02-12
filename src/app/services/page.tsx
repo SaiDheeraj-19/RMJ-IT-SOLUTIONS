@@ -6,27 +6,33 @@ import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import HorizontalLine from "@/components/ui/HorizontalLine";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const capabilitySuites = [
     {
-        title: "Enterprise Platform Engineering",
-        desc: "Convert legacy technological silos into high-performance web ecosystems. We architect platforms for universities and enterprises that require 60% reduction in operational overhead and sub-second latency for global-scale user bases.",
-        points: ["Scalable Architecture Consolidations", "Legacy-to-Cloud Modernization", "High-Availability Node Cluster Design", "SOC2/ISO Compliance Frameworks"]
+        title: "Web Applications & Portals",
+        result: "Replaced 5 separate tools with 1 integrated platform for a university with 8,000 students.",
+        desc: "We build student portals, admin dashboards, and public-facing platforms that handle 10K+ concurrent users. If your current systems are slow, fragmented, or require manual data transfers between tools — this is what we fix.",
+        points: ["React / Next.js frontends", "PostgreSQL with REST & GraphQL APIs", "Role-based access & SSO", "Sub-200ms response times at scale"]
     },
     {
-        title: "National-Scale Mobile Architecture",
-        desc: "Delivering biometric-secure, offline-first mobile applications for field operations and student lifecycles. Our apps maintain 98.9% crash-free sessions across millions of daily active users.",
-        points: ["Biometric Access Controls", "Offline-First Operational Sync", "Multi-Tenant Deployment Structures", "API-Driven Engagement Models"]
+        title: "Mobile Apps (iOS & Android)",
+        result: "80% reduction in paper-based workflows within 60 days of launch.",
+        desc: "Campus navigation, attendance tracking, and citizen-service apps that work offline. Our apps maintain 98.9% crash-free sessions and are designed for environments with inconsistent connectivity.",
+        points: ["React Native for cross-platform", "Offline-first data sync", "Biometric authentication", "Push notifications & engagement"]
     },
     {
-        title: "Institutional OS (Digital Campus)",
-        desc: "A programmable operating system for large-scale institutions. Automate administrative records, financial reconciliation, and student recruitment to reduce processing cycles from days to minutes.",
-        points: ["Real-time Academic Sync", "Automated Recruitment Funnels", "Predictive Analytics Forecasts", "Governance & Audit Transparency"]
+        title: "Campus ERP & Digital Operations",
+        result: "One university saved 400+ staff hours per month after deployment.",
+        desc: "End-to-end campus digitization: admissions, fee management, timetable automation, and examination workflows. We replace Excel-based operations with real-time integrated systems.",
+        points: ["Complete student lifecycle management", "Automated fee reconciliation", "Timetable & exam scheduling", "Multi-campus deployment support"]
     },
     {
-        title: "AI & Autonomous Operations",
-        desc: "Deploying predictive models to identify operational bottlenecks before they occur. From dropout risk forecasting in academics to pattern-based security threats in finance.",
-        points: ["Natural Language Support Blocks", "Predictive Retention Modeling", "Fraud & Threat Recognition", "Automated Resource Allocation"]
+        title: "AI & Process Automation",
+        result: "Document verification that took 3 weeks now runs in 4 hours (99.2% accuracy).",
+        desc: "Custom ML models for document processing, predictive analytics, and workflow automation. We build solutions tailored to institutional data — not generic SaaS tools.",
+        points: ["OCR & document processing pipelines", "Predictive analytics dashboards", "Automated grading & evaluation", "Natural language support systems"]
     }
 ];
 
@@ -35,25 +41,30 @@ export default function ServicesPage() {
         <main className="min-h-screen bg-[#f5f5f5]">
             <Navbar />
 
-            <section className="min-h-[80vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20">
+            <section className="min-h-[70vh] pt-40 flex flex-col justify-end pb-24 px-10 md:px-20">
                 <div className="max-w-[1400px] mx-auto w-full">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
-                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-12 block">
-                            The Expertise
+                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
+                            Our Services
                         </span>
-                        <div className="mb-16">
+                        <div className="mb-12">
                             <TextReveal
                                 as="h1"
-                                text="Capability Suites."
-                                className="text-[clamp(4rem,12vw,10rem)] font-display leading-[0.9] tracking-tighter font-bold"
+                                text="What We Build."
+                                className="text-[clamp(4rem,12vw,9rem)] font-display leading-[0.9] tracking-tighter font-bold"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(4rem,12vw,10rem)] font-display italic text-brand leading-none font-bold">Institutionalized.</span>
+                            <span className="text-[clamp(2rem,5vw,3.5rem)] font-display text-[#606060] leading-none block mt-4 font-medium">
+                                And the results we&apos;ve delivered.
+                            </span>
                         </div>
+                        <p className="text-xl text-[#505050] max-w-2xl leading-relaxed">
+                            Every project starts with a free technical audit. We scope it, estimate it, and give you a fixed quote — before any commitment.
+                        </p>
                     </motion.div>
                 </div>
             </section>
@@ -69,10 +80,15 @@ export default function ServicesPage() {
                             <TextReveal
                                 as="h2"
                                 text={suite.title}
-                                className="text-5xl font-display mb-12 leading-tight font-bold text-[#1a1a1a]"
+                                className="text-4xl md:text-5xl font-display mb-8 leading-tight font-bold text-[#1a1a1a]"
                             />
-                            <HorizontalLine className="mb-12 opacity-30" />
-                            <p className="text-xl font-normal leading-relaxed text-[#505050]">
+                            {/* Result callout */}
+                            <div className="mb-8 p-6 bg-brand/5 border-l-4 border-brand rounded-r-xl">
+                                <span className="text-[10px] uppercase tracking-widest font-bold text-brand block mb-2">Real Result</span>
+                                <p className="text-lg font-medium text-[#1a1a1a] leading-relaxed">{suite.result}</p>
+                            </div>
+                            <HorizontalLine className="mb-8 opacity-30" />
+                            <p className="text-lg font-normal leading-relaxed text-[#505050]">
                                 {suite.desc}
                             </p>
                         </div>
@@ -95,6 +111,23 @@ export default function ServicesPage() {
                     </div>
                 </Section>
             ))}
+
+            {/* Services CTA */}
+            <Section className="bg-gradient-to-b from-[#f0ebe3] to-[#e8e0d4] text-center">
+                <div className="max-w-2xl mx-auto">
+                    <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">Next Step</span>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight text-[#1a1a1a]">
+                        Not sure which service you need?
+                    </h2>
+                    <p className="text-xl text-[#606060] mb-12 leading-relaxed">
+                        Start with a free audit. We&apos;ll assess your current systems and recommend the right approach — no commitment required.
+                    </p>
+                    <Link href="/contact" id="services-page-cta" className="group inline-flex items-center gap-3 px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-sm uppercase tracking-widest font-black hover:bg-brand transition-all duration-300 shadow-2xl">
+                        Request Free Audit
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </div>
+            </Section>
 
             <Footer />
         </main>

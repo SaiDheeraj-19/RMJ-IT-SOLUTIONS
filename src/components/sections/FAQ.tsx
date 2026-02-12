@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import TextReveal from "@/components/animations/TextReveal";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations/MotionEffects";
 
 const faqs = [
     {
@@ -40,53 +41,73 @@ export default function FAQ() {
         <Section className="bg-white">
             <div className="max-w-[1000px] mx-auto">
                 <div className="mb-20">
-                    <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
-                        Common Questions
-                    </span>
+                    <FadeIn>
+                        <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
+                            Common Questions
+                        </span>
+                    </FadeIn>
                     <TextReveal
                         as="h2"
                         text="Answers before you ask."
                         className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-[#1a1a1a] tracking-tight"
                     />
-                    <p className="mt-6 text-xl text-[#606060] max-w-xl">
-                        We&apos;ve compiled the questions we hear most from IT directors, CTOs, and procurement teams evaluating technical partners.
-                    </p>
+                    <FadeIn delay={0.3}>
+                        <p className="mt-6 text-xl text-[#606060] max-w-xl">
+                            We&apos;ve compiled the questions we hear most from IT directors, CTOs, and procurement teams evaluating technical partners.
+                        </p>
+                    </FadeIn>
                 </div>
 
-                <div className="space-y-4">
+                <StaggerChildren staggerDelay={0.08} className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="border-b border-stone-200">
-                            <button
-                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full py-8 flex items-center justify-between text-left group"
+                        <StaggerItem key={index}>
+                            <motion.div
+                                className="border-b border-stone-200 group"
+                                whileHover={{ x: 4 }}
+                                transition={{ duration: 0.3 }}
                             >
-                                <span className={`text-xl font-display font-bold transition-colors duration-300 pr-8 ${openIndex === index ? 'text-brand' : 'text-[#1a1a1a]'}`}>
-                                    {faq.question}
-                                </span>
-                                {openIndex === index ? (
-                                    <Minus size={20} className="text-brand shrink-0" />
-                                ) : (
-                                    <Plus size={20} className="text-stone-300 group-hover:text-brand transition-colors shrink-0" />
-                                )}
-                            </button>
-                            <AnimatePresence>
-                                {openIndex === index && (
+                                <button
+                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                    className="w-full py-8 flex items-center justify-between text-left"
+                                >
+                                    <span className={`text-xl font-display font-bold transition-colors duration-300 pr-8 ${openIndex === index ? 'text-brand' : 'text-[#1a1a1a] group-hover:text-brand/70'}`}>
+                                        {faq.question}
+                                    </span>
                                     <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.4, ease: "circOut" }}
-                                        className="overflow-hidden"
+                                        animate={{ rotate: openIndex === index ? 180 : 0 }}
+                                        transition={{ duration: 0.3 }}
                                     >
-                                        <p className="text-[#606060] text-lg leading-relaxed pb-8 max-w-2xl">
-                                            {faq.answer}
-                                        </p>
+                                        {openIndex === index ? (
+                                            <Minus size={20} className="text-brand shrink-0" />
+                                        ) : (
+                                            <Plus size={20} className="text-stone-300 group-hover:text-brand transition-colors shrink-0" />
+                                        )}
                                     </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
+                                </button>
+                                <AnimatePresence>
+                                    {openIndex === index && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                            className="overflow-hidden"
+                                        >
+                                            <motion.p
+                                                initial={{ y: 10, opacity: 0 }}
+                                                animate={{ y: 0, opacity: 1 }}
+                                                transition={{ duration: 0.4, delay: 0.1 }}
+                                                className="text-[#606060] text-lg leading-relaxed pb-8 max-w-2xl"
+                                            >
+                                                {faq.answer}
+                                            </motion.p>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerChildren>
             </div>
         </Section>
     );

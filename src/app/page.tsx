@@ -9,6 +9,7 @@ import SectorsImpact from "@/components/sections/SectorsImpact";
 import WhyRMJIT from "@/components/sections/WhyRMJIT";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
+import StickyCTA from "@/components/ui/StickyCTA";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
+      <StickyCTA />
     </main>
   );
 }

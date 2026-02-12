@@ -2,20 +2,20 @@
 
 import { motion } from "framer-motion";
 
-const row1 = [
-    "Higher Education Boards",
-    "Fortune 500 Enterprises",
-    "Public Sector Initiatives",
-    "Digital Campus Networks",
-    "National Research Labs",
+const clientTypes = [
+    "University Campus Systems",
+    "Government Citizen Portals",
+    "Enterprise Operations Platforms",
+    "Multi-Campus ERP Deployments",
+    "Research Institution Networks",
 ];
 
-const row2 = [
-    "99.9% Uptime Guarantee",
-    "ISO 27001 Certified Ops",
-    "10M+ Users Supported",
-    "Zero-Downtime Migration",
-    "Global Security Standards",
+const outcomes = [
+    "10,000+ Concurrent Users Handled",
+    "Sub-200ms Response Times",
+    "Zero-Downtime Migrations",
+    "SOC2-Aligned Security",
+    "6-Phase Gated Delivery",
 ];
 
 export default function SocialProof() {
@@ -37,7 +37,7 @@ export default function SocialProof() {
             </div>
 
             <div className="flex flex-col gap-8 md:gap-12">
-                {/* Row 1 - Left */}
+                {/* Row 1 - Client Types */}
                 <div className="flex overflow-hidden">
                     <motion.div
                         initial={{ x: 0 }}
@@ -45,7 +45,7 @@ export default function SocialProof() {
                         transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
                         className="flex whitespace-nowrap gap-12 md:gap-32 items-center"
                     >
-                        {[...row1, ...row1].map((partner, i) => (
+                        {[...clientTypes, ...clientTypes].map((partner, i) => (
                             <span
                                 key={i}
                                 className="text-[4vw] md:text-[5vw] font-display font-black uppercase tracking-tighter text-[#1a1a1a]"
@@ -56,7 +56,7 @@ export default function SocialProof() {
                     </motion.div>
                 </div>
 
-                {/* Row 2 - Right */}
+                {/* Row 2 - Outcomes */}
                 <div className="flex overflow-hidden">
                     <motion.div
                         initial={{ x: "-50%" }}
@@ -64,7 +64,7 @@ export default function SocialProof() {
                         transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
                         className="flex whitespace-nowrap gap-12 md:gap-32 items-center"
                     >
-                        {[...row2, ...row2].map((partner, i) => (
+                        {[...outcomes, ...outcomes].map((partner, i) => (
                             <span
                                 key={i}
                                 className="text-[4vw] md:text-[5vw] font-display font-black uppercase tracking-tighter text-[#1a1a1a]/40"
