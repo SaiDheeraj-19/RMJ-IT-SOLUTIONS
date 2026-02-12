@@ -12,28 +12,25 @@ const navLinks = [
         name: "Services",
         href: "/services",
         dropdown: [
-            { title: "Web Platforms", href: "/services/web", description: "Portals, dashboards & apps" },
-            { title: "Mobile Apps", href: "/services/mobile", description: "iOS & Android development" },
-            { title: "AI & Automation", href: "/services/ai", description: "ML models & process automation" },
-            { title: "Cloud & Infrastructure", href: "/services/cloud", description: "AWS/GCP migration & ops" },
-            { title: "Campus ERP", href: "/services/marketing", description: "End-to-end digitization" }
+            { title: "Digital Systems Engineering", href: "/services/erp", description: "ERP & campus management platforms" },
+            { title: "Cloud & Infrastructure", href: "/services/cloud", description: "AWS/GCP architecture & migration" },
+            { title: "Custom Web Applications", href: "/services/web", description: "High-performance specialized apps" },
+            { title: "Security & Performance", href: "/services/security", description: "System audits & optimization" }
         ]
     },
     {
-        name: "Case Studies",
-        href: "/case-studies",
+        name: "Process",
+        href: "/#approach",
         dropdown: [
-            { title: "All Case Studies", href: "/case-studies", description: "Real results, documented" },
-            { title: "Universities", href: "/case-studies", description: "Campus system deployments" },
-            { title: "Enterprises", href: "/case-studies", description: "Operations & automation" }
+            { title: "How We Work", href: "/#approach", description: "6-phase delivery framework" },
+            { title: "Case Studies", href: "/case-studies", description: "Real results, documented" }
         ]
     },
     {
         name: "About",
         href: "/about",
         dropdown: [
-            { title: "Our Story", href: "/about", description: "Why we built RMJ IT" },
-            { title: "How We Work", href: "/#approach", description: "6-phase delivery process" },
+            { title: "Our Mission", href: "/about", description: "Why we built RMJ IT" },
             { title: "Contact", href: "/contact", description: "Start a project" },
             { title: "Legal", href: "/privacy", description: "Privacy & terms" }
         ]
@@ -165,7 +162,7 @@ export default function Navbar() {
                     id="nav-cta"
                     className="px-6 py-3 bg-[#1a1a1a] text-white text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-brand hover:scale-105 transition-all duration-300 shadow-xl"
                 >
-                    Get Free Audit
+                    Technical Consultation
                 </Link>
             </div>
 
@@ -224,7 +221,7 @@ export default function Navbar() {
                                 className="text-xs uppercase tracking-[0.2em] font-bold bg-white text-black px-12 py-4 rounded-full"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Start Project
+                                Technical Consultation
                             </Link>
                         </motion.div>
                     </motion.div>

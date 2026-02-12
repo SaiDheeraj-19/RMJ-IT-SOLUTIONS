@@ -144,14 +144,14 @@ export default function AboutPage() {
                         <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-display font-bold text-white mb-4 tracking-tight">
                             Ready to modernize your systems?
                         </h2>
-                        <p className="text-white/70 text-xl mb-12 max-w-lg mx-auto">
-                            Start with a free 14-day Technical Audit. We&apos;ll assess your current infrastructure and deliver a prioritized roadmap.
+                        <p className="text-white/70 text-xl mb-12 max-w-lg mx-auto leading-relaxed">
+                            Start with a Technical Strategy Call. We&apos;ll assess your current infrastructure bottlenecks and provide an engineering roadmap.
                         </p>
                         <Link
                             href="/contact"
                             className="inline-block px-12 py-6 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-black rounded-full hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 shadow-2xl"
                         >
-                            Request a Free Audit
+                            Request a Consultation
                         </Link>
                     </motion.div>
                 </div>

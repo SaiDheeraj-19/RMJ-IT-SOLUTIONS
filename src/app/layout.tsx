@@ -22,17 +22,17 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RMJ IT Solutions — Web Apps, Mobile Apps & Campus ERP for Institutions",
-  description: "We build web platforms, mobile apps, and campus ERP systems for universities, government agencies, and enterprises. 15+ institutions served. Free 14-day technical audit. Based in Kurnool, Andhra Pradesh.",
-  keywords: ["IT company Kurnool", "campus ERP development", "university web portal", "mobile app development India", "cloud migration services", "AI automation India", "digital campus solutions", "student portal development", "enterprise web application", "government IT services"],
+  title: "RMJ IT Solutions — Engineering Digital Infrastructure That Scales",
+  description: "We architect and build digital systems for educational institutions, mid-size enterprises, and startups. Specialized in ERP, Cloud Infrastructure, and Custom Web Applications. Based in Kurnool, Andhra Pradesh.",
+  keywords: ["Digital Infrastructure Engineering", "Campus ERP development", "Custom Web Applications", "Cloud Infrastructure Setup India", "IT Consulting Kurnool", "Scalable Software Systems"],
   authors: [{ name: "RMJ IT Solutions Pvt Ltd" }],
   robots: "index, follow",
   alternates: {
     canonical: "https://rmjit.com",
   },
   openGraph: {
-    title: "RMJ IT Solutions — Web Apps, Mobile Apps & Campus ERP",
-    description: "15+ institutions trust us to build and operate their critical technology. Free 14-day audit. No lock-in contracts.",
+    title: "RMJ IT Solutions — Engineering Digital Infrastructure That Scales",
+    description: "Architecting scalable digital systems for institutions and growth-focused businesses. No fluff, just engineering.",
     type: "website",
     url: "https://rmjit.com",
     siteName: "RMJ IT Solutions",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RMJ IT Solutions — Campus Technology That Works",
-    description: "We build web platforms, mobile apps, and campus ERP systems. 15+ institutions. Free 14-day audit.",
+    title: "RMJ IT Solutions — Digital Systems Engineering",
+    description: "We replace fragmented tools with engineered infrastructure designed for performance and scalability.",
   },
   icons: {
     icon: "/icon.png",

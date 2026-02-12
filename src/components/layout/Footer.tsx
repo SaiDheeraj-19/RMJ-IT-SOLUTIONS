@@ -84,9 +84,9 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full overflow-hidden">
                     {/* Massive Watermark Text */}
-                    <span className="font-display text-[13.5vw] font-bold text-[#e5e5e5] leading-[0.8] tracking-tighter uppercase select-none block text-center pointer-events-none translate-y-4">
+                    <span className="font-display text-[12vw] font-bold text-[#e5e5e5] leading-[0.8] tracking-tighter uppercase select-none block text-center pointer-events-none translate-y-4 whitespace-nowrap">
                         RMJ IT SOLUTIONS .
                     </span>
 

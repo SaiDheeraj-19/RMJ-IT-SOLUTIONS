@@ -71,14 +71,14 @@ export default function CaseStudiesPage() {
                         <div className="mb-16">
                             <TextReveal
                                 as="h1"
-                                text="Measurable Results."
+                                text="System Transformations."
                                 className="text-[clamp(4rem,10vw,8rem)] font-display leading-[0.9] tracking-tighter font-bold"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Verified Outcomes.</span>
+                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Engineering Proofs.</span>
                         </div>
                         <p className="text-xl text-[#606060] max-w-2xl leading-relaxed">
-                            Each case study below follows a documented structure: the client&apos;s specific problem, our technical solution, the stack used, and the measurable business impact delivered.
+                            We solve complex organizational problems through specialized digital infrastructure. Each proof below documents the architectural approach, technical stack, and system impact.
                         </p>
                     </motion.div>
                 </div>
@@ -130,10 +130,7 @@ export default function CaseStudiesPage() {
                                 ))}
                             </div>
 
-                            <div className="bg-stone-50 rounded-2xl p-10 border border-stone-100">
-                                <p className="text-xl text-[#505050] italic leading-relaxed mb-4">{item.testimonial}</p>
-                                <span className="text-sm font-bold text-brand">{item.testimonialAuthor}</span>
-                            </div>
+
                         </div>
                     </div>
                 </Section>
@@ -149,16 +146,16 @@ export default function CaseStudiesPage() {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-display font-bold text-white mb-4 tracking-tight">
-                            Have a similar challenge?
+                            Solving a Complex Systems Problem?
                         </h2>
-                        <p className="text-white/70 text-xl mb-12 max-w-lg mx-auto">
-                            We&apos;ll assess your current systems and deliver a technical roadmap within 14 days — free of charge.
+                        <p className="text-white/70 text-xl mb-12 max-w-lg mx-auto leading-relaxed">
+                            If you&apos;re dealing with tech debt, fragmentation, or scalability issues, let&apos;s look at your architecture.
                         </p>
                         <Link
                             href="/contact"
                             className="inline-block px-12 py-6 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-black rounded-full hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 shadow-2xl"
                         >
-                            Request a Free Technical Audit
+                            Request a Technical Consultation
                         </Link>
                     </motion.div>
                 </div>

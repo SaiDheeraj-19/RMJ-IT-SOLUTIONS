@@ -70,10 +70,10 @@ export default function ContactPage() {
                                 transition={{ delay: 0.4 }}
                             >
                                 <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-[#1a1a1a] leading-tight mb-6 tracking-tighter">
-                                    Audit Request <br /> <span className="italic text-brand">Received.</span>
+                                    Consultation Request <br /> <span className="italic text-brand">Received.</span>
                                 </h2>
                                 <p className="text-stone-500 text-lg md:text-xl max-w-md mx-auto mb-12 leading-relaxed">
-                                    Your institutional requirements have been received. Our architects will prepare your technical roadmap and reach out shortly.
+                                    Your institutional requirements have been received. Our senior engineers will prepare for the technical strategy call and reach out shortly.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -115,14 +115,14 @@ export default function ContactPage() {
                         <div className="mb-8">
                             <TextReveal
                                 as="h1"
-                                text="Start with a Free"
+                                text="Start with a"
                                 className="text-[clamp(4rem,10vw,8rem)] font-display leading-[0.9] tracking-tighter font-bold"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Technical Audit.</span>
+                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Strategy Consultation.</span>
                         </div>
                         <p className="text-xl text-[#606060] max-w-xl leading-relaxed">
-                            Tell us about your system and we&apos;ll deliver a written assessment with a prioritized roadmap within 14 days — at no cost.
+                            Tell us about your infrastructure goals. We&apos;ll schedule a deep-dive call to assess bottlenecks and provide a technical roadmap for your organization.
                         </p>
                     </motion.div>
                 </div>
@@ -170,13 +170,12 @@ export default function ContactPage() {
                                         name="service"
                                         className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display text-[#606060] appearance-none"
                                     >
-                                        <option value="">Select a service</option>
-                                        <option value="web">Web Application Development</option>
-                                        <option value="mobile">Mobile App Development</option>
-                                        <option value="erp">Digital Campus / ERP Systems</option>
-                                        <option value="ai">AI & Process Automation</option>
-                                        <option value="cloud">Cloud Infrastructure & IT Consulting</option>
-                                        <option value="audit">Technical Audit Only</option>
+                                        <option value="">Select a service focus</option>
+                                        <option value="digital-engineering">Digital Systems Engineering</option>
+                                        <option value="cloud-infrastructure">Cloud & Infrastructure Setup</option>
+                                        <option value="custom-web">Custom Web Applications</option>
+                                        <option value="security-optimization">Security & Performance Optimization</option>
+                                        <option value="strategy-call">General Strategy Consultation</option>
                                     </select>
                                 </div>
                             </div>
@@ -206,7 +205,7 @@ export default function ContactPage() {
                                 type="submit"
                                 className="px-16 py-8 bg-[#1a1a1a] text-stone-50 rounded-full text-xs uppercase tracking-[0.4em] font-black hover:bg-brand transition-all shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {isSubmitting ? "Submitting..." : "Request Free Audit"}
+                                {isSubmitting ? "Submitting..." : "Request Technical Consultation"}
                             </button>
                         </form>
                     </div>
