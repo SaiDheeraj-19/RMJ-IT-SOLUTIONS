@@ -7,127 +7,169 @@ import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import HorizontalLine from "@/components/ui/HorizontalLine";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle, Database, ShieldCheck, Zap } from "lucide-react";
 
 const capabilitySuites = [
     {
-        title: "Web Applications & Portals",
+        title: "Digital Systems Engineering",
         result: "Replaced 5 separate tools with 1 integrated platform for a university with 8,000 students.",
-        desc: "We build student portals, admin dashboards, and public-facing platforms that handle 10K+ concurrent users. If your current systems are slow, fragmented, or require manual data transfers between tools — this is what we fix.",
-        points: ["React / Next.js frontends", "PostgreSQL with REST & GraphQL APIs", "Role-based access & SSO", "Sub-200ms response times at scale"]
+        desc: "We build student portals, admin dashboards, and internal platforms that handle 10K+ concurrent users. If your systems are slow or fragmented, we build the unified replacement.",
+        points: ["Scalable Architecture", "RBAC & Institutional Security", "Sub-200ms API Performance", "Technical Logic Consolidation"]
     },
     {
-        title: "Mobile Apps (iOS & Android)",
-        result: "80% reduction in paper-based workflows within 60 days of launch.",
-        desc: "Campus navigation, attendance tracking, and citizen-service apps that work offline. Our apps maintain 98.9% crash-free sessions and are designed for environments with inconsistent connectivity.",
-        points: ["React Native for cross-platform", "Offline-first data sync", "Biometric authentication", "Push notifications & engagement"]
+        title: "Cloud & Infrastructure Setup",
+        result: "Production deployment with 100% uptime recorded over 24 consecutive months.",
+        desc: "High-trust infrastructure built on AWS or GCP. We design for zero single points of failure, automated failover, and high-security VPC environments.",
+        points: ["Infrastructure as Code (Terraform)", "Automated CI/CD Pipelines", "Vulnerability Assessment", "Hardened Database Schemas"]
     },
     {
-        title: "Campus ERP & Digital Operations",
-        result: "One university saved 400+ staff hours per month after deployment.",
-        desc: "End-to-end campus digitization: admissions, fee management, timetable automation, and examination workflows. We replace Excel-based operations with real-time integrated systems.",
-        points: ["Complete student lifecycle management", "Automated fee reconciliation", "Timetable & exam scheduling", "Multi-campus deployment support"]
+        title: "Custom Web Applications",
+        result: "One enterprise saved 400+ staff hours per month through workflow automation.",
+        desc: "Focus on high-performance, secure, and interactive portals—not just static brochure sites. We use Next.js and industry-standard security protocols.",
+        points: ["Production-Ready Next.js", "Server-Side Rendering for Speed", "OWASP Top 10 Hardening", "Deep Accessibility Compliance"]
     },
     {
         title: "AI & Process Automation",
-        result: "Document verification that took 3 weeks now runs in 4 hours (99.2% accuracy).",
-        desc: "Custom ML models for document processing, predictive analytics, and workflow automation. We build solutions tailored to institutional data — not generic SaaS tools.",
-        points: ["OCR & document processing pipelines", "Predictive analytics dashboards", "Automated grading & evaluation", "Natural language support systems"]
+        result: "Verify documents in 4 hours instead of 3 weeks (99.2% verified accuracy).",
+        desc: "Custom ML models for institutional document processing, predictive analytics, and process automation. We build models on your private institutional data.",
+        points: ["Document Digitization OCR", "Predictive Lifecycle Models", "Workflow Guardrail Logic", "Private Data Inference"]
     }
 ];
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-[#f8fafc]">
+        <main className="min-h-screen bg-white text-[#0f172a]">
             <Navbar />
 
-            <section className="min-h-[70vh] pt-40 flex flex-col justify-end pb-24 px-10 md:px-20">
-                <div className="max-w-[1400px] mx-auto w-full">
+            {/* Hero Section */}
+            <section className="min-h-[80vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#f8fafc] z-0" />
+                <div className="absolute bottom-[10%] left-[-5%] w-[50vw] h-[50vw] bg-indigo-50 rounded-full blur-[150px] opacity-40 z-0" />
+
+                <div className="max-w-[1400px] mx-auto w-full relative z-10">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
-                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
-                            Our Services
+                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-12 block font-mono">
+                            {`// OUR CAPABILITIES`}
                         </span>
-                        <div className="mb-12">
+                        <div className="mb-16">
                             <TextReveal
                                 as="h1"
                                 text="What We Build."
-                                className="text-[clamp(4rem,12vw,9rem)] font-display leading-[0.9] tracking-tighter font-bold"
+                                className="text-[clamp(4rem,10vw,8rem)] font-display leading-[0.9] tracking-tighter font-bold text-slate-900"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(2rem,5vw,3.5rem)] font-display text-[#606060] leading-none block mt-4 font-medium">
-                                And the results we&apos;ve delivered.
-                            </span>
+                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-[0.9] block mt-4 font-bold tracking-tight">Engineering institutional certainty.</span>
                         </div>
-                        <p className="text-xl text-[#505050] max-w-2xl leading-relaxed">
-                            Every project starts with a Technical Strategy Call. We scope the architecture, estimate the delivery, and provide a clear roadmap — before any commitment.
+                        <p className="text-2xl text-slate-500 max-w-2xl leading-relaxed font-normal">
+                            Every project starts with a Strategic Technical Consultation. We blueprint the architecture, define the benchmarks, and provide a fixed-scope roadmap.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
+            {/* Capability Suite List */}
             {capabilitySuites.map((suite, i) => (
-                <Section key={i} className={i % 2 === 0 ? "bg-[#f1f5f9]" : "bg-white"}>
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
-                        <div className="lg:col-span-1">
-                            <HorizontalLine className="mb-12 w-12" />
-                            <span className="font-mono text-sm text-brand tracking-widest">{String(i + 1).padStart(2, '0')}</span>
-                        </div>
-                        <div className="lg:col-span-5">
-                            <TextReveal
-                                as="h2"
-                                text={suite.title}
-                                className="text-4xl md:text-5xl font-display mb-8 leading-tight font-bold text-[#1a1a1a]"
-                            />
-                            {/* Result callout */}
-                            <div className="mb-8 p-6 bg-brand/5 border-l-4 border-brand rounded-r-xl">
-                                <span className="text-[10px] uppercase tracking-widest font-bold text-brand block mb-2">Real Result</span>
-                                <p className="text-lg font-medium text-[#1a1a1a] leading-relaxed">{suite.result}</p>
+                <Section key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#f8fafc]"}>
+                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+                        {/* Numbering */}
+                        <div className="lg:col-span-1 hidden lg:block">
+                            <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-brand font-black text-sm font-mono border border-indigo-100">
+                                0{i + 1}
                             </div>
-                            <HorizontalLine className="mb-8 opacity-30" />
-                            <p className="text-lg font-normal leading-relaxed text-[#505050]">
-                                {suite.desc}
-                            </p>
                         </div>
-                        <div className="lg:col-span-1 hidden lg:block" />
-                        <div className="lg:col-span-5 grid grid-cols-1 gap-4 pt-12">
+
+                        {/* Content */}
+                        <div className="lg:col-span-6 space-y-12">
+                            <div className="space-y-6">
+                                <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight leading-tight">
+                                    {suite.title}
+                                </h2>
+                                <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                                    {suite.desc}
+                                </p>
+                            </div>
+
+                            {/* Result Callout */}
+                            <div className="p-10 bg-white border border-slate-200 rounded-[2.5rem] shadow-xl shadow-indigo-500/5 relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-8 text-brand/10 group-hover:text-brand/20 transition-colors">
+                                    <ShieldCheck className="w-12 h-12" />
+                                </div>
+                                <span className="text-[10px] uppercase tracking-[0.3em] font-black text-brand mb-6 block font-mono">
+                                    {`// PROVEN OUTCOME`}
+                                </span>
+                                <p className="text-2xl font-display font-bold text-slate-900 leading-tight tracking-tight">
+                                    {suite.result}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Technical Points */}
+                        <div className="lg:col-span-1" />
+                        <div className="lg:col-span-4 grid grid-cols-1 gap-6 pt-4">
                             {suite.points.map((point, j) => (
                                 <motion.div
                                     key={j}
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: 0.5 + j * 0.1 }}
-                                    className="flex items-center space-x-6 py-6 border-b border-stone-200"
+                                    transition={{ delay: 0.3 + j * 0.1 }}
+                                    className="flex items-center gap-6 py-6 border-b border-slate-200 group"
                                 >
-                                    <span className="text-brand font-mono text-xs">+</span>
-                                    <span className="text-xs uppercase tracking-[0.3em] font-black text-[#1a1a1a]">{point}</span>
+                                    <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-all duration-500">
+                                        {j === 0 ? <Database size={16} /> : j === 1 ? <ShieldCheck size={16} /> : j === 2 ? <Zap size={16} /> : <CheckCircle size={16} />}
+                                    </div>
+                                    <span className="text-xs uppercase tracking-[0.2em] font-black text-slate-800 font-mono">{point}</span>
                                 </motion.div>
                             ))}
+
+                            <div className="pt-8">
+                                <Link
+                                    href="/contact"
+                                    className="text-brand font-black uppercase text-[10px] tracking-widest flex items-center gap-3 hover:gap-6 transition-all"
+                                >
+                                    REQUEST SPECIFIC CASE STUDY <ArrowRight size={14} />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </Section>
             ))}
 
-            {/* Services CTA */}
-            <Section className="bg-[#fafaf9] text-center border-t border-stone-100">
-                <div className="max-w-2xl mx-auto">
-                    <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">Next Step</span>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight text-[#1a1a1a]">
-                        Not sure which service you need?
-                    </h2>
-                    <p className="text-xl text-[#606060] mb-12 leading-relaxed">
-                        Start with a Technical Consultation. We&apos;ll assess your current systems and recommend the right approach — no commitment required.
-                    </p>
-                    <Link href="/contact" id="services-page-cta" className="group inline-flex items-center gap-3 px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-sm uppercase tracking-widest font-black hover:bg-brand transition-all duration-300 shadow-2xl">
-                        Request Consultation
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+            {/* Bottom CTA */}
+            <section className="bg-white py-40 border-t border-slate-100 relative overflow-hidden">
+                {/* Architectural Grid */}
+                <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+                    style={{
+                        backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`,
+                        backgroundSize: '40px 40px',
+                    }}
+                />
+
+                <div className="max-w-[1400px] mx-auto text-center px-10 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-display font-bold text-slate-900 mb-8 leading-[0.95] tracking-tighter">
+                            Unsure where <br /> <span className="text-brand italic">to begin?</span>
+                        </h2>
+                        <p className="text-xl text-slate-500 mb-12 max-w-xl mx-auto font-medium">
+                            Start with a Strategic Technical Call. We&apos;ll assess your bottlenecks, audit your stack, and deliver an engineering roadmap.
+                        </p>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-4 px-12 py-6 bg-slate-900 text-white text-xs uppercase tracking-[0.2em] font-black rounded-full hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10"
+                        >
+                            Schedule Consultation <ArrowRight size={16} />
+                        </Link>
+                    </motion.div>
                 </div>
-            </Section>
+            </section>
 
             <Footer />
         </main>

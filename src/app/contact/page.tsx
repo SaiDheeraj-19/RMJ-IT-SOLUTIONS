@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import { useState } from "react";
 import { sendContactEmail } from "@/app/actions/contact";
-import { Check, ArrowRight, X } from "lucide-react";
+import { Check, ArrowRight, X, ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -25,15 +25,14 @@ export default function ContactPage() {
             setIsSubmitting(false);
         } else {
             setStatus({ type: 'success', message: "Engagement initiated successfully." });
-            // Don't reset isSubmitting yet to keep the success screen active
         }
     }
 
     return (
-        <main className="min-h-screen bg-[#f8fafc]">
+        <main className="min-h-screen bg-white text-[#0f172a]">
             <Navbar />
 
-            {/* Full Screen Success Overlay */}
+            {/* Success Overlay */}
             <AnimatePresence>
                 {status?.type === 'success' && (
                     <motion.div
@@ -49,183 +48,200 @@ export default function ContactPage() {
                                 const form = document.getElementById('contact-form') as HTMLFormElement;
                                 form?.reset();
                             }}
-                            className="absolute top-10 right-10 text-stone-300 hover:text-[#1a1a1a] transition-colors"
+                            className="absolute top-10 right-10 text-slate-300 hover:text-brand transition-colors"
                         >
-                            <X size={32} strokeWidth={1} />
+                            <X size={32} strokeWidth={1.5} />
                         </button>
 
                         <div className="max-w-2xl w-full text-center">
                             <motion.div
-                                initial={{ scale: 0, rotate: -45 }}
-                                animate={{ scale: 1, rotate: 0 }}
-                                transition={{ type: "spring", damping: 12, stiffness: 100, delay: 0.2 }}
-                                className="w-24 h-24 bg-brand rounded-full flex items-center justify-center mx-auto mb-12 shadow-[0_20px_40px_rgba(var(--brand-rgb),0.2)]"
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: "spring", damping: 15, stiffness: 100, delay: 0.2 }}
+                                className="w-24 h-24 bg-brand rounded-full flex items-center justify-center mx-auto mb-12 shadow-2xl shadow-brand/30"
                             >
                                 <Check size={48} className="text-white" strokeWidth={3} />
                             </motion.div>
 
-                            <motion.div
+                            <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
+                                className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-slate-900 leading-tight mb-6 tracking-tighter"
                             >
-                                <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-[#1a1a1a] leading-tight mb-6 tracking-tighter">
-                                    Consultation Request <br /> <span className="italic text-brand">Received.</span>
-                                </h2>
-                                <p className="text-stone-500 text-lg md:text-xl max-w-md mx-auto mb-12 leading-relaxed">
-                                    Your institutional requirements have been received. Our senior engineers will prepare for the technical strategy call and reach out shortly.
-                                </p>
+                                Consultation Request <br /> <span className="italic text-brand">Received.</span>
+                            </motion.h2>
 
-                                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                                    <Link
-                                        href="/"
-                                        className="group flex items-center gap-3 text-[#1a1a1a] text-xs uppercase tracking-[0.3em] font-black"
-                                    >
-                                        Return Home
-                                        <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform opacity-40 text-brand" />
-                                    </Link>
-                                    <button
-                                        onClick={() => {
-                                            setStatus(null);
-                                            setIsSubmitting(false);
-                                            const form = document.getElementById('contact-form') as HTMLFormElement;
-                                            form?.reset();
-                                        }}
-                                        className="px-8 py-4 border border-stone-200 rounded-full text-stone-500 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-[#1a1a1a] hover:text-white transition-all hover:border-[#1a1a1a]"
-                                    >
-                                        Send another
-                                    </button>
-                                </div>
-                            </motion.div>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
+                                className="text-slate-500 text-lg max-w-md mx-auto mb-12 leading-relaxed"
+                            >
+                                Your institutional requirements have been received. Our architecture team will review and contact you within 24 business hours.
+                            </motion.p>
+
+                            <Link
+                                href="/"
+                                className="inline-flex items-center gap-4 bg-slate-900 text-white px-10 py-5 rounded-full text-xs uppercase tracking-widest font-black hover:bg-brand transition-all duration-500"
+                            >
+                                Return Home <ArrowRight size={16} />
+                            </Link>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            <section className="min-h-[80vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20">
-                <div className="max-w-[1400px] mx-auto w-full">
+            {/* Hero Section */}
+            <section className="min-h-[70vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#f8fafc] z-0" />
+                <div className="absolute top-[20%] right-[-10%] w-[50vw] h-[50vw] bg-indigo-50 rounded-full blur-[150px] opacity-60 z-0" />
+
+                <div className="max-w-[1400px] mx-auto w-full relative z-10">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
-                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-12 block">
-                            Contact Us
+                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-12 block font-mono">
+                            {`// START THE CONVERSATION`}
                         </span>
-                        <div className="mb-8">
+                        <div className="mb-12">
                             <TextReveal
                                 as="h1"
-                                text="Start with a"
-                                className="text-[clamp(4rem,10vw,8rem)] font-display leading-[0.9] tracking-tighter font-bold"
+                                text="Initiate Structural"
+                                className="text-[clamp(3.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tighter font-bold text-slate-900"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Strategy Consultation.</span>
+                            <span className="text-[clamp(3.5rem,8vw,7rem)] font-display italic text-brand leading-[0.9] block mt-4 font-bold tracking-tight">Strategy Consultation.</span>
                         </div>
-                        <p className="text-xl text-[#606060] max-w-xl leading-relaxed">
-                            Tell us about your infrastructure goals. We&apos;ll schedule a deep-dive call to assess bottlenecks and provide a technical roadmap for your organization.
+                        <p className="text-2xl text-slate-500 max-w-2xl leading-relaxed font-normal">
+                            Map your organizational goals to a fixed engineering roadmap. No fluff, just architecture.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            <Section className="bg-[#efefef]">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+            {/* Form Section */}
+            <Section className="bg-white border-y border-slate-100 py-40">
+                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
                     <div className="lg:col-span-7">
-                        <form id="contact-form" action={handleSubmit} className="space-y-12">
+                        <form id="contact-form" action={handleSubmit} className="space-y-16">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Full Name</label>
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-slate-400 font-mono">Full Name</label>
                                     <input
                                         name="name"
                                         required
                                         type="text"
-                                        placeholder="Your name"
-                                        className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display"
+                                        placeholder="Institutional Lead Name"
+                                        className="w-full bg-transparent border-b border-slate-200 py-6 focus:border-brand outline-none transition-all text-xl font-display placeholder:text-slate-300"
                                     />
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Work Email</label>
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-slate-400 font-mono">Work Email</label>
                                     <input
                                         name="email"
                                         required
                                         type="email"
-                                        placeholder="you@organization.com"
-                                        className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display"
+                                        placeholder="lead@organization.edu"
+                                        className="w-full bg-transparent border-b border-slate-200 py-6 focus:border-brand outline-none transition-all text-xl font-display placeholder:text-slate-300"
                                     />
                                 </div>
                             </div>
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Organization</label>
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-slate-400 font-mono">Organization</label>
                                     <input
                                         name="organization"
                                         type="text"
-                                        placeholder="University / Company / Agency"
-                                        className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display"
+                                        placeholder="University / Enterprise Name"
+                                        className="w-full bg-transparent border-b border-slate-200 py-6 focus:border-brand outline-none transition-all text-xl font-display placeholder:text-slate-300"
                                     />
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Service Needed</label>
-                                    <select
-                                        name="service"
-                                        className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display text-[#606060] appearance-none"
-                                    >
-                                        <option value="">Select a service focus</option>
-                                        <option value="digital-engineering">Digital Systems Engineering</option>
-                                        <option value="cloud-infrastructure">Cloud & Infrastructure Setup</option>
-                                        <option value="custom-web">Custom Web Applications</option>
-                                        <option value="security-optimization">Security & Performance Optimization</option>
-                                        <option value="strategy-call">General Strategy Consultation</option>
-                                    </select>
+                                    <label className="text-[10px] uppercase tracking-widest font-black text-slate-400 font-mono">Technical Domain</label>
+                                    <div className="relative">
+                                        <select
+                                            name="service"
+                                            className="w-full bg-transparent border-b border-slate-200 py-6 focus:border-brand outline-none transition-all text-xl font-display text-slate-500 appearance-none"
+                                        >
+                                            <option value="">Select Priority Domain</option>
+                                            <option value="digital-engineering">Systems Engineering (ERP)</option>
+                                            <option value="cloud-infrastructure">Cloud & Scalability</option>
+                                            <option value="custom-web">Direct Web Portals</option>
+                                            <option value="security-optimization">Security & Hardening</option>
+                                            <option value="ai-automation">Institutional AI Mastery</option>
+                                        </select>
+                                        <div className="absolute right-0 bottom-6 pointer-events-none text-slate-400">
+                                            <ArrowRight size={18} className="rotate-90" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                             <div className="space-y-4">
-                                <label className="text-[10px] uppercase tracking-widest font-black text-[#1a1a1a] opacity-40">Project Details</label>
+                                <label className="text-[10px] uppercase tracking-widest font-black text-slate-400 font-mono">Infrastructure Overview</label>
                                 <textarea
                                     name="requirements"
                                     required
                                     rows={4}
-                                    placeholder="Describe your current system, the problem you're facing, or the project you need built..."
-                                    className="w-full bg-transparent border-b border-stone-300 py-4 focus:border-brand outline-none transition-colors text-xl font-display resize-none"
+                                    placeholder="Describe current system constraints, user scales, or security requirements..."
+                                    className="w-full bg-transparent border-b border-slate-200 py-6 focus:border-brand outline-none transition-all text-xl font-display resize-none placeholder:text-slate-300"
                                 />
                             </div>
 
-                            {status?.type === 'error' && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="p-4 rounded-lg text-sm font-bold tracking-tight bg-red-100 text-red-700"
+                            <div className="flex flex-col md:flex-row items-center gap-10">
+                                <button
+                                    disabled={isSubmitting}
+                                    type="submit"
+                                    className="w-full md:w-auto px-16 py-8 bg-slate-900 text-white rounded-full text-xs uppercase tracking-[0.4em] font-black hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10 disabled:opacity-50"
                                 >
-                                    {status.message}
-                                </motion.div>
-                            )}
-
-                            <button
-                                disabled={isSubmitting}
-                                type="submit"
-                                className="px-16 py-8 bg-[#1a1a1a] text-stone-50 rounded-full text-xs uppercase tracking-[0.4em] font-black hover:bg-brand transition-all shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {isSubmitting ? "Submitting..." : "Request Technical Consultation"}
-                            </button>
+                                    {isSubmitting ? "Initiating Audit..." : "Request Technical Consultation"}
+                                </button>
+                                <div className="flex items-center gap-3 text-slate-400">
+                                    <ShieldCheck className="w-5 h-5" />
+                                    <span className="text-[10px] font-black uppercase tracking-widest font-mono">Encrypted & Secure</span>
+                                </div>
+                            </div>
                         </form>
                     </div>
 
-                    <div className="lg:col-span-5 space-y-20">
-                        <div>
-                            <h3 className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8">Headquarters</h3>
-                            <p className="text-2xl font-display text-[#1a1a1a] leading-relaxed">
-                                RMJ IT SOLUTIONS <br />
-                                86/326-2, DOCTORS COLONY, <br />
-                                REVENUE WARD NO 86, <br />
-                                KURNOOL, Kurnool, <br />
-                                Andhra Pradesh, 518002
-                            </p>
+                    <div className="lg:col-span-5 flex flex-col gap-20">
+                        {/* Trust Signals */}
+                        <div className="p-10 bg-[#f8fafc] rounded-[3rem] border border-slate-100 space-y-12">
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-4 text-brand">
+                                    <MapPin size={20} />
+                                    <span className="text-[10px] uppercase font-black tracking-widest font-mono">HQ Context</span>
+                                </div>
+                                <p className="text-xl font-display font-bold text-slate-900 leading-[1.3] tracking-tight">
+                                    RMJ IT SOLUTIONS <br />
+                                    86/326-2, Doctors Colony, <br />
+                                    Kurnool, AP, 518002
+                                </p>
+                            </div>
+
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-4 text-brand">
+                                    <Mail size={20} />
+                                    <span className="text-[10px] uppercase font-black tracking-widest font-mono">Direct Technical Line</span>
+                                </div>
+                                <div className="space-y-2">
+                                    <p className="text-xl font-display font-bold text-slate-900">support@rmjit.com</p>
+                                    <p className="text-xl font-display font-bold text-slate-900">+91 8639756899</p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h3 className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8">Direct Channels</h3>
-                            <div className="space-y-4">
-                                <p className="text-2xl font-display text-[#1a1a1a]">+91 8639756899</p>
-                                <p className="text-2xl font-display text-[#1a1a1a] hover:text-brand transition-colors cursor-pointer">support@rmjit.com</p>
+
+                        <div className="px-10 space-y-8">
+                            <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest">Global Standards</h4>
+                            <div className="flex flex-wrap gap-8 opacity-40">
+                                <span className="text-[11px] font-black uppercase tracking-wider">ISO 27001</span>
+                                <span className="text-[11px] font-black uppercase tracking-wider">SOC 2 READY</span>
+                                <span className="text-[11px] font-black uppercase tracking-wider">HIPAA GAP READY</span>
+                                <span className="text-[11px] font-black uppercase tracking-wider">GDPR ALIGNED</span>
                             </div>
                         </div>
                     </div>
