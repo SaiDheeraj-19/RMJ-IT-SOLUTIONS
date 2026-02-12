@@ -23,7 +23,26 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
 
     requestAnimationFrame(raf);
 
+    // Handle anchor links
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+      if (href?.startsWith("#") && href.length > 1) {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+          lenis.scrollTo(element as HTMLElement);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
     return () => {
+      document.removeEventListener("click", handleAnchorClick);
       lenis.destroy();
     };
   }, []);
