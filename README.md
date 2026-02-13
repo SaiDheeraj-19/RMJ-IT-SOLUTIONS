@@ -24,13 +24,29 @@ We deliver global-grade digital infrastructure for organizations that cannot aff
 - 🧠 **AI & Analytics**: Data-driven insights and institutional intelligence.
 - 🏢 **ERP Integration**: Seamless synchronization of organizational resources.
 
-## 🛠️ Technology Ecosystem
-Built with a modern, high-performance stack for maximum efficiency.
+## 🛠️ The Engineering Blueprint
+Our digital infrastructure is forged with a high-performance stack, engineered for institutional scale and precision.
 
-| Core | Styles | Animation | Icons |
-| :--- | :--- | :--- | :--- |
-| **Next.js 15** | **Tailwind CSS** | **Framer Motion** | **Lucide React** |
-| **TypeScript** | **Vanilla CSS** | **GSAP (Optional)** | **Radix UI** |
+```mermaid
+graph TD
+    A[The Foundation] --> B[Next.js 16 + React 19]
+    A --> C[TypeScript]
+    D[The Interface] --> E[Tailwind CSS v4]
+    D --> F[Lucide Design]
+    G[The Kinetic Engine] --> H[Framer Motion + GSAP]
+    G --> I[Lenis Smooth Scroll]
+    J[The Logic Core] --> K[React Compiler]
+    J --> L[Server Actions + Resend]
+```
+
+### ⚡ Technical Specifications
+- **Core Architecture**: `Next.js 16.1.6` with the latest **App Router** paradigm.
+- **Rendering Engine**: `React 19` powered by the **Experimental React Compiler** for auto-optimized performance.
+- **Styling Matrix**: `Tailwind CSS v4` for utility-first precision and **Modern CSS Variables**.
+- **Kinetic System**: A hybrid motion engine combining `Framer Motion` for reactive UI and `GSAP` for complex timelines.
+- **User Physiology**: `Lenis` integration for buttery-smooth inertial scrolling.
+- **Data Conduit**: `Resend` integration for high-deliverables transactional communications.
+
 
 ## 💎 Design Philosophy
 - **Institutional Authority**: High-contrast, bold typography and generous whitespace.
