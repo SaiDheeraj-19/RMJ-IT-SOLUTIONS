@@ -32,7 +32,7 @@ const navLinks = [
         dropdown: [
             { title: "The Mission", href: "/about", description: "Architecting for structural certainty" },
             { title: "Strategic Engagement", href: "/contact", description: "Initiate institutional audit" },
-            { title: "Regulatory Hub", href: "/privacy", description: "Compliance & global standards" }
+            { title: "Regulatory Hub", href: "/regulatory-hub", description: "Compliance & global standards" }
         ]
     },
 ];

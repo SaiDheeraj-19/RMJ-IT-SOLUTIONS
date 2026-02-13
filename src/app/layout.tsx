@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Preloader from "@/components/ui/Preloader";
 import Script from "next/script";
+import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -99,6 +100,7 @@ export default function RootLayout({
             {children}
           </div>
         </SmoothScroll>
+        <GoogleAnalytics />
       </body>
     </html>
   );

@@ -30,8 +30,8 @@ const sitemap = [
         links: [
             { label: "Data Privacy", href: "/privacy" },
             { label: "Legal Terms", href: "/terms" },
-            { label: "Security Policy", href: "/services/security" },
-            { label: "Compliance Hub", href: "/privacy" },
+            { label: "Security Policy", href: "/security-disclosure" },
+            { label: "Compliance Hub", href: "/regulatory-hub" },
             { label: "Cookie Settings", href: "/privacy" }
         ]
     },
@@ -117,8 +117,8 @@ export default function Footer() {
                     <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
                         <Link href="/privacy" className="text-[11px] font-bold text-slate-400 hover:text-slate-900 transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="text-[11px] font-bold text-slate-400 hover:text-slate-900 transition-colors">Terms of Use</Link>
-                        <Link href="/privacy" className="text-[11px] font-bold text-slate-400 hover:text-slate-900 transition-colors">Accessibility</Link>
-                        <Link href="/contact" className="text-[11px] font-bold text-slate-400 hover:text-slate-900 transition-colors">Security Disclosure</Link>
+                        <Link href="/accessibility" className="text-[11px] font-bold text-slate-400 hover:text-slate-900 transition-colors">Accessibility</Link>
+                        <Link href="/security-disclosure" className="text-[11px] font-bold text-slate-400 hover:text-slate-900 transition-colors">Security Disclosure</Link>
                     </div>
                 </div>
             </div>

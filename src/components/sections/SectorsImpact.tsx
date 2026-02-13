@@ -58,7 +58,7 @@ const phases = [
 
 export default function ProcessTimeline() {
     return (
-        <Section className="bg-white text-[#0f172a] py-40 border-t border-slate-100">
+        <Section className="bg-white text-[#0f172a] pt-40 pb-12 border-t border-slate-100">
             <div className="max-w-[1400px] mx-auto">
                 <div className="mb-32 flex flex-col md:flex-row justify-between items-end gap-12">
                     <div className="max-w-2xl">

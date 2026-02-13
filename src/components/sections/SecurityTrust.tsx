@@ -3,7 +3,7 @@
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
-import { ShieldCheck, Lock, Globe, Server, CheckCircle, Database } from "lucide-react";
+import { ShieldCheck, Lock, Globe, Server } from "lucide-react";
 
 const trustPoints = [
     {
@@ -88,38 +88,7 @@ export default function SecurityTrust() {
                 </div>
 
                 {/* Performance Radar Block */}
-                <div className="bg-white rounded-[3rem] p-10 md:p-20 border border-slate-200 relative overflow-hidden shadow-2xl shadow-indigo-500/5">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-bl-full flex items-center justify-center p-8">
-                        <Database className="w-8 h-8 text-brand/30" />
-                    </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-                        <div className="space-y-6">
-                            <span className="text-[10px] font-black font-mono text-brand tracking-widest uppercase">{`// REAL-TIME STATUS`}</span>
-                            <h4 className="text-3xl font-display font-bold text-slate-900 tracking-tight">Hardened Infrastructure</h4>
-                            <p className="text-sm text-slate-500 font-medium leading-relaxed">
-                                Our deployment pipelines undergo automated security scanning and vulnerability assessments with every commit.
-                            </p>
-                        </div>
-
-                        <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
-                            {[
-                                { label: "Security Scans", value: "Daily", icon: <ShieldCheck className="w-4 h-4" /> },
-                                { label: "Uptime", value: "Verified", icon: <Server className="w-4 h-4" /> },
-                                { label: "Backups", value: "Hourly", icon: <Database className="w-4 h-4" /> },
-                                { label: "SSL Status", value: "A+ Grade", icon: <CheckCircle className="w-4 h-4" /> }
-                            ].map((stat, i) => (
-                                <div key={i} className="space-y-3">
-                                    <div className="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center text-brand">
-                                        {stat.icon}
-                                    </div>
-                                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
-                                    <div className="text-xl font-display font-black text-brand tracking-tighter">{stat.value}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
             </div>
         </Section>
     );

@@ -33,10 +33,10 @@ export default function AboutPage() {
                             <TextReveal
                                 as="h1"
                                 text="Engineering trust into"
-                                className="text-[clamp(3.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tighter font-bold text-slate-900"
+                                className="text-[clamp(3.5rem,8vw,7rem)] font-display leading-[1.15] tracking-tighter font-bold text-slate-900 pb-6"
                                 delay={0.2}
                             />
-                            <span className="text-[clamp(3.5rem,8vw,7rem)] font-display italic text-brand leading-[0.9] block mt-4 font-bold tracking-tight">every line of code.</span>
+                            <span className="text-[clamp(3.5rem,8vw,7rem)] font-display italic text-brand leading-[1.1] block mt-4 font-bold tracking-tight pb-2">every line of code.</span>
                         </div>
                     </motion.div>
                 </div>
