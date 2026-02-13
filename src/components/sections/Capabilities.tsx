@@ -3,7 +3,7 @@
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
-import { LayoutDashboard, Cloud, Blocks, Lock, ArrowUpRight } from "lucide-react";
+import { LayoutDashboard, Cloud, Blocks, Lock, ArrowUpRight, Sparkles, Zap, Smartphone, Globe } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -16,15 +16,15 @@ const services = [
         link: "/services/erp"
     },
     {
-        title: "Cloud & Infrastructure Setup",
+        title: "Cloud Orchestration",
         icon: Cloud,
         description: "Scalable AWS/GCP architecture design, migration strategy, and automated CI/CD pipeline implementation.",
         audience: "Growing Startups & Mid-size Firms",
-        outcome: "Zero-downtime deployments and auto-scaling capabilities.",
+        outcome: "Zero-downtime deployments and auto-scaling.",
         link: "/services/cloud"
     },
     {
-        title: "Custom Web Applications",
+        title: "Deterministic Web Systems",
         icon: Blocks,
         description: "Focus on high-performance, secure, and interactive web platforms—not just static brochure sites.",
         audience: "SaaS Founders & Digital Brands",
@@ -32,12 +32,44 @@ const services = [
         link: "/services/web"
     },
     {
-        title: "Security & Performance Optimization",
+        title: "Security & Performance",
         icon: Lock,
         description: "Comprehensive system audits, vulnerability scanning, code refactoring, and database optimization.",
         audience: "Organizations with Legacy Systems",
         outcome: "Compliance readiness (SOC2/GDPR) and risk reduction.",
         link: "/services/security"
+    },
+    {
+        title: "Strategic Intelligence (AI)",
+        icon: Sparkles,
+        description: "Custom ML models for document processing, predictive analytics, and private institutional data inference.",
+        audience: "Data-driven Enterprises",
+        outcome: "99% accuracy in automated verification workflows.",
+        link: "/services/ai"
+    },
+    {
+        title: "Process Automation",
+        icon: Zap,
+        description: "End-to-end workflow logic, automated financial reconciliation, and operational efficiency protocols.",
+        audience: "Operationally Complex Firms",
+        outcome: "Reduction of manual staff hours by up to 400h/month.",
+        link: "/services/automation"
+    },
+    {
+        title: "Mobility Systems",
+        icon: Smartphone,
+        description: "High-security mobile solutions for field operations, with offline-first synchronization and biometric auth.",
+        audience: "Field-heavy Organizations",
+        outcome: "Mission-critical tools for distributed workforces.",
+        link: "/services/mobile"
+    },
+    {
+        title: "Digital Presence",
+        icon: Globe,
+        description: "Data-led SEO architecture and performance marketing to scale institutional authority globally.",
+        audience: "Global Scaling Ventures",
+        outcome: "Verified reach of 1M+ monthly impressions.",
+        link: "/services/marketing"
     }
 ];
 

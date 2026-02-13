@@ -5,34 +5,58 @@ import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
-import HorizontalLine from "@/components/ui/HorizontalLine";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Database, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Database, ShieldCheck, Zap, Sparkles, Smartphone, Globe, Cloud } from "lucide-react";
 
 const capabilitySuites = [
     {
-        title: "Digital Systems Engineering",
+        title: "Digital Systems Engineering (ERP)",
         result: "Replaced 5 separate tools with 1 integrated platform for a university with 8,000 students.",
         desc: "We build student portals, admin dashboards, and internal platforms that handle 10K+ concurrent users. If your systems are slow or fragmented, we build the unified replacement.",
-        points: ["Scalable Architecture", "RBAC & Institutional Security", "Sub-200ms API Performance", "Technical Logic Consolidation"]
+        points: ["Scalable Architecture", "RBAC & Institutional Security", "Sub-200ms API Performance", "Technical Logic Consolidation"],
+        icon: Database
     },
     {
-        title: "Cloud & Infrastructure Setup",
+        title: "Cloud Orchestration & Infrastructure",
         result: "Production deployment with 100% uptime recorded over 24 consecutive months.",
         desc: "High-trust infrastructure built on AWS or GCP. We design for zero single points of failure, automated failover, and high-security VPC environments.",
-        points: ["Infrastructure as Code (Terraform)", "Automated CI/CD Pipelines", "Vulnerability Assessment", "Hardened Database Schemas"]
+        points: ["Infrastructure as Code (Terraform)", "Automated CI/CD Pipelines", "Vulnerability Assessment", "Hardened Database Schemas"],
+        icon: Cloud
     },
     {
-        title: "Custom Web Applications",
+        title: "Deterministic Web Systems",
         result: "One enterprise saved 400+ staff hours per month through workflow automation.",
         desc: "Focus on high-performance, secure, and interactive portals—not just static brochure sites. We use Next.js and industry-standard security protocols.",
-        points: ["Production-Ready Next.js", "Server-Side Rendering for Speed", "OWASP Top 10 Hardening", "Deep Accessibility Compliance"]
+        points: ["Production-Ready Next.js", "Server-Side Rendering for Speed", "OWASP Top 10 Hardening", "Deep Accessibility Compliance"],
+        icon: Zap
     },
     {
         title: "AI & Process Automation",
         result: "Verify documents in 4 hours instead of 3 weeks (99.2% verified accuracy).",
         desc: "Custom ML models for institutional document processing, predictive analytics, and process automation. We build models on your private institutional data.",
-        points: ["Document Digitization OCR", "Predictive Lifecycle Models", "Workflow Guardrail Logic", "Private Data Inference"]
+        points: ["Document Digitization OCR", "Predictive Lifecycle Models", "Workflow Guardrail Logic", "Private Data Inference"],
+        icon: Sparkles
+    },
+    {
+        title: "Security & Performance Hardening",
+        result: "Achieved 99.99% uptime and <150ms API latency for global platforms.",
+        desc: "We optimize your infrastructure for peak performance while building a fortress around your institutional data using advanced profiling and proprietary checklists.",
+        points: ["Penetration Testing", "Identity & Access Control", "Database Hardening", "Real-time Monitoring"],
+        icon: ShieldCheck
+    },
+    {
+        title: "Enterprise Mobility Systems",
+        result: "Deployed mission-critical mobile tools used by 5,000+ field operations staff.",
+        desc: "Native and cross-platform mobile solutions designed for institutional workflows. We focus on offline-first reliability and high-security data synchronization.",
+        points: ["iOS & Android Engineering", "Offline Data Sync Protocol", "Biometric Authentication", "MDM Ready Deployment"],
+        icon: Smartphone
+    },
+    {
+        title: "Strategic Digital Presence",
+        result: "Scaled a digital brand from regional reach to over 1M+ global monthly impressions.",
+        desc: "Performance-driven marketing and SEO architecture that turns visibility into institutional authority using data-led growth strategies for global scaling.",
+        points: ["Search Engine Domination", "Growth Data Analytics", "Content Distribution Logic", "Conversion Rate Hardening"],
+        icon: Globe
     }
 ];
 
@@ -96,7 +120,7 @@ export default function ServicesPage() {
                             {/* Result Callout */}
                             <div className="p-10 bg-white border border-slate-200 rounded-[2.5rem] shadow-xl shadow-indigo-500/5 relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 p-8 text-brand/10 group-hover:text-brand/20 transition-colors">
-                                    <ShieldCheck className="w-12 h-12" />
+                                    <suite.icon className="w-12 h-12" />
                                 </div>
                                 <span className="text-[10px] uppercase tracking-[0.3em] font-black text-brand mb-6 block font-mono">
                                     {`// PROVEN OUTCOME`}

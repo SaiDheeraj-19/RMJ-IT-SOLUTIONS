@@ -15,14 +15,18 @@ const navLinks = [
             { title: "Institutional Infrastructure", href: "/services/erp", description: "Enterprise refactoring & ecosystems" },
             { title: "Cloud Orchestration", href: "/services/cloud", description: "High-availability technical architecture" },
             { title: "Deterministic Web Systems", href: "/services/web", description: "High-performance specialized builds" },
-            { title: "Architectural Auditing", href: "/services/security", description: "Structural security & hardening" }
+            { title: "Architectural Auditing", href: "/services/security", description: "Structural security & hardening" },
+            { title: "Strategic Intelligence", href: "/services/ai", description: "Private LLMs & institutional AI models" },
+            { title: "Process Automation", href: "/services/automation", description: "Workflow logic & operational efficiency" },
+            { title: "Mobility Systems", href: "/services/mobile", description: "Cross-platform enterprise mobile builds" },
+            { title: "Digital Presence", href: "/services/marketing", description: "Performance marketing & global growth" }
         ]
     },
     {
         name: "Orchestration",
-        href: "/#approach",
+        href: "/process",
         dropdown: [
-            { title: "The Framework", href: "/#approach", description: "Deterministic delivery protocol" },
+            { title: "The Protocol", href: "/process", description: "Deterministic delivery framework" },
             { title: "Strategic Evidence", href: "/case-studies", description: "Documented institutional results" }
         ]
     },
@@ -32,7 +36,8 @@ const navLinks = [
         dropdown: [
             { title: "The Mission", href: "/about", description: "Architecting for structural certainty" },
             { title: "Strategic Engagement", href: "/contact", description: "Initiate institutional audit" },
-            { title: "Regulatory Hub", href: "/regulatory-hub", description: "Compliance & global standards" }
+            { title: "Regulatory Hub", href: "/regulatory-hub", description: "Compliance & global standards" },
+            { title: "Security Disclosure", href: "/security-disclosure", description: "Vulnerability reporting & protocols" }
         ]
     },
 ];
