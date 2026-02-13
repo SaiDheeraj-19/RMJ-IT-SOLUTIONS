@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { X, Cookie, Check, ChevronDown, ChevronRight, Plus, Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { X, Cookie, Check, Plus, Minus } from "lucide-react";
 
 type ConsentState = "accepted" | "rejected" | "custom" | null;
 
@@ -54,6 +53,7 @@ export default function CookieConsent() {
             timestamp: new Date().toISOString()
         };
         localStorage.setItem("rmjit_cookie_consent", JSON.stringify(consentData));
+        window.dispatchEvent(new Event("rmjit_consent_updated"));
         setIsOpen(false);
         setShowPreferences(false);
     };
