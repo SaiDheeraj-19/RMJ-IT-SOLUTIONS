@@ -1,4 +1,8 @@
-# RMJ IT SOLUTIONS .
+<p align="center">
+  <img src="public/rmjit-logo.png" width="200" alt="RMJ IT SOLUTIONS Logo">
+</p>
+
+# RMJ IT SOLUTIONS
 ### Institutional Infrastructure & Strategic Digital Implementation
 
 <p align="center">
