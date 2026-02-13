@@ -2,12 +2,12 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
-import { ArrowLeft, Shield, Activity, Settings2, Lock } from "lucide-react";
+import { ArrowLeft, Cookie, ShieldCheck, Settings, Info, Ban, FileText } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Digital Traceability & Cookie Policy | RMJ IT Solutions',
-    description: 'Technical documentation regarding our use of cookies for security, telemetry, and system integrity.',
+    title: 'Cookie Policy | RMJ IT Solutions',
+    description: 'Information about how we use cookies to improve your experience.',
 };
 
 export default function CookiePolicyPage() {
@@ -21,14 +21,13 @@ export default function CookiePolicyPage() {
 
                 <div className="max-w-[1400px] mx-auto relative z-10">
                     <Link href="/" className="inline-flex items-center text-xs font-mono font-bold text-slate-400 hover:text-brand transition-colors mb-8 uppercase tracking-widest">
-                        <ArrowLeft size={14} className="mr-2" /> Return to Console
+                        <ArrowLeft size={14} className="mr-2" /> Return to Home
                     </Link>
                     <h1 className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold tracking-tighter leading-[1.1] mb-8">
-                        Digital Traceability <br />
-                        <span className="text-slate-500">& Protocols.</span>
+                        Cookie Policy.
                     </h1>
                     <p className="text-xl text-slate-400 font-medium max-w-2xl leading-relaxed">
-                        We treat cookies as architectural components. They are strictly deployed to ensure system integrity, secure session states, and monitor infrastructure telemetry.
+                        Transparent information about how and why we use cookies to improve your browsing experience.
                     </p>
                 </div>
             </div>
@@ -36,164 +35,145 @@ export default function CookiePolicyPage() {
             <Section className="py-24 bg-white">
                 <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
-                    {/* Sidebar Navigation / Context */}
+                    {/* Sidebar Navigation */}
                     <div className="lg:col-span-4 space-y-12">
-                        <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
-                            <Shield className="w-10 h-10 text-brand mb-6" />
-                            <h3 className="text-xl font-bold text-slate-900 mb-4">Security First Architecture</h3>
-                            <p className="text-slate-600 leading-relaxed mb-6">
-                                Our platform utilizes cookies primarily for verifying identity tokens and preventing CSRF (Cross-Site Request Forgery) attacks. Tracking is secondary to security.
-                            </p>
-                            <div className="flex items-center gap-3 text-xs font-mono text-slate-500 uppercase tracking-widest">
-                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                                System Status: Operational
+                        <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100 sticky top-24">
+                            <Cookie className="w-10 h-10 text-brand mb-6" />
+                            <h3 className="text-xl font-bold text-slate-900 mb-4">Quick Navigation</h3>
+                            <div className="space-y-2">
+                                <a href="#what-are-cookies" className="block p-3 rounded-lg hover:bg-white text-slate-600 hover:text-brand text-sm font-bold transition-all border border-transparent hover:border-slate-100 hover:shadow-sm">What are cookies?</a>
+                                <a href="#how-we-use" className="block p-3 rounded-lg hover:bg-white text-slate-600 hover:text-brand text-sm font-bold transition-all border border-transparent hover:border-slate-100 hover:shadow-sm">How we use cookies?</a>
+                                <a href="#types-of-cookies" className="block p-3 rounded-lg hover:bg-white text-slate-600 hover:text-brand text-sm font-bold transition-all border border-transparent hover:border-slate-100 hover:shadow-sm">Types of cookies</a>
+                                <a href="#information-collection" className="block p-3 rounded-lg hover:bg-white text-slate-600 hover:text-brand text-sm font-bold transition-all border border-transparent hover:border-slate-100 hover:shadow-sm">Information we collect</a>
+                                <a href="#blocking-cookies" className="block p-3 rounded-lg hover:bg-white text-slate-600 hover:text-brand text-sm font-bold transition-all border border-transparent hover:border-slate-100 hover:shadow-sm">Managing cookies</a>
+                                <a href="#policy-changes" className="block p-3 rounded-lg hover:bg-white text-slate-600 hover:text-brand text-sm font-bold transition-all border border-transparent hover:border-slate-100 hover:shadow-sm">Policy updates</a>
                             </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 px-2">Table of Contents</h4>
-                            <a href="#necessary" className="block p-3 rounded-lg hover:bg-slate-50 text-slate-600 hover:text-brand text-sm font-bold transition-colors">01. Operational Necessity</a>
-                            <a href="#telemetry" className="block p-3 rounded-lg hover:bg-slate-50 text-slate-600 hover:text-brand text-sm font-bold transition-colors">02. Telemetry & Diagnostics</a>
-                            <a href="#preferences" className="block p-3 rounded-lg hover:bg-slate-50 text-slate-600 hover:text-brand text-sm font-bold transition-colors">03. User State Management</a>
                         </div>
                     </div>
 
                     {/* Main Content */}
                     <div className="lg:col-span-8 space-y-16">
 
-                        {/* Section 01 */}
-                        <div id="necessary" className="scroll-mt-32">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center text-white">
-                                    <Lock size={24} />
+                        {/* What are cookies? */}
+                        <div id="what-are-cookies" className="scroll-mt-32">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600">
+                                    <Info size={20} />
                                 </div>
-                                <div>
-                                    <h2 className="text-2xl font-display font-bold text-slate-900">Operational Necessity</h2>
-                                    <p className="text-slate-500 font-mono text-xs uppercase tracking-wider mt-1">Classification: Mandatory</p>
-                                </div>
+                                <h2 className="text-2xl font-display font-bold text-slate-900">What are cookies?</h2>
                             </div>
-                            <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                                These protocols are non-negotiable for system function. They handle authentication handshakes, load balancing across our CDN, and CSRF protection measures.
-                            </p>
-
-                            <div className="border border-slate-200 rounded-xl overflow-hidden">
-                                <table className="w-full text-left text-sm">
-                                    <thead className="bg-slate-50 text-slate-500 font-mono uppercase text-xs tracking-wider">
-                                        <tr>
-                                            <th className="p-4 border-b border-slate-200">Protocol ID</th>
-                                            <th className="p-4 border-b border-slate-200">Technical Function</th>
-                                            <th className="p-4 border-b border-slate-200">Retention</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100 font-medium">
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-brand">rmjit_session</td>
-                                            <td className="p-4 text-slate-600">Encrypts user session keys for secure portal access.</td>
-                                            <td className="p-4 text-slate-500">Session</td>
-                                        </tr>
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-brand">__cf_bm</td>
-                                            <td className="p-4 text-slate-600">Cloudflare Bot Management (DDoS Protection).</td>
-                                            <td className="p-4 text-slate-500">30 Mins</td>
-                                        </tr>
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-brand">rmjit_consent</td>
-                                            <td className="p-4 text-slate-600">Stores legal compliance acknowledgement.</td>
-                                            <td className="p-4 text-slate-500">1 Year</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                                <p>
+                                    A cookie is a small file of letters and numbers. Cookies contain information that is stored on the browser of your computer or mobile device&apos;s hard drive.
+                                </p>
                             </div>
                         </div>
 
-                        {/* Section 02 */}
-                        <div id="telemetry" className="scroll-mt-32">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
-                                    <Activity size={24} />
+                        {/* How we use cookies? */}
+                        <div id="how-we-use" className="scroll-mt-32">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
+                                    <Settings size={20} />
                                 </div>
-                                <div>
-                                    <h2 className="text-2xl font-display font-bold text-slate-900">Telemetry & Diagnostics</h2>
-                                    <p className="text-slate-500 font-mono text-xs uppercase tracking-wider mt-1">Classification: Performance</p>
-                                </div>
+                                <h2 className="text-2xl font-display font-bold text-slate-900">How we use cookies?</h2>
                             </div>
-                            <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                                We deploy diagnostic probes to measure infrastructure latency, page load performance, and user interaction paths. Data is aggregated and anonymized.
-                            </p>
-
-                            <div className="border border-slate-200 rounded-xl overflow-hidden">
-                                <table className="w-full text-left text-sm">
-                                    <thead className="bg-slate-50 text-slate-500 font-mono uppercase text-xs tracking-wider">
-                                        <tr>
-                                            <th className="p-4 border-b border-slate-200">Protocol ID</th>
-                                            <th className="p-4 border-b border-slate-200">Technical Function</th>
-                                            <th className="p-4 border-b border-slate-200">Retention</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100 font-medium">
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-indigo-600">_ga_RMJIT</td>
-                                            <td className="p-4 text-slate-600">Google Analytics 4: System usage metrics.</td>
-                                            <td className="p-4 text-slate-500">2 Years</td>
-                                        </tr>
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-indigo-600">_cl_sk</td>
-                                            <td className="p-4 text-slate-600">Heatmap analysis for UI/UX optimization.</td>
-                                            <td className="p-4 text-slate-500">24 Hours</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                                <p>
+                                    We use cookies to distinguish you from other users of our website and to provide a browsing experience that is unique to you. Cookies are used by RMJ IT Solutions so that our website can remember what you have done whilst browsing our website, for instance, your log-in details and your preferences.
+                                </p>
                             </div>
                         </div>
 
-                        {/* Section 03 */}
-                        <div id="preferences" className="scroll-mt-32">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-500">
-                                    <Settings2 size={24} />
+                        {/* Types of cookies */}
+                        <div id="types-of-cookies" className="scroll-mt-32">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                    <ShieldCheck size={20} />
                                 </div>
-                                <div>
-                                    <h2 className="text-2xl font-display font-bold text-slate-900">User State Management</h2>
-                                    <p className="text-slate-500 font-mono text-xs uppercase tracking-wider mt-1">Classification: Functional</p>
-                                </div>
+                                <h2 className="text-2xl font-display font-bold text-slate-900">What type of cookies do we use?</h2>
                             </div>
-                            <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                                These tokens persist your interface customizations, such as dashboard layout preferences, theme settings, and regional localization.
-                            </p>
+                            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 space-y-6">
+                                <p className="text-slate-600 leading-relaxed">
+                                    Cookies can be in the form of session cookies or persistent cookies. Session cookies are deleted from your computer when you close your web-browser. Persistent cookies will remain stored on your computer until deleted or until they reach their expiry date. We use the following cookies:
+                                </p>
 
-                            <div className="border border-slate-200 rounded-xl overflow-hidden">
-                                <table className="w-full text-left text-sm">
-                                    <thead className="bg-slate-50 text-slate-500 font-mono uppercase text-xs tracking-wider">
-                                        <tr>
-                                            <th className="p-4 border-b border-slate-200">Protocol ID</th>
-                                            <th className="p-4 border-b border-slate-200">Technical Function</th>
-                                            <th className="p-4 border-b border-slate-200">Retention</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100 font-medium">
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-slate-600">theme_state</td>
-                                            <td className="p-4 text-slate-600">Persists dark/light mode selection.</td>
-                                            <td className="p-4 text-slate-500">Persistent</td>
-                                        </tr>
-                                        <tr className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="p-4 font-mono text-slate-600">NEXT_LOCALE</td>
-                                            <td className="p-4 text-slate-600">Maintains language/region context.</td>
-                                            <td className="p-4 text-slate-500">Session</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div className="space-y-6">
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 mb-2">Analytical/performance cookies.</h4>
+                                        <p className="text-sm text-slate-600 leading-relaxed">
+                                            These cookies allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 mb-2">Functionality cookies.</h4>
+                                        <p className="text-sm text-slate-600 leading-relaxed">
+                                            These cookies are used to recognise you when you return to our website. This enables us to personalise our content for you, greet you by name and remember your preferences, allow for live chat support on your browsing experience.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 mb-2">Targeting cookies.</h4>
+                                        <p className="text-sm text-slate-600 leading-relaxed">
+                                            These cookies record your visit to our website, the pages you have visited and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose. These cookies allow you to share and like & send information to other websites to customize their advertisements.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 mb-2">Marketing & Data Management.</h4>
+                                        <p className="text-sm text-slate-600 leading-relaxed">
+                                            We use data management platforms to collect device information and behavioral data about how our websites and other digital touchpoints are used. The information is used to build audiences for online advertising. The aim is to make sure we advertise relevant products and services at the correct time. Audiences can be, for example, interest-based or based on demography (age, gender). If you prefer not to receive targeted advertising you can control cookies set on your device from the browser settings.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        {/* Information we collect */}
+                        <div id="information-collection" className="scroll-mt-32">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600">
+                                    <FileText size={20} />
+                                </div>
+                                <h2 className="text-2xl font-display font-bold text-slate-900">What kind of information do we collect?</h2>
+                            </div>
+                            <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                                <p>
+                                    When you visit our website, we may automatically collect the following types of information from you: Your internet protocol (IP) address, your login information, time zone setting, operating system and platform, information about your visits including the URL you came from, your country, the search terms you used in our website, products or services you viewed, page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs), and the methods used to browse away from the page. We may collect this information from you whether or not you have engaged with our services directly.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Permission and Blocking */}
+                        <div id="blocking-cookies" className="scroll-mt-32">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-600">
+                                    <Ban size={20} />
+                                </div>
+                                <h2 className="text-2xl font-display font-bold text-slate-900">Your permission and blocking cookies</h2>
+                            </div>
+                            <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                                <p>
+                                    By using the RMJ IT Solutions website on a computer or mobile device, you agree to our Privacy and Cookies policy and consent to our use of cookies.
+                                </p>
+                                <p>
+                                    However, most browsers allow you to refuse cookies. You may block our cookies by activating the setting on your browser that allows you to refuse the setting of all or some cookies. You can find out more about cookies and how to delete and control them on <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-brand underline hover:text-brand/80">www.aboutcookies.org</a> or click help in your browser menu.
+                                </p>
+                                <div className="p-4 bg-amber-50 border border-amber-100 rounded-lg text-amber-900 text-sm">
+                                    <strong>Note:</strong> If you block our use of cookies, you may be unable to access certain areas of our website and certain functions and pages will not work in the usual way.
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Changes to Policy */}
+                        <div id="policy-changes" className="scroll-mt-32">
+                            <h2 className="text-xl font-bold text-slate-900 mb-4">How RMJ IT Solutions can change the Cookie Policy</h2>
+                            <p className="text-slate-600 leading-relaxed">
+                                RMJ IT Solutions may from time to time update this policy. The date of issue will be indicated by the date on the top of this policy. Changes in technology, legislation, and authorities’ guidance may require us to inform you of the activities we undertake where it affects your privacy rights. You should check this page occasionally to ensure you are familiar with any changes.
+                            </p>
+                        </div>
+
                     </div>
-
-                </div>
-
-                <div className="max-w-[1400px] mx-auto mt-24 pt-12 border-t border-slate-200">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4">Manual Override</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed max-w-3xl">
-                        You maintain root access to your browser&apos;s storage. You can flush these tokens at any time via your browser&apos;s developer tools or settings. However, removing cryptographic tokens (Strictly Necessary) will terminate your active session and may trigger security lockouts.
-                    </p>
                 </div>
             </Section>
 

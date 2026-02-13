@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { X, Cookie, Activity, Settings2, Lock } from "lucide-react";
+import { X, Cookie, Check, ChevronDown, ChevronRight, Plus, Minus } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type ConsentState = "accepted" | "rejected" | "custom" | null;
 
@@ -14,10 +15,14 @@ export default function CookieConsent() {
 
     // Preference states
     const [prefs, setPrefs] = useState({
-        necessary: true, // Always true
-        analytics: true,
-        marketing: false
+        necessary: true,
+        performance: true,
+        functional: false,
+        targeting: false
     });
+
+    // Accordion state for Privacy Center
+    const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
     useEffect(() => {
         const mountTimer = setTimeout(() => setIsMounted(true), 0);
@@ -31,11 +36,11 @@ export default function CookieConsent() {
     }, []);
 
     const handleAcceptAll = () => {
-        saveConsent("accepted", { necessary: true, analytics: true, marketing: true });
+        saveConsent("accepted", { necessary: true, performance: true, functional: true, targeting: true });
     };
 
     const handleRejectNonEssential = () => {
-        saveConsent("rejected", { necessary: true, analytics: false, marketing: false });
+        saveConsent("rejected", { necessary: true, performance: false, functional: false, targeting: false });
     };
 
     const handleSavePreferences = () => {
@@ -53,20 +58,25 @@ export default function CookieConsent() {
         setShowPreferences(false);
     };
 
+    const toggleSection = (section: string) => {
+        setExpandedSection(expandedSection === section ? null : section);
+    };
+
     if (!isMounted) return null;
 
     return (
         <>
-            {/* 🍪 Floating Cookie Button (Visible when banner is closed) */}
+            {/* 🍪 Floating Cookie Button */}
             <AnimatePresence>
-                {!isOpen && (
+                {!isOpen && !showPreferences && (
                     <motion.button
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0 }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        onClick={() => { setIsOpen(true); setShowPreferences(false); }}
+                        // Open main banner first (standard UX), but user can go to prefs from there
+                        onClick={() => setIsOpen(true)}
                         className="fixed bottom-6 right-6 z-[90] w-12 h-12 bg-white rounded-full shadow-xl border border-slate-200 flex items-center justify-center text-brand hover:border-brand transition-colors group"
                         aria-label="Cookie Preferences"
                     >
@@ -80,9 +90,9 @@ export default function CookieConsent() {
                 )}
             </AnimatePresence>
 
-            {/* 🛑 Consent Banner / Modal */}
+            {/* 🛑 Main Consent Banner (Small Card) */}
             <AnimatePresence>
-                {isOpen && (
+                {isOpen && !showPreferences && (
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -90,116 +100,212 @@ export default function CookieConsent() {
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="fixed bottom-6 right-6 z-[100] max-w-[440px] w-full p-4"
                     >
-                        {/* THE NEW DESIGN: Clean White Card with Brand Accents */}
                         <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-6 relative overflow-hidden">
-
-                            {!showPreferences ? (
-                                <div className="space-y-6">
-                                    <div className="space-y-3">
-                                        <h3 className="text-xl font-display font-bold text-slate-900 leading-tight">
-                                            We use cookies to secure and optimize your experience.
-                                        </h3>
-                                        <p className="text-slate-500 text-sm leading-relaxed">
-                                            Our infrastructure relies on essential cookies for security. We also use analytics to improve performance. <Link href="/cookie-policy" className="text-brand font-bold hover:underline">Read Policy</Link>
-                                        </p>
-                                    </div>
-
-                                    <div className="flex items-center gap-3 pt-2">
-                                        <button
-                                            onClick={() => setShowPreferences(true)}
-                                            className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:border-brand hover:text-brand transition-all duration-200 shadow-sm"
-                                        >
-                                            Preferences
-                                        </button>
-                                        <button
-                                            onClick={handleRejectNonEssential}
-                                            className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:bg-slate-50 transition-all duration-200 shadow-sm"
-                                        >
-                                            Decline
-                                        </button>
-                                        <button
-                                            onClick={handleAcceptAll}
-                                            className="flex-1 py-3 px-4 bg-brand text-white text-[13px] font-bold rounded-lg hover:bg-brand/90 transition-all duration-200 shadow-lg shadow-brand/20"
-                                        >
-                                            Accept
-                                        </button>
-                                    </div>
+                            <div className="space-y-6">
+                                <div className="space-y-3">
+                                    <h3 className="text-xl font-display font-bold text-slate-900 leading-tight">
+                                        We use cookies to secure and optimize your experience.
+                                    </h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners. <Link href="/cookie-policy" className="text-brand font-bold hover:underline">Read Policy</Link>
+                                    </p>
                                 </div>
-                            ) : (
-                                /* Preferences View */
-                                <div className="space-y-6">
-                                    <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-                                        <div className="flex items-center gap-2">
-                                            <Settings2 size={18} className="text-slate-400" />
-                                            <h3 className="font-bold text-slate-900 text-sm">
-                                                Manage Preferences
-                                            </h3>
-                                        </div>
-                                        <button
-                                            onClick={() => setShowPreferences(false)}
-                                            className="text-slate-400 hover:text-slate-900 transition-colors"
-                                        >
-                                            <X size={20} />
-                                        </button>
-                                    </div>
 
-                                    <div className="space-y-3">
-                                        {/* Security - Locked */}
-                                        <div className="flex items-start gap-4 p-4 rounded-lg bg-slate-50 border border-slate-100">
-                                            <Lock className="shrink-0 text-slate-400 mt-0.5" size={16} />
-                                            <div className="flex-1">
-                                                <div className="flex items-center justify-between mb-1">
-                                                    <span className="text-sm font-bold text-slate-700">Strictly Necessary</span>
-                                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Required</span>
-                                                </div>
-                                                <p className="text-xs text-slate-500 leading-relaxed">
-                                                    Essential for security, authentication, and core site functions.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        {/* Telemetry Toggle */}
-                                        <div
-                                            className={`flex items-start gap-4 p-4 rounded-lg border cursor-pointer transition-all ${prefs.analytics ? 'bg-brand/5 border-brand/20' : 'bg-white border-slate-200 hover:border-slate-300'}`}
-                                            onClick={() => setPrefs({ ...prefs, analytics: !prefs.analytics })}
-                                        >
-                                            <Activity className={`shrink-0 mt-0.5 transition-colors ${prefs.analytics ? 'text-brand' : 'text-slate-400'}`} size={16} />
-                                            <div className="flex-1">
-                                                <div className="flex items-center justify-between mb-1">
-                                                    <span className={`text-sm font-bold transition-colors ${prefs.analytics ? 'text-brand' : 'text-slate-700'}`}>Analytics & Performance</span>
-
-                                                    {/* Toggle Switch */}
-                                                    <div className={`w-9 h-5 rounded-full relative transition-colors duration-300 ${prefs.analytics ? 'bg-brand' : 'bg-slate-200'}`}>
-                                                        <div className={`absolute top-1 left-1 w-3 h-3 bg-white rounded-full transition-transform duration-300 ${prefs.analytics ? 'translate-x-4' : 'translate-x-0'}`} />
-                                                    </div>
-                                                </div>
-                                                <p className="text-xs text-slate-500 leading-relaxed">
-                                                    Helps us understand how you use the site to improve performance.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex gap-3 pt-2">
-                                        <button
-                                            onClick={() => setShowPreferences(false)}
-                                            className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:bg-slate-50 transition-all duration-200"
-                                        >
-                                            Cancel
-                                        </button>
-                                        <button
-                                            onClick={handleSavePreferences}
-                                            className="flex-[2] py-3 px-4 bg-brand text-white text-[13px] font-bold rounded-lg hover:bg-brand/90 transition-all duration-200 shadow-lg shadow-brand/20"
-                                        >
-                                            Save Preferences
-                                        </button>
-                                    </div>
+                                <div className="flex items-center gap-3 pt-2">
+                                    <button
+                                        onClick={() => setShowPreferences(true)}
+                                        className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:border-brand hover:text-brand transition-all duration-200 shadow-sm"
+                                    >
+                                        Preferences
+                                    </button>
+                                    <button
+                                        onClick={handleRejectNonEssential}
+                                        className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:bg-slate-50 transition-all duration-200 shadow-sm"
+                                    >
+                                        Decline
+                                    </button>
+                                    <button
+                                        onClick={handleAcceptAll}
+                                        className="flex-1 py-3 px-4 bg-brand text-white text-[13px] font-bold rounded-lg hover:bg-brand/90 transition-all duration-200 shadow-lg shadow-brand/20"
+                                    >
+                                        Accept
+                                    </button>
                                 </div>
-                            )}
+                            </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* 🛠 Privacy Preference Centre (Side Drawer / Modal) */}
+            <AnimatePresence>
+                {showPreferences && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]"
+                            onClick={() => setShowPreferences(false)}
+                        />
+
+                        {/* Drawer Panel */}
+                        <motion.div
+                            initial={{ x: "-100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: "-100%" }}
+                            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                            className="fixed top-0 left-0 bottom-0 w-full max-w-[500px] bg-white z-[101] shadow-2xl flex flex-col h-full overflow-hidden"
+                        >
+                            {/* Header */}
+                            <div className="p-6 md:p-8 border-b border-slate-100 flex items-start justify-between bg-white shrink-0">
+                                <div>
+                                    <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Privacy preference centre</h2>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. <Link href="/cookie-policy" className="text-brand underline hover:no-underline">More information</Link>
+                                    </p>
+                                </div>
+                                <button
+                                    onClick={() => setShowPreferences(false)}
+                                    className="p-2 hover:bg-slate-100 rounded-full transition-colors -mr-2 -mt-2"
+                                >
+                                    <X size={24} className="text-slate-400" />
+                                </button>
+                            </div>
+
+                            {/* Scrollable Content */}
+                            <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 bg-[#f9fafb]">
+
+                                <h3 className="text-lg font-bold text-slate-900">Manage consent preferences</h3>
+
+                                {/* Accordion Items */}
+                                <div className="space-y-4">
+
+                                    {/* Strictly Necessary */}
+                                    <AccordionItem
+                                        title="Strictly necessary cookies"
+                                        expanded={expandedSection === 'necessary'}
+                                        onToggle={() => toggleSection('necessary')}
+                                        alwaysActive
+                                    >
+                                        These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.
+                                    </AccordionItem>
+
+                                    {/* Performance */}
+                                    <AccordionItem
+                                        title="Performance cookies"
+                                        expanded={expandedSection === 'performance'}
+                                        onToggle={() => toggleSection('performance')}
+                                        checked={prefs.performance}
+                                        onChange={(val) => setPrefs({ ...prefs, performance: val })}
+                                    >
+                                        These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site.
+                                    </AccordionItem>
+
+                                    {/* Functional */}
+                                    <AccordionItem
+                                        title="Functional cookies"
+                                        expanded={expandedSection === 'functional'}
+                                        onToggle={() => toggleSection('functional')}
+                                        checked={prefs.functional}
+                                        onChange={(val) => setPrefs({ ...prefs, functional: val })}
+                                    >
+                                        These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages.
+                                    </AccordionItem>
+
+                                    {/* Targeting */}
+                                    <AccordionItem
+                                        title="Targeting cookies"
+                                        expanded={expandedSection === 'targeting'}
+                                        onToggle={() => toggleSection('targeting')}
+                                        checked={prefs.targeting}
+                                        onChange={(val) => setPrefs({ ...prefs, targeting: val })}
+                                    >
+                                        These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites.
+                                    </AccordionItem>
+
+                                </div>
+                            </div>
+
+                            {/* Footer actions */}
+                            <div className="p-6 border-t border-slate-100 bg-white shrink-0">
+                                <button
+                                    onClick={handleSavePreferences}
+                                    className="w-full py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-all duration-200 shadow-lg text-sm uppercase tracking-widest border border-slate-900"
+                                >
+                                    Confirm my choices
+                                </button>
+                            </div>
+
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </>
+    );
+}
+
+// Reusable Accordion Component
+function AccordionItem({
+    title,
+    children,
+    expanded,
+    onToggle,
+    alwaysActive = false,
+    checked = false,
+    onChange
+}: {
+    title: string;
+    children: React.ReactNode;
+    expanded: boolean;
+    onToggle: () => void;
+    alwaysActive?: boolean;
+    checked?: boolean;
+    onChange?: (checked: boolean) => void;
+}) {
+    return (
+        <div className="bg-white border text-left border-slate-200 rounded-lg overflow-hidden transition-all duration-200 hover:shadow-md">
+            <div className={`flex items-center justify-between p-4 cursor-pointer ${expanded ? 'bg-slate-50' : 'bg-white'}`} >
+                <div className="flex items-center gap-4 flex-1" onClick={onToggle}>
+                    <button className="text-slate-400">
+                        {expanded ? <Minus size={16} /> : <Plus size={16} />}
+                    </button>
+                    <span className="font-bold text-slate-800 text-sm">{title}</span>
+                </div>
+
+                {alwaysActive ? (
+                    <span className="text-brand font-bold text-xs uppercase tracking-wider mr-2">Always active</span>
+                ) : (
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (onChange) onChange(!checked);
+                        }}
+                        className={`w-12 h-6 rounded-full relative transition-colors duration-300 ease-in-out ${checked ? 'bg-[#0058a3]' : 'bg-slate-300'}`}
+                    >
+                        <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow-sm transition-transform duration-300 flex items-center justify-center ${checked ? 'translate-x-6' : 'translate-x-0'}`}>
+                            {checked && <Check size={10} className="text-[#0058a3]" />}
+                        </div>
+                    </button>
+                )}
+            </div>
+
+            <AnimatePresence>
+                {expanded && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                    >
+                        <div className="p-4 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50">
+                            {children}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 }
