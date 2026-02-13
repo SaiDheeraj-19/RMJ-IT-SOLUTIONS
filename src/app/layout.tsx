@@ -5,6 +5,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import Preloader from "@/components/ui/Preloader";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -101,6 +102,7 @@ export default function RootLayout({
           </div>
         </SmoothScroll>
         <GoogleAnalytics />
+        <CookieConsent />
       </body>
     </html>
   );

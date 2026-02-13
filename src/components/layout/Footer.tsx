@@ -32,7 +32,7 @@ const sitemap = [
             { label: "Legal Terms", href: "/terms" },
             { label: "Security Policy", href: "/security-disclosure" },
             { label: "Compliance Hub", href: "/regulatory-hub" },
-            { label: "Cookie Settings", href: "/privacy" }
+            { label: "Cookie Settings", href: "/cookie-policy" }
         ]
     },
     {
