@@ -58,7 +58,7 @@ const navLinks = [
             { title: "About RMJ IT Solutions", href: "/about", description: "Our legacy and expertise" },
             { title: "Our Mission", href: "/about#mission", description: "Empowering through innovation" },
             { title: "Engineering Principles", href: "/about#principles", description: "Methodical excellence & rigour" },
-            { title: "Careers", href: "/contact", description: "Join our expert team" }
+            { title: "Careers", href: "/careers", description: "Join our expert team" }
         ]
     },
     {

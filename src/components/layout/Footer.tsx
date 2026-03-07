@@ -22,7 +22,7 @@ const sitemap = [
             { label: "The Framework", href: "/#approach" },
             { label: "Case Studies", href: "/case-studies" },
             { label: "Strategy Portfolio", href: "/services" },
-            { label: "Career Portal", href: "/contact" }
+            { label: "Career Portal", href: "/careers" }
         ]
     },
     {
