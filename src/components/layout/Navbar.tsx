@@ -9,35 +9,66 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
     {
-        name: "Capabilities",
+        name: "Engineering",
         href: "/services",
         dropdown: [
-            { title: "Institutional Infrastructure", href: "/services/erp", description: "Enterprise refactoring & ecosystems" },
-            { title: "Cloud Orchestration", href: "/services/cloud", description: "High-availability technical architecture" },
-            { title: "Deterministic Web Systems", href: "/services/web", description: "High-performance specialized builds" },
-            { title: "Architectural Auditing", href: "/services/security", description: "Structural security & hardening" },
-            { title: "Strategic Intelligence", href: "/services/ai", description: "Private LLMs & institutional AI models" },
-            { title: "Process Automation", href: "/services/automation", description: "Workflow logic & operational efficiency" },
-            { title: "Mobility Systems", href: "/services/mobile", description: "Cross-platform enterprise mobile builds" },
-            { title: "Digital Presence", href: "/services/marketing", description: "Performance marketing & global growth" }
+            { title: "Digital Systems Engineering", href: "/services/erp", description: "Scalable enterprise ecosystems" },
+            { title: "Cloud Infrastructure", href: "/services/cloud", description: "High-availability technical architecture" },
+            { title: "AI Automation", href: "/services/ai", description: "Strategic institutional AI models" },
+            { title: "Security & Performance", href: "/services/security", description: "Structural hardening & auditing" },
+            { title: "Process Automation", href: "/services/automation", description: "Operational efficiency protocols" }
         ]
     },
     {
-        name: "Orchestration",
-        href: "/process",
+        name: "Services",
+        href: "/services",
         dropdown: [
-            { title: "The Protocol", href: "/process", description: "Deterministic delivery framework" },
-            { title: "Strategic Evidence", href: "/case-studies", description: "Documented institutional results" }
+            { title: "Custom Software Development", href: "/services/web", description: "Tailored business logic solutions" },
+            { title: "Web Applications", href: "/services/web", description: "High-performance specialized builds" },
+            { title: "Mobile Applications", href: "/services/mobile", description: "Cross-platform mobility systems" },
+            { title: "Enterprise Systems", href: "/services/erp", description: "Legacy refactoring & integration" },
+            { title: "Digital Platforms", href: "/services/erp", description: "End-to-end digital transformation" }
         ]
     },
     {
-        name: "Institution",
+        name: "Solutions",
+        href: "/#products",
+        dropdown: [
+            { title: "Digital Campus Platform", href: "/#products", description: "Academic operations management" },
+            { title: "Attendance Management System", href: "/#products", description: "Automated tracking & reporting" },
+            { title: "Training Management System", href: "/#products", description: "Learning & progress orchestration" },
+            { title: "Enterprise Dashboards", href: "/#products", description: "Real-time decision intelligence" },
+            { title: "Automation Systems", href: "/#products", description: "Mission-critical workflow automation" }
+        ]
+    },
+    {
+        name: "Process",
+        href: "/#approach",
+        dropdown: [
+            { title: "Diagnose", href: "/#approach", description: "Strategic audit & discovery" },
+            { title: "Architect", href: "/#approach", description: "System design & blueprinting" },
+            { title: "Build", href: "/#approach", description: "Precision engineering & development" },
+            { title: "Optimize", href: "/#approach", description: "Performance tuning & monitoring" }
+        ]
+    },
+    {
+        name: "Company",
         href: "/about",
         dropdown: [
-            { title: "The Mission", href: "/about", description: "Architecting for structural certainty" },
-            { title: "Strategic Engagement", href: "/contact", description: "Initiate institutional audit" },
-            { title: "Regulatory Hub", href: "/regulatory-hub", description: "Compliance & global standards" },
-            { title: "Security Disclosure", href: "/security-disclosure", description: "Vulnerability reporting & protocols" }
+            { title: "About RMJ IT Solutions", href: "/about", description: "Our legacy and expertise" },
+            { title: "Our Mission", href: "/about#mission", description: "Empowering through innovation" },
+            { title: "Engineering Principles", href: "/about#principles", description: "Methodical excellence & rigour" },
+            { title: "Careers", href: "/contact", description: "Join our expert team" }
+        ]
+    },
+    {
+        name: "Contact",
+        href: "/contact",
+        dropdown: [
+            { title: "Contact Us", href: "/contact", description: "Direct communication channel" },
+            { title: "Schedule Consultation", href: "/contact", description: "Technical advisory booking" },
+            { title: "Office Location", href: "/contact#location", description: "Visit our technology center" },
+            { title: "Email Support", href: "mailto:support@rmjit.com", description: "Technical assistance portal" }
         ]
     },
 ];
@@ -167,7 +198,7 @@ export default function Navbar() {
                     id="nav-cta"
                     className="px-6 py-3 bg-brand text-white text-[11px] uppercase tracking-widest font-black rounded-full hover:bg-brand/90 hover:scale-105 transition-all duration-300 shadow-xl shadow-brand/20"
                 >
-                    Strategic Advisory
+                    Start Project
                 </Link>
             </div>
 
@@ -226,7 +257,7 @@ export default function Navbar() {
                                 className="text-xs uppercase tracking-[0.2em] font-black bg-brand text-white px-12 py-4 rounded-full shadow-xl shadow-brand/20"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Technical Consultation
+                                Start Project
                             </Link>
                         </motion.div>
                     </motion.div>

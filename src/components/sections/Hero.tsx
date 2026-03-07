@@ -53,7 +53,7 @@ export default function Hero() {
                             <div className="space-y-6">
                                 <TextReveal
                                     as="h1"
-                                    text="Defining the Standard for Digital Sovereignty."
+                                    text="Defining the Future of Digital Solutions"
                                     className="text-[clamp(3.5rem,7vw,6.5rem)] font-display leading-[1.15] font-bold tracking-tighter text-slate-900 pb-6"
                                     delay={0.1}
                                 />
@@ -64,7 +64,10 @@ export default function Hero() {
                                     className="max-w-xl"
                                 >
                                     <p className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed">
-                                        We engineer high-stakes digital infrastructure where failure is not a metric. We deliver <span className="text-brand">architectural certainty</span> for the world&apos;s most demanding institutions.
+                                        RMJ IT Solutions Pvt Ltd delivers innovative software systems, web applications, and enterprise platforms that help businesses and educational institutions transform digitally.
+                                    </p>
+                                    <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed mt-6">
+                                        We provide scalable, secure, and customized technology solutions designed to improve operational efficiency and accelerate growth. Our team of experienced developers and designers works closely with clients to build reliable digital systems that solve real-world problems.
                                     </p>
                                 </motion.div>
                             </div>

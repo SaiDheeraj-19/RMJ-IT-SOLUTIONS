@@ -30,11 +30,21 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       if (!anchor) return;
 
       const href = anchor.getAttribute("href");
-      if (href?.startsWith("#") && href.length > 1) {
-        e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-          lenis.scrollTo(element as HTMLElement);
+      if (!href) return;
+
+      // Handle both #anchor and /#anchor
+      const isInternalAnchor = href.startsWith("#") || href.startsWith("/") && href.includes("#");
+
+      if (isInternalAnchor) {
+        const targetId = href.split("#")[1];
+        if (!targetId) return;
+
+        const targetElement = document.getElementById(targetId);
+
+        // Only prevent default if we are on the page where the target exists
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement);
         }
       }
     };

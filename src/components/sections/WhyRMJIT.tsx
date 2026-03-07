@@ -7,24 +7,20 @@ import { Check } from "lucide-react";
 
 const differentiators = [
     {
-        title: "Systems Thinking, Not Just Code",
-        description: "We analyze how your entire operation functions—people, processes, and existing tools—before we write a single line of code. We solve business problems, not just tickets."
+        title: "Competitive Pricing",
+        description: "We offer transparent and cost-effective pricing models to ensure our clients receive the best value for their investment."
     },
     {
-        title: "Performance-First Architecture",
-        description: "Every application we build is benchmarked for speed, load capacity, and database efficiency. We design for the 10,000th user, not just the first 10."
+        title: "Creative Development",
+        description: "Our team delivers creative web design and modern application development using the latest technologies and frameworks."
     },
     {
-        title: "Transparent Engineering Process",
-        description: "No black boxes. You get access to our project board, bi-weekly demo calls, and direct communication with the lead engineer. You own the code from day one."
+        title: "Expert Team",
+        description: "Our developers stay updated with industry trends and technologies to deliver high-performance and scalable systems."
     },
     {
-        title: "Documentation-Driven Builds",
-        description: "We don't just hand over a repo. We deliver comprehensive API documentation, system architecture diagrams, and operator manuals so your team can maintain it long-term."
-    },
-    {
-        title: "Long-Term Scalability Focus",
-        description: "We avoid quick hacks and proprietary lock-in. We use standard, open-source technologies (React, Next.js, Python, PostgreSQL) that any competent developer can pick up."
+        title: "Customized Solutions",
+        description: "Every solution we build is tailored to the specific needs and goals of each organization."
     }
 ];
 

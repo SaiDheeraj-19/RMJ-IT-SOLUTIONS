@@ -67,7 +67,7 @@ export default function AboutPage() {
             </Section>
 
             {/* Safety & Trust Section */}
-            <Section className="bg-[#eef2ff]/50 py-40 overflow-hidden relative">
+            <Section id="mission" className="bg-[#eef2ff]/50 py-40 overflow-hidden relative">
                 <div className="max-w-[1400px] mx-auto">
                     <div className="max-w-3xl mb-24">
                         <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block font-mono">{`// SAFETY FIRST ARCHITECTURE`}</span>
@@ -117,7 +117,7 @@ export default function AboutPage() {
             </Section>
 
             {/* Sectors We Protect */}
-            <Section className="bg-white py-40">
+            <Section id="principles" className="bg-white py-40">
                 <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
                         <div className="max-w-2xl">

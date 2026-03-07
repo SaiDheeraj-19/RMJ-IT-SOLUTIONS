@@ -10,6 +10,7 @@ import SectorsImpact from "@/components/sections/SectorsImpact";
 import FAQ from "@/components/sections/FAQ";
 import LeadershipPhilosophy from "@/components/sections/LeadershipPhilosophy";
 import CTA from "@/components/sections/CTA";
+import DigitalCampus from "@/components/sections/DigitalCampus";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <OurApproach /> {/* Solution Section */}
       <Capabilities /> {/* Services Section */}
       <WhyRMJIT /> {/* Differentiation Section */}
+      <DigitalCampus /> {/* Products Section */}
       <SecurityTrust /> {/* Trust Section */}
       <SectorsImpact /> {/* Process Visualization */}
       <LeadershipPhilosophy />

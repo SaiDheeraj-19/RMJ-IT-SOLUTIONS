@@ -45,7 +45,7 @@ export default function CTASection() {
                                 whileTap={{ scale: 0.98 }}
                                 className="px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-[15px] font-bold uppercase tracking-wider flex items-center gap-3 shadow-2xl hover:bg-brand transition-all duration-300"
                             >
-                                Schedule a Technical Consultation
+                                Initiate Structural Audit
                                 <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                             </motion.button>
                         </Link>

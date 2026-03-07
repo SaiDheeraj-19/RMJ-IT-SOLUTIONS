@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, ArrowUpRight } from "lucide-react";
+import { Globe } from "lucide-react";
 
 const sitemap = [
     {
@@ -47,8 +47,6 @@ const sitemap = [
 ];
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
-
     return (
         <footer className="bg-[#fafafa] pt-32 pb-16 px-6 md:px-12 lg:px-24 border-t border-slate-200">
             <div className="max-w-[1400px] mx-auto">
@@ -57,25 +55,37 @@ export default function Footer() {
                     {/* Brand Info */}
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
-                            <div className="relative h-12 w-32 mix-blend-multiply flex items-center mb-8">
+                            <Link href="/" className="relative h-12 w-32 mix-blend-multiply flex items-center mb-8">
                                 <Image
                                     src="/rmjit-logo.png"
                                     alt="RMJ IT SOLUTIONS"
                                     fill
                                     className="object-contain object-left opacity-80"
                                 />
-                            </div>
+                            </Link>
                             <p className="text-[15px] text-slate-500 font-medium leading-relaxed max-w-sm">
-                                Engineering high-trust digital infrastructure for institutions and growth-focused enterprises. Specialized in resilience, security, and scalability.
+                                RMJ IT Solutions Pvt Ltd provides modern software development and digital solutions designed to help businesses and institutions grow through technology.
                             </p>
                         </div>
 
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-full text-[11px] font-black uppercase tracking-widest text-slate-900 hover:border-brand hover:text-brand transition-all duration-500 shadow-sm"
-                        >
-                            Schedule Consultation <ArrowUpRight size={14} />
-                        </Link>
+                        <div className="space-y-4">
+                            <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">
+                                Contact Information
+                            </h4>
+                            <div className="space-y-3 text-[13px] font-semibold text-slate-600">
+                                <a href="tel:+918639756899" className="hover:text-brand transition-colors flex items-center gap-2">
+                                    Phone: +91 8639756899
+                                </a>
+                                <a href="mailto:support@rmjit.com" className="hover:text-brand transition-colors flex items-center gap-2">
+                                    Email: support@rmjit.com
+                                </a>
+                                <p className="leading-relaxed text-slate-500 font-medium">
+                                    Address: 86/326-2 Doctors Colony,<br />
+                                    Revenue Ward No 86, Kurnool,<br />
+                                    Andhra Pradesh, India – 518002
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Sitemap Links */}
@@ -99,6 +109,15 @@ export default function Footer() {
                                 </ul>
                             </div>
                         ))}
+                        <div className="space-y-8">
+                            <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">
+                                Company Details
+                            </h4>
+                            <div className="space-y-2 text-[13px] font-semibold text-slate-600">
+                                <p>Founded: 2018</p>
+                                <p>Industry: IT Services</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -106,7 +125,7 @@ export default function Footer() {
                 <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="flex items-center gap-6">
                         <span className="text-[11px] font-bold text-slate-400">
-                            © {currentYear} RMJ IT SOLUTIONS PVT LTD.
+                            © 2026 RMJ IT SOLUTIONS PVT LTD. ALL RIGHTS RESERVED.
                         </span>
                         <div className="flex items-center gap-2 text-[11px] font-bold text-slate-400 group cursor-pointer hover:text-brand transition-colors">
                             <Globe size={14} />

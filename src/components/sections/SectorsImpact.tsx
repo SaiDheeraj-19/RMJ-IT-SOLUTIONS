@@ -3,56 +3,48 @@
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
-import { CheckCircle2, ShieldCheck, Timer, FileCode, Server, Zap } from "lucide-react";
+import { ShieldCheck, Timer, FileCode, Server, Zap } from "lucide-react";
 
 const phases = [
     {
         num: "01",
         icon: <Timer className="w-5 h-5" />,
-        title: "Deterministic Discovery",
-        description: "We eliminate ambiguity via structural auditing. Our engineers map institutional logic into a deterministic requirements matrix before a single byte is generated.",
+        title: "Requirement Analysis",
+        description: "We analyze business needs and identify system requirements, ensuring a clear understanding of the project goals and technical scope.",
         duration: "Strategic Audit",
-        deliverable: "Digital Sovereignty Blueprint"
+        deliverable: "System Requirements Matrix"
     },
     {
         num: "02",
         icon: <FileCode className="w-5 h-5" />,
-        title: "Foundational Architecture",
-        description: "Designing for the decades. We blueprint high-availability schemas and cryptographic orchestration layers that form the core structural integrity of your organization.",
+        title: "System Design",
+        description: "Our experts design the architecture and user experience, creating detailed blueprints for a scalable and intuitive digital solution.",
         duration: "Architectural Gating",
-        deliverable: "Hardened Tech Specification"
+        deliverable: "Tech Specification & UI/UX"
     },
     {
         num: "03",
         icon: <Zap className="w-5 h-5" />,
-        title: "Precision Engineering",
-        description: "Execution with mathematical rigour. We utilize automated orchestration and deterministic CI/CD pipelines to ensure every sprint delivers production-grade certainty.",
+        title: "Development",
+        description: "Our development team builds secure and scalable applications using modern technologies and industry best practices.",
         duration: "Engineering Sprint",
         deliverable: "High-Integrity Codebase"
     },
     {
         num: "04",
         icon: <ShieldCheck className="w-5 h-5" />,
-        title: "Verifiable Assurance",
-        description: "Beyond QA. We perform adversarial stress testing and kernel-level vulnerability auditing to verify that every protocol meets our rigorous institutional standard.",
+        title: "Testing",
+        description: "All systems undergo thorough testing, including security audits and performance stress tests, to ensure maximum reliability.",
         duration: "Assurance Gating",
-        deliverable: "Structural Integrity Report"
+        deliverable: "Quality Assurance Report"
     },
     {
         num: "05",
         icon: <Server className="w-5 h-5" />,
-        title: "Institutional Orchestration",
-        description: "The zero-risk cutover. We manage global DNS orchestration and multi-regional data migration with mission-critical precision and zero single points of failure.",
+        title: "Deployment and Support",
+        description: "We deploy solutions and provide continuous support to ensure long-term success, including system updates and monitoring.",
         duration: "Strategic Rollout",
-        deliverable: "Live Hardened Infrastructure"
-    },
-    {
-        num: "06",
-        icon: <CheckCircle2 className="w-5 h-5" />,
-        title: "Sustained Stabilization",
-        description: "We provide post-deployment structural monitoring and institutional handover, ensuring your internal teams are prepared to maintain global standards.",
-        duration: "Sustained Ops",
-        deliverable: "Operational Continuity Manual"
+        deliverable: "Live Infrastructure & Support"
     }
 ];
 

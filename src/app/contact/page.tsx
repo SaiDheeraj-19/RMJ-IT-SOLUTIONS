@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 import { useState } from "react";
 import { sendContactEmail } from "@/app/actions/contact";
-import { Check, ArrowRight, X, ShieldCheck } from "lucide-react";
+import { Check, ArrowRight, X, ShieldCheck, Landmark } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -243,10 +243,55 @@ export default function ContactPage() {
                                         {member.role}
                                     </span>
                                     <p className="text-xl font-display font-medium text-slate-700 leading-relaxed italic">
-                                        "{member.message}"
+                                        &quot;{member.message}&quot;
                                     </p>
                                 </motion.div>
                             ))}
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+            {/* Office Location Section */}
+            <Section id="location" className="bg-[#f8fafc] py-40 border-t border-slate-100">
+                <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div>
+                        <span className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block font-mono">
+                            {`// GLOBAL HEADQUARTERS`}
+                        </span>
+                        <h2 className="text-5xl font-display font-bold text-slate-900 tracking-tight mb-8">
+                            Visit our Technology <br /> Center in Kurnool.
+                        </h2>
+                        <p className="text-xl text-slate-500 leading-relaxed font-medium mb-12">
+                            Our primary engineering hub where we host technical deep-dives and architectural discovery sessions with institutional leadership.
+                        </p>
+                        <div className="space-y-6">
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-brand shadow-sm">
+                                    <Landmark size={20} />
+                                </div>
+                                <div className="space-y-1">
+                                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest">Registered Office</h4>
+                                    <p className="text-slate-500 font-medium">
+                                        86/326-2 Doctors Colony, <br />
+                                        Revenue Ward No 86, <br />
+                                        Kurnool, Andhra Pradesh 518002
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="h-[500px] bg-slate-200 rounded-[3.5rem] overflow-hidden relative border border-slate-200 shadow-2xl">
+                        {/* Placeholder for map / static map image */}
+                        <div className="absolute inset-0 bg-[#eef2ff] flex items-center justify-center flex-col gap-4">
+                            <motion.div
+                                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
+                                transition={{ duration: 3, repeat: Infinity }}
+                                className="w-32 h-32 bg-brand/10 rounded-full flex items-center justify-center"
+                            >
+                                <div className="w-12 h-12 bg-brand/20 rounded-full" />
+                            </motion.div>
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand/40">Kurnool Technology Hub</span>
                         </div>
                     </div>
                 </div>
