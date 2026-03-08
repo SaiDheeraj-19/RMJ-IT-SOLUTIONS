@@ -5,174 +5,147 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Industries", href: "/industries" },
-    { name: "Process", href: "/process" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Services", href: "/services" },
+    { name: "Works", href: "/products" },
 ];
 
 export default function Navbar() {
     const pathname = usePathname();
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const [isDark, setIsDark] = useState(true);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            setIsScrolled(currentScrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
+        const saved = localStorage.getItem("theme");
+        if (saved === "light") {
+            setIsDark(false);
+            document.documentElement.setAttribute("data-theme", "light");
+            document.documentElement.classList.add("light");
+        } else {
+            setIsDark(true);
+            document.documentElement.setAttribute("data-theme", "dark");
+            document.documentElement.classList.remove("light");
+        }
     }, []);
 
+    const toggleTheme = () => {
+        const next = !isDark;
+        setIsDark(next);
+        if (next) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            document.documentElement.classList.remove("light");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            document.documentElement.classList.add("light");
+            localStorage.setItem("theme", "light");
+        }
+    };
+
     return (
-        <>
-            <motion.nav
-                initial={{ y: 0 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex items-center justify-between pointer-events-none"
-                aria-label="Main Navigation"
-            >
-                <Link
-                    href="/"
-                    className="pointer-events-auto flex items-center group flex-shrink-0"
-                    aria-label="RMJ IT Solutions Home"
-                >
-                    <div className="relative h-16 w-32 md:h-16 md:w-32 flex items-center">
-                        <Image
-                            src="/rmjit-logo.png"
-                            alt="RMJ IT SOLUTIONS"
-                            fill
-                            className="object-contain object-left"
-                            priority
-                        />
+        <nav className="fixed top-4 md:top-8 px-6 z-[100] w-full flex justify-between items-center pointer-events-none">
+
+            {/* Mobile Logo — RefractWeb-style pill */}
+            <Link href="/" className="md:hidden z-[70] relative pointer-events-auto">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full rmjit-pill">
+                    <span className="leading-none font-bold text-sm text-white tracking-tight">RMJ IT</span>
+                </div>
+            </Link>
+
+            {/* Desktop Center Pill */}
+            <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex bg-white/5 backdrop-blur-md border border-white/5 border-b-white/20 rounded-full p-2 items-center gap-8 shadow-xl shadow-black/10 pointer-events-auto">
+
+                {/* RMJ IT Brand Pill — RefractWeb style */}
+                <Link href="/" className="flex-shrink-0">
+                    <div className="flex items-center gap-2 px-5 h-9 rounded-full rmjit-pill cursor-pointer active:scale-95 transition-transform">
+                        <span className="leading-none font-bold tracking-tight text-white text-[15px]">RMJ IT</span>
                     </div>
                 </Link>
 
-                {/* Center Menu Pill */}
-                <div className="hidden xl:flex items-center pointer-events-auto absolute left-1/2 -translate-x-1/2">
-                    <motion.div
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className={cn(
-                            "flex items-center gap-1 px-2 py-2 transition-all duration-500 rounded-full",
-                            "bg-white/90 backdrop-blur-xl border border-black/5 shadow-sm",
-                            isScrolled ? "shadow-lg" : ""
-                        )}
-                    >
-                        {navLinks.map((link) => (
-                            <div
-                                key={link.name}
-                                onMouseEnter={() => setHoveredLink(link.name)}
-                                onMouseLeave={() => setHoveredLink(null)}
-                                className="relative"
-                            >
-                                <Link
-                                    href={link.href}
-                                    className={cn(
-                                        "relative block px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-black transition-colors duration-300",
-                                        pathname === link.href ? "text-brand" : "text-slate-900"
-                                    )}
-                                >
-                                    <span className="relative z-10">{link.name}</span>
-                                    {(hoveredLink === link.name || pathname === link.href) && (
-                                        <motion.div
-                                            layoutId="nav-pill"
-                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                            className={cn(
-                                                "absolute inset-0 rounded-full z-0",
-                                                pathname === link.href ? "bg-brand/5" : "bg-slate-100"
-                                            )}
-                                        />
-                                    )}
-                                </Link>
-                            </div>
-                        ))}
-                    </motion.div>
+                <div className="flex items-center gap-8 px-4 text-sm font-medium text-white/50">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className={cn(
+                                "hover:text-foreground transition-all relative overflow-hidden group",
+                                pathname === link.href ? "text-foreground" : "text-foreground/50"
+                            )}
+                        >
+                            <span className="relative flex">
+                                {link.name}
+                            </span>
+                        </Link>
+                    ))}
                 </div>
+            </div>
 
-                {/* Right Actions */}
-                <div className="hidden md:flex items-center gap-6 pointer-events-auto">
-                    <Link
-                        href="/contact"
-                        id="nav-cta"
-                        className="px-6 py-3 bg-brand text-white text-[11px] uppercase tracking-widest font-black rounded-full hover:bg-brand/90 hover:scale-105 transition-all duration-300 shadow-xl shadow-brand/20"
-                    >
-                        Start Your Project With Us
-                    </Link>
-                </div>
+            {/* Right Side Controls */}
+            <div className="ml-auto flex items-center gap-3 relative z-[70] pointer-events-auto">
 
-                {/* Mobile Toggle */}
+                {/* Theme Toggle */}
                 <button
-                    className="xl:hidden p-3 bg-white rounded-full shadow-lg pointer-events-auto text-[#1a1a1a]"
+                    onClick={toggleTheme}
+                    className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-foreground/70 hover:text-foreground hover:bg-white/10 transition-all"
+                    aria-label="Toggle theme"
+                >
+                    {isDark ? <Sun size={16} /> : <Moon size={16} />}
+                </button>
+
+                <Link href="/contact" className="hidden md:inline-flex btn-glow px-5 h-9 text-sm font-bold">
+                    Work With Us
+                </Link>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                    className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-foreground transition-all active:scale-95 hover:bg-white/10"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
+            </div>
 
-                {/* Mobile Menu Curtain */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-6 xl:hidden pointer-events-auto"
-                        >
-                            <button
-                                className="absolute top-8 right-6 p-4 text-stone-400 hover:text-brand transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                <X size={24} />
+            {/* Mobile Dropdown Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                        className="absolute top-20 left-6 right-6 bg-[#0a0b0c] border border-white/10 rounded-3xl p-6 pointer-events-auto md:hidden shadow-2xl flex flex-col gap-6"
+                        style={{ background: 'var(--background)' }}
+                    >
+                        <div className="flex items-center justify-between">
+                            <Image src="/rmjit.png" alt="RMJ IT" width={32} height={32} className="object-contain logo-animated" />
+                            <button onClick={toggleTheme} className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-foreground/70">
+                                {isDark ? <Sun size={16} /> : <Moon size={16} />}
                             </button>
-
-                            {navLinks.map((link, i) => (
-                                <motion.div
-                                    key={link.name}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 + i * 0.1 }}
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                        className={cn(
-                                            "text-3xl font-display font-medium transition-colors",
-                                            pathname === link.href ? "text-brand" : "text-[#1a1a1a]"
-                                        )}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </motion.div>
-                            ))}
-
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.4 }}
-                                className="pt-6"
+                        </div>
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="text-2xl font-medium text-foreground/70 hover:text-foreground transition-colors"
                             >
-                                <Link
-                                    href="/contact"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-xs uppercase tracking-[0.2em] font-black bg-brand text-white px-12 py-4 rounded-full shadow-xl shadow-brand/20"
-                                >
-                                    Start Your Project With Us
-                                </Link>
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </motion.nav>
-        </>
+                                {link.name}
+                            </Link>
+                        ))}
+                        <Link
+                            href="/contact"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="btn-glow text-center py-4 rounded-full mt-4"
+                        >
+                            Work With Us
+                        </Link>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </nav>
     );
 }

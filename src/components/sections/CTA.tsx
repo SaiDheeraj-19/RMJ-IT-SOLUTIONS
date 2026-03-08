@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTASection() {
     return (
-        <Section id="cta" className="bg-white text-slate-800 py-32 relative overflow-hidden text-center z-10">
+        <Section id="cta" className="bg-white text-foreground/70 py-32 relative overflow-hidden text-center z-10">
             <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-[#eef2ff]/50 to-transparent pointer-events-none" />
             {/* Subtle tech aura */}
             <div className="absolute inset-0 opacity-[0.4]"
@@ -43,7 +43,7 @@ export default function CTASection() {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-[15px] font-bold uppercase tracking-wider flex items-center gap-3 shadow-2xl hover:bg-brand transition-all duration-300"
+                                className="px-12 py-6 bg-[#1a1a1a] text-foreground rounded-full text-[15px] font-bold uppercase tracking-wider flex items-center gap-3 shadow-2xl hover:bg-brand transition-all duration-300"
                             >
                                 Initiate Structural Audit
                                 <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />

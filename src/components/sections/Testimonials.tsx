@@ -25,7 +25,7 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <Section className="py-40 bg-[#fafafa]">
+        <Section className="py-40 bg-surface-soft">
             <div className="max-w-[1440px] mx-auto">
                 <div className="mb-24 text-center">
                     <motion.span
@@ -39,7 +39,7 @@ export default function Testimonials() {
                     <TextReveal
                         as="h2"
                         text="What Our Clients Say."
-                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                     />
                 </div>
 
@@ -55,12 +55,12 @@ export default function Testimonials() {
                         >
                             <Quote size={40} className="text-brand/10 absolute top-8 right-8" />
                             <div className="space-y-8 relative z-10">
-                                <p className="text-lg text-slate-600 italic leading-relaxed">
+                                <p className="text-lg text-foreground/70 italic leading-relaxed">
                                     &quot;{item.text}&quot;
                                 </p>
                                 <div className="pt-8 border-t border-slate-100">
-                                    <h4 className="text-lg font-display font-black text-slate-900">{item.name}</h4>
-                                    <p className="text-[11px] uppercase tracking-widest font-black text-slate-400">{item.role}</p>
+                                    <h4 className="text-lg font-display font-black text-foreground">{item.name}</h4>
+                                    <p className="text-[11px] uppercase tracking-widest font-black text-foreground/70">{item.role}</p>
                                 </div>
                             </div>
                         </motion.div>

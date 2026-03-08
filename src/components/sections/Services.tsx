@@ -54,7 +54,7 @@ export default function Services() {
                     <TextReveal
                         as="h2"
                         text="Our Technology Services"
-                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                     />
                 </div>
 
@@ -70,16 +70,16 @@ export default function Services() {
                         >
                             <Link href="/services" className="block space-y-8">
                                 <div className="space-y-6">
-                                    <h3 className="text-3xl font-display font-bold text-slate-900 group-hover:text-brand transition-colors duration-500">
+                                    <h3 className="text-3xl font-display font-bold text-foreground group-hover:text-brand transition-colors duration-500">
                                         {service.title}
                                     </h3>
-                                    <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                                    <p className="text-lg text-foreground/70 font-medium leading-relaxed">
                                         {service.description}
                                     </p>
                                 </div>
                                 <div className="flex flex-wrap gap-3">
                                     {service.details.map((detail, idx) => (
-                                        <span key={idx} className="text-[10px] font-bold uppercase tracking-widest bg-slate-50 text-slate-400 px-4 py-2 rounded-full border border-slate-100 group-hover:border-brand/20 group-hover:text-brand transition-all duration-500">
+                                        <span key={idx} className="text-[10px] font-bold uppercase tracking-widest bg-surface text-foreground/70 px-4 py-2 rounded-full border border-slate-100 group-hover:border-brand/20 group-hover:text-brand transition-all duration-500">
                                             {detail}
                                         </span>
                                     ))}

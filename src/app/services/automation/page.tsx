@@ -45,7 +45,7 @@ export default function AutomationPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block px-8 py-4 bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-colors shadow-lg"
+                            className="inline-block px-8 py-4 bg-[#1a1a1a] text-foreground text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-colors shadow-lg"
                         >
                             Request a Free Audit
                         </Link>
@@ -70,7 +70,7 @@ export default function AutomationPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <div className="text-4xl md:text-5xl font-display font-bold text-[#1a1a1a] mb-2">{m.stat}</div>
+                                <div className="text-4xl md:text-backgroundxl font-display font-bold text-[#1a1a1a] mb-2">{m.stat}</div>
                                 <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400">{m.label}</div>
                             </motion.div>
                         ))}
@@ -195,7 +195,7 @@ export default function AutomationPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="p-10 bg-white/70 backdrop-blur-sm border border-stone-200/80 rounded-2xl"
+                                className="p-10 bg-foreground/70 backdrop-blur-sm border border-stone-200/80 rounded-2xl"
                             >
                                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand mb-4 block">{c.sector}</span>
                                 <h3 className="text-lg font-display font-bold text-[#1a1a1a] mb-3">Problem</h3>
@@ -220,12 +220,12 @@ export default function AutomationPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-display font-bold text-white mb-8 tracking-tight">
+                        <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-display font-bold text-foreground mb-8 tracking-tight">
                             Ready to eliminate <br /> manual overhead?
                         </h2>
                         <Link
                             href="/contact"
-                            className="inline-block px-12 py-6 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-black rounded-full hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 shadow-2xl"
+                            className="inline-block px-12 py-6 bg-[#1a1a1a] text-foreground text-sm uppercase tracking-widest font-black rounded-full hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 shadow-2xl"
                         >
                             Schedule an Automation Audit
                         </Link>

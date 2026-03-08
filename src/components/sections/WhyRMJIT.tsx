@@ -69,7 +69,7 @@ export default function DifferentiationSection() {
                             >
                                 <div className="mt-1 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
                                     <div className="w-8 h-8 rounded-full bg-brand/10 flex items-center justify-center border border-brand/20 group-hover:bg-brand group-hover:border-brand transition-all">
-                                        <Check size={14} className="text-brand group-hover:text-white" />
+                                        <Check size={14} className="text-brand group-hover:text-foreground" />
                                     </div>
                                 </div>
                                 <div>

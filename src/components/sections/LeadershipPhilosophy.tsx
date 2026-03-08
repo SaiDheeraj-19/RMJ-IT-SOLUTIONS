@@ -46,17 +46,17 @@ export default function LeadershipPhilosophy() {
                     {/* Header Section */}
                     <div className="lg:col-span-4 space-y-8">
                         <div className="space-y-6 sticky top-32">
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-[1.2] tracking-tight pb-4">
+                            <h2 className="text-4xl md:text-backgroundxl font-display font-bold text-foreground leading-[1.2] tracking-tight pb-4">
                                 The <br />
-                                <span className="text-slate-400">Manifesto.</span>
+                                <span className="text-foreground/70">Manifesto.</span>
                             </h2>
-                            <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-sm">
+                            <p className="text-lg text-foreground/70 font-medium leading-relaxed max-w-sm">
                                 We operate on a set of immutable engineering principles. These aren&apos;t just values—they are the constraints within which we build excellence.
                             </p>
 
-                            <Link href="/about" className="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-900 mt-8">
+                            <Link href="/about" className="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-foreground mt-8">
                                 <span>Read the Manifesto</span>
-                                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-brand group-hover:text-white transition-colors">
+                                <div className="w-8 h-8 rounded-full bg-surface0 flex items-center justify-center group-hover:bg-brand group-hover:text-foreground transition-colors">
                                     <ArrowUpRight size={14} />
                                 </div>
                             </Link>
@@ -72,7 +72,7 @@ export default function LeadershipPhilosophy() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group relative bg-[#fafafa] hover:bg-slate-900 transition-colors duration-500 rounded-3xl p-10 md:p-12 border border-slate-100 hover:border-slate-800"
+                                className="group relative bg-surface-soft hover:bg-surface0 transition-colors duration-500 rounded-3xl p-10 md:p-12 border border-slate-100 hover:border-slate-800"
                             >
                                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 z-10 relative">
                                     <div className="space-y-6 md:max-w-xl">
@@ -82,11 +82,11 @@ export default function LeadershipPhilosophy() {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-3xl font-display font-bold text-slate-900 group-hover:text-white transition-colors">
+                                        <h3 className="text-3xl font-display font-bold text-foreground group-hover:text-foreground transition-colors">
                                             {item.title}
                                         </h3>
 
-                                        <p className="text-base text-slate-500 font-medium leading-relaxed group-hover:text-slate-400 transition-colors">
+                                        <p className="text-base text-foreground/70 font-medium leading-relaxed group-hover:text-foreground/70 transition-colors">
                                             {item.desc}
                                         </p>
                                     </div>

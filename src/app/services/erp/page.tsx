@@ -43,13 +43,13 @@ const features = [
 
 export default function ERPPage() {
     return (
-        <main className="min-h-screen bg-[#fafafa]">
+        <main className="min-h-screen bg-surface-soft">
             <Navbar />
 
             {/* Hero Section */}
             <section className="relative min-h-[90vh] pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden border-b border-slate-100">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-slate-900/[0.02]"
+                    <div className="absolute inset-0 bg-surface0/[0.02]"
                         style={{
                             backgroundImage: `radial-gradient(#000 0.5px, transparent 0.5px)`,
                             backgroundSize: '40px 40px',
@@ -70,14 +70,14 @@ export default function ERPPage() {
                         <TextReveal
                             as="h1"
                             text="Digital Systems Engineering."
-                            className="text-[clamp(3.2rem,7vw,5.5rem)] font-display leading-[0.9] tracking-tighter font-bold text-slate-900 mb-8"
+                            className="text-[clamp(3.2rem,7vw,5.5rem)] font-display leading-[0.9] tracking-tighter font-bold text-foreground mb-8"
                         />
-                        <p className="text-xl text-slate-500 max-w-xl leading-relaxed mb-12 font-medium">
+                        <p className="text-xl text-foreground/70 max-w-xl leading-relaxed mb-12 font-medium">
                             We bridge the gap between Boardroom strategy and technical execution. We replace fragmented legacy tools with unified, deterministic digital infrastructure.
                         </p>
                         <Link
                             href="/contact"
-                            className="group inline-flex items-center gap-4 px-12 py-6 bg-slate-900 text-white text-[11px] uppercase tracking-[0.4em] font-black rounded-full hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10"
+                            className="group inline-flex items-center gap-4 px-12 py-6 bg-surface0 text-foreground text-[11px] uppercase tracking-[0.4em] font-black rounded-full hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10"
                         >
                             Initiate Structural Audit
                             <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-500" />
@@ -91,10 +91,10 @@ export default function ERPPage() {
                 <div className="max-w-[1400px] mx-auto">
                     <div className="mb-32 max-w-3xl">
                         <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono">{`// CORE CAPABILITIES`}</span>
-                        <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter mb-10">
+                        <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter mb-10">
                             Re-engineering operational <span className="italic text-brand">certainty.</span>
                         </h2>
-                        <p className="text-xl text-slate-500 leading-relaxed font-medium">
+                        <p className="text-xl text-foreground/70 leading-relaxed font-medium">
                             Fragmented systems create operational doubt. We architect infrastructure around deterministic workflows, ensuring global institutional autonomy and long-term technical resilience.
                         </p>
                     </div>
@@ -109,7 +109,7 @@ export default function ERPPage() {
                                 transition={{ delay: i * 0.1 }}
                                 className="p-10 bg-[#f8fafc] border border-stone-100 rounded-3xl hover:border-brand/30 transition-all duration-500 group"
                             >
-                                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand mb-8 shadow-sm group-hover:bg-brand group-hover:text-white transition-colors duration-500">
+                                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand mb-8 shadow-sm group-hover:bg-brand group-hover:text-foreground transition-colors duration-500">
                                     {feature.icon}
                                 </div>
                                 <h4 className="text-xl font-display font-bold text-[#1a1a1a] mb-4">{feature.title}</h4>
@@ -144,7 +144,7 @@ export default function ERPPage() {
                                         <span className="text-[10px] font-black font-mono text-brand tracking-[0.3em] uppercase opacity-70">
                                             {`// SYSTEM PERFORMANCE METRICS`}
                                         </span>
-                                        <h4 className="text-2xl font-display font-bold text-slate-900 tracking-tight">System Autonomy Dashboard</h4>
+                                        <h4 className="text-2xl font-display font-bold text-foreground tracking-tight">System Autonomy Dashboard</h4>
                                     </div>
                                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm">
                                         <Activity className="w-5 h-5 text-brand" />
@@ -155,20 +155,20 @@ export default function ERPPage() {
                                     {/* Metric 1 */}
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-end">
-                                            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Efficiency</span>
+                                            <span className="text-sm font-bold text-foreground/70 uppercase tracking-widest">Efficiency</span>
                                             <span className="text-2xl font-display font-black text-brand tracking-tighter uppercase">High</span>
                                         </div>
-                                        <div className="h-3 w-full bg-slate-200/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                                        <div className="h-3 w-full bg-surface0/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
                                             <motion.div
                                                 initial={{ width: 0 }}
                                                 whileInView={{ width: "100%" }}
                                                 transition={{ duration: 2.5, ease: "circOut" }}
                                                 className="h-full bg-gradient-to-r from-brand to-indigo-400 rounded-full relative shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                                             >
-                                                <div className="absolute top-0 right-0 w-2 h-full bg-white/40 blur-[1px]" />
+                                                <div className="absolute top-0 right-0 w-2 h-full bg-foreground/40 blur-[1px]" />
                                             </motion.div>
                                         </div>
-                                        <p className="text-[13px] text-slate-600 font-medium leading-relaxed">
+                                        <p className="text-[13px] text-foreground/70 font-medium leading-relaxed">
                                             Reduction in manual data entry cycles across institutional workflows.
                                         </p>
                                     </div>
@@ -176,10 +176,10 @@ export default function ERPPage() {
                                     {/* Metric 2 */}
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-end">
-                                            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Stability</span>
+                                            <span className="text-sm font-bold text-foreground/70 uppercase tracking-widest">Stability</span>
                                             <span className="text-2xl font-display font-black text-brand tracking-tighter uppercase">Active</span>
                                         </div>
-                                        <div className="h-3 w-full bg-slate-200/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                                        <div className="h-3 w-full bg-surface0/50 rounded-full overflow-hidden p-0.5 border border-slate-200">
                                             <motion.div
                                                 initial={{ width: 0 }}
                                                 whileInView={{ width: "100%" }}
@@ -187,7 +187,7 @@ export default function ERPPage() {
                                                 className="h-full bg-brand rounded-full"
                                             />
                                         </div>
-                                        <p className="text-[13px] text-slate-600 font-medium leading-relaxed">
+                                        <p className="text-[13px] text-foreground/70 font-medium leading-relaxed">
                                             Unscheduled system downtime recorded over 24 consecutive months.
                                         </p>
                                     </div>
@@ -197,11 +197,11 @@ export default function ERPPage() {
                                 <div className="mt-16 pt-10 border-t border-slate-200 flex flex-wrap gap-8">
                                     <div className="flex items-center gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Security Hardware: Active</span>
+                                        <span className="text-[10px] font-black text-foreground/70 uppercase tracking-widest leading-none">Security Hardware: Active</span>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-brand" />
-                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Latency: &lt; 200ms</span>
+                                        <span className="text-[10px] font-black text-foreground/70 uppercase tracking-widest leading-none">Latency: &lt; 200ms</span>
                                     </div>
                                 </div>
                             </div>
@@ -218,8 +218,8 @@ export default function ERPPage() {
                                         <ShieldCheck className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Architecture</p>
-                                        <p className="text-sm font-bold text-slate-900 leading-none">Hardened.</p>
+                                        <p className="text-[10px] font-black text-foreground/70 uppercase tracking-widest mb-1">Architecture</p>
+                                        <p className="text-sm font-bold text-foreground leading-none">Hardened.</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -229,16 +229,16 @@ export default function ERPPage() {
                     <div className="lg:col-span-5 space-y-12">
                         <div className="space-y-8">
                             <span className="text-brand font-mono text-xs tracking-[0.3em] font-black uppercase block">{`// Engineered Results`}</span>
-                            <h3 className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.95] tracking-tight">
+                            <h3 className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-foreground leading-[0.95] tracking-tight">
                                 Performance that is engineered, not promised.
                             </h3>
-                            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                            <p className="text-lg text-foreground/70 leading-relaxed font-medium">
                                 We don&apos;t just deliver code; we deliver measurable institutional efficiency. Our systems are built to eliminate the errors, delays, and security gaps of fragmented software.
                             </p>
                         </div>
 
                         <div className="pt-4">
-                            <Link href="/contact" className="group inline-flex items-center gap-4 bg-slate-900 text-white px-10 py-5 rounded-full text-xs uppercase tracking-widest font-black hover:bg-brand transition-all duration-500 shadow-xl shadow-slate-900/10">
+                            <Link href="/contact" className="group inline-flex items-center gap-4 bg-surface0 text-foreground px-10 py-5 rounded-full text-xs uppercase tracking-widest font-black hover:bg-brand transition-all duration-500 shadow-xl shadow-slate-900/10">
                                 Talk To An Architect
                                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
                             </Link>

@@ -35,7 +35,7 @@ const industries = [
 
 export default function Industries() {
     return (
-        <Section id="industries" className="py-40 bg-[#fafafa]">
+        <Section id="industries" className="py-40 bg-surface-soft">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                 <div className="max-w-4xl mb-32">
                     <motion.span
@@ -45,7 +45,7 @@ export default function Industries() {
                     >
                         {"// DOMAIN EXPERTISE"}
                     </motion.span>
-                    <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter">
+                    <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter">
                         Industries We Support with Technical Excellence.
                     </h2>
                 </div>
@@ -64,13 +64,13 @@ export default function Industries() {
                                 href="/industries"
                                 className="block p-10 rounded-[3rem] border border-slate-100 hover:border-brand/30 hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500"
                             >
-                                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white transition-all duration-500 mb-8">
+                                <div className="w-14 h-14 bg-surface rounded-2xl flex items-center justify-center text-foreground/70 group-hover:bg-brand group-hover:text-foreground transition-all duration-500 mb-8">
                                     <ind.icon size={24} />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors">
+                                <h3 className="text-2xl font-display font-bold text-foreground mb-4 group-hover:text-brand transition-colors">
                                     {ind.title}
                                 </h3>
-                                <p className="text-lg text-slate-500 leading-relaxed font-medium">
+                                <p className="text-lg text-foreground/70 leading-relaxed font-medium">
                                     {ind.description}
                                 </p>
                             </Link>

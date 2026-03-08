@@ -48,11 +48,11 @@ export default function Process() {
                         <TextReveal
                             as="h2"
                             text="Our Development Methodology"
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                         />
                     </div>
                     <div className="max-w-md">
-                        <p className="text-lg text-slate-500 font-medium">A structured engineering approach designed to maximize efficiency and maintain total transparency throughout the build cycle.</p>
+                        <p className="text-lg text-foreground/70 font-medium">A structured engineering approach designed to maximize efficiency and maintain total transparency throughout the build cycle.</p>
                     </div>
                 </div>
 
@@ -68,16 +68,16 @@ export default function Process() {
                         >
                             <div className="space-y-10">
                                 <div className="flex items-center gap-6">
-                                    <span className="text-5xl font-display font-black text-slate-100 group-hover:text-brand/20 transition-colors duration-500">
+                                    <span className="text-backgroundxl font-display font-black text-foreground/70 group-hover:text-brand/20 transition-colors duration-500">
                                         {(i + 1).toString().padStart(2, '0')}
                                     </span>
-                                    <div className="h-[2px] w-12 bg-slate-100 group-hover:bg-brand/20 transition-colors duration-500" />
+                                    <div className="h-[2px] w-12 bg-surface0 group-hover:bg-brand/20 transition-colors duration-500" />
                                 </div>
                                 <div className="space-y-6">
-                                    <h3 className="text-3xl font-display font-bold text-slate-900 group-hover:text-brand transition-colors duration-500 tracking-tighter">
+                                    <h3 className="text-3xl font-display font-bold text-foreground group-hover:text-brand transition-colors duration-500 tracking-tighter">
                                         {step.title}
                                     </h3>
-                                    <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                                    <p className="text-lg text-foreground/70 font-medium leading-relaxed">
                                         {step.desc}
                                     </p>
                                 </div>

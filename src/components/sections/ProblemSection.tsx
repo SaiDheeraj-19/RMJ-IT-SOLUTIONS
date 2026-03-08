@@ -30,20 +30,20 @@ const challenges = [
 
 export default function ProblemSection() {
     return (
-        <Section className="py-32 bg-[#fafafa]">
+        <Section className="py-32 bg-surface-soft">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                 <div className="max-w-3xl mb-24">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        className="text-[10px] uppercase tracking-[0.6em] font-black text-slate-400 mb-10 block font-mono"
+                        className="text-[10px] uppercase tracking-[0.6em] font-black text-foreground/70 mb-10 block font-mono"
                     >
                         {`// THE CHALLENGE`}
                     </motion.span>
                     <TextReveal
                         as="h2"
                         text="Technology Challenges Businesses Face"
-                        className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                        className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                     />
                 </div>
 
@@ -57,13 +57,13 @@ export default function ProblemSection() {
                             transition={{ delay: i * 0.1, duration: 0.8 }}
                             className="bg-white p-10 rounded-[2.5rem] border border-slate-100 group hover:border-brand/20 transition-all duration-500"
                         >
-                            <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-red-50 group-hover:text-red-500 transition-all duration-500 mb-10">
+                            <div className="w-14 h-14 bg-surface rounded-2xl flex items-center justify-center text-foreground/70 group-hover:bg-red-50 group-hover:text-red-500 transition-all duration-500 mb-10">
                                 <item.icon size={28} />
                             </div>
-                            <h3 className="text-xl font-display font-bold text-slate-900 mb-4">
+                            <h3 className="text-xl font-display font-bold text-foreground mb-4">
                                 {item.title}
                             </h3>
-                            <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                            <p className="text-sm text-foreground/70 leading-relaxed font-medium">
                                 {item.desc}
                             </p>
                         </motion.div>

@@ -5,7 +5,7 @@ import { Mail, Phone, ArrowRight, Building2, MessageSquare } from "lucide-react"
 
 export default function ContactPage() {
     return (
-        <div className="pt-32 pb-20 selection:bg-brand/10 bg-slate-50 min-h-screen">
+        <div className="pt-32 pb-20 selection:bg-brand/10 bg-surface min-h-screen">
             {/* Minimal High-End Hero */}
             <section className="pb-20 pt-10 px-10 md:px-20">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
@@ -21,7 +21,7 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-[clamp(3.5rem,8vw,6.5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                            className="text-[clamp(3.5rem,8vw,6.5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                         >
                             Let&apos;s build something <span className="text-brand">extraordinary.</span>
                         </motion.h1>
@@ -29,7 +29,7 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed"
+                            className="text-xl md:text-2xl text-foreground/70 font-medium leading-relaxed"
                         >
                             Whether you need a custom enterprise platform or a complete digital transformation, our team is ready to architect your success.
                         </motion.p>
@@ -46,43 +46,43 @@ export default function ContactPage() {
                             <form className="space-y-10">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                     <div className="space-y-3">
-                                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 pl-4">Full Name</label>
+                                        <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Full Name</label>
                                         <input
                                             type="text"
                                             placeholder="John Doe"
-                                            className="w-full bg-slate-50 border border-transparent rounded-2xl px-6 py-5 font-bold text-slate-900 focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all placeholder:text-slate-300"
+                                            className="w-full bg-surface border border-transparent rounded-2xl px-6 py-5 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all placeholder:text-foreground/70"
                                         />
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 pl-4">Email Address</label>
+                                        <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Email Address</label>
                                         <input
                                             type="email"
                                             placeholder="john@company.com"
-                                            className="w-full bg-slate-50 border border-transparent rounded-2xl px-6 py-5 font-bold text-slate-900 focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all placeholder:text-slate-300"
+                                            className="w-full bg-surface border border-transparent rounded-2xl px-6 py-5 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all placeholder:text-foreground/70"
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-xs font-black uppercase tracking-widest text-slate-400 pl-4">Project Type</label>
+                                    <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Type</label>
                                     <div className="relative">
-                                        <select className="w-full bg-slate-50 border border-transparent rounded-2xl px-6 py-5 font-bold text-slate-900 focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none appearance-none cursor-pointer transition-all text-lg pt-5">
+                                        <select className="w-full bg-surface border border-transparent rounded-2xl px-6 py-5 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none appearance-none cursor-pointer transition-all text-lg pt-5">
                                             <option>Web Application Development</option>
                                             <option>Mobile Application</option>
                                             <option>Custom Software</option>
                                             <option>Digital Campus</option>
                                         </select>
-                                        <ArrowRight size={20} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-slate-400 pointer-events-none" />
+                                        <ArrowRight size={20} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-foreground/70 pointer-events-none" />
                                     </div>
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-xs font-black uppercase tracking-widest text-slate-400 pl-4">Project Details</label>
+                                    <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Details</label>
                                     <textarea
                                         rows={5}
                                         placeholder="Tell us about your goals, timeline, and requirements..."
-                                        className="w-full bg-slate-50 border border-transparent rounded-3xl px-6 py-6 font-bold text-slate-900 focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all resize-none placeholder:text-slate-300"
+                                        className="w-full bg-surface border border-transparent rounded-3xl px-6 py-6 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all resize-none placeholder:text-foreground/70"
                                     />
                                 </div>
-                                <button type="button" className="w-full py-6 bg-brand text-white rounded-2xl font-black uppercase tracking-[0.2em] text-sm group relative overflow-hidden transition-all shadow-xl hover:shadow-brand/30 hover:-translate-y-1">
+                                <button type="button" className="w-full py-6 bg-brand text-foreground rounded-2xl font-black uppercase tracking-[0.2em] text-sm group relative overflow-hidden transition-all shadow-xl hover:shadow-brand/30 hover:-translate-y-1">
                                     <span className="relative z-10 flex items-center justify-center gap-4">
                                         Send Message <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                                     </span>
@@ -103,16 +103,16 @@ export default function ContactPage() {
                                 { title: "Email Address", icon: Mail, desc: "support@rmjit.com", link: "mailto:support@rmjit.com" }
                             ].map((card, idx) => (
                                 <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-lg shadow-slate-200/40 group hover:border-brand/30 transition-colors">
-                                    <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-brand mb-6 group-hover:bg-brand group-hover:text-white transition-colors">
+                                    <div className="w-14 h-14 bg-surface rounded-2xl flex items-center justify-center text-brand mb-6 group-hover:bg-brand group-hover:text-foreground transition-colors">
                                         <card.icon size={24} />
                                     </div>
-                                    <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-3">{card.title}</h4>
+                                    <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-foreground/70 mb-3">{card.title}</h4>
                                     {card.link ? (
-                                        <a href={card.link} className="text-xl font-bold text-slate-900 hover:text-brand transition-colors block leading-snug tracking-tight">
+                                        <a href={card.link} className="text-xl font-bold text-foreground hover:text-brand transition-colors block leading-snug tracking-tight">
                                             {card.desc}
                                         </a>
                                     ) : (
-                                        <p className="text-xl font-bold text-slate-900 leading-snug tracking-tight">
+                                        <p className="text-xl font-bold text-foreground leading-snug tracking-tight">
                                             {card.desc}
                                         </p>
                                     )}

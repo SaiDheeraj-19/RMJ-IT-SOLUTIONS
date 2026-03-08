@@ -77,7 +77,7 @@ export default function SecurityPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-all duration-300 shadow-xl"
+                            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-foreground text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-all duration-300 shadow-xl"
                         >
                             Get Security Audit
                             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -92,7 +92,7 @@ export default function SecurityPage() {
                     <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
                         <div className="max-w-2xl">
                             <span className="text-brand font-mono text-sm tracking-widest block mb-4 uppercase">{`// Hardened Architecture`}</span>
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1a1a] leading-tight">
+                            <h2 className="text-4xl md:text-backgroundxl font-display font-bold text-[#1a1a1a] leading-tight">
                                 Zero-friction speed. <br /> Zero-compromise security.
                             </h2>
                         </div>

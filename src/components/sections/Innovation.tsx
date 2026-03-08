@@ -44,7 +44,7 @@ export default function Innovation() {
                     <TextReveal
                         as="h2"
                         text="Innovation and Future Projects"
-                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                        className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                     />
                 </div>
 
@@ -56,15 +56,15 @@ export default function Innovation() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1, duration: 0.8 }}
-                            className="p-12 rounded-[3rem] bg-slate-50 border border-slate-100 hover:bg-white hover:border-brand/30 hover:shadow-2xl transition-all duration-500 group"
+                            className="p-12 rounded-[3rem] bg-surface border border-slate-100 hover:bg-white hover:border-brand/30 hover:shadow-2xl transition-all duration-500 group"
                         >
-                            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white transition-all duration-500 mb-10">
+                            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-foreground/70 group-hover:bg-brand group-hover:text-foreground transition-all duration-500 mb-10">
                                 <project.icon size={28} />
                             </div>
-                            <h3 className="text-2xl font-display font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors duration-500">
+                            <h3 className="text-2xl font-display font-bold text-foreground mb-4 group-hover:text-brand transition-colors duration-500">
                                 {project.title}
                             </h3>
-                            <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                            <p className="text-sm text-foreground/70 leading-relaxed font-medium">
                                 {project.description}
                             </p>
                         </motion.div>

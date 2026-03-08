@@ -45,7 +45,7 @@ export default function MarketingPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block px-8 py-4 bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-colors shadow-lg"
+                            className="inline-block px-8 py-4 bg-[#1a1a1a] text-foreground text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-colors shadow-lg"
                         >
                             Start Project
                         </Link>

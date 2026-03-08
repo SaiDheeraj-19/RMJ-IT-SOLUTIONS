@@ -43,7 +43,7 @@ export default function Portfolio() {
                         <TextReveal
                             as="h2"
                             text="Upcoming Projects and Innovations."
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                         />
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export default function Portfolio() {
                             transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
                             className="group"
                         >
-                            <div className="relative aspect-[4/3] bg-slate-50 rounded-[2.5rem] overflow-hidden mb-8">
+                            <div className="relative aspect-[4/3] bg-surface rounded-[2.5rem] overflow-hidden mb-8">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -66,17 +66,17 @@ export default function Portfolio() {
                                     className="object-contain p-12 grayscale opacity-50"
                                 />
                                 <div className="absolute top-6 right-6">
-                                    <span className="px-4 py-2 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full text-[10px] uppercase tracking-widest font-black text-slate-400">
+                                    <span className="px-4 py-2 bg-foreground/80 backdrop-blur-sm border border-slate-200 rounded-full text-[10px] uppercase tracking-widest font-black text-foreground/70">
                                         Coming Soon
                                     </span>
                                 </div>
                             </div>
                             <div className="space-y-4">
                                 <span className="text-[10px] uppercase tracking-widest font-black text-brand">{project.category}</span>
-                                <h3 className="text-2xl font-display font-black text-slate-900 tracking-tight transition-colors">
+                                <h3 className="text-2xl font-display font-black text-foreground tracking-tight transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-[14px] text-slate-500 font-medium leading-relaxed">
+                                <p className="text-[14px] text-foreground/70 font-medium leading-relaxed">
                                     {project.desc}
                                 </p>
                             </div>

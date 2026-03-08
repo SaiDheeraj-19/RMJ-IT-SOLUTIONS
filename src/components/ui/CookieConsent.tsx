@@ -77,7 +77,7 @@ export default function CookieConsent() {
                         whileTap={{ scale: 0.9 }}
                         // Open main banner first (standard UX), but user can go to prefs from there
                         onClick={() => setIsOpen(true)}
-                        className="fixed bottom-6 right-6 z-[90] w-12 h-12 bg-white rounded-full shadow-xl border border-slate-200 flex items-center justify-center text-brand hover:border-brand transition-colors group"
+                        className="fixed bottom-6 right-6 z-[90] w-12 h-12 bg-surface rounded-full shadow-xl border border-border/20 flex items-center justify-center text-brand hover:border-brand transition-colors group"
                         aria-label="Cookie Preferences"
                     >
                         <motion.div
@@ -100,13 +100,13 @@ export default function CookieConsent() {
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="fixed bottom-6 right-6 z-[100] max-w-[440px] w-full p-4"
                     >
-                        <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-6 relative overflow-hidden">
+                        <div className="bg-surface rounded-xl shadow-2xl border border-border/20 p-6 relative overflow-hidden">
                             <div className="space-y-6">
                                 <div className="space-y-3">
-                                    <h3 className="text-xl font-display font-bold text-slate-900 leading-tight">
+                                    <h3 className="text-xl font-display font-bold text-foreground leading-tight">
                                         We use cookies to secure and optimize your experience.
                                     </h3>
-                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                    <p className="text-foreground/70 text-sm leading-relaxed">
                                         We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners. <Link href="/cookie-policy" className="text-brand font-bold hover:underline">Read Policy</Link>
                                     </p>
                                 </div>
@@ -114,19 +114,19 @@ export default function CookieConsent() {
                                 <div className="flex items-center gap-3 pt-2">
                                     <button
                                         onClick={() => setShowPreferences(true)}
-                                        className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:border-brand hover:text-brand transition-all duration-200 shadow-sm"
+                                        className="flex-1 py-3 px-4 bg-surface border border-border/20 text-foreground/70 text-[13px] font-bold rounded-lg hover:border-brand hover:text-brand transition-all duration-200 shadow-sm"
                                     >
                                         Preferences
                                     </button>
                                     <button
                                         onClick={handleRejectNonEssential}
-                                        className="flex-1 py-3 px-4 bg-white border border-slate-200 text-slate-600 text-[13px] font-bold rounded-lg hover:bg-slate-50 transition-all duration-200 shadow-sm"
+                                        className="flex-1 py-3 px-4 bg-surface border border-border/20 text-foreground/70 text-[13px] font-bold rounded-lg hover:bg-surface-soft transition-all duration-200 shadow-sm"
                                     >
                                         Decline
                                     </button>
                                     <button
                                         onClick={handleAcceptAll}
-                                        className="flex-1 py-3 px-4 bg-brand text-white text-[13px] font-bold rounded-lg hover:bg-brand/90 transition-all duration-200 shadow-lg shadow-brand/20"
+                                        className="flex-1 py-3 px-4 bg-brand text-foreground text-[13px] font-bold rounded-lg hover:bg-brand/90 transition-all duration-200 shadow-lg shadow-brand/20"
                                     >
                                         Accept
                                     </button>
@@ -156,28 +156,28 @@ export default function CookieConsent() {
                             animate={{ x: 0 }}
                             exit={{ x: "-100%" }}
                             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                            className="fixed top-0 left-0 bottom-0 w-full max-w-[500px] bg-white z-[101] shadow-2xl flex flex-col h-full overflow-hidden"
+                            className="fixed top-0 left-0 bottom-0 w-full max-w-[500px] bg-background z-[101] shadow-2xl flex flex-col h-full overflow-hidden border-r border-border/20"
                         >
                             {/* Header */}
-                            <div className="p-6 md:p-8 border-b border-slate-100 flex items-start justify-between bg-white shrink-0">
+                            <div className="p-6 md:p-8 border-b border-border/20 flex items-start justify-between bg-surface shrink-0">
                                 <div>
-                                    <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Privacy preference centre</h2>
-                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                    <h2 className="text-2xl font-display font-bold text-foreground mb-2">Privacy preference centre</h2>
+                                    <p className="text-foreground/70 text-sm leading-relaxed">
                                         When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. <Link href="/cookie-policy" className="text-brand underline hover:no-underline">More information</Link>
                                     </p>
                                 </div>
                                 <button
                                     onClick={() => setShowPreferences(false)}
-                                    className="p-2 hover:bg-slate-100 rounded-full transition-colors -mr-2 -mt-2"
+                                    className="p-2 hover:bg-surface0 rounded-full transition-colors -mr-2 -mt-2"
                                 >
-                                    <X size={24} className="text-slate-400" />
+                                    <X size={24} className="text-foreground/70" />
                                 </button>
                             </div>
 
                             {/* Scrollable Content */}
-                            <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 bg-[#f9fafb]">
+                            <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 bg-background">
 
-                                <h3 className="text-lg font-bold text-slate-900">Manage consent preferences</h3>
+                                <h3 className="text-lg font-bold text-foreground">Manage consent preferences</h3>
 
                                 {/* Accordion Items */}
                                 <div className="space-y-4">
@@ -229,10 +229,10 @@ export default function CookieConsent() {
                             </div>
 
                             {/* Footer actions */}
-                            <div className="p-6 border-t border-slate-100 bg-white shrink-0">
+                            <div className="p-6 border-t border-border/20 bg-surface shrink-0">
                                 <button
                                     onClick={handleSavePreferences}
-                                    className="w-full py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-all duration-200 shadow-lg text-sm uppercase tracking-widest border border-slate-900"
+                                    className="w-full py-4 bg-background text-foreground font-bold rounded-full hover:border-brand/50 transition-all duration-200 shadow-lg text-sm uppercase tracking-widest border border-border/20"
                                 >
                                     Confirm my choices
                                 </button>
@@ -265,13 +265,13 @@ function AccordionItem({
     onChange?: (checked: boolean) => void;
 }) {
     return (
-        <div className="bg-white border text-left border-slate-200 rounded-lg overflow-hidden transition-all duration-200 hover:shadow-md">
-            <div className={`flex items-center justify-between p-4 cursor-pointer ${expanded ? 'bg-slate-50' : 'bg-white'}`} >
+        <div className="bg-surface border text-left border-border/20 rounded-lg overflow-hidden transition-all duration-200 hover:shadow-md">
+            <div className={`flex items-center justify-between p-4 cursor-pointer ${expanded ? 'bg-surface-soft' : 'bg-surface'}`} >
                 <div className="flex items-center gap-4 flex-1" onClick={onToggle}>
-                    <button className="text-slate-400">
+                    <button className="text-foreground/70">
                         {expanded ? <Minus size={16} /> : <Plus size={16} />}
                     </button>
-                    <span className="font-bold text-slate-800 text-sm">{title}</span>
+                    <span className="font-bold text-foreground/70 text-sm">{title}</span>
                 </div>
 
                 {alwaysActive ? (
@@ -282,10 +282,10 @@ function AccordionItem({
                             e.stopPropagation();
                             if (onChange) onChange(!checked);
                         }}
-                        className={`w-12 h-6 rounded-full relative transition-colors duration-300 ease-in-out ${checked ? 'bg-[#0058a3]' : 'bg-slate-300'}`}
+                        className={`w-12 h-6 rounded-full relative transition-colors duration-300 ease-in-out ${checked ? 'bg-brand' : 'bg-border/20'}`}
                     >
-                        <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow-sm transition-transform duration-300 flex items-center justify-center ${checked ? 'translate-x-6' : 'translate-x-0'}`}>
-                            {checked && <Check size={10} className="text-[#0058a3]" />}
+                        <div className={`absolute top-1 left-1 w-4 h-4 bg-foreground rounded-full shadow-sm transition-transform duration-300 flex items-center justify-center ${checked ? 'translate-x-6' : 'translate-x-0'}`}>
+                            {checked && <Check size={10} className="text-surface" />}
                         </div>
                     </button>
                 )}
@@ -300,7 +300,7 @@ function AccordionItem({
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                     >
-                        <div className="p-4 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50">
+                        <div className="p-4 pt-0 text-sm text-foreground/70 leading-relaxed border-t border-border/10 bg-surface">
                             {children}
                         </div>
                     </motion.div>

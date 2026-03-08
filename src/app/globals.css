@@ -1,122 +1,156 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  /* Deep Slate - more modern than total black */
-  --color-brand: #4f46e5;
-  /* Strategic Indigo - Microsoft/Google tier */
-  /* Premium Surfaces */
-  --color-surface: #f8fafc;
-  /* Slate 50 */
-  --color-surface-soft: #f1f5f9;
-  /* Slate 100 */
-  --color-surface-accent: #eef2ff;
-  /* Indigo 50 */
-  --color-surface-creme: #fffbf0;
-  /* Soft Creme */
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-border: var(--border);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument), var(--font-inter), ui-sans-serif;
+  --font-sans: var(--font-inter-tight), "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), "Inter Tight", ui-sans-serif;
   --font-mono: var(--font-dm-mono), monospace;
-
-  --animate-marquee: marquee var(--duration) linear infinite;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-
-  @keyframes marquee-vertical {
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(calc(-100% - var(--gap)));
-    }
-  }
 }
 
+/* DARK MODE (Default) */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --brand-rgb: 79, 70, 229;
+  --background: #0a0b0c;
+  --foreground: #fafafa;
+  --primary: #b05d41;
+  --primary2: #f59768;
+  --surface: #111111;
+  --surface-soft: #181818;
+  --border: #282828;
+  --brand: #b05d41;
+  --radius: .625rem;
+}
+
+/* LIGHT MODE */
+:root[data-theme="light"],
+.light {
+  --background: #f5f3ef;
+  --foreground: #0a0b0c;
+  --primary: #b05d41;
+  --primary2: #f59768;
+  --surface: #e8e4df;
+  --surface-soft: #ede9e4;
+  --border: #d0ccc6;
+  --brand: #b05d41;
+  --radius: .625rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  font-size: 18px;
-  /* Ventriloc Body */
-  line-height: 1.33;
-  /* Ventriloc Body */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Valid selection styles */
+/* Light mode body */
+.light body,
+body.light {
+  background: #f5f3ef;
+  color: #0a0b0c;
+}
+
 ::selection {
-  background-color: var(--color-brand);
-  color: white;
+  background-color: var(--brand);
+  color: #fff;
 }
 
-/* Precise Heading Styles to match Ventriloc */
-h1 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  /* Ventriloc H1: -1.32px on 66px ~ -0.02em */
-  line-height: 0.91;
-  /* Ventriloc H1: 60px/66px */
-  font-size: clamp(3rem, 5vw, 66px);
-  /* Scaled to max 66px per Ventriloc */
-}
-
-h2 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  /* Ventriloc H2: -0.8px on 40px ~ -0.02em */
-  line-height: 1.2;
-  /* Ventriloc H2: 48px/40px */
-  font-size: clamp(2rem, 4vw, 40px);
-  /* Scaled to max 40px per Ventriloc */
-}
-
+/* Typography matching RefractWeb */
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(180deg, var(--foreground) 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* RefractWeb glowing button */
+.btn-glow {
+  background: radial-gradient(57.04% 86.47% at 50% 105%, #F59768 0%, #b05d41 100%);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.4),
+    0px 0px 40px 0px rgba(245, 151, 104, 0.3);
+  border: 0.6px solid rgba(255, 255, 255, 0.6);
+  color: #fff !important;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 }
 
-.text-consulting-h1 {
-  font-size: clamp(3.5rem, 10vw, 8rem);
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.4),
+    0px 0px 60px 0px rgba(245, 151, 104, 0.5);
 }
 
-.text-consulting-h2 {
-  font-size: clamp(2.5rem, 7vw, 5rem);
+/* RMJ IT navbar brand pill — matches RefractWeb style */
+.rmjit-pill {
+  background: radial-gradient(57.04% 86.47% at 50% 105%, #c46a3a 0%, #4a2a1a 100%);
+  box-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset 0px -3px 3px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 8px 0px rgba(0, 0, 0, 0.5),
+    0px 0px 20px 0px rgba(176, 93, 65, 0.25);
+  border: 0.6px solid rgba(255, 255, 255, 0.18);
 }
 
-.text-consulting-body {
-  font-size: 1.5rem;
-  max-width: 874px;
-  line-height: 1.4;
-  color: #505050;
+.rmjit-pill:hover {
+  box-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset 0px -3px 3px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 8px 0px rgba(0, 0, 0, 0.5),
+    0px 0px 30px 0px rgba(245, 151, 104, 0.4);
 }
 
-/* Lenis mandatory styles for smooth scroll */
+
+.tech-icon-white {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+}
+
+/* Light mode: show darker icons */
+.light .tech-icon-white {
+  filter: brightness(0) !important;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--surface);
+}
+
+/* Smooth scroll */
 .lenis.lenis-smooth {
   height: auto;
 }
@@ -129,7 +163,7 @@ h6 {
   overflow: hidden;
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -139,27 +173,115 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: var(--border);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand);
+  background: var(--brand);
 }
 
-/* Animation utilities */
-.overflow-hidden-reveal {
-  overflow: hidden;
-  display: block;
+/* Theme transition for all elements */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
 }
 
-.reveal-up {
-  transform: translateY(100%);
-  animation: revealUp 1.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-}
+/* Logo animation */
+@keyframes logo-float {
 
-@keyframes revealUp {
-  to {
-    transform: translateY(0);
+  0%,
+  100% {
+    transform: translateY(0px);
   }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes logo-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(176, 93, 65, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(245, 151, 104, 0.6));
+  }
+}
+
+.logo-animated {
+  animation: logo-float 3s ease-in-out infinite, logo-glow 3s ease-in-out infinite;
+}
+
+/* Nav logo: mix-blend-mode removes white background in dark mode */
+.nav-logo {
+  mix-blend-mode: multiply;
+}
+
+/* In light mode, logo renders normally (white bg matches) */
+.light .nav-logo {
+  mix-blend-mode: normal;
+}
+
+@keyframes logo-cloud {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Light mode overrides */
+.light .bg-\[\#0a0b0c\] {
+  background-color: #f5f3ef !important;
+}
+
+.light .bg-\[\#0E111B\] {
+  background-color: #e3dfd8 !important;
+}
+
+.light .bg-\[\#101010\] {
+  background-color: #dedad4 !important;
+}
+
+.light .bg-black {
+  background-color: #f5f3ef !important;
+}
+
+.light .text-white {
+  color: #0a0b0c !important;
+}
+
+.light .text-white\/50 {
+  color: rgba(10, 11, 12, 0.5) !important;
+}
+
+.light .text-white\/60 {
+  color: rgba(10, 11, 12, 0.6) !important;
+}
+
+.light .text-white\/70 {
+  color: rgba(10, 11, 12, 0.7) !important;
+}
+
+.light .text-white\/80 {
+  color: rgba(10, 11, 12, 0.8) !important;
+}
+
+.light .border-white\/5 {
+  border-color: rgba(10, 11, 12, 0.1) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(10, 11, 12, 0.15) !important;
+}
+
+.light .border-\[\#282828\] {
+  border-color: #c8c4be !important;
 }

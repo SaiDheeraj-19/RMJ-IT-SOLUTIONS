@@ -6,24 +6,26 @@ import Image from "next/image";
 
 export default function AboutPage() {
     return (
-        <div className="pt-32 pb-20 selection:bg-brand/10">
+        <div className="pt-32 pb-20 selection:bg-brand selection:text-black">
             {/* Enterprise Hero */}
-            <section className="bg-white pb-20 pt-10 px-10 md:px-20">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <section className="bg-background pb-20 pt-10 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+                <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+
+                <div className="max-w-[1440px] mx-auto relative z-10">
                     <div className="flex flex-col items-center text-center space-y-12 max-w-5xl mx-auto">
                         <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-[clamp(3.5rem,8vw,7rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                            className="text-[clamp(3.5rem,8vw,7rem)] font-display font-semibold text-foreground leading-[0.9] tracking-tighter"
                         >
-                            Empowering Organizations through <span className="text-brand italic pr-4">Innovation.</span>
+                            Empowering Organizations through <span className="text-foreground/30 italic pr-4">Innovation.</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl md:text-3xl text-slate-500 font-medium leading-relaxed max-w-4xl"
+                            className="text-xl md:text-3xl text-foreground/50 font-medium leading-relaxed max-w-4xl"
                         >
                             We are a technology partner dedicated to building reliable and scalable software systems that accelerate growth and improve operational efficiency across India.
                         </motion.p>
@@ -32,41 +34,35 @@ export default function AboutPage() {
             </section>
 
             {/* Visual Storytelling Section */}
-            <section className="bg-white py-10">
+            <section className="bg-background py-10 relative">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="relative w-full aspect-[21/9] rounded-[4rem] bg-slate-50 border border-slate-100 overflow-hidden group flex items-center justify-center p-10"
+                        className="relative w-full aspect-[21/9] rounded-[40px] md:rounded-[4rem] bg-surface border border-border/50 overflow-hidden group flex items-center justify-center p-10 hover:border-brand/30 transition-colors duration-1000"
                     >
-                        <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 transition-colors duration-1000" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                         <div className="relative z-10 w-[50%] h-full flex items-center justify-center pointer-events-none">
                             <Image
-                                src="/rmjit.png"
+                                src="/rmjit-logo.png"
                                 alt="RMJ IT SOLUTIONS Excellence"
-                                width={800}
-                                height={800}
-                                className="object-contain opacity-90 group-hover:scale-105 transition-transform duration-1000 pointer-events-none"
+                                fill
+                                className="object-contain opacity-50 dark:invert group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
                             />
                         </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Core Values / Mission & Vision Redesign */}
-            <section className="bg-[#fafafa] py-40 border-y border-slate-100 relative overflow-hidden">
-                {/* Decorative technical matrix */}
-                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                    style={{
-                        backgroundImage: `radial-gradient(${'#4f46e5'} 1px, transparent 1px)`,
-                        backgroundSize: '32px 32px',
-                    }}
-                />
+            {/* Core Values / Mission & Vision */}
+            <section className="bg-surface py-40 border-y border-border/50 relative overflow-hidden mt-10">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.02] dark:from-white/[0.03] to-transparent pointer-events-none" />
 
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                     <div className="flex flex-col space-y-32">
+
                         {/* Mission Block - Left Aligned */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             <motion.div
@@ -77,18 +73,18 @@ export default function AboutPage() {
                                 className="space-y-10"
                             >
                                 <div className="space-y-6">
-                                    <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand font-mono">
+                                    <span className="text-[11px] uppercase tracking-[0.4em] font-black text-foreground/30 font-mono">
                                         {"// CORE OBJECTIVE"}
                                     </span>
-                                    <h2 className="text-6xl md:text-8xl font-display font-bold text-slate-900 tracking-tighter leading-[0.85]">
-                                        Our <span className="text-brand">Mission.</span>
+                                    <h2 className="text-6xl md:text-8xl font-display font-semibold text-foreground tracking-tighter leading-[0.85]">
+                                        Our <span className="text-foreground/30 italic">Mission.</span>
                                     </h2>
                                 </div>
-                                <p className="text-2xl md:text-3xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                                <p className="text-2xl md:text-3xl text-foreground/50 font-medium leading-relaxed max-w-xl">
                                     To architect innovative IT ecosystems that synchronize organizational intelligence with digital performance, driving absolute structural transformation.
                                 </p>
-                                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-                                    <Target size={16} className="text-brand" />
+                                <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.3em] text-brand">
+                                    <Target size={16} />
                                     PRECISION DRIVEN DELIVERY
                                 </div>
                             </motion.div>
@@ -98,15 +94,13 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1 }}
-                                className="relative aspect-square lg:aspect-video rounded-[3rem] bg-indigo-50 border border-indigo-100 overflow-hidden group"
+                                className="relative aspect-square lg:aspect-video rounded-[40px] bg-background border border-border/50 overflow-hidden group hover:border-brand/30 transition-colors duration-700"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-brand/10 to-transparent" />
-                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white/40 to-transparent backdrop-blur-sm" />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-3/4 h-3/4 border border-brand/20 rounded-full animate-[spin_20s_linear_infinite] p-8">
-                                        <div className="w-full h-full border border-brand/10 rounded-full animate-[ping_4s_linear_infinite] opacity-20" />
+                                    <div className="w-3/4 h-3/4 border border-border/50 rounded-full animate-[spin_20s_linear_infinite] p-8 group-hover:border-brand/20 transition-colors duration-700">
+                                        <div className="w-full h-full border border-border/30 rounded-full animate-[ping_4s_linear_infinite] opacity-20 group-hover:border-brand/50 transition-colors duration-700" />
                                     </div>
-                                    <Target size={80} className="absolute text-brand/20 group-hover:scale-110 transition-transform duration-700" />
+                                    <Target size={80} className="absolute text-foreground/10 group-hover:text-brand/50 group-hover:scale-110 transition-all duration-700" />
                                 </div>
                             </motion.div>
                         </div>
@@ -121,18 +115,18 @@ export default function AboutPage() {
                                 className="lg:order-2 space-y-10"
                             >
                                 <div className="space-y-6">
-                                    <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand font-mono">
+                                    <span className="text-[11px] uppercase tracking-[0.4em] font-black text-foreground/30 font-mono">
                                         {"// FUTURE HORIZON"}
                                     </span>
-                                    <h2 className="text-6xl md:text-8xl font-display font-bold text-slate-900 tracking-tighter leading-[0.85]">
-                                        Our <span className="text-brand italic">Vision.</span>
+                                    <h2 className="text-6xl md:text-8xl font-display font-semibold text-foreground tracking-tighter leading-[0.85]">
+                                        Our <span className="text-foreground/30 italic">Vision.</span>
                                     </h2>
                                 </div>
-                                <p className="text-2xl md:text-3xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                                <p className="text-2xl md:text-3xl text-foreground/50 font-medium leading-relaxed max-w-xl">
                                     To redefine the global benchmark for institutional engineering, building a future where digital infrastructure operates at the speed of human thought.
                                 </p>
-                                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-                                    <Flag size={16} className="text-brand" />
+                                <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.3em] text-brand">
+                                    <Flag size={16} />
                                     BEYOND TECHNICAL BOUNDARIES
                                 </div>
                             </motion.div>
@@ -142,34 +136,34 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, x: 0, order: 2 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="lg:order-1 relative aspect-square lg:aspect-video rounded-[3rem] bg-slate-900 border border-slate-800 overflow-hidden group"
+                                className="lg:order-1 relative aspect-square lg:aspect-video rounded-[40px] bg-background border border-border/50 overflow-hidden group hover:border-brand/30 transition-colors duration-700"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent" />
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/30 blur-[100px] rounded-full group-hover:scale-150 transition-transform duration-1000" />
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 blur-[100px] rounded-full group-hover:scale-150 transition-transform duration-1000" />
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="flex flex-col items-center gap-8">
                                         <div className="flex gap-4">
                                             {[1, 2, 3].map((i) => (
-                                                <div key={i} className="w-1.5 h-16 bg-brand/40 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
+                                                <div key={i} className="w-1.5 h-16 bg-foreground/20 rounded-full animate-pulse group-hover:bg-brand/50 transition-colors duration-700" style={{ animationDelay: `${i * 0.2}s` }} />
                                             ))}
                                         </div>
-                                        <Flag size={80} className="text-white/10 group-hover:text-brand/20 transition-colors duration-700" />
+                                        <Flag size={80} className="text-foreground/10 group-hover:text-brand/50 transition-colors duration-700" />
                                     </div>
                                 </div>
                             </motion.div>
                         </div>
+
                     </div>
                 </div>
             </section>
 
-            {/* Why Us Redesign on About Page */}
-            <section className="bg-white py-40 px-10 md:px-20">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
-                    <div className="mb-24 md:text-center max-w-3xl mx-auto space-y-8">
-                        <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand font-mono">
+            {/* Why Us */}
+            <section className="bg-background py-40 px-6 md:px-12 lg:px-24">
+                <div className="max-w-[1440px] mx-auto">
+                    <div className="mb-24 md:text-center max-w-4xl mx-auto space-y-8">
+                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-foreground/30 font-mono">
                             {"// THE RMJ ADVANTAGE"}
                         </span>
-                        <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.95] tracking-tighter">
+                        <h2 className="text-[clamp(3.5rem,6vw,5rem)] font-display font-semibold text-foreground leading-[0.95] tracking-tighter">
                             Designed for scale. Built for impact.
                         </h2>
                     </div>
@@ -186,13 +180,14 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group p-12 rounded-[3vw] bg-slate-50 border border-slate-100 hover:border-brand/20 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl"
+                                className="group p-12 rounded-[40px] bg-surface border border-border/50 hover:border-brand/30 transition-all duration-500 overflow-hidden relative"
                             >
-                                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-slate-400 mb-8 border border-slate-100 group-hover:bg-brand group-hover:text-white transition-colors">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="relative z-10 w-16 h-16 bg-background rounded-2xl flex items-center justify-center text-foreground/50 border border-border/50 mb-8 group-hover:bg-brand/10 group-hover:text-brand group-hover:border-brand/30 transition-colors duration-500">
                                     <item.icon size={28} />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold text-slate-900 mb-4 tracking-tight">{item.title}</h3>
-                                <p className="text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                                <h3 className="relative z-10 text-3xl font-display font-semibold text-foreground mb-4 tracking-tight">{item.title}</h3>
+                                <p className="relative z-10 text-lg text-foreground/50 font-medium leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>

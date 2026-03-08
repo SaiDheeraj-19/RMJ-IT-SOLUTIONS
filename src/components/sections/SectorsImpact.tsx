@@ -65,12 +65,12 @@ export default function ProcessTimeline() {
                         <TextReveal
                             as="h2"
                             text="Architecture Defined by Precision."
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display leading-[0.9] font-bold tracking-tighter text-slate-900"
+                            className="text-[clamp(2.5rem,5vw,5rem)] font-display leading-[0.9] font-bold tracking-tighter text-foreground"
                             delay={0.1}
                         />
                     </div>
                     <div className="max-w-md pb-4">
-                        <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                        <p className="text-xl text-foreground/70 font-medium leading-relaxed">
                             We have replaced the uncertainties of standard development with a gated, milestone-driven delivery protocol. We don&apos;t just build software; we engineer institutional certainty.
                         </p>
                     </div>
@@ -91,21 +91,21 @@ export default function ProcessTimeline() {
 
                             {/* Phase Number - Vertical Marker */}
                             <div className="md:col-span-1 flex items-center md:justify-center">
-                                <span className="text-sm font-black font-mono text-slate-200 group-hover:text-brand transition-colors duration-500">
+                                <span className="text-sm font-black font-mono text-foreground/70 group-hover:text-brand transition-colors duration-500">
                                     {phase.num}
                                 </span>
                             </div>
 
                             {/* Content Block */}
                             <div className="md:col-span-7 pr-8 flex items-center gap-10">
-                                <div className="hidden lg:flex w-14 h-14 bg-slate-50 border border-slate-100 rounded-2xl items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-700">
+                                <div className="hidden lg:flex w-14 h-14 bg-surface border border-slate-100 rounded-2xl items-center justify-center text-foreground/70 group-hover:bg-brand group-hover:text-foreground group-hover:border-brand transition-all duration-700">
                                     {phase.icon}
                                 </div>
                                 <div className="space-y-4">
-                                    <h3 className="text-2xl font-display font-bold text-slate-900 group-hover:text-brand transition-colors duration-500 tracking-tight leading-tight">
+                                    <h3 className="text-2xl font-display font-bold text-foreground group-hover:text-brand transition-colors duration-500 tracking-tight leading-tight">
                                         {phase.title}
                                     </h3>
-                                    <p className="text-slate-500 text-[16px] leading-relaxed font-normal max-w-xl">
+                                    <p className="text-foreground/70 text-[16px] leading-relaxed font-normal max-w-xl">
                                         {phase.description}
                                     </p>
                                 </div>
@@ -115,14 +115,14 @@ export default function ProcessTimeline() {
                             <div className="md:col-span-4 flex flex-col md:items-end gap-6 h-full justify-center">
                                 <div className="space-y-4 w-full md:text-right">
                                     <div className="flex flex-col md:items-end">
-                                        <span className="text-[10px] uppercase tracking-widest font-black text-slate-400 mb-2">Technical Delivery</span>
-                                        <div className="flex items-center md:justify-end gap-3 text-sm font-bold text-slate-700">
+                                        <span className="text-[10px] uppercase tracking-widest font-black text-foreground/70 mb-2">Technical Delivery</span>
+                                        <div className="flex items-center md:justify-end gap-3 text-sm font-bold text-foreground/70">
                                             <span className="w-1.5 h-1.5 rounded-full bg-brand" />
                                             {phase.deliverable}
                                         </div>
                                     </div>
                                     <div className="flex flex-col md:items-end">
-                                        <span className="text-[10px] uppercase tracking-widest font-black text-slate-400 mb-2">Timeframe</span>
+                                        <span className="text-[10px] uppercase tracking-widest font-black text-foreground/70 mb-2">Timeframe</span>
                                         <span className="text-xs font-black text-brand bg-indigo-50 px-4 py-1.5 rounded-full border border-indigo-100">
                                             {phase.duration}
                                         </span>

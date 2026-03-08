@@ -57,11 +57,11 @@ export default function IndustriesPage() {
                             >
                                 {"// DOMAIN EXPERTISE"}
                             </motion.span>
-                            <h1 className="text-[clamp(3.5rem,8vw,6rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter">
+                            <h1 className="text-[clamp(3.5rem,8vw,6rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter">
                                 Specialized Digital Solutions <br /> for Every Industry.
                             </h1>
                         </div>
-                        <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                        <p className="text-xl text-foreground/70 font-medium leading-relaxed max-w-xl">
                             We don&apos;t just build software; we engineer industry-specific solutions that solve unique domain challenges and drive measurable institutional growth.
                         </p>
                     </div>
@@ -79,11 +79,11 @@ export default function IndustriesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.8 }}
-                                className="group bg-slate-50/50 rounded-[4rem] p-12 lg:p-20 border border-slate-100 hover:border-brand/20 transition-all duration-700 relative overflow-hidden"
+                                className="group bg-surface/50 rounded-[4rem] p-12 lg:p-20 border border-slate-100 hover:border-brand/20 transition-all duration-700 relative overflow-hidden"
                             >
                                 <div className="space-y-12 relative z-10">
                                     <div className="flex items-center justify-between">
-                                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white transition-all duration-500 shadow-sm border border-slate-50">
+                                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-foreground/70 group-hover:bg-brand group-hover:text-foreground transition-all duration-500 shadow-sm border border-slate-50">
                                             <domain.icon size={28} />
                                         </div>
                                         <div className="flex items-center gap-2 text-[10px] font-black text-brand uppercase tracking-widest bg-brand/5 px-4 py-2 rounded-full">
@@ -93,19 +93,19 @@ export default function IndustriesPage() {
                                     </div>
 
                                     <div className="space-y-6">
-                                        <h2 className="text-4xl font-display font-bold text-slate-900 leading-tight">
+                                        <h2 className="text-4xl font-display font-bold text-foreground leading-tight">
                                             {domain.title}
                                         </h2>
-                                        <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                                        <p className="text-lg text-foreground/70 font-medium leading-relaxed">
                                             {domain.description}
                                         </p>
                                     </div>
 
                                     <div className="space-y-6">
-                                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-400">Core Industry Systems</h4>
+                                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-foreground/70">Core Industry Systems</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {domain.solutions.map((sol, idx) => (
-                                                <div key={idx} className="bg-white px-6 py-4 rounded-2xl border border-slate-100 font-bold text-sm text-slate-800 flex items-center gap-3">
+                                                <div key={idx} className="bg-white px-6 py-4 rounded-2xl border border-slate-100 font-bold text-sm text-foreground/70 flex items-center gap-3">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-brand" />
                                                     {sol}
                                                 </div>
@@ -113,7 +113,7 @@ export default function IndustriesPage() {
                                         </div>
                                     </div>
 
-                                    <Link href="/contact" className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-brand transition-colors pt-4">
+                                    <Link href="/contact" className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-foreground/70 group-hover:text-brand transition-colors pt-4">
                                         Request Domain Demo <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </div>
@@ -124,12 +124,12 @@ export default function IndustriesPage() {
             </section>
 
             {/* Technical Architecture / Commitment */}
-            <section className="bg-slate-900 py-40 relative overflow-hidden">
+            <section className="bg-surface0 py-40 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand via-transparent to-transparent" />
-                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 relative z-10 text-center text-white space-y-16">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 relative z-10 text-center text-foreground space-y-16">
                     <div className="space-y-6 max-w-4xl mx-auto">
                         <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand font-mono">{"// ARCHITECTURAL INTEGRITY"}</span>
-                        <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.9]">
+                        <h2 className="text-backgroundxl md:text-7xl font-display font-bold tracking-tighter leading-[0.9]">
                             Systems built for institutional <span className="italic text-brand">immortality.</span>
                         </h2>
                     </div>
@@ -139,9 +139,9 @@ export default function IndustriesPage() {
                             { title: "Sovereign Security", desc: "We prioritize local data laws and institutional privacy requirements at the kernel level." },
                             { title: "Legacy Bridging", desc: "Synchronizing modern interfaces with decades-old institutional backend mainframes." }
                         ].map((item, i) => (
-                            <div key={i} className="space-y-6 p-10 rounded-[3rem] bg-white/5 border border-white/10">
+                            <div key={i} className="space-y-6 p-10 rounded-[3rem] bg-foreground/5 border border-border">
                                 <h3 className="text-2xl font-display font-bold text-brand">{item.title}</h3>
-                                <p className="text-white/60 font-medium leading-relaxed">{item.desc}</p>
+                                <p className="text-foreground/60 font-medium leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -149,17 +149,17 @@ export default function IndustriesPage() {
             </section>
 
             {/* Sector Performance Benchmarks */}
-            <section className="bg-slate-50 py-40">
+            <section className="bg-surface py-40">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <div className="flex flex-col lg:flex-row gap-20 items-center">
                         <div className="lg:w-1/2 space-y-10">
                             <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand font-mono">
                                 {"// PERFORMANCE ANALYTICS"}
                             </span>
-                            <h2 className="text-5xl md:text-7xl font-display font-bold text-slate-900 tracking-tighter leading-[0.9]">
+                            <h2 className="text-backgroundxl md:text-7xl font-display font-bold text-foreground tracking-tighter leading-[0.9]">
                                 Measurable impact. <br /> Across every <span className="text-brand">vertical.</span>
                             </h2>
-                            <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                            <p className="text-xl text-foreground/70 font-medium leading-relaxed">
                                 We don&apos;t just deploy software; we optimize business outcomes. Our engineering efforts are benchmarked against industry-specific KPIs to ensure absolute structural improvement.
                             </p>
                         </div>
@@ -172,8 +172,8 @@ export default function IndustriesPage() {
                             ].map((stat, i) => (
                                 <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-4">
                                     <div className={`w-8 h-1 rounded-full ${stat.color}`} />
-                                    <h4 className="text-[10px] uppercase tracking-widest font-black text-slate-400">{stat.label}</h4>
-                                    <div className="text-3xl font-display font-bold text-slate-900">{stat.value}</div>
+                                    <h4 className="text-[10px] uppercase tracking-widest font-black text-foreground/70">{stat.label}</h4>
+                                    <div className="text-3xl font-display font-bold text-foreground">{stat.value}</div>
                                 </div>
                             ))}
                         </div>
@@ -184,12 +184,12 @@ export default function IndustriesPage() {
             {/* Bottom CTA */}
             <section className="bg-white py-40 px-10 md:px-20">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 text-center space-y-12">
-                    <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 tracking-tighter">
+                    <h2 className="text-4xl md:text-6xl font-display font-bold text-foreground tracking-tighter">
                         Ready to innovate your industry?
                     </h2>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-6 px-12 py-6 bg-brand text-white rounded-full text-[11px] font-black uppercase tracking-[0.3em] hover:scale-105 transition-all shadow-2xl shadow-brand/30"
+                        className="inline-flex items-center gap-6 px-12 py-6 bg-brand text-foreground rounded-full text-[11px] font-black uppercase tracking-[0.3em] hover:scale-105 transition-all shadow-2xl shadow-brand/30"
                     >
                         Initialize Project Consultation <ArrowRight size={18} />
                     </Link>

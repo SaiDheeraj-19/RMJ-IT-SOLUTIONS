@@ -30,7 +30,7 @@ export default function SocialProof() {
                     <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand mb-4 block">
                         Network Capacity
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1a1a] tracking-tighter">
+                    <h2 className="text-4xl md:text-backgroundxl font-display font-bold text-[#1a1a1a] tracking-tighter">
                         Intervening for the most <span className="italic text-brand">critical operations.</span>
                     </h2>
                 </motion.div>

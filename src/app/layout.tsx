@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Sans, DM_Mono } from "next/font/google";
+import { Inter_Tight, Instrument_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Preloader from "@/components/ui/Preloader";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 import CookieConsent from "@/components/ui/CookieConsent";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
 });
 
@@ -79,8 +81,6 @@ const jsonLd = {
   "openingHours": "Mo-Sa 09:00-18:00"
 };
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({
   children,
@@ -88,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrument.variable} ${dmMono.variable} scroll-smooth`}>
+    <html lang="en" className={`${interTight.variable} ${instrument.variable} ${dmMono.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <Script
           id="json-ld"
@@ -97,7 +97,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className="antialiased selection:bg-brand selection:text-white overflow-x-hidden font-sans bg-[#f5f5f5] text-[#1a1a1a]">
+      <body className="antialiased selection:bg-brand selection:text-black overflow-x-hidden font-sans bg-black text-foreground transition-colors duration-300">
         <Preloader />
         <SmoothScroll>
           <div id="root-content" className="flex flex-col min-h-screen">
@@ -106,6 +106,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+
+
           </div>
         </SmoothScroll>
         <GoogleAnalytics />

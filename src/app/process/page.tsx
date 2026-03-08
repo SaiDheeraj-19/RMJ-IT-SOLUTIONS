@@ -66,11 +66,11 @@ export default function ProcessPage() {
                             >
                                 {"// THE RMJ METHODOLOGY"}
                             </motion.span>
-                            <h1 className="text-[clamp(3.5rem,8vw,6rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter">
+                            <h1 className="text-[clamp(3.5rem,8vw,6rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter">
                                 Engineering Consistency <br /> for Professional Results.
                             </h1>
                         </div>
-                        <p className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+                        <p className="text-xl md:text-2xl text-foreground/70 font-medium leading-relaxed max-w-2xl">
                             Our engineering lifecycle is designed to eliminate uncertainty. We follow a disciplined, 6-phase methodology from initial research to final production scale.
                         </p>
                     </div>
@@ -84,30 +84,30 @@ export default function ProcessPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.8 }}
-                                className="group relative bg-slate-50 rounded-[4rem] p-12 border border-slate-100 hover:border-brand/20 transition-all duration-700"
+                                className="group relative bg-surface rounded-[4rem] p-12 border border-slate-100 hover:border-brand/20 transition-all duration-700"
                             >
                                 <div className="space-y-10">
                                     <div className="flex items-center justify-between">
-                                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white transition-all duration-500 shadow-sm border border-slate-50">
+                                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-foreground/70 group-hover:bg-brand group-hover:text-foreground transition-all duration-500 shadow-sm border border-slate-50">
                                             <phase.icon size={28} />
                                         </div>
-                                        <span className="text-4xl font-display font-black text-slate-200/50 group-hover:text-brand/10 transition-colors">
+                                        <span className="text-4xl font-display font-black text-foreground/70/50 group-hover:text-brand/10 transition-colors">
                                             {(i + 1).toString().padStart(2, '0')}
                                         </span>
                                     </div>
                                     <div className="space-y-6">
-                                        <h3 className="text-2xl font-display font-bold text-slate-900">
+                                        <h3 className="text-2xl font-display font-bold text-foreground">
                                             {phase.title}
                                         </h3>
-                                        <p className="text-base text-slate-500 font-medium leading-relaxed">
+                                        <p className="text-base text-foreground/70 font-medium leading-relaxed">
                                             {phase.desc}
                                         </p>
                                     </div>
                                     <div className="pt-8 border-t border-slate-100">
-                                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-400 mb-6">Phase Deliverables</h4>
+                                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-foreground/70 mb-6">Phase Deliverables</h4>
                                         <ul className="space-y-3">
                                             {phase.deliverables.map((item, idx) => (
-                                                <li key={idx} className="flex items-center gap-3 text-xs font-bold text-slate-800">
+                                                <li key={idx} className="flex items-center gap-3 text-xs font-bold text-foreground/70">
                                                     <CheckCircle2 size={14} className="text-brand" />
                                                     {item}
                                                 </li>
@@ -126,14 +126,14 @@ export default function ProcessPage() {
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-24">
                         <div className="space-y-12">
-                            <h2 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 tracking-tighter leading-[0.9]">
+                            <h2 className="text-backgroundxl lg:text-7xl font-display font-bold text-foreground tracking-tighter leading-[0.9]">
                                 Committed to <br /> Engineering Integrity.
                             </h2>
-                            <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                            <p className="text-xl text-foreground/70 font-medium leading-relaxed">
                                 We maintain a &quot;zero-debt&quot; development philosophy. Every module we deploy is documented, tested, and built on a foundation of clean code principles that allow your platform to grow without technical friction.
                             </p>
                         </div>
-                        <div className="bg-slate-900 rounded-[4rem] p-16 text-white space-y-12 relative overflow-hidden group">
+                        <div className="bg-surface0 rounded-[4rem] p-16 text-foreground space-y-12 relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand/20 blur-[100px] rounded-full group-hover:bg-brand/40 transition-colors" />
                             <div className="relative z-10 space-y-8">
                                 <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-brand font-mono">{"// TECHNICAL STANDARDS"}</h4>
@@ -145,7 +145,7 @@ export default function ProcessPage() {
                                         "Total Transparent communication"
                                     ].map((standard, i) => (
                                         <div key={i} className="flex items-center gap-6 group/item">
-                                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand font-black text-sm">
+                                            <div className="w-10 h-10 rounded-xl bg-foreground/5 border border-border flex items-center justify-center text-brand font-black text-sm">
                                                 {i + 1}
                                             </div>
                                             <span className="text-lg font-bold tracking-tight">{standard}</span>

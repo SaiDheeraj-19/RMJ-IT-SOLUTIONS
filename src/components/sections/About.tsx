@@ -22,13 +22,13 @@ export default function About() {
                             <TextReveal
                                 as="h2"
                                 text="Dedicated to Digital Excellence."
-                                className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter mb-10"
+                                className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter mb-10"
                             />
                             <div className="space-y-8">
-                                <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                                <p className="text-xl text-foreground/70 font-medium leading-relaxed max-w-xl">
                                     RMJ IT Solutions is a technology-driven company dedicated to helping businesses and educational institutions adopt digital solutions that improve efficiency, productivity, and decision-making.
                                 </p>
-                                <p className="text-lg text-slate-400 font-medium leading-relaxed max-w-xl">
+                                <p className="text-lg text-foreground/70 font-medium leading-relaxed max-w-xl">
                                     Our team focuses on building scalable, reliable, and user-friendly software systems tailored to the unique needs of each organization. We aim to provide innovative technology solutions that help our clients adapt to a rapidly evolving digital world.
                                 </p>
                             </div>
@@ -41,7 +41,7 @@ export default function About() {
                             whileInView={{ opacity: 1, scale: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                            className="relative aspect-square bg-slate-50 rounded-[3rem] overflow-hidden flex items-center justify-center p-12 border border-slate-100"
+                            className="relative aspect-square bg-surface rounded-[3rem] overflow-hidden flex items-center justify-center p-12 border border-slate-100"
                         >
                             <div className="text-center space-y-6">
                                 <div className="w-24 h-24 bg-brand/10 rounded-3xl flex items-center justify-center text-brand mx-auto">
@@ -49,8 +49,8 @@ export default function About() {
                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-display font-black text-slate-900">Proven Integrity</h3>
-                                <p className="text-sm text-slate-400 font-medium">Built on trust, engineered for the future.</p>
+                                <h3 className="text-2xl font-display font-black text-foreground">Proven Integrity</h3>
+                                <p className="text-sm text-foreground/70 font-medium">Built on trust, engineered for the future.</p>
                             </div>
                         </motion.div>
                         {/* Decorative elements */}

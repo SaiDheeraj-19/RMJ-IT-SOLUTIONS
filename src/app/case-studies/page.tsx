@@ -98,7 +98,7 @@ export default function CaseStudiesPage() {
                             <TextReveal
                                 as="h2"
                                 text={item.title}
-                                className="text-5xl font-display font-bold leading-[1.05] mb-16 tracking-tight text-[#1a1a1a]"
+                                className="text-backgroundxl font-display font-bold leading-[1.05] mb-16 tracking-tight text-[#1a1a1a]"
                             />
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
@@ -153,7 +153,7 @@ export default function CaseStudiesPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block px-12 py-6 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-black rounded-full hover:bg-brand transition-all duration-300 shadow-2xl"
+                            className="inline-block px-12 py-6 bg-[#1a1a1a] text-foreground text-sm uppercase tracking-widest font-black rounded-full hover:bg-brand transition-all duration-300 shadow-2xl"
                         >
                             Request a Technical Consultation
                         </Link>

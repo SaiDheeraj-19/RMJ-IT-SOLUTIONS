@@ -69,7 +69,7 @@ export default function ProductsPage() {
                                     text="Digital Campus Platform."
                                     className="text-[clamp(3.5rem,6vw,6rem)] font-display font-bold text-[#0f172a] leading-[0.9] tracking-tighter"
                                 />
-                                <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
+                                <p className="text-xl text-foreground/70 leading-relaxed max-w-xl">
                                     A next-generation educational management system engineered to replace fragmented tools with a single, unified digital infrastructure. Digital Campus simplifies administration and enhances learning outcomes.
                                 </p>
                             </div>
@@ -78,7 +78,7 @@ export default function ProductsPage() {
                                     href="http://digitalcampus.msmfclasses.com:97"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-4 px-10 py-5 bg-[#0369a1] text-white rounded-full text-[11px] font-black uppercase tracking-[0.2em] hover:bg-[#075985] transition-all duration-300 shadow-2xl shadow-blue-900/10 hover:scale-105 active:scale-95"
+                                    className="inline-flex items-center gap-4 px-10 py-5 bg-[#0369a1] text-foreground rounded-full text-[11px] font-black uppercase tracking-[0.2em] hover:bg-[#075985] transition-all duration-300 shadow-2xl shadow-blue-900/10 hover:scale-105 active:scale-95"
                                 >
                                     Launch Product Portal <ArrowUpRight size={18} />
                                 </a>
@@ -91,15 +91,15 @@ export default function ProductsPage() {
                                 initial={{ opacity: 0, scale: 0.9, y: 30 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                                className="bg-slate-50 rounded-[4rem] border border-blue-100 shadow-2xl overflow-hidden aspect-square flex items-center justify-center p-12"
+                                className="bg-surface rounded-[4rem] border border-blue-100 shadow-2xl overflow-hidden aspect-square flex items-center justify-center p-12"
                             >
                                 <div className="text-center space-y-8">
                                     <div className="w-24 h-24 bg-blue-100 rounded-3xl flex items-center justify-center text-[#0369a1] mx-auto animate-pulse">
                                         <ShieldCheck size={48} />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-display font-bold text-slate-900">Enterprise Security</h3>
-                                        <p className="text-sm text-slate-400 font-medium">Bank-grade data protection</p>
+                                        <h3 className="text-2xl font-display font-bold text-foreground">Enterprise Security</h3>
+                                        <p className="text-sm text-foreground/70 font-medium">Bank-grade data protection</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -124,16 +124,16 @@ export default function ProductsPage() {
                                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#0369a1]">
                                     <feature.icon size={24} />
                                 </div>
-                                <h4 className="text-xl font-bold text-slate-900">{feature.title}</h4>
-                                <p className="text-slate-500 font-medium">{feature.desc}</p>
+                                <h4 className="text-xl font-bold text-foreground">{feature.title}</h4>
+                                <p className="text-foreground/70 font-medium">{feature.desc}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="space-y-32">
                         <div className="center text-center space-y-6 max-w-2xl mx-auto mb-20">
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0f172a]">Modular Excellence</h2>
-                            <p className="text-lg text-slate-500">Pick and choose the modules your institution needs, or deploy the complete ecosystem for total digital transformation.</p>
+                            <h2 className="text-4xl md:text-backgroundxl font-display font-bold text-[#0f172a]">Modular Excellence</h2>
+                            <p className="text-lg text-foreground/70">Pick and choose the modules your institution needs, or deploy the complete ecosystem for total digital transformation.</p>
                         </div>
 
                         <div className="grid grid-cols-1 gap-8">
@@ -149,12 +149,12 @@ export default function ProductsPage() {
                                         <module.icon size={40} />
                                     </div>
                                     <div className="flex-1 space-y-6 text-center lg:text-left">
-                                        <h3 className="text-3xl font-display font-bold text-slate-900">{module.title}</h3>
-                                        <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-2xl">{module.description}</p>
+                                        <h3 className="text-3xl font-display font-bold text-foreground">{module.title}</h3>
+                                        <p className="text-lg text-foreground/70 font-medium leading-relaxed max-w-2xl">{module.description}</p>
                                     </div>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 shrink-0">
                                         {module.features.map((feat, idx) => (
-                                            <div key={idx} className="flex items-center gap-3 px-6 py-3 bg-slate-50 rounded-full border border-slate-100 text-xs font-bold uppercase tracking-wider text-[#0369a1]">
+                                            <div key={idx} className="flex items-center gap-3 px-6 py-3 bg-surface rounded-full border border-slate-100 text-xs font-bold uppercase tracking-wider text-[#0369a1]">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-[#0369a1]" />
                                                 {feat}
                                             </div>

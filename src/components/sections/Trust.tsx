@@ -36,10 +36,10 @@ export default function Trust() {
                             transition={{ delay: i * 0.1, duration: 0.8 }}
                             className="flex items-center gap-6 group"
                         >
-                            <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-all duration-500">
+                            <div className="w-12 h-12 rounded-2xl bg-surface flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-foreground transition-all duration-500">
                                 {item.icon}
                             </div>
-                            <span className="text-sm font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors duration-500">
+                            <span className="text-sm font-black uppercase tracking-widest text-foreground/70 group-hover:text-foreground transition-colors duration-500">
                                 {item.label}
                             </span>
                         </motion.div>

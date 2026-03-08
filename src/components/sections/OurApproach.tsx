@@ -88,9 +88,9 @@ export default function SolutionSection() {
                         >
                             <div className="flex items-start justify-between mb-10">
                                 <div className="p-3 bg-white border border-slate-100 rounded-xl group-hover:bg-brand/10 group-hover:border-brand/20 transition-all duration-500">
-                                    <stage.icon size={22} className="text-slate-400 group-hover:text-brand transition-colors" />
+                                    <stage.icon size={22} className="text-foreground/70 group-hover:text-brand transition-colors" />
                                 </div>
-                                <span className="text-[11px] font-black font-mono text-slate-300 tracking-widest group-hover:text-brand/30 transition-colors">
+                                <span className="text-[11px] font-black font-mono text-foreground/70 tracking-widest group-hover:text-brand/30 transition-colors">
                                     {stage.num} {`//`}
                                 </span>
                             </div>
@@ -98,14 +98,14 @@ export default function SolutionSection() {
                             <h3 className="text-2xl font-display font-bold text-[#0f172a] mb-6 tracking-tight group-hover:text-brand transition-colors duration-500">
                                 {stage.title}
                             </h3>
-                            <p className="text-slate-500 leading-relaxed font-medium text-sm mb-8">
+                            <p className="text-foreground/70 leading-relaxed font-medium text-sm mb-8">
                                 {stage.description}
                             </p>
 
                             <ul className="space-y-3">
                                 {stage.bullets.map((bullet, idx) => (
-                                    <li key={idx} className="flex items-start gap-3 text-[13px] text-slate-500 font-medium">
-                                        <span className="w-1 h-1 rounded-full bg-slate-300 mt-2 shrink-0 group-hover:bg-brand transition-colors" />
+                                    <li key={idx} className="flex items-start gap-3 text-[13px] text-foreground/70 font-medium">
+                                        <span className="w-1 h-1 rounded-full bg-surface0 mt-2 shrink-0 group-hover:bg-brand transition-colors" />
                                         {bullet}
                                     </li>
                                 ))}

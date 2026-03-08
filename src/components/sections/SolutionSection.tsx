@@ -43,7 +43,7 @@ export default function SolutionSection() {
                     <TextReveal
                         as="h2"
                         text="Modern Technology Solutions for Growing Businesses"
-                        className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter"
+                        className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter"
                     />
                 </div>
 
@@ -55,15 +55,15 @@ export default function SolutionSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1, duration: 0.8 }}
-                            className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 group hover:border-brand/20 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:shadow-brand/5"
+                            className="bg-surface p-10 rounded-[2.5rem] border border-slate-100 group hover:border-brand/20 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:shadow-brand/5"
                         >
-                            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white transition-all duration-500 mb-10 shadow-sm">
+                            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-foreground/70 group-hover:bg-brand group-hover:text-foreground transition-all duration-500 mb-10 shadow-sm">
                                 <item.icon size={28} />
                             </div>
-                            <h3 className="text-xl font-display font-bold text-slate-900 mb-4 transition-colors group-hover:text-brand">
+                            <h3 className="text-xl font-display font-bold text-foreground mb-4 transition-colors group-hover:text-brand">
                                 {item.title}
                             </h3>
-                            <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                            <p className="text-sm text-foreground/70 leading-relaxed font-medium">
                                 {item.desc}
                             </p>
                         </motion.div>

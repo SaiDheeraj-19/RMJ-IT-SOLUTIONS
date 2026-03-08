@@ -30,7 +30,7 @@ const trustPoints = [
 
 export default function SecurityTrust() {
     return (
-        <Section id="trust" className="bg-[#fafafa] py-40 relative overflow-hidden">
+        <Section id="trust" className="bg-surface-soft py-40 relative overflow-hidden">
             {/* Precision Grid Background */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
                 style={{
@@ -53,9 +53,9 @@ export default function SecurityTrust() {
                         <TextReveal
                             as="h2"
                             text="Architecture Defined by Certainty."
-                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter mb-10"
+                            className="text-[clamp(2.5rem,5vw,5rem)] font-display font-bold text-foreground leading-[0.9] tracking-tighter mb-10"
                         />
-                        <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                        <p className="text-xl text-foreground/70 font-medium leading-relaxed max-w-xl">
                             In high-stakes environments, safety is not a feature—it is the foundation. We build hardened digital infrastructure that transforms trust into a mathematical constant.
                         </p>
                     </div>
@@ -76,10 +76,10 @@ export default function SecurityTrust() {
                                 <div className="text-brand mb-8 group-hover:scale-110 transition-transform duration-500">
                                     {point.icon}
                                 </div>
-                                <h3 className="text-lg font-display font-black text-slate-900 mb-4 tracking-tight group-hover:text-brand transition-colors">
+                                <h3 className="text-lg font-display font-black text-foreground mb-4 tracking-tight group-hover:text-brand transition-colors">
                                     {point.title}
                                 </h3>
-                                <p className="text-[13px] text-slate-500 font-medium leading-relaxed">
+                                <p className="text-[13px] text-foreground/70 font-medium leading-relaxed">
                                     {point.desc}
                                 </p>
                             </motion.div>
