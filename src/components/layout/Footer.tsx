@@ -6,42 +6,25 @@ import { Globe } from "lucide-react";
 
 const sitemap = [
     {
-        title: "Engineering",
+        title: "About",
         links: [
-            { label: "Digital Systems", href: "/services/erp" },
-            { label: "Cloud & Infrastructure", href: "/services/cloud" },
-            { label: "Institutional AI", href: "/services/ai" },
-            { label: "Security & Audits", href: "/services/security" },
-            { label: "Web Architecture", href: "/services/web" }
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Industries", href: "/industries" },
+            { label: "Process", href: "/process" },
+            { label: "About", href: "/about" },
+            { label: "Contact", href: "/contact" }
         ]
     },
     {
-        title: "Company",
+        title: "Services",
         links: [
-            { label: "Our Mission", href: "/about" },
-            { label: "The Framework", href: "/#approach" },
-            { label: "Case Studies", href: "/case-studies" },
-            { label: "Strategy Portfolio", href: "/services" },
-            { label: "Career Portal", href: "/careers" }
-        ]
-    },
-    {
-        title: "Legal & Data",
-        links: [
-            { label: "Data Privacy", href: "/privacy" },
-            { label: "Legal Terms", href: "/terms" },
-            { label: "Security Policy", href: "/security-disclosure" },
-            { label: "Compliance Hub", href: "/regulatory-hub" },
-            { label: "Cookie Settings", href: "/cookie-policy" }
-        ]
-    },
-    {
-        title: "Consultation",
-        links: [
-            { label: "Initiate Structural Audit", href: "/contact" },
-            { label: "Strategic Advisory", href: "/contact" },
-            { label: "Technical Support", href: "/contact" },
-            { label: "Knowledge Base", href: "/about" }
+            { label: "Web Applications", href: "/services" },
+            { label: "Android App Development", href: "/services" },
+            { label: "iOS App Development", href: "/services" },
+            { label: "Digital Marketing", href: "/services" },
+            { label: "Web Design", href: "/services" },
+            { label: "Graphic Design", href: "/services" }
         ]
     }
 ];
@@ -55,7 +38,7 @@ export default function Footer() {
                     {/* Brand Info */}
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
-                            <Link href="/" className="relative h-12 w-32 mix-blend-multiply flex items-center mb-8">
+                            <Link href="/" className="relative h-12 w-32 flex items-center mb-8">
                                 <Image
                                     src="/rmjit-logo.png"
                                     alt="RMJ IT SOLUTIONS"
@@ -89,7 +72,7 @@ export default function Footer() {
                     </div>
 
                     {/* Sitemap Links */}
-                    <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-12">
+                    <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
                         {sitemap.map((section) => (
                             <div key={section.title} className="space-y-8">
                                 <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">
@@ -111,11 +94,18 @@ export default function Footer() {
                         ))}
                         <div className="space-y-8">
                             <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-400 font-mono">
-                                Company Details
+                                Contact
                             </h4>
-                            <div className="space-y-2 text-[13px] font-semibold text-slate-600">
-                                <p>Founded: 2018</p>
-                                <p>Industry: IT Services</p>
+                            <div className="space-y-4 text-[13px] font-semibold text-slate-600">
+                                <p className="leading-relaxed text-slate-500 font-medium">
+                                    Kurnool, Andhra Pradesh
+                                </p>
+                                <a href="tel:+918639756899" className="hover:text-brand transition-colors block">
+                                    Phone +91 8639756899
+                                </a>
+                                <a href="mailto:support@rmjit.com" className="hover:text-brand transition-colors block">
+                                    Email support@rmjit.com
+                                </a>
                             </div>
                         </div>
                     </div>

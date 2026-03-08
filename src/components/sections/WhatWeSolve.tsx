@@ -1,7 +1,6 @@
 "use client";
 
 import Section from "@/components/ui/Section";
-import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
 
 export default function ProblemSection() {
@@ -16,14 +15,7 @@ export default function ProblemSection() {
             />
             <div className="max-w-[1200px] mx-auto relative z-10">
                 <div className="mb-24">
-                    <motion.span
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        className="text-[10px] uppercase tracking-[0.4em] font-black text-brand mb-8 block transition-colors duration-500"
-                    >
-                        About RMJ IT Solutions
-                    </motion.span>
+                    {/* Text removed per user request */}
                     <TextReveal
                         as="h2"
                         text="Empowering Organizations through Innovation."

@@ -1,142 +1,162 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
-import TextReveal from "@/components/animations/TextReveal";
-import HorizontalLine from "@/components/ui/HorizontalLine";
-import { ArrowRight, CheckCircle2, Cpu, Layout, Lock, Zap } from "lucide-react";
-import Link from "next/link";
+import {
+    Search,
+    Map,
+    PenTool,
+    Code2,
+    FileSearch,
+    Rocket,
+    CheckCircle2
+} from "lucide-react";
 
-const steps = [
+const engineeringPhases = [
     {
-        title: "Deep Discovery & Audit",
-        desc: "We don't start with a 'sales' call. We start with senior architects auditing your existing infrastructure, identifying bottlenecks, and mapping technical debt. We look at code, databases, and deployment pipelines.",
-        icon: <Cpu className="w-6 h-6" />,
-        outcome: "A comprehensive Technical Audit & Strategic Roadmap."
+        title: "Strategic Discovery",
+        icon: Search,
+        desc: "We analyze institutional workflows, current bottlenecks, and future scalability requirements to define a technically viable roadmap.",
+        deliverables: ["Product Strategy Doc", "Technical Audit", "User Research Summary"]
     },
     {
-        title: "Architectural Mapping",
-        desc: "Before a single line of code is written, we map out the entire system architecture. We solve for scalability, security, and data integrity at the blueprint stage. No fragmented tools — just integrated systems.",
-        icon: <Layout className="w-6 h-6" />,
-        outcome: "Scalable System Architecture diagrams & Tech Stack selection."
+        title: "Architectural Planning",
+        icon: Map,
+        desc: "Selecting the optimal technology stack and designing modular system architectures that ensure long-term stability and expansion.",
+        deliverables: ["Tech Stack Selection", "Database Schema", "Architecture Diagram"]
     },
     {
-        title: "Agile Engineering Phase",
-        desc: "Our engineering sprints are transparent and high-velocity. We use CI/CD pipelines to ensure you can see progress in real-time. We don't just build features; we build resilient digital assets.",
-        icon: <Zap className="w-6 h-6" />,
-        outcome: "Functional, high-performance modules delivered in 2-week sprints."
+        title: "Experience Design",
+        icon: PenTool,
+        desc: "Translating architectural requirements into intuitive, high-fidelity UI systems that prioritize user efficiency and brand alignment.",
+        deliverables: ["Visual Design Systems", "High-Fi Prototypes", "UX Workflows"]
     },
     {
-        title: "Stress Testing & Hardening",
-        desc: "We push the system to its limits before launch. We perform security hardening, load testing for 10K+ concurrent users, and cross-platform validation to ensure zero friction on day one.",
-        icon: <Lock className="w-6 h-6" />,
-        outcome: "A battle-tested, secure, and performant production environment."
+        title: "Agile Engineering",
+        icon: Code2,
+        desc: "Rapid delivery of high-quality, clean code through iterative cycles. We prioritize performance, security, and enterprise standards.",
+        deliverables: ["Modular Source Code", "API Documentation", "Integrations Setup"]
     },
     {
-        title: "Handover & Optimization",
-        desc: "We don't believe in vendor lock-in. We provide full documentation, technical training for your team, and a 30-day stabilization period. We stay involved for long-term health monitoring and performance tuning.",
-        icon: <CheckCircle2 className="w-6 h-6" />,
-        outcome: "Complete system autonomy with ongoing engineering support."
+        title: "Quality Assurance",
+        icon: FileSearch,
+        desc: "Rigorous automated and manual testing cycles to ensure zero-defect delivery and total system integrity under load.",
+        deliverables: ["Test Case Reports", "Security Audit", "UAT Sign-off"]
+    },
+    {
+        title: "Scale & Deployment",
+        icon: Rocket,
+        desc: "Seamless production launch supported by robust CI/CD pipelines and long-term technical maintenance frameworks.",
+        deliverables: ["Deployment Logs", "Maintenance Plan", "Training Documentation"]
     }
 ];
 
 export default function ProcessPage() {
     return (
-        <main className="min-h-screen bg-[#f8fafc]">
-            <Navbar />
-
-            {/* Hero Section */}
-            <section className="min-h-[80vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20">
-                <div className="max-w-[1400px] mx-auto w-full">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-brand mb-8 block">
-                            Our Engineering Methodology
-                        </span>
-                        <div className="mb-12">
-                            <TextReveal
-                                as="h1"
-                                text="Engineering"
-                                className="text-[clamp(4rem,10vw,8rem)] font-display leading-[0.9] tracking-tighter font-bold"
-                                delay={0.2}
-                            />
-                            <span className="text-[clamp(4rem,10vw,8rem)] font-display italic text-brand leading-none block mt-4 font-bold">Standardized.</span>
+        <div className="pt-32 pb-20 selection:bg-brand/10">
+            {/* Header */}
+            <section className="bg-white px-10 md:px-20 pt-10">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+                    <div className="max-w-4xl space-y-12 mb-32">
+                        <div className="space-y-8">
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="text-[10px] uppercase tracking-[0.6em] font-black text-brand mb-10 block font-mono"
+                            >
+                                {"// THE RMJ METHODOLOGY"}
+                            </motion.span>
+                            <h1 className="text-[clamp(3.5rem,8vw,6rem)] font-display font-bold text-slate-900 leading-[0.9] tracking-tighter">
+                                Engineering Consistency <br /> for Professional Results.
+                            </h1>
                         </div>
-                        <p className="text-xl text-[#505050] max-w-2xl leading-relaxed">
-                            We don&apos;t wing it. Every RMJ IT deployment follows a strict, repeatable engineering lifecycle designed to eliminate fragmentation and technical risk.
+                        <p className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+                            Our engineering lifecycle is designed to eliminate uncertainty. We follow a disciplined, 6-phase methodology from initial research to final production scale.
                         </p>
-                    </motion.div>
-                </div>
-            </section>
+                    </div>
 
-            {/* Process Steps */}
-            <Section className="bg-white">
-                <div className="max-w-[1200px] mx-auto">
-                    <div className="grid grid-cols-1 gap-24">
-                        {steps.map((step, i) => (
-                            <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                                <div className="lg:col-span-1">
-                                    <span className="font-mono text-sm text-brand tracking-widest">{String(i + 1).padStart(2, '0')}</span>
-                                    <div className="mt-8 text-[#1a1a1a]">
-                                        {step.icon}
-                                    </div>
-                                </div>
-                                <div className="lg:col-span-5">
-                                    <TextReveal
-                                        as="h2"
-                                        text={step.title}
-                                        className="text-4xl font-display mb-8 text-[#1a1a1a] font-bold"
-                                    />
-                                    <p className="text-lg text-[#505050] leading-relaxed mb-8">
-                                        {step.desc}
-                                    </p>
-                                    <div className="p-6 bg-[#f8fafc] border-l-4 border-brand rounded-r-xl">
-                                        <span className="text-[10px] uppercase tracking-widest font-bold text-brand block mb-2">Outcome</span>
-                                        <p className="text-lg font-medium text-[#1a1a1a] leading-relaxed">{step.outcome}</p>
-                                    </div>
-                                </div>
-                                <div className="lg:col-span-1 flex justify-center py-12 lg:py-0">
-                                    <HorizontalLine className="w-12 rotate-90 opacity-20 hidden lg:block" />
-                                </div>
-                                <div className="lg:col-span-5">
-                                    <div className="h-64 bg-[#f1f5f9] rounded-2xl flex items-center justify-center border border-stone-100 relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03]" />
-                                        <span className="text-[#1a1a1a]/20 font-display font-black text-6xl rotate-[-12deg] tracking-tighter uppercase select-none">
-                                            Phase {i + 1}
+                    {/* Timeline Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                        {engineeringPhases.map((phase, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.8 }}
+                                className="group relative bg-slate-50 rounded-[4rem] p-12 border border-slate-100 hover:border-brand/20 transition-all duration-700"
+                            >
+                                <div className="space-y-10">
+                                    <div className="flex items-center justify-between">
+                                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand group-hover:text-white transition-all duration-500 shadow-sm border border-slate-50">
+                                            <phase.icon size={28} />
+                                        </div>
+                                        <span className="text-4xl font-display font-black text-slate-200/50 group-hover:text-brand/10 transition-colors">
+                                            {(i + 1).toString().padStart(2, '0')}
                                         </span>
                                     </div>
+                                    <div className="space-y-6">
+                                        <h3 className="text-2xl font-display font-bold text-slate-900">
+                                            {phase.title}
+                                        </h3>
+                                        <p className="text-base text-slate-500 font-medium leading-relaxed">
+                                            {phase.desc}
+                                        </p>
+                                    </div>
+                                    <div className="pt-8 border-t border-slate-100">
+                                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-400 mb-6">Phase Deliverables</h4>
+                                        <ul className="space-y-3">
+                                            {phase.deliverables.map((item, idx) => (
+                                                <li key={idx} className="flex items-center gap-3 text-xs font-bold text-slate-800">
+                                                    <CheckCircle2 size={14} className="text-brand" />
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
-            </Section>
+            </section>
 
-            {/* Final CTA */}
-            <Section className="bg-[#fffdf5] text-center">
-                <div className="max-w-2xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight text-[#1a1a1a]">
-                        Ready to begin Phase 01?
-                    </h2>
-                    <p className="text-xl text-[#606060] mb-12 leading-relaxed">
-                        Start with a Technical Strategy Consultation. Let&apos;s map out your org&apos;s engineering roadmap together.
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="group inline-flex items-center gap-3 px-12 py-6 bg-[#1a1a1a] text-white rounded-full text-sm uppercase tracking-widest font-black hover:bg-brand transition-all duration-300 shadow-2xl"
-                    >
-                        Schedule Strategy Call
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+            {/* Quality Commitment Section */}
+            <Section className="bg-white py-40">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-24">
+                        <div className="space-y-12">
+                            <h2 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 tracking-tighter leading-[0.9]">
+                                Committed to <br /> Engineering Integrity.
+                            </h2>
+                            <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                                We maintain a &quot;zero-debt&quot; development philosophy. Every module we deploy is documented, tested, and built on a foundation of clean code principles that allow your platform to grow without technical friction.
+                            </p>
+                        </div>
+                        <div className="bg-slate-900 rounded-[4rem] p-16 text-white space-y-12 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand/20 blur-[100px] rounded-full group-hover:bg-brand/40 transition-colors" />
+                            <div className="relative z-10 space-y-8">
+                                <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-brand font-mono">{"// TECHNICAL STANDARDS"}</h4>
+                                <div className="grid grid-cols-1 gap-8">
+                                    {[
+                                        "Automated CI/CD Integration",
+                                        "Performance Benchmark compliance",
+                                        "Enterprise Security standards (SOC2 compliant)",
+                                        "Total Transparent communication"
+                                    ].map((standard, i) => (
+                                        <div key={i} className="flex items-center gap-6 group/item">
+                                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand font-black text-sm">
+                                                {i + 1}
+                                            </div>
+                                            <span className="text-lg font-bold tracking-tight">{standard}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Section>
-
-            <Footer />
-        </main>
+        </div>
     );
 }

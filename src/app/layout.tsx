@@ -79,6 +79,9 @@ const jsonLd = {
   "openingHours": "Mo-Sa 09:00-18:00"
 };
 
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
 export default function RootLayout({
   children,
 }: {
@@ -98,7 +101,11 @@ export default function RootLayout({
         <Preloader />
         <SmoothScroll>
           <div id="root-content" className="flex flex-col min-h-screen">
-            {children}
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
           </div>
         </SmoothScroll>
         <GoogleAnalytics />
