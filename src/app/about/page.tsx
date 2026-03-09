@@ -49,7 +49,7 @@ const timeline = [
     { year: "2021", title: "GPCET & RECW Partnership", desc: "G. Pullaiah College of Engineering & Technology and Ravindra College of Engineering for Women simultaneously adopted our Digital Campus platform — digitising student records, marks, attendance, placements, and accreditation reports.", link1: { label: "View GPCET →", href: "/partners/gpcet" }, link2: { label: "View RECW →", href: "/partners/recw" } },
     { year: "2023", title: "Ecosystem Growth", desc: "Expanded our academic footprint, adding advanced analytical modules and new college deployments across the state." },
     { year: "2024", title: "Full-Stack Expansion", desc: "Expanded into mobile app development, AI integrations, and cloud infrastructure services for enterprise clients." },
-    { year: "2025", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
+    { year: "2026", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
 ];
 
 const team = [
