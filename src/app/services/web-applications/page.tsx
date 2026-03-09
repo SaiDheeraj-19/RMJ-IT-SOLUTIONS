@@ -1,196 +1,280 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
-import TextReveal from "@/components/animations/TextReveal";
 import Link from "next/link";
-import { ArrowRight, Code, Database, Layout, Shield, Smartphone, Zap } from "lucide-react";
+import {
+    ArrowRight, Code2, Database, Globe, Layers, Monitor,
+    Zap, Shield, RefreshCw, LayoutDashboard, GitBranch, Lock,
+} from "lucide-react";
 
-const features = [
+const pillars = [
     {
+        icon: <Monitor className="w-6 h-6" />,
         title: "Frontend Engineering",
-        desc: "Lightning-fast, highly interactive user interfaces built with React and Next.js, optimized for conversions and retention.",
-        icon: <Layout className="w-5 h-5" />
+        brief: "We build snappy, accessible, and animated interfaces with React and Next.js. Every user interaction is deliberate — from page transitions to micro-animations — to maximize retention and delight.",
+        points: [
+            "Server-Side Rendering (SSR) & Static Site Generation (SSG)",
+            "Complex state management with Zustand or Redux Toolkit",
+            "Design system architecture with component libraries",
+            "WCAG 2.1 AA accessibility compliance",
+            "Core Web Vitals optimisation for SEO performance",
+        ],
     },
     {
-        title: "Backend Architecture",
-        desc: "Scalable APIs and microservices using Node.js, Python, or Go to power complex business logic under heavy loads.",
-        icon: <Database className="w-5 h-5" />
+        icon: <Database className="w-6 h-6" />,
+        title: "Backend & API Architecture",
+        brief: "Scalable, high-throughput backends built on Node.js, Python, or Go. We design RESTful and GraphQL APIs that power complex institutional logic — multi-tenancy, billing workflows, and analytics pipelines included.",
+        points: [
+            "Microservices and event-driven architectures",
+            "Real-time capabilities via WebSockets and SSE",
+            "Database design: PostgreSQL, MongoDB, Redis",
+            "Role-based access control (RBAC) and multi-tenancy",
+            "API gateway configuration and rate limiting",
+        ],
     },
     {
+        icon: <Globe className="w-6 h-6" />,
         title: "Progressive Web Apps",
-        desc: "App-like experiences directly in the browser with offline support, push notifications, and fast loading times.",
-        icon: <Smartphone className="w-5 h-5" />
+        brief: "PWAs blur the line between native and web. We deliver offline-capable, installable apps that feel fast on any device without requiring app store distribution — perfect for institutional portals and internal tools.",
+        points: [
+            "Service Worker caching strategies for offline availability",
+            "Push notification integrations",
+            "App manifest and installability setup",
+            "Background sync for low-connectivity environments",
+            "Lighthouse score optimisation (Performance, PWA, SEO)",
+        ],
     },
     {
-        title: "High Performance",
-        desc: "Optimized asset delivery, server-side rendering, and efficient caching to ensure sub-second page loads.",
-        icon: <Zap className="w-5 h-5" />
+        icon: <Layers className="w-6 h-6" />,
+        title: "System Integration",
+        brief: "Modern enterprises depend on dozens of tools. We connect them — ERP systems, payment gateways, SMS & email providers, third-party APIs — into a unified platform with reliable data pipelines.",
+        points: [
+            "ERP integration (Tally, Zoho, SAP connectors)",
+            "Payment gateway integration: Razorpay, Stripe, PayU",
+            "OAuth 2.0 social login and SSO (Google, Microsoft)",
+            "Webhook architecture and event-driven sync",
+            "Data migration and legacy system bridging",
+        ],
     },
     {
-        title: "Enterprise Security",
-        desc: "Built-in protection against common vulnerabilities (XSS, CSRF, Injection) with secure authentication flows.",
-        icon: <Shield className="w-5 h-5" />
+        icon: <Shield className="w-6 h-6" />,
+        title: "Security & Compliance",
+        brief: "Security is baked in from day one — not bolted on at the end. We follow OWASP Top 10 mitigation practices, ensuring your application is hardened against modern attack vectors before it ships.",
+        points: [
+            "OWASP Top 10 vulnerability mitigation",
+            "JWT + refresh token rotation strategies",
+            "Input validation, parameterised queries (no SQLi)",
+            "CSP, CORS, and XSS protection headers",
+            "HTTPS enforcement and SSL/TLS certificate management",
+        ],
     },
     {
-        title: "API Integrations",
-        desc: "Seamlessly connecting your web app with third-party services, payment gateways, and existing ERP systems.",
-        icon: <Code className="w-5 h-5" />
-    }
+        icon: <RefreshCw className="w-6 h-6" />,
+        title: "CI/CD & DevOps",
+        brief: "We ship faster and safer with automated pipelines. From staging environments to zero-downtime production deployments, our DevOps practices reduce release friction and rollback risk.",
+        points: [
+            "GitHub Actions / GitLab CI pipeline setup",
+            "Docker containerisation and orchestration",
+            "Automated test suites: unit, integration, E2E (Playwright)",
+            "Zero-downtime blue/green deployments on AWS or GCP",
+            "Monitoring with Datadog or Grafana + Prometheus",
+        ],
+    },
+];
+
+const process = [
+    { num: "01", title: "Discovery & Architecture", desc: "We begin with a deep technical discovery — understanding your infrastructure, users, and business logic. We then produce a system architecture document that serves as the single source of truth for the entire build." },
+    { num: "02", title: "Design System First", desc: "Before any component is built, we establish a design system — tokens, typography scale, component library. This makes UI consistent and speeds up development 3x." },
+    { num: "03", title: "Iterative Sprint Delivery", desc: "We work in structured 2-week sprints with stakeholder demos. You see real, deployed progress every fortnight — not a surprise at the end." },
+    { num: "04", title: "Testing & Hardening", desc: "Every release goes through automated unit tests, integration tests, cross-browser checks, and a manual QA pass. Security is audited before every major release." },
+    { num: "05", title: "Deployment & Handoff", desc: "We deploy to your infrastructure, configure monitoring dashboards, and document everything. Post-launch, we offer SLA-backed support and maintenance contracts." },
+];
+
+const techStack = [
+    "Next.js", "React", "TypeScript", "Node.js", "PostgreSQL",
+    "Redis", "Docker", "Kubernetes", "AWS", "GraphQL",
+    "Tailwind CSS", "Playwright", "GitHub Actions", "Prisma ORM",
 ];
 
 export default function WebApplicationsPage() {
     return (
-        <main className="min-h-screen bg-[#f8fafc]">
-            <Navbar />
+        <main style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
-            {/* Hero Section */}
-            <section className="relative min-h-[90vh] pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 opacity-[0.03]"
-                        style={{
-                            backgroundImage: `linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)`,
-                            backgroundSize: '20px 20px',
-                        }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/50 via-transparent to-[#f8fafc]" />
-                </div>
+            {/* ── HERO ── */}
+            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-24 px-6 md:px-12 lg:px-24">
+                {/* Background glows */}
+                <div className="absolute top-[-15%] right-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none"
+                    style={{ background: "#3150aa", filter: "blur(240px)", opacity: 0.08 }} />
+                <div className="absolute bottom-0 left-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
+                    style={{ background: "#b05d41", filter: "blur(200px)", opacity: 0.07 }} />
 
-                <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -25 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand mb-6 block">
-                            Service / Web Apps
-                        </span>
-                        <TextReveal
-                            as="h1"
-                            text="Custom Web Applications."
-                            className="text-[clamp(3.2rem,7vw,5.5rem)] font-display leading-[0.9] tracking-tighter font-bold text-[#1a1a1a] mb-6"
-                        />
-                        <p className="text-xl text-[#505050] max-w-xl leading-relaxed mb-8">
-                            We architect secure, scalable, and tailored web applications designed to solve your unique business challenges. From enterprise portals to consumer platforms.
-                        </p>
-                        <Link
-                            href="/contact"
-                            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-foreground text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-all duration-300 shadow-xl"
-                        >
-                            Discuss Your Project
-                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                <div className="relative z-10 max-w-[1400px] mx-auto w-full">
+                    {/* Eyebrow */}
+                    <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+                        className="flex items-center gap-4 mb-10">
+                        <Link href="/services" className="text-[11px] font-black uppercase tracking-[0.45em] font-mono hover:opacity-100 transition-opacity"
+                            style={{ color: "var(--brand)", opacity: 0.8 }}>
+                            ← Services
+                        </Link>
+                        <span className="w-16 h-px" style={{ background: "var(--border)" }} />
+                        <span className="text-[11px] font-black uppercase tracking-[0.45em] font-mono"
+                            style={{ color: "var(--foreground)", opacity: 0.35 }}>Web Applications</span>
+                    </motion.div>
+
+                    {/* Heading */}
+                    <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+                        className="text-[clamp(3rem,8vw,7.5rem)] font-black leading-[0.9] tracking-tighter mb-10 max-w-5xl"
+                        style={{ color: "var(--foreground)", letterSpacing: "-3px" }}>
+                        Enterprise Web<br />
+                        <span style={{ color: "var(--brand)" }}>Engineering.</span>
+                    </motion.h1>
+
+                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
+                        className="text-xl md:text-2xl max-w-2xl leading-relaxed mb-14"
+                        style={{ color: "var(--foreground)", opacity: 0.6 }}>
+                        We architect and build production-grade web applications — from institutional ERP portals to consumer-facing SaaS platforms. Every line of code is written for scale, security, and speed.
+                    </motion.p>
+
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
+                        className="flex flex-wrap items-center gap-5">
+                        <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
+                            Discuss Your Project <ArrowRight size={16} />
+                        </Link>
+                        <Link href="/case-studies" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all"
+                            style={{ color: "var(--foreground)", opacity: 0.6 }}>
+                            See Case Studies →
                         </Link>
                     </motion.div>
                 </div>
+
+                {/* Tech Chips */}
+                <div className="relative z-10 max-w-[1400px] mx-auto w-full mt-24">
+                    <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-4"
+                        style={{ color: "var(--foreground)", opacity: 0.3 }}>Technologies We Deploy</p>
+                    <div className="flex flex-wrap gap-2">
+                        {techStack.map((t) => (
+                            <span key={t} className="px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider"
+                                style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--foreground)", opacity: 0.7 }}>
+                                {t}
+                            </span>
+                        ))}
+                    </div>
+                </div>
             </section>
 
-            {/* Core Features */}
-            <Section className="bg-white">
+            {/* ── WHAT WE BUILD ── */}
+            <section className="px-6 md:px-12 lg:px-24 py-32" style={{ background: "var(--surface)" }}>
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
-                        <div className="max-w-2xl">
-                            <span className="text-brand font-mono text-sm tracking-widest block mb-4 uppercase">{`// Engineering Excellence`}</span>
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1a1a] leading-tight flex-1">
-                                Built for scale. <br /> Designed for users.
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+                        <div className="lg:col-span-5">
+                            <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-5"
+                                style={{ color: "var(--brand)" }}>{`// What We Build`}</p>
+                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-tight"
+                                style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
+                                Full-stack capability.<br />No gaps.
                             </h2>
+                        </div>
+                        <div className="lg:col-span-7 flex items-end">
+                            <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.55 }}>
+                                Our web engineering practice covers every layer — from pixel-perfect interfaces to robust backend infrastructure. We operate as an embedded engineering team, not a subcontractor. You get deep ownership, clear communication, and accountability at every milestone.
+                            </p>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-                        {features.map((feature, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="group"
-                            >
-                                <div className="text-brand mb-8 flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-brand/5 rounded-lg flex items-center justify-center">
-                                        {feature.icon}
-                                    </div>
-                                    <div className="h-px bg-stone-100 flex-1" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {pillars.map((p, i) => (
+                            <motion.div key={i}
+                                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }} transition={{ delay: i * 0.07 }}
+                                className="group rounded-[20px] p-8 transition-transform duration-300 hover:-translate-y-1"
+                                style={{ background: "var(--surface-soft)", border: "1px solid var(--border)" }}>
+                                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                                    style={{ background: "var(--background)", color: "var(--brand)", border: "1px solid var(--border)" }}>
+                                    {p.icon}
                                 </div>
-                                <h4 className="text-xl font-display font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">{feature.title}</h4>
-                                <p className="text-[#606060] leading-relaxed text-sm">
-                                    {feature.desc}
-                                </p>
+                                <h3 className="text-xl font-black tracking-tight mb-3"
+                                    style={{ color: "var(--foreground)" }}>{p.title}</h3>
+                                <p className="text-sm leading-relaxed mb-6"
+                                    style={{ color: "var(--foreground)", opacity: 0.55 }}>{p.brief}</p>
+                                <ul className="space-y-2">
+                                    {p.points.map((pt, j) => (
+                                        <li key={j} className="text-[12px] font-semibold flex items-start gap-2"
+                                            style={{ color: "var(--foreground)", opacity: 0.45 }}>
+                                            <span className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: "var(--brand)" }} />
+                                            {pt}
+                                        </li>
+                                    ))}
+                                </ul>
                             </motion.div>
                         ))}
                     </div>
                 </div>
-            </Section>
+            </section>
 
-            {/* Development Process */}
-            <Section className="bg-[#fffdf5]">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <div>
-                        <h3 className="text-4xl font-display font-bold text-[#1a1a1a] mb-8 tracking-tight">Structured <br /> Delivery Process.</h3>
-                        <p className="text-lg text-[#505050] leading-relaxed mb-12">
-                            We follow an agile, iterative methodology that ensures transparency, predictable delivery timelines, and alignment with your business goals at every stage.
-                        </p>
+            {/* ── PROCESS ── */}
+            <section className="px-6 md:px-12 lg:px-24 py-32" style={{ background: "var(--background)" }}>
+                <div className="max-w-[1400px] mx-auto">
+                    <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-5"
+                        style={{ color: "var(--brand)" }}>{`// How We Work`}</p>
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-20"
+                        style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
+                        A process built for trust.
+                    </h2>
 
-                        <div className="grid grid-cols-2 gap-12 border-t border-stone-200 pt-12">
-                            <div>
-                                <span className="text-4xl font-display font-bold text-brand">01</span>
-                                <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">Discovery & Architecture</p>
-                            </div>
-                            <div>
-                                <span className="text-4xl font-display font-bold text-brand">02</span>
-                                <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">Iterative Development</p>
-                            </div>
-                            <div>
-                                <span className="text-4xl font-display font-bold text-brand">03</span>
-                                <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">Rigorous Testing</p>
-                            </div>
-                            <div>
-                                <span className="text-4xl font-display font-bold text-brand">04</span>
-                                <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">Deployment & Scaling</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="relative h-full min-h-[400px] rounded-[2rem] overflow-hidden">
-                        <div className="absolute inset-0 bg-[#1a1a1a] flex flex-col justify-center p-12 overflow-hidden shadow-2xl">
-                            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay" />
-                            <div className="relative z-10 w-full h-full border border-white/10 rounded-xl overflow-hidden shadow-2xl bg-[#0a0b0c] flex flex-col">
-                                {/* Browser mock header */}
-                                <div className="h-10 border-b border-white/10 flex items-center px-4 gap-2 bg-[#111]">
-                                    <div className="w-3 h-3 rounded-full bg-red-400/80"></div>
-                                    <div className="w-3 h-3 rounded-full bg-amber-400/80"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-400/80"></div>
+                    <div className="space-y-0">
+                        {process.map((step, i) => (
+                            <motion.div key={i}
+                                initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                                className="grid grid-cols-12 gap-8 py-10 border-t group hover:bg-surface transition-colors rounded-xl px-4"
+                                style={{ borderColor: "var(--border)" }}>
+                                <div className="col-span-2 md:col-span-1">
+                                    <span className="text-5xl font-black tabular-nums"
+                                        style={{ color: "var(--foreground)", opacity: 0.12 }}>{step.num}</span>
                                 </div>
-                                {/* Code content */}
-                                <div className="flex-1 p-6 font-mono text-[11px] md:text-xs text-green-400/80 overflow-hidden leading-relaxed opacity-80">
-                                    <p><span className="text-blue-400">export default async function</span> <span className="text-yellow-200">SystemArchitecture</span>() {"{"}</p>
-                                    <p className="pl-4"><span className="text-purple-400">const</span> database = <span className="text-blue-400">await</span> <span className="text-yellow-200">connectDB</span>();</p>
-                                    <p className="pl-4"><span className="text-purple-400">const</span> auth = <span className="text-blue-400">await</span> <span className="text-yellow-200">verifySession</span>();</p>
-                                    <br />
-                                    <p className="pl-4"><span className="text-purple-400">if</span> (!auth.isValid) <span className="text-blue-400">return</span> <span className="text-blue-400">new</span> <span className="text-yellow-200">Response</span>(&quot;Unauthorized&quot;, {`"{ status: 401 }"`});</p>
-                                    <br />
-                                    <p className="pl-4"><span className="text-purple-400">const</span> data = <span className="text-blue-400">await</span> database.records.<span className="text-yellow-200">find</span>({"{"}</p>
-                                    <p className="pl-8">tenantId: auth.tenantId,</p>
-                                    <p className="pl-8">status: <span className="text-green-300">&quot;active&quot;</span></p>
-                                    <p className="pl-4">{"}"}).<span className="text-yellow-200">populate</span>(<span className="text-green-300">&quot;metrics&quot;</span>);</p>
-                                    <br />
-                                    <p className="pl-4"><span className="text-blue-400">return</span> (</p>
-                                    <p className="pl-8 text-stone-300">{"<DashboardLayout>"}</p>
-                                    <p className="pl-12 text-stone-300">{"<MetricsGrid data={data} />"}</p>
-                                    <p className="pl-8 text-stone-300">{"</DashboardLayout>"}</p>
-                                    <p className="pl-4">);</p>
-                                    <p>{"}"}</p>
-                                    <p className="animate-pulse pt-2">_</p>
+                                <div className="col-span-10 md:col-span-4">
+                                    <h3 className="text-xl font-black tracking-tight"
+                                        style={{ color: "var(--foreground)" }}>{step.title}</h3>
                                 </div>
-                            </div>
-                        </div>
+                                <div className="col-span-12 md:col-span-7">
+                                    <p className="text-base leading-relaxed"
+                                        style={{ color: "var(--foreground)", opacity: 0.55 }}>{step.desc}</p>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
-            </Section>
+            </section>
 
-            <Footer />
+            {/* ── CTA BANNER ── */}
+            <section className="px-6 md:px-12 lg:px-24 py-24" style={{ background: "var(--surface)" }}>
+                <div className="max-w-[1400px] mx-auto">
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                        className="rounded-[36px] p-14 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden"
+                        style={{ background: "var(--background)", border: "1px solid var(--border)" }}>
+                        <div className="absolute right-0 top-0 w-96 h-96 rounded-full pointer-events-none"
+                            style={{ background: "#3150aa", filter: "blur(180px)", opacity: 0.08 }} />
+                        <div className="relative z-10">
+                            <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-4"
+                                style={{ color: "var(--brand)" }}>{`// Ready?`}</p>
+                            <h2 className="text-3xl md:text-5xl font-black tracking-tighter"
+                                style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
+                                Let&apos;s build your<br />web platform.
+                            </h2>
+                        </div>
+                        <div className="relative z-10 flex flex-col sm:flex-row gap-4">
+                            <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
+                                Start the Conversation <ArrowRight size={16} />
+                            </Link>
+                            <Link href="/case-studies"
+                                className="px-10 py-4 text-base font-bold inline-flex items-center gap-3 rounded-full border transition-all hover:border-brand"
+                                style={{ color: "var(--foreground)", borderColor: "var(--border)" }}>
+                                View Case Studies
+                            </Link>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </main>
     );
 }
