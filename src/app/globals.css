@@ -200,41 +200,23 @@ p {
     0px 0px 60px 0px rgba(245, 151, 104, 0.5);
 }
 
-/* RMJ IT navbar brand pill — matches RefractWeb style */
+/* RMJ IT navbar brand pill — same style as Work With Us CTA */
 .rmjit-pill {
-  background: radial-gradient(57.04% 86.47% at 50% 105%, #c46a3a 0%, #4a2a1a 100%);
+  background: radial-gradient(57.04% 86.47% at 50% 105%, #F59768 0%, #b05d41 100%);
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
-    inset 0px -3px 3px 0px rgba(0, 0, 0, 0.3),
-    0px 2px 8px 0px rgba(0, 0, 0, 0.5),
-    0px 0px 20px 0px rgba(176, 93, 65, 0.25);
-  border: 0.6px solid rgba(255, 255, 255, 0.18);
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.35),
+    0px 0px 30px 0px rgba(245, 151, 104, 0.35);
+  border: 0.6px solid rgba(255, 255, 255, 0.55);
 }
 
 .rmjit-pill:hover {
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
-    inset 0px -3px 3px 0px rgba(0, 0, 0, 0.3),
-    0px 2px 8px 0px rgba(0, 0, 0, 0.5),
-    0px 0px 30px 0px rgba(245, 151, 104, 0.4);
-}
-
-/* Light mode: make the pill clearly visible with a warm terracotta */
-.light .rmjit-pill {
-  background: radial-gradient(57.04% 86.47% at 50% 105%, #d4754a 0%, #b05d41 100%);
-  box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.35),
-    inset 0px -3px 3px 0px rgba(0, 0, 0, 0.15),
-    0px 2px 12px 0px rgba(176, 93, 65, 0.35),
-    0px 0px 24px 0px rgba(176, 93, 65, 0.2);
-  border: 0.6px solid rgba(255, 255, 255, 0.5);
-}
-
-.light .rmjit-pill:hover {
-  box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.35),
-    0px 4px 16px 0px rgba(176, 93, 65, 0.45),
-    0px 0px 32px 0px rgba(245, 151, 104, 0.3);
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 4px 8px 0px rgba(0, 0, 0, 0.4),
+    0px 0px 50px 0px rgba(245, 151, 104, 0.55);
 }
 
 
