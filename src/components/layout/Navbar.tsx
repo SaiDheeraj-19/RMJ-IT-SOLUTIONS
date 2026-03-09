@@ -19,18 +19,18 @@ const navLinks = [
 export default function Navbar() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isDark, setIsDark] = useState(true);
+    const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
         const saved = localStorage.getItem("theme");
-        if (saved === "light") {
-            setIsDark(false);
-            document.documentElement.setAttribute("data-theme", "light");
-            document.documentElement.classList.add("light");
-        } else {
+        if (saved === "dark") {
             setIsDark(true);
             document.documentElement.setAttribute("data-theme", "dark");
             document.documentElement.classList.remove("light");
+        } else {
+            setIsDark(false);
+            document.documentElement.setAttribute("data-theme", "light");
+            document.documentElement.classList.add("light");
         }
     }, []);
 

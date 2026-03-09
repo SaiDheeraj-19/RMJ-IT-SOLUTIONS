@@ -88,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${interTight.variable} ${instrument.variable} ${dmMono.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="en" className={`${interTight.variable} ${instrument.variable} ${dmMono.variable} scroll-smooth light`} data-theme="light" suppressHydrationWarning>
       <head>
         <Script
           id="json-ld"
