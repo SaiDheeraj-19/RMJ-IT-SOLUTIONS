@@ -228,24 +228,32 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* ── Massive wordmark ── */}
-                <div className="relative select-none overflow-hidden border-t" style={{ borderColor: "var(--border)" }}>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 60 }}
+                {/* ── Wordmark ── */}
+                <div className="relative select-none overflow-hidden border-t py-10" style={{ borderColor: "var(--border)" }}>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                        className="text-[clamp(5rem,18vw,24rem)] font-black tracking-tighter leading-none text-center py-8"
+                        className="text-center text-[clamp(2.5rem,10vw,10rem)] font-black leading-none"
                         style={{
                             fontFamily: "var(--font-display)",
-                            background: "linear-gradient(135deg, #b05d41 0%, #f59768 40%, #e8855a 70%, #b05d41 100%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                            opacity: 0.7,
+                            letterSpacing: "0.35em",
+                            WebkitTextStroke: "1.5px #b05d41",
+                            color: "transparent",
+                            opacity: 0.55,
                         }}
                     >
-                        RMJ IT
-                    </motion.h2>
+                        RMJ IT SOLUTIONS
+                    </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={isInView ? { opacity: 1 } : {}}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="text-center text-[10px] font-black uppercase tracking-[0.65em] font-mono mt-4"
+                        style={{ color: "var(--brand)", opacity: 0.5 }}
+                    >
+                        Est. 2018 · Kurnool, India
+                    </motion.p>
                 </div>
 
                 {/* ── Bottom bar ── */}
