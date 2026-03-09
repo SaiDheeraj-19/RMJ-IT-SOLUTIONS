@@ -263,83 +263,59 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — Full 3x3 Staggered tech grid */}
-          <div className="relative z-20 flex-1 w-full max-w-[580px] min-h-[460px] flex items-center justify-center">
-            <div className="grid grid-cols-3 gap-4" style={{ transform: 'rotate(-5deg) scale(1.05)' }}>
+          {/* Right — All 21 tech logos, 4-col staggered grid */}
+          <div className="relative z-20 flex-1 w-full max-w-[640px] min-h-[520px] flex items-center justify-center overflow-hidden">
+            {(() => {
+              const D = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+              const S = "https://cdn.simpleicons.org";
+              const techs = [
+                { src: `${D}/html5/html5-original.svg`, label: "HTML5", glow: "rgba(227,76,38,0.2)" },
+                { src: `${D}/css3/css3-original.svg`, label: "CSS3", glow: "rgba(38,77,228,0.2)" },
+                { src: `${D}/javascript/javascript-original.svg`, label: "JavaScript", glow: "rgba(247,223,30,0.2)" },
+                { src: `${D}/react/react-original.svg`, label: "React", glow: "rgba(97,218,251,0.2)" },
+                { src: `${S}/nextdotjs/ffffff`, label: "Next.js", glow: "rgba(255,255,255,0.08)" },
+                { src: `${D}/nodejs/nodejs-original.svg`, label: "Node.js", glow: "rgba(104,160,99,0.2)" },
+                { src: `${D}/flutter/flutter-original.svg`, label: "Flutter", glow: "rgba(84,202,251,0.2)" },
+                { src: `${D}/python/python-original.svg`, label: "Python", glow: "rgba(55,118,171,0.2)" },
+                { src: `${D}/tensorflow/tensorflow-original.svg`, label: "TensorFlow", glow: "rgba(255,110,64,0.2)" },
+                { src: `${D}/pytorch/pytorch-original.svg`, label: "PyTorch", glow: "rgba(238,76,44,0.2)" },
+                { src: `${D}/docker/docker-original.svg`, label: "Docker", glow: "rgba(25,150,210,0.2)" },
+                { src: `${D}/kubernetes/kubernetes-original.svg`, label: "Kubernetes", glow: "rgba(50,108,229,0.2)" },
+                { src: `${D}/linux/linux-original.svg`, label: "Linux", glow: "rgba(255,213,0,0.15)" },
+                { src: `${D}/postgresql/postgresql-original.svg`, label: "PostgreSQL", glow: "rgba(51,103,145,0.2)" },
+                { src: `${D}/mongodb/mongodb-original.svg`, label: "MongoDB", glow: "rgba(71,162,72,0.2)" },
+                { src: `${S}/express/ffffff`, label: "Express.js", glow: "rgba(255,255,255,0.07)" },
+                { src: `${S}/github/ffffff`, label: "GitHub", glow: "rgba(255,255,255,0.08)" },
+                { src: `${D}/figma/figma-original.svg`, label: "Figma", glow: "rgba(162,89,255,0.2)" },
+                { src: `${S}/vercel/ffffff`, label: "Vercel", glow: "rgba(255,255,255,0.08)" },
+                { src: `${D}/amazonwebservices/amazonwebservices-original-wordmark.svg`, label: "AWS", glow: "rgba(249,168,37,0.2)" },
+                { src: `${S}/greensock/88ce02`, label: "GSAP", glow: "rgba(136,206,2,0.2)" },
+              ];
+              // Stagger offsets cycling through 4 columns
+              const yOffsets = [48, 16, -20, -44, 28, -8, 8, -32, 52, 20, -24, -40, 36, -4, 12, -28, 44, 8, -16, -36, 24];
 
-              {/* Row 1: React | Next.js | Node.js */}
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(40px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(97,218,251,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" className="w-10 h-10 relative z-10" alt="React" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>React</span>
+              return (
+                <div className="grid grid-cols-4 gap-3" style={{ transform: 'rotate(-4deg) scale(0.97)' }}>
+                  {techs.map((t, i) => (
+                    <div key={t.label} className="relative h-24 w-24 group/card"
+                      style={{ transform: `translateY(${yOffsets[i] ?? 0}px)` }}>
+                      <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-1.5 transition-transform duration-500 hover:scale-110"
+                        style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.07)' }}>
+                        <div className="absolute inset-0 rounded-2xl" style={{ background: `radial-gradient(circle at center, ${t.glow}, transparent 70%)` }} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={t.src} alt={t.label} className="w-9 h-9 relative z-10 object-contain" />
+                        <span className="text-[8px] font-bold opacity-50 relative z-10 text-center px-1 leading-tight"
+                          style={{ color: 'var(--foreground)' }}>{t.label}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(24px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%)' }} />
-                  <img src="https://cdn.simpleicons.org/nextdotjs/ffffff" className="w-10 h-10 relative z-10" alt="Next.js" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Next.js</span>
-                </div>
-              </div>
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(-40px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(104,160,99,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" className="w-10 h-10 relative z-10" alt="Node.js" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Node.js</span>
-                </div>
-              </div>
-
-              {/* Row 2: Python | Docker | TensorFlow */}
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(16px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(55,118,171,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" className="w-10 h-10 relative z-10" alt="Python" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Python</span>
-                </div>
-              </div>
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(-16px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(25,150,210,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" className="w-10 h-10 relative z-10" alt="Docker" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Docker</span>
-                </div>
-              </div>
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(8px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(255,110,64,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" className="w-10 h-10 relative z-10" alt="TensorFlow" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>TensorFlow</span>
-                </div>
-              </div>
-
-              {/* Row 3: AWS | PostgreSQL | Figma */}
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(52px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(249,168,37,0.12), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" className="w-10 h-10 relative z-10" alt="AWS" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>AWS</span>
-                </div>
-              </div>
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(48px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(51,103,145,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-10 h-10 relative z-10" alt="PostgreSQL" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>PostgreSQL</span>
-                </div>
-              </div>
-              <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(-32px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(162,89,255,0.15), transparent 70%)' }} />
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" className="w-10 h-10 relative z-10" alt="Figma" />
-                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Figma</span>
-                </div>
-              </div>
-
-            </div>
+              );
+            })()}
           </div>
         </div>
       </section>
+
 
       {/* ── WHY CHOOSE US ── */}
       <section className="relative z-10 container mx-auto px-4 md:px-12 pt-40 pb-20 fade-up">
@@ -383,10 +359,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section >
 
       {/* ── READY FOR WHAT'S NEXT (matching RefractWeb hero CTA) ── */}
-      <section className="relative z-10 container mx-auto px-4 md:px-12 pt-40 pb-32 fade-up">
+      < section className="relative z-10 container mx-auto px-4 md:px-12 pt-40 pb-32 fade-up" >
         <div className="rounded-[44px] border overflow-hidden relative min-h-[500px] flex flex-col md:flex-row items-center"
           style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
           {/* Background */}
@@ -430,8 +406,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
-    </main>
+    </main >
   );
 }
