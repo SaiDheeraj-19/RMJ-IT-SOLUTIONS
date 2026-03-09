@@ -66,7 +66,7 @@ export default function Home() {
           <p className="hero-text-line text-[11px] font-black uppercase tracking-[0.5em] font-mono" style={{ color: 'var(--brand)', opacity: 0.85 }}>IT Infrastructure · Software Engineering</p>
 
           <h1 className="hero-text-line font-bold leading-[1.1] tracking-[-1.5px]" style={{ color: 'var(--foreground)', fontSize: 'clamp(1.9rem, 3.8vw, 3.1rem)' }}>
-            Engineering Digital<br />Infrastructure<br /><span style={{ opacity: 0.35, fontStyle: 'italic', fontWeight: 400 }}>That Scales.</span>
+            Engineering Digital<br />Infrastructure<br /><span>That Scales.</span>
           </h1>
 
           <p className="hero-text-line leading-[1.6] max-w-md font-normal" style={{ color: 'var(--foreground)', opacity: 0.55, fontSize: 'clamp(1rem, 1.5vw, 1.15rem)' }}>
