@@ -132,7 +132,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-10">
             <Link href="/contact" className="btn-glow px-9 py-3.5 text-lg font-bold">Work With Us</Link>
-            <Link href="https://rmjit.com/services.php" target="_blank" className="flex items-center gap-2 text-lg hover:opacity-100 transition-opacity font-semibold group" style={{ color: 'var(--foreground)', opacity: 0.6 }}>
+            <Link href="/services" className="flex items-center gap-2 text-lg hover:opacity-100 transition-opacity font-semibold group" style={{ color: 'var(--foreground)', opacity: 0.6 }}>
               View All Services <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
@@ -150,7 +150,7 @@ export default function Home() {
               </div>
               <h3 className="text-3xl font-bold mb-4 tracking-tight" style={{ color: 'var(--foreground)' }}>Web Applications</h3>
               <p className="text-lg mb-8 leading-[1.6]" style={{ color: 'var(--foreground)', opacity: 0.55 }}>Creates secure, scalable, and customized web applications to meet clients&apos; unique business needs, developed by our expert team of developers.</p>
-              <a href="https://rmjit.com/services.php#webapp" target="_blank" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all">Explore Service →</a>
+              <Link href="/services/web-applications" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all">Explore Service →</Link>
             </div>
             <div className="flex-1 relative w-full min-h-[280px] rounded-2xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
               <Image
@@ -214,8 +214,8 @@ export default function Home() {
                 <Image src="/service_android_ios.png" alt="iOS Android Apps" fill className="object-cover" />
               </div>
               <div className="flex items-center gap-6 mt-auto">
-                <a href="https://rmjit.com/services.php#android" target="_blank" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all text-sm">Android →</a>
-                <a href="https://rmjit.com/services.php#ios" target="_blank" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all text-sm">iOS →</a>
+                <Link href="/services/mobile-apps" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all text-sm">Android →</Link>
+                <Link href="/services/mobile-apps" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all text-sm">iOS →</Link>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ export default function Home() {
               <div className="relative flex-1 min-h-[220px] rounded-2xl overflow-hidden mb-6 group-hover:scale-[1.02] transition-transform duration-700">
                 <Image src="/service_digital_marketing.png" alt="Digital Marketing" fill className="object-cover" />
               </div>
-              <a href="https://rmjit.com/services.php#dms" target="_blank" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all">Explore Service →</a>
+              <Link href="/services/digital-marketing" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all">Explore Service →</Link>
             </div>
           </div>
 
