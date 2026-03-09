@@ -6,7 +6,7 @@ import { ArrowRight, Users, BookOpen, BarChart2, Wifi, Award, CheckCircle } from
 
 const stats = [
     { value: "3,500+", label: "Students on Platform" },
-    { value: "40+", label: "Departments Integrated" },
+    { value: "7", label: "Departments Integrated" },
     { value: "2021", label: "Partnership Established" },
     { value: "100%", label: "Paperless Administration" },
 ];

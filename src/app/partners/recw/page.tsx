@@ -6,7 +6,7 @@ import { ArrowRight, Users, BookOpen, BarChart2, Shield, Award, CheckCircle } fr
 
 const stats = [
     { value: "2,000+", label: "Students on Platform" },
-    { value: "25+", label: "Departments Integrated" },
+    { value: "3", label: "Departments Integrated" },
     { value: "2021", label: "Partnership Established" },
     { value: "100%", label: "Digital Administration" },
 ];
