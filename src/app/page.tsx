@@ -40,21 +40,11 @@ export default function Home() {
 
   return (
     <main ref={containerRef} className="min-h-screen overflow-hidden pb-40 font-sans" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
-      {/* Background Gradients */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[10%] w-[60vw] h-[60vw] rounded-full opacity-20" style={{ background: '#b05d41', filter: 'blur(250px)' }} />
-        <div className="absolute top-[-5%] -left-[15%] w-[50vw] h-[50vw] rounded-full opacity-15" style={{ background: '#3150aa', filter: 'blur(240px)' }} />
+      {/* Background Gradients — absolute (not fixed) to avoid scroll repaints */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[10%] w-[50vw] h-[50vw] rounded-full opacity-15 bg-brand/20 blur-[120px] transform-gpu will-change-transform" />
+        <div className="absolute top-[-5%] -left-[15%] w-[40vw] h-[40vw] rounded-full opacity-10 bg-blue-600/20 blur-[100px] transform-gpu will-change-transform" />
       </div>
-
-      <div
-        className="fixed inset-0 z-0 opacity-[0.08] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(to right, #444 1px, transparent 1px), linear-gradient(to bottom, #444 1px, transparent 1px)`,
-          backgroundSize: '80px 80px',
-          maskImage: 'radial-gradient(ellipse 70% 70% at top right, black 20%, transparent 100%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at top right, black 20%, transparent 100%)'
-        }}
-      />
 
       {/* ── HERO SECTION ── */}
       <section className="relative z-10 container mx-auto px-4 md:px-12 pt-36 md:pt-48 min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8">
@@ -143,7 +133,7 @@ export default function Home() {
           {/* Web Applications — Full Width */}
           <div className="col-span-1 md:col-span-2 rounded-[20px] border p-10 md:p-14 relative overflow-hidden group fade-up min-h-[480px] flex flex-col md:flex-row items-center gap-12"
             style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
-            <div className="absolute bottom-[-10%] left-[-5%] w-[350px] h-[350px] rounded-full opacity-10 pointer-events-none" style={{ background: '#3150aa', filter: 'blur(100px)' }} />
+            <div className="absolute bottom-[-10%] left-[-5%] w-[350px] h-[350px] rounded-full opacity-10 pointer-events-none bg-blue-600/30 blur-[80px] transform-gpu" />
             <div className="flex-1 max-w-lg relative z-10">
               <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ color: 'var(--foreground)', opacity: 0.7 }}><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
@@ -165,7 +155,7 @@ export default function Home() {
           {/* Digital Campus — full width featured card */}
           <div className="col-span-1 md:col-span-2 rounded-[20px] border p-10 md:p-14 relative overflow-hidden group fade-up min-h-[480px] flex flex-col md:flex-row-reverse items-center gap-12"
             style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full opacity-10 pointer-events-none" style={{ background: '#b05d41', filter: 'blur(100px)' }} />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full opacity-10 pointer-events-none bg-brand/30 blur-[80px] transform-gpu" />
             <div className="flex-1 max-w-lg relative z-10">
               <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ color: 'var(--foreground)', opacity: 0.7 }}><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
@@ -366,7 +356,7 @@ export default function Home() {
         <div className="rounded-[44px] border overflow-hidden relative min-h-[500px] flex flex-col md:flex-row items-center"
           style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
           {/* Background */}
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(176,93,65,0.25) 0%, transparent 60%)' }} />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(176,93,65,0.2) 0%, transparent 60%)' }} />
 
           {/* Left text */}
           <div className="relative z-10 flex-1 p-12 md:p-20 space-y-8">
@@ -388,9 +378,9 @@ export default function Home() {
 
           {/* Right — Decorative visual */}
           <div className="flex-1 relative h-[380px] md:h-full hidden md:flex items-center justify-center overflow-hidden">
-            {/* Ambient glow */}
-            <div className="absolute w-64 h-64 rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #b05d41 0%, transparent 70%)', filter: 'blur(60px)', right: '-40px', bottom: '-40px' }} />
-            <div className="absolute w-48 h-48 rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #3150aa 0%, transparent 70%)', filter: 'blur(50px)', right: '80px', top: '40px' }} />
+            {/* Ambient glow - GPU accelerated */}
+            <div className="absolute w-64 h-64 rounded-full opacity-25 bg-brand/40 blur-[40px] transform-gpu" style={{ right: '-40px', bottom: '-40px' }} />
+            <div className="absolute w-48 h-48 rounded-full opacity-15 bg-blue-600/30 blur-[30px] transform-gpu" style={{ right: '80px', top: '40px' }} />
             {/* Watermark text */}
             <span className="absolute text-[150px] font-black tracking-tighter leading-none select-none pointer-events-none"
               style={{ color: 'transparent', WebkitTextStroke: '1px rgba(245,151,104,0.12)' }}>RMJ</span>

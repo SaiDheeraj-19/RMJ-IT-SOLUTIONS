@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Section from "@/components/ui/Section";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useRef } from "react";
 
 const directives = [
     {
@@ -25,28 +24,14 @@ const directives = [
 ];
 
 export default function LeadershipPhilosophy() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
-
-    // Keeping the hooks but avoiding unused variable warnings if logic changes
-    const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
     return (
-        <Section id="philosophy" ref={containerRef} className="bg-white pt-12 pb-24 relative overflow-hidden border-t border-slate-100">
-            {/* Background Element using y transform to silence unused var warning */}
-            <motion.div style={{ y }} className="absolute inset-0 pointer-events-none opacity-50" />
-
-
-
+        <Section id="philosophy" className="pt-12 pb-24 relative overflow-hidden border-t border-border" style={{ background: 'var(--background)' }}>
             <div className="max-w-[1600px] mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
                     {/* Header Section */}
                     <div className="lg:col-span-4 space-y-8">
                         <div className="space-y-6 sticky top-32">
-                            <h2 className="text-4xl md:text-backgroundxl font-display font-bold text-foreground leading-[1.2] tracking-tight pb-4">
+                            <h2 className="text-4xl font-display font-bold text-foreground leading-[1.2] tracking-tight pb-4">
                                 The <br />
                                 <span className="text-foreground/70">Manifesto.</span>
                             </h2>
@@ -56,7 +41,7 @@ export default function LeadershipPhilosophy() {
 
                             <Link href="/about" className="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-foreground mt-8">
                                 <span>Read the Manifesto</span>
-                                <div className="w-8 h-8 rounded-full bg-surface0 flex items-center justify-center group-hover:bg-brand group-hover:text-foreground transition-colors">
+                                <div className="w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-brand group-hover:text-foreground transition-colors border border-border">
                                     <ArrowUpRight size={14} />
                                 </div>
                             </Link>
@@ -70,9 +55,10 @@ export default function LeadershipPhilosophy() {
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="group relative bg-surface-soft hover:bg-surface0 transition-colors duration-500 rounded-3xl p-10 md:p-12 border border-slate-100 hover:border-slate-800"
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="group relative rounded-3xl p-10 md:p-12 border border-border hover:border-brand/20 transition-colors duration-300"
+                                style={{ background: 'var(--surface)' }}
                             >
                                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 z-10 relative">
                                     <div className="space-y-6 md:max-w-xl">
@@ -82,11 +68,11 @@ export default function LeadershipPhilosophy() {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-3xl font-display font-bold text-foreground group-hover:text-foreground transition-colors">
+                                        <h3 className="text-3xl font-display font-bold text-foreground">
                                             {item.title}
                                         </h3>
 
-                                        <p className="text-base text-foreground/70 font-medium leading-relaxed group-hover:text-foreground/70 transition-colors">
+                                        <p className="text-base text-foreground/70 font-medium leading-relaxed">
                                             {item.desc}
                                         </p>
                                     </div>
