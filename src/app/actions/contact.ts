@@ -7,7 +7,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendContactEmail(formData: FormData) {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
-    const projectType = formData.get('project_type') as string;
+    const rawProjectType = formData.get('project_type') as string;
+    const customProjectType = formData.get('project_type_custom') as string;
+    const projectType = rawProjectType === 'other' ? (customProjectType || 'Other') : rawProjectType;
     const requirements = formData.get('requirements') as string;
 
     if (!name || !email || !requirements) {

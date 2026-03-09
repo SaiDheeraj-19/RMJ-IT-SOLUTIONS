@@ -9,6 +9,7 @@ export default function ContactPage() {
     const [isPending, setIsPending] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState("");
+    const [projectType, setProjectType] = useState("");
 
     return (
         <div className="pt-32 pb-20 selection:bg-brand/10 bg-surface min-h-screen">
@@ -113,15 +114,32 @@ export default function ContactPage() {
                                     <div className="space-y-3">
                                         <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Type</label>
                                         <div className="relative">
-                                            <select name="project_type" className="w-full border rounded-2xl px-6 py-5 font-bold outline-none appearance-none cursor-pointer transition-all text-lg pt-5"
-                                                style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}>
+                                            <select
+                                                name="project_type"
+                                                value={projectType}
+                                                onChange={(e) => setProjectType(e.target.value)}
+                                                className="w-full border rounded-2xl px-6 py-5 font-bold outline-none appearance-none cursor-pointer transition-all text-lg"
+                                                style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
+                                            >
+                                                <option value="">Select a project type...</option>
                                                 <option value="Web Application Development">Web Application Development</option>
                                                 <option value="Mobile Application">Mobile Application</option>
                                                 <option value="Custom Software">Custom Software</option>
                                                 <option value="Digital Campus">Digital Campus</option>
+                                                <option value="other">Other (describe below)...</option>
                                             </select>
                                             <ArrowRight size={20} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-foreground/70 pointer-events-none" />
                                         </div>
+                                        {projectType === "other" && (
+                                            <input
+                                                type="text"
+                                                name="project_type_custom"
+                                                placeholder="Describe your project type..."
+                                                required
+                                                className="w-full border rounded-2xl px-6 py-4 font-bold outline-none transition-all mt-3"
+                                                style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
+                                            />
+                                        )}
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Details</label>
