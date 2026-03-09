@@ -1,14 +1,12 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function PrivacyPolicy() {
     return (
         <main className="min-h-screen bg-[#f8fafc]">
-            <Navbar />
+
 
             <section className="pt-32 pb-20 px-6 md:px-12">
                 <div className="max-w-[1000px] mx-auto">
@@ -89,7 +87,7 @@ export default function PrivacyPolicy() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

@@ -1,5 +1,3 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -13,7 +11,7 @@ export const metadata: Metadata = {
 export default function SecurityDisclosurePage() {
     return (
         <main className="min-h-screen bg-white">
-            <Navbar />
+
 
             <div className="pt-32 pb-12 px-6 md:px-12 max-w-[1400px] mx-auto">
                 <Link href="/" className="inline-flex items-center text-sm font-bold text-foreground/70 hover:text-brand transition-colors mb-8">
@@ -98,7 +96,7 @@ export default function SecurityDisclosurePage() {
                 </div>
             </Section>
 
-            <Footer />
+
         </main>
     );
 }

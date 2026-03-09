@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
@@ -11,7 +9,7 @@ import Link from "next/link";
 export default function WebDevelopmentPage() {
     return (
         <main className="min-h-screen bg-[#f8fafc]">
-            <Navbar />
+
 
             {/* Hero Section */}
             <section className="relative min-h-[90vh] pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden">
@@ -80,7 +78,7 @@ export default function WebDevelopmentPage() {
                 </div>
             </Section>
 
-            <Footer />
+
         </main>
     );
 }

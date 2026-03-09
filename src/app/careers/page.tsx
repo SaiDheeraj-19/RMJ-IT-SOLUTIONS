@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
@@ -11,7 +9,7 @@ import Link from "next/link";
 export default function CareersPage() {
     return (
         <main className="min-h-screen bg-white">
-            <Navbar />
+
 
             {/* Hero Section */}
             <section className="min-h-[70vh] pt-40 flex flex-col justify-end pb-32 px-10 md:px-20 relative overflow-hidden text-[#0f172a]">
@@ -122,7 +120,7 @@ export default function CareersPage() {
                 </div>
             </Section>
 
-            <Footer />
+
         </main>
     );
 }

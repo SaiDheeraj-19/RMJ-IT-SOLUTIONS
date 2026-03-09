@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/animations/TextReveal";
@@ -44,7 +42,7 @@ const features = [
 export default function ERPPage() {
     return (
         <main className="min-h-screen bg-surface-soft">
-            <Navbar />
+
 
             {/* Hero Section */}
             <section className="relative min-h-[90vh] pt-32 pb-20 px-6 md:px-12 flex items-center overflow-hidden border-b border-slate-100">
@@ -247,7 +245,7 @@ export default function ERPPage() {
                 </div>
             </Section>
 
-            <Footer />
+
         </main>
     );
 }

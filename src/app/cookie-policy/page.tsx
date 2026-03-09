@@ -1,5 +1,3 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import { ArrowLeft, Cookie, ShieldCheck, Settings, Info, Ban, FileText } from "lucide-react";
@@ -13,7 +11,7 @@ export const metadata: Metadata = {
 export default function CookiePolicyPage() {
     return (
         <main className="min-h-screen bg-surface">
-            <Navbar />
+
 
             {/* Header Section */}
             <div className="bg-surface0 text-foreground pt-40 pb-24 px-6 md:px-12 relative overflow-hidden">
@@ -177,7 +175,7 @@ export default function CookiePolicyPage() {
                 </div>
             </Section>
 
-            <Footer />
+
         </main>
     );
 }
