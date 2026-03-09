@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     GraduationCap,
@@ -236,6 +236,16 @@ const pillars = [
 
 export default function SolutionsPage() {
     const [selected, setSelected] = useState<Industry | null>(null);
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selected) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => { document.body.style.overflow = ""; };
+    }, [selected]);
 
     return (
         <div className="pt-32 pb-20 selection:bg-brand/10">
