@@ -2,8 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight, Building2, MessageSquare } from "lucide-react";
+import { useState } from "react";
+import { sendContactEmail } from "@/app/actions/contact";
 
 export default function ContactPage() {
+    const [isPending, setIsPending] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState("");
+
     return (
         <div className="pt-32 pb-20 selection:bg-brand/10 bg-surface min-h-screen">
             {/* Minimal High-End Hero */}
@@ -44,55 +50,97 @@ export default function ContactPage() {
                             className="lg:col-span-8 p-10 md:p-16 rounded-[3rem] border shadow-2xl"
                             style={{ background: 'var(--background)', borderColor: 'var(--border)' }}
                         >
-                            <form className="space-y-10">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            {isSuccess ? (
+                                <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
+                                    <div className="w-20 h-20 bg-brand/10 text-brand rounded-[2rem] flex items-center justify-center mb-4">
+                                        <MessageSquare size={36} />
+                                    </div>
+                                    <h3 className="text-3xl font-display font-bold text-foreground">Message Received</h3>
+                                    <p className="text-foreground/70 text-lg max-w-md">
+                                        Thank you for reaching out. Our team will review your requirements and get back to you shortly.
+                                    </p>
+                                    <button
+                                        onClick={() => setIsSuccess(false)}
+                                        className="mt-8 px-8 py-4 bg-surface border rounded-2xl text-sm font-bold uppercase tracking-widest text-foreground hover:bg-white hover:text-brand transition-all"
+                                        style={{ borderColor: 'var(--border)' }}
+                                    >
+                                        Send Another
+                                    </button>
+                                </div>
+                            ) : (
+                                <form action={async (formData) => {
+                                    setIsPending(true);
+                                    setError("");
+                                    try {
+                                        const res = await sendContactEmail(formData);
+                                        if (res?.error) setError(res.error);
+                                        else setIsSuccess(true);
+                                    } catch (err) {
+                                        setError("Something went wrong. Please try again.");
+                                    } finally {
+                                        setIsPending(false);
+                                    }
+                                }} className="space-y-10">
+                                    {error && (
+                                        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-500 text-sm font-bold text-center">
+                                            {error}
+                                        </div>
+                                    )}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                        <div className="space-y-3">
+                                            <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Full Name</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                required
+                                                placeholder="John Doe"
+                                                className="w-full border rounded-2xl px-6 py-5 font-bold outline-none transition-all"
+                                                style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
+                                            />
+                                        </div>
+                                        <div className="space-y-3">
+                                            <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Email Address</label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                required
+                                                placeholder="john@company.com"
+                                                className="w-full border rounded-2xl px-6 py-5 font-bold outline-none transition-all"
+                                                style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
+                                            />
+                                        </div>
+                                    </div>
                                     <div className="space-y-3">
-                                        <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Full Name</label>
-                                        <input
-                                            type="text"
-                                            placeholder="John Doe"
-                                            className="w-full border rounded-2xl px-6 py-5 font-bold outline-none transition-all"
+                                        <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Type</label>
+                                        <div className="relative">
+                                            <select name="project_type" className="w-full border rounded-2xl px-6 py-5 font-bold outline-none appearance-none cursor-pointer transition-all text-lg pt-5"
+                                                style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}>
+                                                <option value="Web Application Development">Web Application Development</option>
+                                                <option value="Mobile Application">Mobile Application</option>
+                                                <option value="Custom Software">Custom Software</option>
+                                                <option value="Digital Campus">Digital Campus</option>
+                                            </select>
+                                            <ArrowRight size={20} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-foreground/70 pointer-events-none" />
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Details</label>
+                                        <textarea
+                                            rows={5}
+                                            name="requirements"
+                                            required
+                                            placeholder="Tell us about your goals, timeline, and requirements..."
+                                            className="w-full border rounded-3xl px-6 py-6 font-bold outline-none transition-all resize-none"
                                             style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
                                         />
                                     </div>
-                                    <div className="space-y-3">
-                                        <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Email Address</label>
-                                        <input
-                                            type="email"
-                                            placeholder="john@company.com"
-                                            className="w-full border rounded-2xl px-6 py-5 font-bold outline-none transition-all"
-                                            style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="space-y-3">
-                                    <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Type</label>
-                                    <div className="relative">
-                                        <select className="w-full border rounded-2xl px-6 py-5 font-bold outline-none appearance-none cursor-pointer transition-all text-lg pt-5"
-                                            style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}>
-                                            <option>Web Application Development</option>
-                                            <option>Mobile Application</option>
-                                            <option>Custom Software</option>
-                                            <option>Digital Campus</option>
-                                        </select>
-                                        <ArrowRight size={20} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-foreground/70 pointer-events-none" />
-                                    </div>
-                                </div>
-                                <div className="space-y-3">
-                                    <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Details</label>
-                                    <textarea
-                                        rows={5}
-                                        placeholder="Tell us about your goals, timeline, and requirements..."
-                                        className="w-full border rounded-3xl px-6 py-6 font-bold outline-none transition-all resize-none"
-                                        style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
-                                    />
-                                </div>
-                                <button type="button" className="w-full py-6 bg-brand text-foreground rounded-2xl font-black uppercase tracking-[0.2em] text-sm group relative overflow-hidden transition-all shadow-xl hover:shadow-brand/30 hover:-translate-y-1">
-                                    <span className="relative z-10 flex items-center justify-center gap-4">
-                                        Send Message <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                                    </span>
-                                </button>
-                            </form>
+                                    <button type="submit" disabled={isPending} className="w-full py-6 bg-brand text-foreground rounded-2xl font-black uppercase tracking-[0.2em] text-sm group relative overflow-hidden transition-all shadow-xl hover:shadow-brand/30 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed">
+                                        <span className="relative z-10 flex items-center justify-center gap-4">
+                                            {isPending ? "Sending..." : "Send Message"} {!isPending && <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />}
+                                        </span>
+                                    </button>
+                                </form>
+                            )}
                         </motion.div>
 
                         {/* Direct Contact Cards */}

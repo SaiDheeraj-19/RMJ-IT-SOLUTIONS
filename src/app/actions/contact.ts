@@ -7,6 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendContactEmail(formData: FormData) {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
+    const projectType = formData.get('project_type') as string;
     const requirements = formData.get('requirements') as string;
 
     if (!name || !email || !requirements) {
@@ -17,7 +18,7 @@ export async function sendContactEmail(formData: FormData) {
         const { error } = await resend.emails.send({
             from: 'RMJ IT Contact <onboarding@resend.dev>',
             to: ['toxiccodez19@gmail.com'],
-            subject: `New Institutional Lead: ${name}`,
+            subject: `New Lead: ${name} (${projectType || 'General Inquiry'})`,
             replyTo: email,
             html: `
                 <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
@@ -27,6 +28,7 @@ export async function sendContactEmail(formData: FormData) {
                     <div style="margin-top: 20px;">
                         <p><strong>Identity:</strong> ${name}</p>
                         <p><strong>Institutional Email:</strong> ${email}</p>
+                        <p><strong>Project Type:</strong> ${projectType || 'Not specified'}</p>
                         <p><strong>Program Details:</strong></p>
                         <blockquote style="background: #f9f9f9; padding: 15px; border-left: 4px solid #1a1a1a; margin-top: 10px;">
                             ${requirements}
