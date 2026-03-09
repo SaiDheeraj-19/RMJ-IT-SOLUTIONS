@@ -75,7 +75,7 @@ export default function SecurityPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-foreground text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-brand transition-all duration-300 shadow-xl"
+                            className="group inline-flex items-center gap-3 px-10 py-5 bg-brand text-white text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-[#1a1a1a] transition-all duration-300 shadow-xl"
                         >
                             Get Security Audit
                             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
