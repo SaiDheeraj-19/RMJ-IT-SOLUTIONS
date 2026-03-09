@@ -46,9 +46,8 @@ const values = [
 
 const timeline = [
     { year: "2018", title: "Founded in Kurnool", desc: "RMJ IT Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
-    { year: "2021", title: "Digital Campus Launch", desc: "Released our flagship ERP product — Digital Campus — covering Attendance, Marks, Placements, and Training across colleges." },
-    { year: "2022", title: "GPCET Partnership", desc: "G. Pullaiah College of Engineering & Technology adopted Digital Campus, becoming our first large-scale institutional deployment." },
-    { year: "2023", title: "RECW Deployment", desc: "Ravindra College of Engineering for Women went live on the Digital Campus platform, expanding our academic footprint." },
+    { year: "2021", title: "GPCET & RECW Partnership", desc: "G. Pullaiah College of Engineering & Technology and Ravindra College of Engineering for Women simultaneously adopted our Digital Campus platform." },
+    { year: "2023", title: "Ecosystem Growth", desc: "Expanded our academic footprint, adding advanced analytical modules and new college deployments across the state." },
     { year: "2024", title: "Full-Stack Expansion", desc: "Expanded into mobile app development, AI integrations, and cloud infrastructure services for enterprise clients." },
     { year: "2025", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
 ];
