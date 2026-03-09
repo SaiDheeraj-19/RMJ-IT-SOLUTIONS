@@ -46,7 +46,7 @@ const values = [
 
 const timeline = [
     { year: "2018", title: "Founded in Kurnool", desc: "RMJ IT Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
-    { year: "2021", title: "GPCET & RECW Partnership", desc: "G. Pullaiah College of Engineering & Technology and Ravindra College of Engineering for Women simultaneously adopted our Digital Campus platform." },
+    { year: "2021", title: "GPCET & RECW Partnership", desc: "G. Pullaiah College of Engineering & Technology and Ravindra College of Engineering for Women simultaneously adopted our Digital Campus platform — digitising student records, marks, attendance, placements, and accreditation reports.", link1: { label: "View GPCET →", href: "/partners/gpcet" }, link2: { label: "View RECW →", href: "/partners/recw" } },
     { year: "2023", title: "Ecosystem Growth", desc: "Expanded our academic footprint, adding advanced analytical modules and new college deployments across the state." },
     { year: "2024", title: "Full-Stack Expansion", desc: "Expanded into mobile app development, AI integrations, and cloud infrastructure services for enterprise clients." },
     { year: "2025", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
@@ -168,6 +168,24 @@ export default function AboutPage() {
                                 <span className="text-[10px] font-black uppercase tracking-[0.5em] font-mono mb-2 block" style={{ color: "var(--brand)", opacity: 0.8 }}>{item.year}</span>
                                 <h3 className="text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>{item.title}</h3>
                                 <p className="text-base leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.55 }}>{item.desc}</p>
+                                {(item.link1 || item.link2) && (
+                                    <div className="flex gap-4 mt-3 flex-wrap">
+                                        {item.link1 && (
+                                            <Link href={item.link1.href}
+                                                className="text-sm font-bold hover:underline transition-all"
+                                                style={{ color: "var(--brand)" }}>
+                                                {item.link1.label}
+                                            </Link>
+                                        )}
+                                        {item.link2 && (
+                                            <Link href={item.link2.href}
+                                                className="text-sm font-bold hover:underline transition-all"
+                                                style={{ color: "var(--brand)" }}>
+                                                {item.link2.label}
+                                            </Link>
+                                        )}
+                                    </div>
+                                )}
                             </motion.div>
                         ))}
                     </div>
