@@ -45,12 +45,17 @@ const values = [
 ];
 
 const timeline = [
-    { year: "2019", title: "Founded in Kurnool", desc: "RMJ IT Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
+    { year: "2018", title: "Founded in Kurnool", desc: "RMJ IT Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
     { year: "2021", title: "Digital Campus Launch", desc: "Released our flagship ERP product — Digital Campus — covering Attendance, Marks, Placements, and Training across colleges." },
     { year: "2022", title: "GPCET Partnership", desc: "G. Pullaiah College of Engineering & Technology adopted Digital Campus, becoming our first large-scale institutional deployment." },
     { year: "2023", title: "RECW Deployment", desc: "Ravindra College of Engineering for Women went live on the Digital Campus platform, expanding our academic footprint." },
     { year: "2024", title: "Full-Stack Expansion", desc: "Expanded into mobile app development, AI integrations, and cloud infrastructure services for enterprise clients." },
     { year: "2025", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
+];
+
+const team = [
+    { initials: "JM", name: "Dr. J Mamatha", role: "Director", color: "#b05d41" },
+    { initials: "GM", name: "G V M Mohan Kumar", role: "Managing Director", color: "#3150aa" },
 ];
 
 export default function AboutPage() {
@@ -200,6 +205,33 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* ── TEAM ── */}
+            <section className="container mx-auto px-4 md:px-12 py-24">
+                <div className="text-center mb-16">
+                    <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>{"// LEADERSHIP"}</span>
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>The team behind RMJ</h2>
+                </div>
+                <div className="flex flex-wrap justify-center gap-6">
+                    {team.map((member, i) => (
+                        <motion.div
+                            key={member.name}
+                            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                            className="group flex flex-col items-center gap-3 p-8 rounded-[20px] w-64 hover:scale-[1.04] transition-transform duration-300"
+                            style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+                        >
+                            <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-2xl font-bold"
+                                style={{ background: member.color }}>
+                                {member.initials}
+                            </div>
+                            <div className="text-center mt-2">
+                                <p className="font-bold text-base" style={{ color: "var(--foreground)" }}>{member.name}</p>
+                                <p className="text-[12px] font-mono uppercase tracking-wider mt-1" style={{ color: "var(--foreground)", opacity: 0.5 }}>{member.role}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
 
             {/* ── CTA ── */}
             <section className="container mx-auto px-4 md:px-12 pb-10">
