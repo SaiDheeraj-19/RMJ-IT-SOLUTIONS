@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Search, Target, Users, Mail, BarChart2, Globe, TrendingUp, MessageSquare, Video } from "lucide-react";
+import { ArrowRight, Search, Target, Users, Mail, BarChart2, TrendingUp } from "lucide-react";
 
 const pillars = [
     {
@@ -140,10 +140,6 @@ export default function DigitalMarketingPage() {
                         <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                             Scale My Brand <ArrowRight size={16} />
                         </Link>
-                        <Link href="/case-studies" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all"
-                            style={{ color: "var(--foreground)", opacity: 0.6 }}>
-                            View Growth Results →
-                        </Link>
                     </motion.div>
                 </div>
 
@@ -264,11 +260,6 @@ export default function DigitalMarketingPage() {
                         <div className="relative z-10 flex flex-col sm:flex-row gap-4">
                             <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                                 Get a Free Audit <ArrowRight size={16} />
-                            </Link>
-                            <Link href="/case-studies"
-                                className="px-10 py-4 text-base font-bold inline-flex items-center gap-3 rounded-full border transition-all hover:border-brand"
-                                style={{ color: "var(--foreground)", borderColor: "var(--border)" }}>
-                                View Case Studies
                             </Link>
                         </div>
                     </motion.div>

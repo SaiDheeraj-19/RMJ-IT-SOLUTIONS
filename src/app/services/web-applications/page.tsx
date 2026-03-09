@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-    ArrowRight, Code2, Database, Globe, Layers, Monitor,
-    Zap, Shield, RefreshCw, LayoutDashboard, GitBranch, Lock,
+    ArrowRight, Database, Globe, Layers, Monitor,
+    Shield, RefreshCw,
 } from "lucide-react";
 
 const pillars = [
@@ -140,10 +140,6 @@ export default function WebApplicationsPage() {
                         <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                             Discuss Your Project <ArrowRight size={16} />
                         </Link>
-                        <Link href="/case-studies" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all"
-                            style={{ color: "var(--foreground)", opacity: 0.6 }}>
-                            See Case Studies →
-                        </Link>
                     </motion.div>
                 </div>
 
@@ -265,11 +261,6 @@ export default function WebApplicationsPage() {
                         <div className="relative z-10 flex flex-col sm:flex-row gap-4">
                             <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                                 Start the Conversation <ArrowRight size={16} />
-                            </Link>
-                            <Link href="/case-studies"
-                                className="px-10 py-4 text-base font-bold inline-flex items-center gap-3 rounded-full border transition-all hover:border-brand"
-                                style={{ color: "var(--foreground)", borderColor: "var(--border)" }}>
-                                View Case Studies
                             </Link>
                         </div>
                     </motion.div>

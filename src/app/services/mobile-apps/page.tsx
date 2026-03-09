@@ -259,11 +259,6 @@ export default function MobileAppsPage() {
                             <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                                 Start the Conversation <ArrowRight size={16} />
                             </Link>
-                            <Link href="/case-studies"
-                                className="px-10 py-4 text-base font-bold inline-flex items-center gap-3 rounded-full border transition-all hover:border-brand"
-                                style={{ color: "var(--foreground)", borderColor: "var(--border)" }}>
-                                View Case Studies
-                            </Link>
                         </div>
                     </motion.div>
                 </div>
