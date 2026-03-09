@@ -71,7 +71,7 @@ export default function Footer() {
     return (
         <footer
             ref={ref}
-            style={{ background: "var(--background)", borderTop: "1px solid var(--border)" }}
+            style={{ background: "var(--background)" }}
             className="relative overflow-hidden"
         >
             {/* ── Ambient glow blobs ── */}
@@ -93,7 +93,7 @@ export default function Footer() {
             </div>
 
             {/* ── CTA Banner ── */}
-            <div className="relative z-10 border-b" style={{ borderColor: "var(--border)" }}>
+            <div className="relative z-10">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-20 flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="space-y-3">
                         <p className="text-[10px] uppercase tracking-[0.55em] font-black font-mono" style={{ color: "var(--brand)" }}>
@@ -229,7 +229,7 @@ export default function Footer() {
                 </div>
 
                 {/* ── Wordmark ── */}
-                <div className="relative select-none overflow-hidden border-t py-10" style={{ borderColor: "var(--border)" }}>
+                <div className="relative select-none overflow-hidden py-10">
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -257,7 +257,7 @@ export default function Footer() {
                 </div>
 
                 {/* ── Bottom bar ── */}
-                <div className="border-t pt-6 pb-2" style={{ borderColor: "var(--border)" }}>
+                <div className="pt-6 pb-2">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-5">
 
                         {/* Left — copyright + location */}
