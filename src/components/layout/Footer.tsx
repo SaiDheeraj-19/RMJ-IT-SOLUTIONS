@@ -272,15 +272,7 @@ export default function Footer() {
                             </p>
                         </div>
 
-                        {/* Center — tagline */}
-                        <div className="flex items-center gap-3 hidden md:flex">
-                            <span className="w-6 h-px" style={{ background: "var(--brand)", opacity: 0.5 }} />
-                            <p className="text-[10px] font-black uppercase tracking-[0.35em] font-mono"
-                                style={{ color: "var(--brand)", opacity: 0.7 }}>
-                                Engineering Digital Infrastructure That Scales
-                            </p>
-                            <span className="w-6 h-px" style={{ background: "var(--brand)", opacity: 0.5 }} />
-                        </div>
+
 
                         {/* Right — socials */}
                         <div className="flex items-center gap-2">
