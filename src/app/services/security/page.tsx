@@ -67,7 +67,7 @@ export default function SecurityPage() {
         <main style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
             {/* ── HERO ── */}
-            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-20 px-6 md:px-12 lg:px-24">
+            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-48 pb-20 px-6 md:px-12 lg:px-24">
                 {/* Dark mesh background */}
                 <div className="absolute inset-0 z-0"
                     style={{
@@ -256,23 +256,35 @@ export default function SecurityPage() {
                             </ul>
                         </div>
 
-                        {/* Stats panel */}
-                        <div className="relative rounded-[2rem] p-12 overflow-hidden"
-                            style={{ background: "#0d1117", border: "1px solid rgba(255,255,255,0.08)" }}>
-                            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-brand/10 blur-[60px] transform-gpu" />
+                        {/* Stats panel - dark brand card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7 }}
+                            className="relative rounded-[2rem] p-12 overflow-hidden"
+                            style={{ background: "linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #1a0f0a 100%)", border: "1px solid rgba(176,93,65,0.3)" }}>
+                            {/* Top accent line */}
+                            <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-[2rem]"
+                                style={{ background: "linear-gradient(90deg, transparent, var(--brand), transparent)" }} />
+                            <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[80px] opacity-30 transform-gpu"
+                                style={{ background: "var(--brand)" }} />
                             <div className="relative z-10 space-y-8">
                                 {[
                                     { label: "Vulnerabilities Resolved", value: "100%" },
                                     { label: "Avg Performance Gain", value: "3× faster" },
                                     { label: "Systems Hardened", value: "Enterprise-Grade" },
                                 ].map((item, i) => (
-                                    <div key={i} className="border-b border-white/8 pb-8 last:border-0 last:pb-0">
-                                        <div className="text-[10px] font-black uppercase tracking-[0.4em] font-mono text-white/30 mb-2">{item.label}</div>
-                                        <div className="text-4xl font-black text-brand tracking-tight" style={{ letterSpacing: "-1px" }}>{item.value}</div>
+                                    <div key={i} className="pb-8 border-b last:border-0 last:pb-0"
+                                        style={{ borderColor: "rgba(176,93,65,0.2)" }}>
+                                        <div className="text-[10px] font-black uppercase tracking-[0.4em] font-mono mb-2"
+                                            style={{ color: "rgba(176,93,65,0.6)" }}>{item.label}</div>
+                                        <div className="text-4xl font-black tracking-tight"
+                                            style={{ color: "var(--brand)", letterSpacing: "-1px" }}>{item.value}</div>
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -286,18 +298,27 @@ export default function SecurityPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="relative rounded-[2.5rem] overflow-hidden"
-                        style={{ background: "#0d1117", border: "1px solid rgba(255,255,255,0.08)" }}>
+                        style={{ background: "linear-gradient(135deg, #b05d41 0%, #8b3d23 40%, #5c2515 100%)", border: "none" }}>
 
+                        {/* Mesh overlay */}
+                        <div className="absolute inset-0 opacity-[0.06]"
+                            style={{
+                                backgroundImage: `linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)`,
+                                backgroundSize: "30px 30px",
+                            }} />
                         <div className="absolute top-0 left-0 right-0 h-px"
-                            style={{ background: "linear-gradient(90deg, transparent, var(--brand), transparent)" }} />
-                        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-brand/8 blur-[100px] transform-gpu" />
+                            style={{ background: "rgba(255,255,255,0.2)" }} />
+                        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-20 blur-[80px] transform-gpu"
+                            style={{ background: "#ff9a73" }} />
 
                         {/* Watermark */}
-                        <span className="absolute right-0 bottom-0 text-[20vw] font-black leading-none select-none pointer-events-none text-white/[0.02]">SECURE</span>
+                        <span className="absolute right-0 bottom-0 text-[18vw] font-black leading-none select-none pointer-events-none"
+                            style={{ color: "rgba(255,255,255,0.05)" }}>SECURE</span>
 
-                        <div className="relative z-10 p-14 md:p-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+                        <div className="relative z-10 p-14 md:p-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
                             <div>
-                                <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Request an Audit`}</p>
+                                <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono mb-4"
+                                    style={{ color: "rgba(255,255,255,0.6)" }}>{`// Request an Audit`}</p>
                                 <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white"
                                     style={{ letterSpacing: "-2px" }}>
                                     Is your system<br />truly secure?
@@ -305,9 +326,14 @@ export default function SecurityPage() {
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link href="/contact?service=Security+%26+Performance+Optimization&type=Security+%26+Performance+Optimization"
-                                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-wide text-white transition-all hover:-translate-y-0.5 shadow-xl"
-                                    style={{ background: "var(--brand)" }}>
+                                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-wide transition-all hover:-translate-y-0.5 shadow-2xl"
+                                    style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "1px solid rgba(255,255,255,0.3)", backdropFilter: "blur(10px)" }}>
                                     Get Security Audit <ArrowRight size={16} />
+                                </Link>
+                                <Link href="/contact?service=Security+%26+Performance+Optimization&type=Security+%26+Performance+Optimization"
+                                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-wide transition-all hover:-translate-y-0.5"
+                                    style={{ background: "white", color: "var(--brand)" }}>
+                                    Talk to Us <ArrowRight size={16} />
                                 </Link>
                             </div>
                         </div>

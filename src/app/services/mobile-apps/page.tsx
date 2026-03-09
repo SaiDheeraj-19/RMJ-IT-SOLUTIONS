@@ -87,7 +87,7 @@ export default function MobileAppsPage() {
         <main style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
             {/* ── HERO ── */}
-            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-16 px-6 md:px-12 lg:px-24">
+            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-48 pb-16 px-6 md:px-12 lg:px-24">
                 {/* Ambient blobs */}
                 <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-brand/10 blur-[100px] transform-gpu pointer-events-none" />
                 <div className="absolute bottom-0 right-[-5%] w-[400px] h-[400px] rounded-full bg-blue-600/10 blur-[80px] transform-gpu pointer-events-none" />
@@ -153,7 +153,7 @@ export default function MobileAppsPage() {
             </section>
 
             {/* ── PLATFORM CARDS ── */}
-            <section id="platforms" className="px-6 md:px-12 lg:px-24 py-24">
+            <section id="platforms" className="px-6 md:px-12 lg:px-24 py-24" style={{ scrollMarginTop: "100px" }}>
                 <div className="max-w-[1440px] mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         {platforms.map((p, idx) => (
@@ -162,22 +162,24 @@ export default function MobileAppsPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.15, duration: 0.6 }}
-                                className={`relative rounded-[2rem] p-10 md:p-14 overflow-hidden bg-gradient-to-br ${p.gradient}`}>
+                                className={`relative rounded-[2.5rem] p-12 md:p-16 overflow-hidden bg-gradient-to-br ${p.gradient} border border-white/10`}>
 
                                 {/* Glow */}
-                                <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[80px] opacity-20 transform-gpu"
+                                <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px] opacity-30 transform-gpu"
+                                    style={{ background: p.color }} />
+                                <div className="absolute bottom-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px] opacity-15 transform-gpu"
                                     style={{ background: p.color }} />
 
                                 {/* Platform icon + name */}
-                                <div className="relative z-10 flex items-center gap-4 mb-12">
+                                <div className="relative z-10 flex items-center gap-5 mb-10">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center border border-white/10"
-                                        style={{ background: "rgba(255,255,255,0.06)" }}>
-                                        <img src={p.logo} alt={p.name} className="w-7 h-7" />
+                                    <div className="w-20 h-20 rounded-[1.25rem] flex items-center justify-center border-2"
+                                        style={{ background: "rgba(255,255,255,0.08)", borderColor: `${p.color}40` }}>
+                                        <img src={p.logo} alt={p.name} className="w-10 h-10" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] font-black uppercase tracking-[0.4em] font-mono" style={{ color: p.accent, opacity: 0.8 }}>{p.tagline}</p>
-                                        <h2 className="text-2xl font-black text-white">{p.headline}</h2>
+                                        <p className="text-[10px] font-black uppercase tracking-[0.45em] font-mono mb-1" style={{ color: p.accent }}>{p.tagline}</p>
+                                        <h2 className="text-3xl font-black text-white leading-tight">{p.headline}</h2>
                                     </div>
                                 </div>
 
