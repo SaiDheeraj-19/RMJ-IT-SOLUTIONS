@@ -12,6 +12,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Solutions", href: "/solutions" },
     { name: "Works", href: "/products" },
 ];
 
@@ -50,7 +51,19 @@ export default function Navbar() {
     return (
         <nav className="fixed top-4 md:top-8 px-6 z-[100] w-full flex justify-between items-center pointer-events-none">
 
-            {/* Mobile Logo — RefractWeb-style pill */}
+            {/* Desktop Top-Left Logo */}
+            <Link href="/" className="hidden md:flex items-center gap-2.5 z-[70] pointer-events-auto">
+                <Image
+                    src="/rmjit.png"
+                    alt="RMJ IT Solutions"
+                    width={52}
+                    height={52}
+                    className="object-contain"
+                />
+                <span className="text-sm font-black tracking-tight" style={{ color: 'var(--foreground)', opacity: 0.85 }}>RMJ IT</span>
+            </Link>
+
+            {/* Mobile Logo — pill */}
             <Link href="/" className="md:hidden z-[70] relative pointer-events-auto">
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full rmjit-pill">
                     <span className="leading-none font-bold text-sm text-white tracking-tight">RMJ IT</span>

@@ -73,6 +73,26 @@ export default function ProductsPage() {
                                     A next-generation educational management system engineered to replace fragmented tools with a single, unified digital infrastructure. Digital Campus simplifies administration and enhances learning outcomes.
                                 </p>
                             </div>
+
+                            {/* Trusted by institutions */}
+                            <div className="flex items-center gap-4 py-2">
+                                <span className="text-[9px] font-black uppercase tracking-[0.55em] font-mono text-[#0369a1] opacity-70">Trusted by</span>
+                                <div className="flex items-center gap-2">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src="/gpcet-logo.png" alt="GPCET"
+                                        title="G. Pullaiah College of Engineering & Technology"
+                                        className="h-8 w-8 object-contain rounded-full border border-slate-200 opacity-80 hover:opacity-100 transition-opacity" />
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src="/recw-logo.png" alt="RECW"
+                                        title="Ravindra College of Engineering for Women"
+                                        className="h-8 w-8 object-contain rounded-full border border-slate-200 opacity-80 hover:opacity-100 transition-opacity" />
+                                    <div>
+                                        <p className="text-xs font-bold text-[#0f172a]">GPCET &amp; RECW</p>
+                                        <p className="text-[10px] text-slate-500 font-medium">Using Digital Campus Platform</p>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="pt-4">
                                 <a
                                     href="http://digitalcampus.msmfclasses.com:97"

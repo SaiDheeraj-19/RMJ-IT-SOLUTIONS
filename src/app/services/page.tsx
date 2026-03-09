@@ -6,6 +6,8 @@ import {
     Smartphone,
     Layout,
     Megaphone,
+    Brain,
+    Cpu,
     ArrowUpRight
 } from "lucide-react";
 import Link from "next/link";
@@ -45,6 +47,20 @@ const detailedServices = [
         description: "Data-driven marketing and SEO strategies that expand your digital footprint and drive targeted institutional leads. We focus on ROI and brand authority.",
         benefits: ["Technical SEO audits", "Performance Marketing", "Content Infrastructure", "Conversion Optimization"],
         useCases: ["Market Expansion", "B2B Lead Gen", "Search Dominance"]
+    },
+    {
+        title: "AI & Machine Learning Solutions",
+        icon: Brain,
+        description: "We provide systems designed for AI and Machine Learning workloads — powerful servers and workstations for model training, data analysis, and AI inferencing. AI-ready appliances come with frameworks and libraries pre-installed so teams can start immediately.",
+        benefits: ["AI & ML Workstation Systems", "Model Training Infrastructure", "AI Inferencing Appliances", "Pre-configured AI Frameworks"],
+        useCases: ["Data Science Teams", "AI Research", "Enterprise AI"]
+    },
+    {
+        title: "High Performance Computing (HPC)",
+        icon: Cpu,
+        description: "We design and deploy HPC servers, workstations, and storage systems for organizations that need strong computing power for research, simulations, data processing, and engineering workloads, including cluster environments.",
+        benefits: ["HPC Server & Workstation Deployment", "Cluster Environment Management", "High-Throughput Data Processing", "Certified & Reliable Hardware"],
+        useCases: ["Research Institutions", "Engineering Firms", "Scientific Simulations"]
     }
 ];
 

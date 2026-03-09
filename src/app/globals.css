@@ -12,6 +12,51 @@
   --font-sans: var(--font-inter-tight), "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-inter-tight), "Inter Tight", ui-sans-serif;
   --font-mono: var(--font-dm-mono), monospace;
+
+  /* Marquee animation tokens */
+  --animate-marquee: marquee var(--duration, 40s) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear infinite;
+}
+
+/* ── Marquee keyframes ── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+/* ── Marquee utility classes ── */
+.animate-marquee {
+  animation: var(--animate-marquee);
+}
+
+.animate-marquee-vertical {
+  animation: var(--animate-marquee-vertical);
+}
+
+/* Direct-use keyframe for TechStackMarquee (manual duplication → -50%) */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* DARK MODE (Default) */
@@ -62,7 +107,7 @@ body.light {
   color: #fff;
 }
 
-/* Typography matching RefractWeb */
+/* ── Professional Typography System ── */
 h1,
 h2,
 h3,
@@ -70,9 +115,47 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
   letter-spacing: -0.03em;
 }
+
+h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.015em;
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Mono labels — eyebrows, badges, captions */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 
 /* Gradient text */
 .text-gradient {
@@ -210,6 +293,36 @@ h6 {
 
   50% {
     filter: drop-shadow(0 0 20px rgba(245, 151, 104, 0.6));
+  }
+}
+
+/* Hero image float animation */
+@keyframes hero-float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 30px 60px rgba(176, 93, 65, 0.3));
+  }
+
+  50% {
+    transform: translateY(-14px);
+    filter: drop-shadow(0 44px 80px rgba(176, 93, 65, 0.5));
+  }
+}
+
+/* Pulsing ring around hero image */
+@keyframes pulse-ring {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.12;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 0.25;
   }
 }
 

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TechStackMarquee from '@/components/sections/TechStackMarquee';
+import HeroImage3D from '@/components/sections/HeroImage3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,17 +36,7 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
-  const techLogos = [
-    { file: "vercel.svg", label: "Vercel" },
-    { file: "aws.svg", label: "AWS" },
-    { file: "react.svg", label: "React" },
-    { file: "hotjar.svg", label: "Hotjar" },
-    { file: "blender.svg", label: "Blender" },
-    { file: "figma.svg", label: "Figma" },
-    { file: "hostinger.svg", label: "Hostinger" },
-    { file: "gsap.svg", label: "GSAP" },
-    { file: "notion.svg", label: "Notion" },
-  ];
+
 
   return (
     <main ref={containerRef} className="min-h-screen overflow-hidden pb-40 font-sans" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
@@ -65,78 +57,70 @@ export default function Home() {
       />
 
       {/* ── HERO SECTION ── */}
-      <section className="relative z-10 container mx-auto px-4 md:px-12 pt-40 md:pt-52 min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-10">
+      <section className="relative z-10 container mx-auto px-4 md:px-12 pt-36 md:pt-48 min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-8">
 
         {/* Left */}
-        <div className="w-full md:w-[55%] space-y-7 z-20">
+        <div className="w-full md:w-[52%] space-y-6 z-20">
 
+          {/* Eyebrow */}
+          <p className="hero-text-line text-[11px] font-black uppercase tracking-[0.5em] font-mono" style={{ color: 'var(--brand)', opacity: 0.85 }}>IT Infrastructure · Software Engineering</p>
 
-          <h1 className="hero-text-line text-4xl md:text-[57px] font-bold leading-[1.15] tracking-[-1.5px]" style={{ color: 'var(--foreground)' }}>
-            Engineering Digital<br />Infrastructure<br /><span className="opacity-40 italic">That Scales.</span>
+          <h1 className="hero-text-line font-bold leading-[1.1] tracking-[-1.5px]" style={{ color: 'var(--foreground)', fontSize: 'clamp(1.9rem, 3.8vw, 3.1rem)' }}>
+            Engineering Digital<br />Infrastructure<br /><span style={{ opacity: 0.35, fontStyle: 'italic', fontWeight: 400 }}>That Scales.</span>
           </h1>
 
-          <p className="hero-text-line text-lg md:text-[20px] leading-[1.4] max-w-lg font-medium" style={{ color: 'var(--foreground)', opacity: 0.6 }}>
-            A technology partner dedicated to building reliable, scalable software systems — from Campus ERP to Custom Web Applications. Based in Kurnool, Andhra Pradesh.
+          <p className="hero-text-line leading-[1.6] max-w-md font-normal" style={{ color: 'var(--foreground)', opacity: 0.55, fontSize: 'clamp(1rem, 1.5vw, 1.15rem)' }}>
+            A technology partner building reliable, scalable systems — from Campus ERP to custom web applications. Based in Kurnool, Andhra Pradesh.
           </p>
 
-          <div className="flex items-center gap-6 pt-4 hero-text-line">
-            <Link href="/contact" className="btn-glow px-7 py-2.5 text-[15px] font-semibold">
+          <div className="flex items-center gap-5 pt-2 hero-text-line">
+            <Link href="/contact" className="btn-glow px-7 py-3 text-[14px] font-bold tracking-wide">
               Work With Us
             </Link>
-            <Link href="/services" className="flex items-center gap-2 text-[15px] hover:opacity-100 transition-opacity group font-medium" style={{ color: 'var(--foreground)', opacity: 0.7 }}>
-              Explore our services
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            <Link href="/services" className="flex items-center gap-2 text-[14px] font-semibold hover:opacity-100 transition-opacity group" style={{ color: 'var(--foreground)', opacity: 0.6 }}>
+              Explore Services <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
             </Link>
           </div>
         </div>
 
-        {/* Right — RMJ IT Logo animated with orbital rings */}
-        <div className="w-full md:w-[45%] relative min-h-[40vh] mt-8 md:mt-0 hero-right flex justify-center md:justify-end">
-          <div className="relative flex items-center justify-center w-[400px] h-[400px]">
-            {/* Outer orbital ring */}
-            <div className="absolute inset-0 rounded-full animate-[spin_28s_linear_infinite]"
-              style={{ border: '1px solid rgba(245,151,104,0.15)' }} />
-            {/* Mid orbital ring */}
-            <div className="absolute inset-[28px] rounded-full animate-[spin_20s_linear_infinite_reverse]"
-              style={{ border: '1px dashed rgba(49,80,170,0.2)' }} />
-            {/* Inner orbital ring */}
-            <div className="absolute inset-[60px] rounded-full animate-[spin_14s_linear_infinite]"
-              style={{ border: '1px solid rgba(245,151,104,0.08)' }} />
-            {/* Orbit dot 1 */}
-            <div className="absolute top-[8px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full animate-[spin_28s_linear_infinite]" style={{ background: '#F59768', boxShadow: '0 0 8px #F59768' }} />
-            {/* Orbit dot 2 */}
-            <div className="absolute top-1/2 right-[8px] -translate-y-1/2 w-2 h-2 rounded-full animate-[spin_20s_linear_infinite_reverse]" style={{ background: '#3150aa', boxShadow: '0 0 6px #3150aa' }} />
-            {/* Glow blobs */}
-            <div className="absolute w-52 h-52 rounded-full opacity-25" style={{ background: '#b05d41', filter: 'blur(90px)' }} />
-            <div className="absolute w-36 h-36 rounded-full opacity-15 translate-x-8" style={{ background: '#3150aa', filter: 'blur(60px)' }} />
-            {/* Logo */}
-            <Image
-              src="/rmjit.png"
-              alt="RMJ IT Solutions"
-              width={230}
-              height={230}
-              className="object-contain logo-animated relative z-10 drop-shadow-2xl"
-            />
+        {/* Right — 3D Animated Hero Image */}
+        <div className="w-full md:w-[48%] relative mt-8 md:mt-0 hero-right flex justify-center md:justify-end items-center">
+          <HeroImage3D />
+        </div>
+      </section>
+      {/* ── TECH STACK MARQUEE ── */}
+      <section className="relative z-10 w-full">
+        <TechStackMarquee />
+      </section>
+
+      {/* ── TRUSTED BY & STAKEHOLDERS ── */}
+      <section className="relative z-10 w-full py-8">
+        <div className="container mx-auto px-4 md:px-12">
+          <p className="text-center text-[9px] font-black uppercase tracking-[0.7em] mb-6 font-mono"
+            style={{ color: 'var(--foreground)', opacity: 0.2 }}>
+            Trusted By &amp; Stakeholders
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10">
+            {/* GPCET */}
+            <div className="group flex flex-col items-center gap-2 cursor-default select-none">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/gpcet-logo.png" alt="GPCET"
+                className="h-11 w-11 object-contain rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" />
+              <p className="text-[10px] font-black tracking-widest opacity-40 group-hover:opacity-90 transition-opacity duration-300"
+                style={{ color: 'var(--foreground)' }}>GPCET</p>
+            </div>
+            {/* RECW */}
+            <div className="group flex flex-col items-center gap-2 cursor-default select-none">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/recw-logo.png" alt="RECW"
+                className="h-11 w-11 object-contain rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" />
+              <p className="text-[10px] font-black tracking-widest opacity-40 group-hover:opacity-90 transition-opacity duration-300"
+                style={{ color: 'var(--foreground)' }}>RECW</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── TECH STACK MARQUEE ── */}
-      <section className="relative z-10 w-full overflow-hidden py-12 fade-up" style={{ background: 'rgba(255,255,255,0.015)' }}>
-        <div className="flex w-[220%] gap-16 items-center" style={{ animation: 'logo-cloud 35s linear infinite' }}>
-          {[...techLogos, ...techLogos, ...techLogos].map((logo, index) => (
-            <div key={index} className="flex-shrink-0 flex items-center gap-3 px-4">
-              <img
-                src={`https://www.refractweb.com/techs/${logo.file}`}
-                alt={logo.label}
-                className="h-10 object-contain tech-icon-white opacity-60 hover:opacity-100 transition-opacity cursor-pointer"
-                style={{ width: '48px' }}
-              />
-              <span className="text-sm font-semibold whitespace-nowrap" style={{ color: 'var(--foreground)', opacity: 0.5 }}>{logo.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ── CORE CAPABILITIES ── */}
       <section id="capabilities" className="relative z-10 container mx-auto px-4 md:px-12 pt-48 pb-20">
@@ -192,6 +176,17 @@ export default function Home() {
                 {['Attendance', 'Academics', 'Placements', 'Training', 'Reports'].map(m => (
                   <span key={m} className="px-3 py-1 rounded-full text-xs font-semibold border" style={{ borderColor: 'var(--border)', color: 'var(--foreground)', opacity: 0.7 }}>{m}</span>
                 ))}
+              </div>
+              {/* Used by */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[9px] font-black uppercase tracking-[0.6em] font-mono" style={{ color: 'var(--foreground)', opacity: 0.35 }}>Used by</span>
+                <div className="flex items-center gap-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/gpcet-logo.png" alt="GPCET" title="G. Pullaiah College of Engineering & Technology" className="h-7 w-7 object-contain rounded-full opacity-70 hover:opacity-100 transition-opacity" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/recw-logo.png" alt="RECW" title="Ravindra College of Engineering for Women" className="h-7 w-7 object-contain rounded-full opacity-70 hover:opacity-100 transition-opacity" />
+                  <span className="text-[10px] font-semibold" style={{ color: 'var(--foreground)', opacity: 0.4 }}>GPCET &amp; RECW</span>
+                </div>
               </div>
               <Link href="/products" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all">Learn More →</Link>
             </div>
