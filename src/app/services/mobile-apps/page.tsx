@@ -2,95 +2,84 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Smartphone, Apple, Layers, Wifi, Bell, Lock } from "lucide-react";
+import { ArrowRight, CheckCircle2, Layers, Wifi, Bell, Lock, ChevronRight } from "lucide-react";
 
-const pillars = [
+const platforms = [
     {
-        icon: <Apple className="w-6 h-6" />,
-        title: "Native iOS Development",
-        brief: "We craft high-performance iOS applications using Swift and SwiftUI, strictly following Apple Human Interface Guidelines. The result: experiences that feel native, fluid, and instinctively familiar to iPhone and iPad users.",
-        points: [
-            "SwiftUI & UIKit for component-level precision",
-            "Core Data and CloudKit for on-device persistence",
-            "ARKit, CoreML, and Vision framework integrations",
-            "App Store submission and review process management",
-            "TestFlight beta testing and phased rollouts",
+        id: "ios",
+        name: "iOS",
+        tagline: "Apple Ecosystem",
+        logo: "https://cdn.simpleicons.org/apple/ffffff",
+        color: "#b05d41",
+        gradient: "from-[#1c1c1e] to-[#2c2c2e]",
+        accent: "#f5a57a",
+        stack: ["Swift", "SwiftUI", "UIKit", "Core Data", "CloudKit", "ARKit", "TestFlight"],
+        headline: "Native iOS Engineering",
+        description: "We craft premium iOS applications in Swift and SwiftUI that feel right at home on every Apple device — iPhone, iPad, and Apple Watch.",
+        features: [
+            "SwiftUI & UIKit for pixel-perfect UI",
+            "Core Data & CloudKit persistence",
+            "ARKit, CoreML, Vision integrations",
+            "App Store submission management",
+            "TestFlight beta & phased rollouts",
         ],
+        href: "/services/mobile-apps/ios",
+        cta: "Start Your iOS Project",
+        ctaHref: "/contact?service=iOS+Application+Development&type=iOS+Application+Development&message=I%27m+interested+in+building+a+native+iOS+application.",
     },
     {
-        icon: <Smartphone className="w-6 h-6" />,
-        title: "Native Android Development",
-        brief: "Built with Kotlin and Jetpack Compose, our Android applications deliver polished experiences across thousands of device configurations — from budget mid-range handsets to flagship tablets.",
-        points: [
-            "Jetpack Compose declarative UI system",
-            "Room database and DataStore for local persistence",
-            "Coroutines and Flow for asynchronous data streams",
-            "Material Design 3 theming and dynamic colours",
-            "Google Play Console management and ASO strategy",
+        id: "android",
+        name: "Android",
+        tagline: "Google Ecosystem",
+        logo: "https://cdn.simpleicons.org/android/3ddc84",
+        color: "#3ddc84",
+        gradient: "from-[#0f1f14] to-[#1a2f1e]",
+        accent: "#3ddc84",
+        stack: ["Kotlin", "Jetpack Compose", "Room", "Coroutines", "Hilt", "Material 3", "Espresso"],
+        headline: "Native Android Engineering",
+        description: "Polished Android applications built with Kotlin and Jetpack Compose — tested across thousands of device configurations from budget to flagship.",
+        features: [
+            "Jetpack Compose declarative UI",
+            "Room DB & DataStore persistence",
+            "Coroutines & Flow async streams",
+            "Material Design 3 theming",
+            "Google Play Store management",
         ],
+        href: "/services/mobile-apps/android",
+        cta: "Start Your Android Project",
+        ctaHref: "/contact?service=Android+Application+Development&type=Android+Application+Development&message=I%27m+interested+in+building+a+native+Android+application.",
     },
+];
+
+const sharedCapabilities = [
     {
         icon: <Layers className="w-6 h-6" />,
-        title: "Cross-Platform Development",
-        brief: "When speed-to-market matters, we use Flutter or React Native to ship feature-complete applications on both iOS and Android from a single shared codebase — without sacrificing quality or performance.",
-        points: [
-            "Flutter with Riverpod or Bloc state management",
-            "React Native with Expo for rapid prototyping",
-            "Platform-specific code bridges for native features",
-            "Shared business logic layer across platforms",
-            "Near-native performance via Dart AOT compilation",
-        ],
+        title: "Cross-Platform (Flutter)",
+        desc: "When speed-to-market matters, we use Flutter to ship feature-complete apps on both platforms from one codebase — no quality compromise.",
     },
     {
         icon: <Wifi className="w-6 h-6" />,
         title: "Offline-First Architecture",
-        brief: "For institutional and field-use apps where internet access is unreliable, we design with an offline-first mindset — ensuring data is always available and syncs reliably when connectivity is restored.",
-        points: [
-            "Local SQLite / Realm database with conflict resolution",
-            "Background sync queue with retry logic",
-            "Delta sync strategies for bandwidth efficiency",
-            "Optimistic UI updates for instant feedback",
-            "Connectivity awareness and degraded-mode UI states",
-        ],
+        desc: "Apps that work without internet. Background sync, local SQLite, delta updates, and conflict-free data resolution baked in from day one.",
     },
     {
         icon: <Bell className="w-6 h-6" />,
-        title: "Push Notifications & Engagement",
-        brief: "We integrate Firebase Cloud Messaging (FCM) and APNs to deliver contextual, personalised push notifications — driving re-engagement and keeping users informed in real-time.",
-        points: [
-            "Firebase Cloud Messaging (FCM) full integration",
-            "Topic-based and targeted device notifications",
-            "Deep linking into specific in-app screens",
-            "Notification analytics and open-rate tracking",
-            "In-app messaging overlays and banners",
-        ],
+        title: "Push & Engagement",
+        desc: "FCM + APNs push integration. Topic-based targeting, rich notifications with deep-links, open-rate analytics, and in-app messaging.",
     },
     {
         icon: <Lock className="w-6 h-6" />,
         title: "Security & Compliance",
-        brief: "Mobile apps are primary attack surfaces. We implement cryptographic storage, certificate pinning, and obfuscation to ensure your institutional data is protected even on compromised devices.",
-        points: [
-            "Keychain / Keystore encrypted credential storage",
-            "SSL certificate pinning against MITM attacks",
-            "Biometric authentication (Face ID, Fingerprint)",
-            "Code obfuscation and anti-tampering measures",
-            "OWASP Mobile Top 10 vulnerability checklist",
-        ],
+        desc: "Keychain/Keystore encrypted storage, SSL certificate pinning, biometrics, code obfuscation, and OWASP Mobile Top 10 compliance.",
     },
 ];
 
 const process = [
-    { num: "01", title: "Platform Strategy", desc: "We identify which platform to prioritise — native iOS, native Android, or cross-platform — based on your target audience, budget, and timeline. This upfront decision saves significant development cost." },
-    { num: "02", title: "UX Wireframing & Prototype", desc: "Every app starts with a clickable Figma prototype. We validate the user flow with real users before writing a single line of code, reducing costly rework downstream." },
-    { num: "03", title: "Sprint-Based Development", desc: "We build in 2-week sprints. After each sprint, a TestFlight or Play Store internal build is delivered for you to test on actual devices. Feedback loops are tight and structured." },
-    { num: "04", title: "QA on Real Devices", desc: "We run automated tests with Detox (React Native) or XCTest / Espresso for native apps. Manual device testing covers a matrix of iOS versions, Android API levels, and screen sizes." },
-    { num: "05", title: "App Store Launch & Monitoring", desc: "We handle the entire submission process — from store listing copy to screenshots and privacy labels. Post-launch, we monitor crash reports via Firebase Crashlytics and iterate based on analytics." },
-];
-
-const techStack = [
-    "Swift", "Kotlin", "Flutter", "React Native", "Firebase",
-    "Dart", "SwiftUI", "Jetpack Compose", "GraphQL", "REST APIs",
-    "Fastlane", "XCTest", "Espresso", "Detox",
+    { num: "01", title: "Platform Strategy", desc: "We define which platform — native iOS, native Android, or Flutter cross-platform — based on your audience, budget, and timeline." },
+    { num: "02", title: "UX Prototype", desc: "Interactive Figma prototype validated with real users before writing a single line of code. Reduces expensive rework." },
+    { num: "03", title: "Sprint Development", desc: "2-week sprints. TestFlight or Play Internal builds delivered after each sprint. Tight, structured feedback loops." },
+    { num: "04", title: "QA on Real Devices", desc: "Automated + manual testing across iOS versions, Android API levels, OEM skins, screen sizes, and accessibility modes." },
+    { num: "05", title: "Store Launch", desc: "Full App Store Connect / Play Console submission. Store copy, screenshots, privacy labels, staged rollouts, and crash monitoring." },
 ];
 
 export default function MobileAppsPage() {
@@ -98,114 +87,164 @@ export default function MobileAppsPage() {
         <main style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
             {/* ── HERO ── */}
-            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-24 px-6 md:px-12 lg:px-24">
-                <div className="absolute top-[-15%] left-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none"
-                    style={{ background: "#b05d41", filter: "blur(240px)", opacity: 0.08 }} />
-                <div className="absolute bottom-0 right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
-                    style={{ background: "#3150aa", filter: "blur(200px)", opacity: 0.07 }} />
+            <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-16 px-6 md:px-12 lg:px-24">
+                {/* Ambient blobs */}
+                <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-brand/10 blur-[100px] transform-gpu pointer-events-none" />
+                <div className="absolute bottom-0 right-[-5%] w-[400px] h-[400px] rounded-full bg-blue-600/10 blur-[80px] transform-gpu pointer-events-none" />
 
-                <div className="relative z-10 max-w-[1400px] mx-auto w-full">
-                    <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-                        className="flex items-center gap-4 mb-10">
-                        <Link href="/services" className="text-[11px] font-black uppercase tracking-[0.45em] font-mono hover:opacity-100 transition-opacity"
-                            style={{ color: "var(--brand)", opacity: 0.8 }}>
+                <div className="relative z-10 max-w-[1440px] mx-auto w-full">
+                    {/* Breadcrumb */}
+                    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+                        className="flex items-center gap-3 mb-12">
+                        <Link href="/services" className="text-[11px] font-black uppercase tracking-[0.45em] font-mono text-brand/80 hover:text-brand transition-colors">
                             ← Services
                         </Link>
-                        <span className="w-16 h-px" style={{ background: "var(--border)" }} />
-                        <span className="text-[11px] font-black uppercase tracking-[0.45em] font-mono"
-                            style={{ color: "var(--foreground)", opacity: 0.35 }}>Mobile Applications</span>
+                        <ChevronRight size={14} className="text-foreground/30" />
+                        <span className="text-[11px] font-black uppercase tracking-[0.45em] font-mono text-foreground/35">Mobile Applications</span>
                     </motion.div>
 
-                    <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-[clamp(3rem,8vw,7.5rem)] font-black leading-[0.9] tracking-tighter mb-10 max-w-5xl"
-                        style={{ color: "var(--foreground)", letterSpacing: "-3px" }}>
-                        iOS & Android<br />
-                        <span style={{ color: "var(--brand)" }}>Mobile Engineering.</span>
-                    </motion.h1>
-
-                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
-                        className="text-xl md:text-2xl max-w-2xl leading-relaxed mb-14"
-                        style={{ color: "var(--foreground)", opacity: 0.6 }}>
-                        Native and cross-platform mobile applications engineered for performance, engagement, and reliability. We build for demanding institutional use cases and consumer applications alike.
+                    {/* Eyebrow */}
+                    <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }}
+                        className="text-[11px] font-black uppercase tracking-[0.5em] font-mono text-brand mb-6">
+                        iOS &amp; Android Engineering
                     </motion.p>
 
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
-                        className="flex flex-wrap items-center gap-5">
-                        <Link href="/contact?service=Mobile%20Application%20Development&type=Mobile%20Application" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
-                            Build Your Application <ArrowRight size={16} />
+                    {/* Hero headline */}
+                    <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+                        className="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.88] tracking-[-4px] mb-8 max-w-4xl"
+                        style={{ color: "var(--foreground)" }}>
+                        Apps that feel<br />
+                        <span style={{ color: "var(--brand)" }}>truly native.</span>
+                    </motion.h1>
+
+                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+                        className="text-xl md:text-2xl max-w-2xl leading-relaxed mb-14 text-foreground/60">
+                        We engineer native iOS and Android applications that are fast, secure, and indistinguishable from the platform they live on.
+                    </motion.p>
+
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
+                        className="flex flex-wrap items-center gap-4">
+                        <Link href="/contact?service=Mobile+Application+Development&type=Mobile+Application"
+                            className="btn-glow px-8 py-4 text-base font-bold inline-flex items-center gap-3">
+                            Start a Project <ArrowRight size={16} />
                         </Link>
-                        <Link href="/services/mobile-apps/ios" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all px-6 py-4 rounded-full border border-border"
-                            style={{ color: "var(--foreground)", background: "var(--surface)" }}>
-                            {/* Apple logo */}
-                            <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" className="w-4 h-4 invert-0 dark:invert" style={{ filter: 'var(--icon-invert, none)' }} />
-                            iOS Development →
-                        </Link>
-                        <Link href="/services/mobile-apps/android" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all px-6 py-4 rounded-full border border-border"
-                            style={{ color: "var(--foreground)", background: "var(--surface)" }}>
-                            {/* Android logo */}
-                            <img src="https://cdn.simpleicons.org/android/3ddc84" alt="Android" className="w-4 h-4" />
-                            Android Development →
+                        <Link href="#platforms" className="flex items-center gap-2 font-semibold text-base text-foreground/60 hover:text-foreground transition-colors">
+                            See Platforms ↓
                         </Link>
                     </motion.div>
                 </div>
 
-                <div className="relative z-10 max-w-[1400px] mx-auto w-full mt-24">
-                    <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-4"
-                        style={{ color: "var(--foreground)", opacity: 0.3 }}>Technologies We Deploy</p>
-                    <div className="flex flex-wrap gap-2">
-                        {techStack.map((t) => (
-                            <span key={t} className="px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider"
-                                style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--foreground)", opacity: 0.7 }}>
-                                {t}
-                            </span>
+                {/* Floating platform badges */}
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
+                    className="absolute bottom-12 right-12 hidden xl:flex items-center gap-4">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <div className="flex items-center gap-3 px-5 py-3 rounded-full border border-border"
+                        style={{ background: "var(--surface)" }}>
+                        <img src="https://cdn.simpleicons.org/apple/b05d41" alt="Apple" className="w-5 h-5" />
+                        <span className="text-xs font-black uppercase tracking-wider text-foreground/70">iOS</span>
+                    </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <div className="flex items-center gap-3 px-5 py-3 rounded-full border border-border"
+                        style={{ background: "var(--surface)" }}>
+                        <img src="https://cdn.simpleicons.org/android/3ddc84" alt="Android" className="w-5 h-5" />
+                        <span className="text-xs font-black uppercase tracking-wider text-foreground/70">Android</span>
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* ── PLATFORM CARDS ── */}
+            <section id="platforms" className="px-6 md:px-12 lg:px-24 py-24">
+                <div className="max-w-[1440px] mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        {platforms.map((p, idx) => (
+                            <motion.div key={p.id}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.15, duration: 0.6 }}
+                                className={`relative rounded-[2rem] p-10 md:p-14 overflow-hidden bg-gradient-to-br ${p.gradient}`}>
+
+                                {/* Glow */}
+                                <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[80px] opacity-20 transform-gpu"
+                                    style={{ background: p.color }} />
+
+                                {/* Platform icon + name */}
+                                <div className="relative z-10 flex items-center gap-4 mb-12">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center border border-white/10"
+                                        style={{ background: "rgba(255,255,255,0.06)" }}>
+                                        <img src={p.logo} alt={p.name} className="w-7 h-7" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] font-black uppercase tracking-[0.4em] font-mono" style={{ color: p.accent, opacity: 0.8 }}>{p.tagline}</p>
+                                        <h2 className="text-2xl font-black text-white">{p.headline}</h2>
+                                    </div>
+                                </div>
+
+                                <p className="relative z-10 text-white/60 text-base leading-relaxed mb-10 max-w-md">{p.description}</p>
+
+                                {/* Feature list */}
+                                <ul className="relative z-10 space-y-3 mb-12">
+                                    {p.features.map((f, i) => (
+                                        <li key={i} className="flex items-center gap-3 text-sm font-semibold text-white/80">
+                                            <CheckCircle2 size={14} style={{ color: p.accent, flexShrink: 0 }} />
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* Tech stack chips */}
+                                <div className="relative z-10 flex flex-wrap gap-2 mb-12">
+                                    {p.stack.map((t) => (
+                                        <span key={t} className="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider border border-white/10 text-white/50"
+                                            style={{ background: "rgba(255,255,255,0.04)" }}>
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* CTAs */}
+                                <div className="relative z-10 flex flex-wrap items-center gap-4">
+                                    <Link href={p.ctaHref}
+                                        className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-black uppercase tracking-wide text-white transition-all hover:-translate-y-0.5"
+                                        style={{ background: p.color }}>
+                                        {p.cta} <ArrowRight size={14} />
+                                    </Link>
+                                    <Link href={p.href}
+                                        className="inline-flex items-center gap-2 text-sm font-bold text-white/50 hover:text-white transition-colors">
+                                        Learn more <ChevronRight size={14} />
+                                    </Link>
+                                </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ── CAPABILITIES ── */}
-            <section className="px-6 md:px-12 lg:px-24 py-32" style={{ background: "var(--surface)" }}>
-                <div className="max-w-[1400px] mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
-                        <div className="lg:col-span-5">
-                            <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-5"
-                                style={{ color: "var(--brand)" }}>{`// Capabilities`}</p>
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-tight"
-                                style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
-                                Native quality.<br />No compromises.
-                            </h2>
-                        </div>
-                        <div className="lg:col-span-7 flex items-end">
-                            <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.55 }}>
-                                Whether you need a consumer application with millions of users or a secure institutional portal used by staff and students, we build mobile experiences that feel premium, perform reliably, and scale gracefully.
-                            </p>
-                        </div>
+            {/* ── SHARED CAPABILITIES ── */}
+            <section className="px-6 md:px-12 lg:px-24 py-24" style={{ background: "var(--surface)" }}>
+                <div className="max-w-[1440px] mx-auto">
+                    <div className="mb-16">
+                        <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Platform-Agnostic Capabilities`}</p>
+                        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-1.5px" }}>
+                            What we bring to<br />both platforms.
+                        </h2>
                     </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {pillars.map((p, i) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {sharedCapabilities.map((c, i) => (
                             <motion.div key={i}
-                                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }} transition={{ delay: i * 0.07 }}
-                                className="group rounded-[20px] p-8 transition-transform duration-300 hover:-translate-y-1"
-                                style={{ background: "var(--surface-soft)", border: "1px solid var(--border)" }}>
-                                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                                    style={{ background: "var(--background)", color: "var(--brand)", border: "1px solid var(--border)" }}>
-                                    {p.icon}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.08 }}
+                                className="rounded-[1.5rem] p-8 border"
+                                style={{ background: "var(--background)", borderColor: "var(--border)" }}>
+                                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-brand"
+                                    style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                                    {c.icon}
                                 </div>
-                                <h3 className="text-xl font-black tracking-tight mb-3"
-                                    style={{ color: "var(--foreground)" }}>{p.title}</h3>
-                                <p className="text-sm leading-relaxed mb-6"
-                                    style={{ color: "var(--foreground)", opacity: 0.55 }}>{p.brief}</p>
-                                <ul className="space-y-2">
-                                    {p.points.map((pt, j) => (
-                                        <li key={j} className="text-[12px] font-semibold flex items-start gap-2"
-                                            style={{ color: "var(--foreground)", opacity: 0.45 }}>
-                                            <span className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: "var(--brand)" }} />
-                                            {pt}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h3 className="text-xl font-black tracking-tight text-foreground mb-3">{c.title}</h3>
+                                <p className="text-sm leading-relaxed text-foreground/55">{c.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -213,60 +252,74 @@ export default function MobileAppsPage() {
             </section>
 
             {/* ── PROCESS ── */}
-            <section className="px-6 md:px-12 lg:px-24 py-32" style={{ background: "var(--background)" }}>
-                <div className="max-w-[1400px] mx-auto">
-                    <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-5"
-                        style={{ color: "var(--brand)" }}>{`// Our Delivery Process`}</p>
-                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-20"
-                        style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
-                        From idea to App Store.
+            <section className="px-6 md:px-12 lg:px-24 py-24" style={{ background: "var(--background)" }}>
+                <div className="max-w-[1440px] mx-auto">
+                    <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Our Delivery Process`}</p>
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-20" style={{ letterSpacing: "-1.5px" }}>
+                        Concept to App Store<br />in structured sprints.
                     </h2>
-
-                    <div className="space-y-0">
-                        {process.map((step, i) => (
-                            <motion.div key={i}
-                                initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                                className="grid grid-cols-12 gap-8 py-10 border-t group transition-colors rounded-xl px-4"
-                                style={{ borderColor: "var(--border)" }}>
-                                <div className="col-span-2 md:col-span-1">
-                                    <span className="text-5xl font-black tabular-nums"
-                                        style={{ color: "var(--foreground)", opacity: 0.12 }}>{step.num}</span>
-                                </div>
-                                <div className="col-span-10 md:col-span-4">
-                                    <h3 className="text-xl font-black tracking-tight"
-                                        style={{ color: "var(--foreground)" }}>{step.title}</h3>
-                                </div>
-                                <div className="col-span-12 md:col-span-7">
-                                    <p className="text-base leading-relaxed"
-                                        style={{ color: "var(--foreground)", opacity: 0.55 }}>{step.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
+                    <div className="relative">
+                        {/* Vertical line */}
+                        <div className="absolute left-6 top-0 bottom-0 w-px hidden md:block"
+                            style={{ background: "var(--border)" }} />
+                        <div className="space-y-0">
+                            {process.map((step, i) => (
+                                <motion.div key={i}
+                                    initial={{ opacity: 0, x: -16 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="grid grid-cols-12 gap-8 py-10 border-t items-start"
+                                    style={{ borderColor: "var(--border)" }}>
+                                    {/* Step dot */}
+                                    <div className="col-span-1 hidden md:flex items-start justify-center pt-1">
+                                        <div className="w-3 h-3 rounded-full bg-brand" />
+                                    </div>
+                                    <div className="col-span-2 md:col-span-1">
+                                        <span className="text-4xl font-black tabular-nums text-foreground/10">{step.num}</span>
+                                    </div>
+                                    <div className="col-span-10 md:col-span-4">
+                                        <h3 className="text-xl font-black tracking-tight text-foreground">{step.title}</h3>
+                                    </div>
+                                    <div className="col-span-12 md:col-span-6">
+                                        <p className="text-base leading-relaxed text-foreground/55">{step.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* ── CTA ── */}
             <section className="px-6 md:px-12 lg:px-24 py-24" style={{ background: "var(--surface)" }}>
-                <div className="max-w-[1400px] mx-auto">
-                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                        className="rounded-[36px] p-14 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden"
+                <div className="max-w-[1440px] mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="relative rounded-[2.5rem] overflow-hidden p-14 md:p-24"
                         style={{ background: "var(--background)", border: "1px solid var(--border)" }}>
-                        <div className="absolute right-0 top-0 w-96 h-96 rounded-full pointer-events-none"
-                            style={{ background: "#b05d41", filter: "blur(180px)", opacity: 0.08 }} />
-                        <div className="relative z-10">
-                            <p className="text-[10px] uppercase tracking-[0.45em] font-black font-mono mb-4"
-                                style={{ color: "var(--brand)" }}>{`// Ship Your App`}</p>
-                            <h2 className="text-3xl md:text-5xl font-black tracking-tighter"
-                                style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
-                                Ready to build your<br />mobile platform?
-                            </h2>
-                        </div>
-                        <div className="relative z-10 flex flex-col sm:flex-row gap-4">
-                            <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
-                                Start the Conversation <ArrowRight size={16} />
-                            </Link>
+
+                        {/* Background watermark */}
+                        <span className="absolute right-0 bottom-0 text-[20vw] font-black leading-none select-none pointer-events-none opacity-[0.025]"
+                            style={{ color: "var(--foreground)" }}>APP</span>
+
+                        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-brand/10 blur-[80px] transform-gpu" />
+
+                        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+                            <div>
+                                <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Ready to Build`}</p>
+                                <h2 className="text-4xl md:text-6xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-2px" }}>
+                                    Let&apos;s ship your<br />mobile app.
+                                </h2>
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Link href="/contact?service=Mobile+Application+Development&type=Mobile+Application"
+                                    className="btn-glow px-10 py-5 text-base font-bold inline-flex items-center gap-3">
+                                    Start the Conversation <ArrowRight size={16} />
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
