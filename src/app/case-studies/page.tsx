@@ -11,45 +11,24 @@ import Link from "next/link";
 const impacts = [
     {
         title: "Campus ERP Migration with Zero Downtime.",
-        sector: "Multi-Campus University — 80+ Locations",
-        problem: "Student records were fragmented across 12 disconnected legacy servers. Each enrollment cycle resulted in 15% data discrepancies, manual reconciliation took 3 weeks, and the system crashed during peak registration — affecting 40,000+ students.",
-        solution: "We architected a centralized student-lifecycle platform with real-time edge synchronization across all 80 campuses. Admissions, fee management, and examination workflows were unified into a single dashboard with role-based access for 200+ administrators.",
-        tech: "Next.js, Go, PostgreSQL, AWS Lambda, Kubernetes, Redis",
-        results: [
-            { stat: "0 min", label: "Migration Downtime" },
-            { stat: "3.2M", label: "Records Migrated" },
-            { stat: "15%→0%", label: "Data Discrepancy" }
-        ],
-        testimonial: "\"RMJ IT delivered what our previous vendor couldn't in 2 years. The migration happened over a weekend with zero disruption to classes.\"",
-        testimonialAuthor: "IT Director, Multi-Campus University"
+        sector: "Educational Institution",
+        problem: "Student records were fragmented across disconnected legacy servers. Each enrollment cycle resulted in data discrepancies, manual reconciliation took weeks, and the system was unstable during peak registration.",
+        solution: "We architected a centralized student-lifecycle platform with real-time edge synchronization across all campuses. Admissions, fee management, and examination workflows were unified into a single dashboard with role-based access.",
+        tech: "Next.js, Node.js, PostgreSQL, AWS, Redis",
     },
     {
         title: "ERP Automation for Logistics Operations.",
-        sector: "Mid-Size Enterprise — 350+ Employees",
-        problem: "Manual ERP data entry was causing $15,000/month in billing errors. Shipment reconciliation required 14 manual steps across 3 departments. Audit preparation consumed 200+ staff-hours per quarter.",
-        solution: "We deployed a custom automated ERP with real-time shipment tracking, automated financial reconciliation, and role-based approval workflows. An OCR pipeline was added for invoice processing, reducing manual entry by 90%.",
-        tech: "React, Node.js, Redis, Docker, GCP, Custom REST APIs",
-        results: [
-            { stat: "99.8%", label: "Billing Accuracy" },
-            { stat: "$180K", label: "Annual Savings" },
-            { stat: "40%", label: "Cycle Time Reduction" }
-        ],
-        testimonial: "\"Our billing errors dropped from $15k/month to near zero. The ROI was visible within the first quarter.\"",
-        testimonialAuthor: "Head of Operations, Logistics Enterprise"
+        sector: "Enterprise Logistics",
+        problem: "Manual ERP data entry was causing frequent billing errors. Shipment reconciliation required manual steps across multiple departments, and audit preparation consumed extensive staff hours.",
+        solution: "We deployed a custom automated ERP with real-time shipment tracking, automated financial reconciliation, and role-based approval workflows. An OCR pipeline was added for invoice processing, significantly reducing manual entry.",
+        tech: "React, Node.js, Redis, Docker, GCP",
     },
     {
         title: "Citizen Services Portal for Government Agency.",
-        sector: "State Government — Public Sector",
-        problem: "Citizen support channels were overwhelmed with 50,000+ daily queries. Response times averaged 72 hours. No self-service portal existed — all requests required manual phone-based processing by understaffed teams.",
-        solution: "We implemented a secure citizen services portal with NLP-powered automated query resolution, secure identity verification (Aadhaar integration), and a tiered support escalation system. An analytics dashboard gave department heads real-time visibility into service metrics.",
-        tech: "Python, TensorFlow, Azure Cognitive Services, FastAPI, React",
-        results: [
-            { stat: "70%", label: "Queries Auto-Resolved" },
-            { stat: "72h→4h", label: "Avg. Response Time" },
-            { stat: "24/7", label: "Service Availability" }
-        ],
-        testimonial: "\"For the first time, our department can handle citizen requests at scale without adding headcount. The system paid for itself in 4 months.\"",
-        testimonialAuthor: "Deputy Director, State IT Department"
+        sector: "Public Sector",
+        problem: "Citizen support channels were overwhelmed with daily queries. Request processing required manual effort by understaffed teams, and response times were too long.",
+        solution: "We implemented a secure citizen services portal with automated query resolution, secure identity verification, and a tiered support escalation system. An analytics dashboard gave department heads real-time visibility into service metrics.",
+        tech: "Python, FastAPI, React, Cloud Architecture",
     }
 ];
 
@@ -120,17 +99,6 @@ export default function CaseStudiesPage() {
                                 <h3 className="text-xs uppercase tracking-widest font-black text-stone-400 mb-4">Technology Stack</h3>
                                 <p className="text-lg font-display font-bold text-[#1a1a1a]">{item.tech}</p>
                             </div>
-
-                            <div className="grid grid-cols-3 gap-8 border-t border-stone-200 pt-12 mb-16">
-                                {item.results.map((r, idx) => (
-                                    <div key={idx}>
-                                        <div className="text-3xl md:text-4xl font-display font-bold text-[#1a1a1a]">{r.stat}</div>
-                                        <div className="text-[10px] uppercase font-bold text-stone-400 tracking-wider mt-2">{r.label}</div>
-                                    </div>
-                                ))}
-                            </div>
-
-
                         </div>
                     </div>
                 </Section>

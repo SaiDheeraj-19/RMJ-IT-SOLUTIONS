@@ -138,11 +138,11 @@ export default function SecurityPage() {
 
                         <div className="grid grid-cols-2 gap-12 border-t border-stone-200 pt-12">
                             <div>
-                                <span className="text-4xl font-display font-bold text-brand">99.99%</span>
-                                <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">Uptime Core</p>
+                                <span className="text-4xl font-display font-bold text-brand">High</span>
+                                <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">Core Availability</p>
                             </div>
                             <div>
-                                <span className="text-4xl font-display font-bold text-brand">&lt;150ms</span>
+                                <span className="text-4xl font-display font-bold text-brand">Low</span>
                                 <p className="text-xs uppercase tracking-widest font-black text-[#1a1a1a] mt-2">API Latency</p>
                             </div>
                         </div>

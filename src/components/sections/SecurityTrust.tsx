@@ -24,7 +24,7 @@ const trustPoints = [
     {
         icon: <Server className="w-8 h-8" />,
         title: "Resilient Infrastructure",
-        desc: "Multi-regional cloud orchestration with automatic structural failover and 99.999% engineered uptime availability."
+        desc: "Multi-regional cloud orchestration with automatic structural failover and high engineered uptime availability."
     }
 ];
 

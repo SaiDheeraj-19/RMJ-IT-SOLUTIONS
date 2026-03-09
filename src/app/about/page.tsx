@@ -4,13 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-const stats = [
-    { value: "5+", label: "Years Building" },
-    { value: "30+", label: "Projects Delivered" },
-    { value: "2", label: "Institutions Powered" },
-    { value: "100%", label: "Client Retention" },
-];
-
 const values = [
     {
         icon: (
@@ -60,13 +53,6 @@ const timeline = [
     { year: "2025", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
 ];
 
-const team = [
-    { initials: "RM", name: "R. Madhu", role: "Founder & CEO", color: "#b05d41" },
-    { initials: "RJ", name: "R. Jagadish", role: "Co-Founder & CTO", color: "#3150aa" },
-    { initials: "SP", name: "S. Priya", role: "Lead Engineer", color: "#1a7a4a" },
-    { initials: "AK", name: "A. Kumar", role: "Product Designer", color: "#7c3aed" },
-];
-
 export default function AboutPage() {
     return (
         <main className="pt-28 pb-20" style={{ background: "var(--background)", color: "var(--foreground)" }}>
@@ -82,7 +68,7 @@ export default function AboutPage() {
                     className="block text-[11px] font-black uppercase tracking-[0.55em] font-mono mb-6"
                     style={{ color: "var(--brand)" }}
                 >
-                    // ABOUT RMJ IT SOLUTIONS
+                    {"// ABOUT RMJ IT SOLUTIONS"}
                 </motion.span>
 
                 <motion.h1
@@ -102,18 +88,7 @@ export default function AboutPage() {
                     RMJ IT Solutions is a Kurnool-based technology company building modern software for colleges, businesses, and enterprises across Andhra Pradesh and beyond.
                 </motion.p>
 
-                {/* Stat row */}
-                <motion.div
-                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
-                    className="flex flex-wrap gap-10"
-                >
-                    {stats.map((s) => (
-                        <div key={s.label}>
-                            <p className="text-4xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1px" }}>{s.value}</p>
-                            <p className="text-xs font-black uppercase tracking-[0.4em] mt-1 font-mono" style={{ color: "var(--foreground)", opacity: 0.35 }}>{s.label}</p>
-                        </div>
-                    ))}
-                </motion.div>
+
             </section>
 
             {/* ── STORY STRIP ── */}
@@ -124,7 +99,7 @@ export default function AboutPage() {
                             initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                             className="space-y-6"
                         >
-                            <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono" style={{ color: "var(--foreground)", opacity: 0.3 }}>// OUR STORY</span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono" style={{ color: "var(--foreground)", opacity: 0.3 }}>{"// OUR STORY"}</span>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
                                 Started small.<br />Built to scale.
                             </h2>
@@ -165,7 +140,7 @@ export default function AboutPage() {
             {/* ── TIMELINE ── */}
             <section className="container mx-auto px-4 md:px-12 py-24">
                 <div className="text-center mb-16">
-                    <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>// MILESTONES</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>{"// MILESTONES"}</span>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>How we got here</h2>
                 </div>
 
@@ -199,7 +174,7 @@ export default function AboutPage() {
             <section className="w-full py-24" style={{ background: "var(--surface)" }}>
                 <div className="container mx-auto px-4 md:px-12">
                     <div className="text-center mb-16">
-                        <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>// WHAT WE STAND FOR</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>{"// WHAT WE STAND FOR"}</span>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>Our core values</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -225,33 +200,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ── TEAM ── */}
-            <section className="container mx-auto px-4 md:px-12 py-24">
-                <div className="text-center mb-16">
-                    <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>// THE TEAM</span>
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>The people behind it</h2>
-                </div>
-                <div className="flex flex-wrap justify-center gap-6">
-                    {team.map((member, i) => (
-                        <motion.div
-                            key={member.name}
-                            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                            className="group flex flex-col items-center gap-3 p-8 rounded-[20px] w-52 hover:scale-[1.04] transition-transform duration-300"
-                            style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
-                        >
-                            <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-bold"
-                                style={{ background: member.color }}>
-                                {member.initials}
-                            </div>
-                            <div className="text-center">
-                                <p className="font-bold text-sm" style={{ color: "var(--foreground)" }}>{member.name}</p>
-                                <p className="text-[11px] font-mono uppercase tracking-wider mt-0.5" style={{ color: "var(--foreground)", opacity: 0.4 }}>{member.role}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
 
             {/* ── CTA ── */}
             <section className="container mx-auto px-4 md:px-12 pb-10">
@@ -263,7 +211,7 @@ export default function AboutPage() {
                     <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "#b05d41", filter: "blur(150px)", opacity: 0.12 }} />
                     <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: "#3150aa", filter: "blur(130px)", opacity: 0.1 }} />
                     <div className="relative z-10">
-                        <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-6" style={{ color: "var(--foreground)", opacity: 0.3 }}>// LET&apos;S BUILD TOGETHER</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-6" style={{ color: "var(--foreground)", opacity: 0.3 }}>{"// LET'S BUILD TOGETHER"}</span>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
                             Ready to transform<br />your organization?
                         </h2>

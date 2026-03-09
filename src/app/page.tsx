@@ -125,7 +125,7 @@ export default function Home() {
       {/* ── CORE CAPABILITIES ── */}
       <section id="capabilities" className="relative z-10 container mx-auto px-4 md:px-12 pt-48 pb-20">
         <div className="text-center mb-20 max-w-5xl mx-auto fade-up">
-          <span className="text-[11px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--foreground)', opacity: 0.3 }}>// OUR SERVICES</span>
+          <span className="text-[11px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--foreground)', opacity: 0.3 }}>{"// OUR SERVICES"}</span>
           <h2 className="text-5xl md:text-[72px] font-bold tracking-tight mb-8 leading-[1.05]" style={{ color: 'var(--foreground)' }}>The full spectrum of<br />core capabilities</h2>
           <p className="text-xl text-center leading-[1.35] mb-14 font-medium uppercase tracking-tight max-w-3xl mx-auto" style={{ color: 'var(--foreground)', opacity: 0.5 }}>
             We replace the need for multiple vendors. From brand strategy to custom software, we build the entire ecosystem your business runs on.
@@ -149,7 +149,7 @@ export default function Home() {
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ color: 'var(--foreground)', opacity: 0.7 }}><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
               </div>
               <h3 className="text-3xl font-bold mb-4 tracking-tight" style={{ color: 'var(--foreground)' }}>Web Applications</h3>
-              <p className="text-lg mb-8 leading-[1.6]" style={{ color: 'var(--foreground)', opacity: 0.55 }}>Creates secure, scalable, and customized web applications to meet clients' unique business needs, developed by our expert team of developers.</p>
+              <p className="text-lg mb-8 leading-[1.6]" style={{ color: 'var(--foreground)', opacity: 0.55 }}>Creates secure, scalable, and customized web applications to meet clients&apos; unique business needs, developed by our expert team of developers.</p>
               <a href="https://rmjit.com/services.php#webapp" target="_blank" className="flex items-center gap-2 text-[#F59768] font-semibold hover:gap-3 transition-all">Explore Service →</a>
             </div>
             <div className="flex-1 relative w-full min-h-[280px] rounded-2xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
@@ -320,7 +320,7 @@ export default function Home() {
       {/* ── WHY CHOOSE US ── */}
       <section className="relative z-10 container mx-auto px-4 md:px-12 pt-40 pb-20 fade-up">
         <div className="text-center mb-20">
-          <span className="text-[11px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--foreground)', opacity: 0.3 }}>// THE RMJ ADVANTAGE</span>
+          <span className="text-[11px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--foreground)', opacity: 0.3 }}>{"// THE RMJ ADVANTAGE"}</span>
           <h2 className="text-4xl md:text-[60px] font-bold tracking-tight mb-6" style={{ color: 'var(--foreground)' }}>Why choose us?</h2>
           <p className="text-xl max-w-2xl mx-auto" style={{ color: 'var(--foreground)', opacity: 0.5 }}>We combine expertise, customization, and results-driven strategies to give you the best value.</p>
         </div>
@@ -371,10 +371,10 @@ export default function Home() {
           {/* Left text */}
           <div className="relative z-10 flex-1 p-12 md:p-20 space-y-8">
             <h2 className="text-5xl md:text-[72px] font-bold leading-[1.05] tracking-tight" style={{ color: 'var(--foreground)' }}>
-              Ready for<br />what's next?
+              Ready for<br />what&apos;s next?
             </h2>
             <p className="text-xl leading-[1.4] max-w-md" style={{ color: 'var(--foreground)', opacity: 0.65 }}>
-              Let's discuss your vision and see if we are the right fit for your next big project.
+              Let&apos;s discuss your vision and see if we are the right fit for your next big project.
             </p>
             <div className="flex items-center gap-6 pt-2">
               <Link href="/contact" className="btn-glow px-8 py-3.5 text-lg font-bold">
