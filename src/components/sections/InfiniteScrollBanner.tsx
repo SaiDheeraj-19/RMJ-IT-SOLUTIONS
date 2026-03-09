@@ -1,15 +1,9 @@
 "use client";
 
-
-import { useScroll } from "framer-motion";
 import { useRef } from "react";
 
 export default function InfiniteScrollBanner() {
     const containerRef = useRef<HTMLDivElement>(null);
-    useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
 
     return (
         <section ref={containerRef} className="bg-surface0 border-y border-slate-800 py-6 overflow-hidden relative">

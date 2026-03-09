@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 export default function Hero() {
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background pt-32 pb-20">
-            {/* Background glow effects */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand/20 blur-[150px] rounded-full pointer-events-none opacity-50 mix-blend-screen" />
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none opacity-30 mix-blend-screen" />
+            {/* Background glow effects - Optimized for GPU */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand/10 blur-[100px] rounded-full pointer-events-none opacity-50 transform-gpu will-change-transform" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[80px] rounded-full pointer-events-none opacity-30 transform-gpu will-change-transform" />
 
             <div className="max-w-[1440px] mx-auto px-6 relative z-10 w-full text-center flex flex-col items-center">
                 <motion.div

@@ -69,7 +69,7 @@ export default function ServicesPage() {
         <div className="pt-32 pb-20 selection:bg-brand selection:text-black">
             {/* Page Header */}
             <section className="px-6 md:px-12 lg:px-24 pt-10 pb-20 relative overflow-hidden">
-                <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+                <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none opacity-60 transform-gpu will-change-transform" />
 
                 <div className="max-w-[1440px] mx-auto relative z-10">
                     <div className="max-w-4xl space-y-8">

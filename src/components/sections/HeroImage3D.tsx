@@ -9,12 +9,6 @@ import {
     useTransform,
 } from "framer-motion";
 
-/* ─────────────────────────────────────────────────────────────────────────
-   HeroImage3D — mouse-tracking perspective tilt with depth layers
-   The image tilts up to ±18° on X/Y axes following the cursor.
-   A glare layer moves opposite to the tilt for a holographic sheen.
-   Falls back gracefully to the float-only animation on touch devices.
-────────────────────────────────────────────────────────────────────────── */
 export default function HeroImage3D() {
     const ref = useRef<HTMLDivElement>(null);
 
@@ -22,18 +16,14 @@ export default function HeroImage3D() {
     const rawX = useMotionValue(0);
     const rawY = useMotionValue(0);
 
-    /* Spring-smoothed values */
-    const springCfg = { stiffness: 140, damping: 18, mass: 0.6 };
-    const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-20, 20]), springCfg);
-    const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [16, -16]), springCfg);
+    /* Spring-smoothed values — reduced stiffness for even smoother float */
+    const springCfg = { stiffness: 120, damping: 20, mass: 0.8 };
+    const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-16, 16]), springCfg);
+    const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [12, -12]), springCfg);
 
-    /* Glare spotlight follows tilt in the opposite direction */
-    const glareX = useSpring(useTransform(rawX, [-0.5, 0.5], [75, 25]), springCfg);
-    const glareY = useSpring(useTransform(rawY, [-0.5, 0.5], [75, 25]), springCfg);
-
-    /* Shadow offset deepens the 3D depth illusion */
-    const shadowX = useSpring(useTransform(rawX, [-0.5, 0.5], [20, -20]), springCfg);
-    const shadowY = useSpring(useTransform(rawY, [-0.5, 0.5], [20, -20]), springCfg);
+    /* Glare spotlight follows tilt */
+    const glareX = useSpring(useTransform(rawX, [-0.5, 0.5], [80, 20]), springCfg);
+    const glareY = useSpring(useTransform(rawY, [-0.5, 0.5], [80, 20]), springCfg);
 
     function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
         const el = ref.current;
@@ -53,18 +43,12 @@ export default function HeroImage3D() {
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative flex items-center justify-center select-none"
-            style={{ perspective: "900px" }}
+            className="relative flex items-center justify-center select-none w-full h-full min-h-[500px]"
+            style={{ perspective: "1000px" }}
         >
-            {/* Ambient glow blobs — always present */}
-            <div
-                className="absolute w-[440px] h-[440px] rounded-full pointer-events-none"
-                style={{ background: "#b05d41", filter: "blur(130px)", opacity: 0.28 }}
-            />
-            <div
-                className="absolute w-[280px] h-[280px] rounded-full pointer-events-none translate-x-16"
-                style={{ background: "#3150aa", filter: "blur(90px)", opacity: 0.14 }}
-            />
+            {/* Ambient glow blobs — optimized hardware-accelerated blurs instead of inline filters */}
+            <div className="absolute w-[440px] h-[440px] rounded-full pointer-events-none bg-brand/20 blur-[100px] will-change-transform transform-gpu" />
+            <div className="absolute w-[280px] h-[280px] rounded-full pointer-events-none translate-x-16 bg-blue-600/10 blur-[80px] will-change-transform transform-gpu" />
 
             {/* ── 3D card wrapper ── */}
             <motion.div
@@ -72,55 +56,42 @@ export default function HeroImage3D() {
                     rotateX,
                     rotateY,
                     transformStyle: "preserve-3d",
-                    /* Dynamic shadow that shifts with tilt */
-                    filter: useTransform(
-                        [shadowX, shadowY] as const,
-                        ([sx, sy]: number[]) =>
-                            `drop-shadow(${sx}px ${sy}px 60px rgba(176,93,65,0.45))`
-                    ),
                 }}
                 /* Continuous float animation via CSS keyframe */
-                animate={{ y: [0, -14, 0] }}
+                animate={{ y: [0, -12, 0] }}
                 transition={{
-                    duration: 5,
+                    duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="relative"
+                className="relative drop-shadow-2xl will-change-transform"
             >
-                {/* Hero illustration — SVG integrates naturally */}
+                {/* Hero illustration */}
                 <Image
                     src="/company-cuate.svg"
                     alt="RMJ IT Solutions — Technology Partner"
-                    width={620}
-                    height={620}
-                    className="object-contain relative z-10"
-                    style={{ transformStyle: "preserve-3d" }}
+                    width={580}
+                    height={580}
+                    className="object-contain relative z-10 filter drop-shadow-xl"
+                    style={{ transform: "translateZ(40px)" }} // Pop out effect without true 3d nesting lag
                     priority
                 />
 
-                {/* Glare overlay — holographic sheen */}
+                {/* Highly optimized glare overlay (no mixBlendMode, purely opacity/gradient) */}
                 <motion.div
-                    className="absolute inset-0 rounded-2xl pointer-events-none z-20"
+                    className="absolute inset-x-0 inset-y-12 rounded-[3rem] pointer-events-none z-20"
                     style={{
                         background: useTransform(
                             [glareX, glareY] as const,
                             ([gx, gy]: number[]) =>
-                                `radial-gradient(circle at ${gx}% ${gy}%, rgba(255,255,255,0.12) 0%, transparent 65%)`
-                        ),
-                        mixBlendMode: "screen",
+                                `radial-gradient(circle at ${gx}% ${gy}%, rgba(255,255,255,0.08) 0%, transparent 60%)`
+                        )
                     }}
                 />
             </motion.div>
 
             {/* Pulsing outer ring */}
-            <div
-                className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
-                style={{
-                    border: "1px solid rgba(245,151,104,0.13)",
-                    animation: "pulse-ring 4s ease-in-out infinite",
-                }}
-            />
+            <div className="absolute w-[480px] h-[480px] rounded-full pointer-events-none border border-brand/10 animate-[spin_12s_linear_infinite]" />
         </div>
     );
 }

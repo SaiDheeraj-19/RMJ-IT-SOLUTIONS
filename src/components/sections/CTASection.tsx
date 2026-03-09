@@ -8,8 +8,8 @@ export default function CTASection() {
     return (
         <section className="pt-32 bg-background relative overflow-hidden flex flex-col justify-end min-h-[90vh]">
             {/* Background Glow */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none opacity-40 mix-blend-screen" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none opacity-40 mix-blend-screen" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none opacity-40 transform-gpu will-change-transform" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none opacity-40 transform-gpu will-change-transform" />
 
             <div className="max-w-[1440px] mx-auto px-6 w-full relative z-10 flex-grow flex flex-col justify-center">
                 <div className="max-w-4xl">

@@ -59,8 +59,8 @@ export default function TechStackMarquee() {
 
             {/* Scrolling track */}
             <div
-                className="flex items-center w-max"
-                style={{ animation: "logo-cloud 50s linear infinite" }}
+                className="flex items-center w-max will-change-transform"
+                style={{ animation: "logo-cloud 50s linear infinite", transform: "translateZ(0)" }}
                 onMouseEnter={(e) =>
                     ((e.currentTarget as HTMLDivElement).style.animationPlayState = "paused")
                 }

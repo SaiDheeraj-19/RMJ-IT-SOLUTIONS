@@ -73,7 +73,7 @@ export default function ProductHighlight() {
                             </div>
                         </div>
 
-                        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-[#f59768] opacity-[0.05] blur-[100px] rounded-full pointer-events-none" />
+                        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-[#f59768] opacity-5 blur-[100px] rounded-full pointer-events-none transform-gpu will-change-transform" />
                     </motion.div>
 
                     <div className="flex justify-center mt-12">
