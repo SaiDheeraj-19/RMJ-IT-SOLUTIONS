@@ -62,9 +62,10 @@ export default function TextReveal({
                     <span key={index} className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em]">
                         <motion.span
                             variants={child}
-                            className="inline-block mr-[0.2em]"
+                            className="inline-block"
                         >
                             {word === "" ? "\u00A0" : word}
+                            {index !== words.length - 1 && "\u00A0"}
                         </motion.span>
                     </span>
                 ))}

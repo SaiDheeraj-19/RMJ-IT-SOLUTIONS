@@ -41,7 +41,8 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="lg:col-span-8 bg-white p-10 md:p-16 rounded-[3rem] border border-slate-200 shadow-2xl shadow-slate-200/50"
+                            className="lg:col-span-8 p-10 md:p-16 rounded-[3rem] border shadow-2xl"
+                            style={{ background: 'var(--background)', borderColor: 'var(--border)' }}
                         >
                             <form className="space-y-10">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -50,7 +51,8 @@ export default function ContactPage() {
                                         <input
                                             type="text"
                                             placeholder="John Doe"
-                                            className="w-full bg-surface border border-transparent rounded-2xl px-6 py-5 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all placeholder:text-foreground/70"
+                                            className="w-full border rounded-2xl px-6 py-5 font-bold outline-none transition-all"
+                                            style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
                                         />
                                     </div>
                                     <div className="space-y-3">
@@ -58,14 +60,16 @@ export default function ContactPage() {
                                         <input
                                             type="email"
                                             placeholder="john@company.com"
-                                            className="w-full bg-surface border border-transparent rounded-2xl px-6 py-5 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all placeholder:text-foreground/70"
+                                            className="w-full border rounded-2xl px-6 py-5 font-bold outline-none transition-all"
+                                            style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-3">
                                     <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Type</label>
                                     <div className="relative">
-                                        <select className="w-full bg-surface border border-transparent rounded-2xl px-6 py-5 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none appearance-none cursor-pointer transition-all text-lg pt-5">
+                                        <select className="w-full border rounded-2xl px-6 py-5 font-bold outline-none appearance-none cursor-pointer transition-all text-lg pt-5"
+                                            style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}>
                                             <option>Web Application Development</option>
                                             <option>Mobile Application</option>
                                             <option>Custom Software</option>
@@ -79,7 +83,8 @@ export default function ContactPage() {
                                     <textarea
                                         rows={5}
                                         placeholder="Tell us about your goals, timeline, and requirements..."
-                                        className="w-full bg-surface border border-transparent rounded-3xl px-6 py-6 font-bold text-foreground focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 outline-none transition-all resize-none placeholder:text-foreground/70"
+                                        className="w-full border rounded-3xl px-6 py-6 font-bold outline-none transition-all resize-none"
+                                        style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
                                     />
                                 </div>
                                 <button type="button" className="w-full py-6 bg-brand text-foreground rounded-2xl font-black uppercase tracking-[0.2em] text-sm group relative overflow-hidden transition-all shadow-xl hover:shadow-brand/30 hover:-translate-y-1">
@@ -102,7 +107,8 @@ export default function ContactPage() {
                                 { title: "Direct Phone", icon: Phone, desc: "+91 86397 56899", link: "tel:+918639756899" },
                                 { title: "Email Address", icon: Mail, desc: "support@rmjit.com", link: "mailto:support@rmjit.com" }
                             ].map((card, idx) => (
-                                <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-lg shadow-slate-200/40 group hover:border-brand/30 transition-colors">
+                                <div key={idx} className="p-8 rounded-[2.5rem] border shadow-lg group transition-colors"
+                                    style={{ background: 'var(--background)', borderColor: 'var(--border)' }}>
                                     <div className="w-14 h-14 bg-surface rounded-2xl flex items-center justify-center text-brand mb-6 group-hover:bg-brand group-hover:text-foreground transition-colors">
                                         <card.icon size={24} />
                                     </div>
@@ -121,7 +127,7 @@ export default function ContactPage() {
                         </motion.div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }

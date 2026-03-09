@@ -241,7 +241,7 @@ export default function SolutionsPage() {
         <div className="pt-32 pb-20 selection:bg-brand/10">
 
             {/* ── Hero Section ── */}
-            <section className="bg-white px-6 md:px-20 pt-10 pb-24">
+            <section className="px-6 md:px-20 pt-10 pb-24" style={{ background: 'var(--background)' }}>
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
@@ -289,7 +289,7 @@ export default function SolutionsPage() {
             </section>
 
             {/* ── Core Pillars ── */}
-            <section className="bg-surface0 py-20">
+            <section className="py-20" style={{ background: 'var(--surface-soft)' }}>
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {pillars.map((p, i) => (
@@ -299,7 +299,8 @@ export default function SolutionsPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                                className="bg-white rounded-[2.5rem] p-10 border border-slate-100 flex flex-col gap-6"
+                                className="rounded-[2.5rem] p-10 border flex flex-col gap-6"
+                                style={{ background: 'var(--background)', borderColor: 'var(--border)' }}
                             >
                                 <div className="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center text-brand">
                                     <p.icon size={22} />
@@ -313,7 +314,7 @@ export default function SolutionsPage() {
             </section>
 
             {/* ── Industries Bento Grid ── */}
-            <section className="bg-white py-24 px-6 md:px-20">
+            <section className="py-24 px-6 md:px-20" style={{ background: 'var(--background)' }}>
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <div className="text-center mb-16 space-y-4">
                         <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand font-mono">
@@ -339,10 +340,12 @@ export default function SolutionsPage() {
                                 whileHover={{ y: -4, scale: 1.03 }}
                                 whileTap={{ scale: 0.97 }}
                                 onClick={() => setSelected(industry)}
-                                className={`group relative flex flex-col items-center justify-center gap-4 p-6 rounded-3xl border border-slate-100 bg-gradient-to-br ${industry.color} hover:border-brand/25 hover:shadow-lg hover:shadow-brand/8 transition-all duration-300 cursor-pointer text-center aspect-square`}
+                                className={`group relative flex flex-col items-center justify-center gap-4 p-6 rounded-3xl border bg-gradient-to-br ${industry.color} hover:border-brand/25 hover:shadow-lg hover:shadow-brand/8 transition-all duration-300 cursor-pointer text-center aspect-square`}
+                                style={{ borderColor: 'var(--border)' }}
                             >
                                 {/* Icon */}
-                                <div className={`w-11 h-11 rounded-2xl bg-white flex items-center justify-center shadow-sm border border-slate-100 ${industry.accentText} group-hover:scale-110 transition-transform duration-300`}>
+                                <div className={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-sm border ${industry.accentText} group-hover:scale-110 transition-transform duration-300`}
+                                    style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
                                     <industry.icon size={20} />
                                 </div>
 
@@ -386,13 +389,15 @@ export default function SolutionsPage() {
                             className="fixed inset-0 z-[210] flex items-center justify-center p-4 md:p-8 pointer-events-none"
                         >
                             <div
-                                className={`relative bg-white rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto pointer-events-auto border border-slate-100 bg-gradient-to-br ${selected.color}`}
+                                className={`relative rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto pointer-events-auto border bg-gradient-to-br ${selected.color}`}
+                                style={{ background: 'var(--background)', borderColor: 'var(--border)' }}
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 {/* Close Button */}
                                 <button
                                     onClick={() => setSelected(null)}
-                                    className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-foreground/50 hover:text-foreground hover:scale-110 transition-all z-10 shadow-sm"
+                                    className="absolute top-6 right-6 w-10 h-10 rounded-full border flex items-center justify-center text-foreground/50 hover:text-foreground hover:scale-110 transition-all z-10 shadow-sm"
+                                    style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
                                 >
                                     <X size={18} />
                                 </button>
@@ -400,7 +405,8 @@ export default function SolutionsPage() {
                                 <div className="p-10 md:p-14 space-y-8">
                                     {/* Header */}
                                     <div className="flex items-start gap-5">
-                                        <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-sm border border-slate-100 ${selected.accentText} flex-shrink-0`}>
+                                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm border ${selected.accentText} flex-shrink-0`}
+                                            style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
                                             <selected.icon size={26} />
                                         </div>
                                         <div className="space-y-1">
@@ -425,7 +431,7 @@ export default function SolutionsPage() {
                                         </h4>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                             {selected.solutions.map((sol, idx) => (
-                                                <div key={idx} className="flex items-start gap-3 bg-white/80 rounded-2xl px-5 py-3 border border-white">
+                                                <div key={idx} className="flex items-start gap-3 rounded-2xl px-5 py-3 border" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
                                                     <CheckCircle2 size={14} className="text-brand mt-0.5 flex-shrink-0" />
                                                     <span className="text-sm font-bold text-foreground/70">{sol}</span>
                                                 </div>
@@ -449,7 +455,7 @@ export default function SolutionsPage() {
             </AnimatePresence>
 
             {/* ── Bottom CTA ── */}
-            <section className="bg-surface0 py-40 px-6 text-center">
+            <section className="py-40 px-6 text-center" style={{ background: 'var(--surface-soft)' }}>
                 <div className="max-w-3xl mx-auto space-y-10">
                     <span className="text-[10px] uppercase tracking-[0.6em] font-black text-brand font-mono">
                         {"// LET'S BUILD TOGETHER"}

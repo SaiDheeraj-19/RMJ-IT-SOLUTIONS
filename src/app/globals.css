@@ -113,40 +113,34 @@ body.light {
   color: #fff;
 }
 
-/* ── Unified Typography — all headings match hero scale ── */
+/* ── Unified Typography ── */
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 0.92;
-}
-
-/* Hero-scale heading — used for page heroes & h1 */
-h1 {
-  font-size: clamp(3rem, 7vw, 7rem);
-  letter-spacing: -0.04em;
-}
-
-/* Section headings — nearly hero-scale */
 h2 {
-  font-size: clamp(2.4rem, 5.5vw, 5.5rem);
-  letter-spacing: -0.04em;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.5px !important;
+  line-height: 1.1 !important;
 }
 
-/* Sub-section / card headings */
 h3 {
-  font-size: clamp(1.6rem, 3vw, 3rem);
-  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 h4 {
+  font-family: var(--font-display);
   font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 700;
   letter-spacing: -0.025em;
+}
+
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 p {
