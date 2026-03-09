@@ -92,7 +92,13 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.3s ease, color 0.3s ease;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Light mode body */
@@ -107,7 +113,7 @@ body.light {
   color: #fff;
 }
 
-/* ── Professional Typography System ── */
+/* ── Unified Typography — all headings match hero scale ── */
 h1,
 h2,
 h3,
@@ -115,35 +121,38 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
 }
 
+/* Hero-scale heading — used for page heroes & h1 */
 h1 {
-  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  font-size: clamp(3rem, 7vw, 7rem);
   letter-spacing: -0.04em;
 }
 
+/* Section headings — nearly hero-scale */
 h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2.4rem, 5.5vw, 5.5rem);
+  letter-spacing: -0.04em;
+}
+
+/* Sub-section / card headings */
+h3 {
+  font-size: clamp(1.6rem, 3vw, 3rem);
   letter-spacing: -0.03em;
 }
 
-h3 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  letter-spacing: -0.02em;
-}
-
 h4 {
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  letter-spacing: -0.015em;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  letter-spacing: -0.025em;
 }
 
 p {
   font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-  line-height: 1.65;
+  line-height: 1.7;
   font-weight: 400;
 }
 
@@ -264,11 +273,24 @@ p {
   background: var(--brand);
 }
 
-/* Theme transition for all elements */
+/* Smooth theme transitions — only structural properties, not transform/opacity (those belong to framer-motion) */
 *,
 *::before,
 *::after {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0.35s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Restore instant transitions for interactive elements to avoid lag */
+button,
+a,
+input,
+select,
+textarea {
+  transition-property: background-color, border-color, color, box-shadow, transform, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Logo animation */
