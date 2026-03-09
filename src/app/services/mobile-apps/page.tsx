@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Smartphone, Apple, Layers, Wifi, Bell, Zap, Code2, RefreshCw, Lock } from "lucide-react";
+import { ArrowRight, Smartphone, Apple, Layers, Wifi, Bell, Lock } from "lucide-react";
 
 const pillars = [
     {
@@ -136,11 +136,15 @@ export default function MobileAppsPage() {
                         </Link>
                         <Link href="/services/mobile-apps/ios" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all px-6 py-4 rounded-full border border-border"
                             style={{ color: "var(--foreground)", background: "var(--surface)" }}>
-                            <Apple size={16} /> iOS Development →
+                            {/* Apple logo */}
+                            <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" className="w-4 h-4 invert-0 dark:invert" style={{ filter: 'var(--icon-invert, none)' }} />
+                            iOS Development →
                         </Link>
                         <Link href="/services/mobile-apps/android" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all px-6 py-4 rounded-full border border-border"
                             style={{ color: "var(--foreground)", background: "var(--surface)" }}>
-                            <Smartphone size={16} /> Android Development →
+                            {/* Android logo */}
+                            <img src="https://cdn.simpleicons.org/android/3ddc84" alt="Android" className="w-4 h-4" />
+                            Android Development →
                         </Link>
                     </motion.div>
                 </div>

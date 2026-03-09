@@ -396,12 +396,15 @@ export default function SolutionsPage() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.94, y: 30 }}
                             transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                            className="fixed inset-0 z-[210] flex items-center justify-center p-4 md:p-8 pointer-events-none"
+                            className="fixed inset-0 z-[210] flex items-center justify-center p-4 md:p-8"
+                            onClick={() => setSelected(null)}
                         >
                             <div
-                                className={`relative rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto pointer-events-auto border bg-gradient-to-br ${selected.color}`}
+                                className={`relative rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto overscroll-contain pointer-events-auto border bg-gradient-to-br ${selected.color}`}
                                 style={{ background: 'var(--background)', borderColor: 'var(--border)' }}
                                 onClick={(e) => e.stopPropagation()}
+                                onWheel={(e) => e.stopPropagation()}
+                                onTouchMove={(e) => e.stopPropagation()}
                             >
                                 {/* Close Button */}
                                 <button

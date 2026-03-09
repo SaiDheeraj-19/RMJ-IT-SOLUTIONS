@@ -75,7 +75,8 @@ export default function IOSPage() {
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
                         className="inline-flex items-center gap-3 mb-8 px-5 py-2.5 rounded-full border"
                         style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
-                        <Apple className="w-4 h-4 text-brand" />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="https://cdn.simpleicons.org/apple/b05d41" alt="Apple" className="w-4 h-4" />
                         <span className="text-xs font-black uppercase tracking-widest" style={{ color: "var(--foreground)", opacity: 0.7 }}>Built for Apple Ecosystem</span>
                     </motion.div>
 
@@ -99,7 +100,9 @@ export default function IOSPage() {
                         </Link>
                         <Link href="/services/mobile-apps/android" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all px-6 py-4 rounded-full border border-border"
                             style={{ color: "var(--foreground)", background: "var(--surface)" }}>
-                            Switch to Android →
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="https://cdn.simpleicons.org/android/3ddc84" alt="Android" className="w-4 h-4" />
+                            Android →
                         </Link>
                     </motion.div>
                 </div>
