@@ -1,198 +1,286 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Flag, Users, Cpu, TrendingUp } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
+
+const stats = [
+    { value: "5+", label: "Years Building" },
+    { value: "30+", label: "Projects Delivered" },
+    { value: "2", label: "Institutions Powered" },
+    { value: "100%", label: "Client Retention" },
+];
+
+const values = [
+    {
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" />
+            </svg>
+        ),
+        title: "Integrity First",
+        desc: "We build trust before we build software. Every engagement is rooted in honesty, transparency, and accountability.",
+    },
+    {
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
+            </svg>
+        ),
+        title: "Speed & Precision",
+        desc: "We move fast without cutting corners. Our systems are engineered to perform reliably under real-world load.",
+    },
+    {
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+        ),
+        title: "People-Centred",
+        desc: "Technology should serve people — not the other way around. Every design decision starts with the end user.",
+    },
+    {
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+        ),
+        title: "Continuous Growth",
+        desc: "We never stop learning. Our team invests in the latest tools and frameworks to keep clients ahead of the curve.",
+    },
+];
+
+const timeline = [
+    { year: "2019", title: "Founded in Kurnool", desc: "RMJ IT Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
+    { year: "2021", title: "Digital Campus Launch", desc: "Released our flagship ERP product — Digital Campus — covering Attendance, Marks, Placements, and Training across colleges." },
+    { year: "2022", title: "GPCET Partnership", desc: "G. Pullaiah College of Engineering & Technology adopted Digital Campus, becoming our first large-scale institutional deployment." },
+    { year: "2023", title: "RECW Deployment", desc: "Ravindra College of Engineering for Women went live on the Digital Campus platform, expanding our academic footprint." },
+    { year: "2024", title: "Full-Stack Expansion", desc: "Expanded into mobile app development, AI integrations, and cloud infrastructure services for enterprise clients." },
+    { year: "2025", title: "RMJ IT 2.0", desc: "Launched a fully redesigned service portfolio — from Campus ERP to scalable web apps, AI systems, and DevOps pipelines." },
+];
+
+const team = [
+    { initials: "RM", name: "R. Madhu", role: "Founder & CEO", color: "#b05d41" },
+    { initials: "RJ", name: "R. Jagadish", role: "Co-Founder & CTO", color: "#3150aa" },
+    { initials: "SP", name: "S. Priya", role: "Lead Engineer", color: "#1a7a4a" },
+    { initials: "AK", name: "A. Kumar", role: "Product Designer", color: "#7c3aed" },
+];
 
 export default function AboutPage() {
     return (
-        <div className="pt-32 pb-20 selection:bg-brand selection:text-black">
-            {/* Enterprise Hero */}
-            <section className="bg-background pb-20 pt-10 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-                <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+        <main className="pt-28 pb-20" style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
-                <div className="max-w-[1440px] mx-auto relative z-10">
-                    <div className="flex flex-col items-center text-center space-y-12 max-w-5xl mx-auto">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-[clamp(3.5rem,8vw,7rem)] font-display font-semibold text-foreground leading-[0.9] tracking-tighter"
+            {/* ── HERO ── */}
+            <section className="relative container mx-auto px-4 md:px-12 pt-16 pb-24 overflow-hidden">
+                {/* Glow */}
+                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "#b05d41", filter: "blur(200px)", opacity: 0.1 }} />
+                <div className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "#3150aa", filter: "blur(180px)", opacity: 0.08 }} />
+
+                <motion.span
+                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+                    className="block text-[11px] font-black uppercase tracking-[0.55em] font-mono mb-6"
+                    style={{ color: "var(--brand)" }}
+                >
+                    // ABOUT RMJ IT SOLUTIONS
+                </motion.span>
+
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+                    className="font-bold leading-[1.0] tracking-tight mb-8 max-w-4xl"
+                    style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)", color: "var(--foreground)", letterSpacing: "-2px" }}
+                >
+                    We build the digital backbone<br />
+                    <span style={{ opacity: 0.3, fontStyle: "italic", fontWeight: 400 }}>organizations run on.</span>
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+                    className="text-xl max-w-2xl leading-relaxed mb-12 font-medium"
+                    style={{ color: "var(--foreground)", opacity: 0.55 }}
+                >
+                    RMJ IT Solutions is a Kurnool-based technology company building modern software for colleges, businesses, and enterprises across Andhra Pradesh and beyond.
+                </motion.p>
+
+                {/* Stat row */}
+                <motion.div
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
+                    className="flex flex-wrap gap-10"
+                >
+                    {stats.map((s) => (
+                        <div key={s.label}>
+                            <p className="text-4xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1px" }}>{s.value}</p>
+                            <p className="text-xs font-black uppercase tracking-[0.4em] mt-1 font-mono" style={{ color: "var(--foreground)", opacity: 0.35 }}>{s.label}</p>
+                        </div>
+                    ))}
+                </motion.div>
+            </section>
+
+            {/* ── STORY STRIP ── */}
+            <section className="w-full py-20" style={{ background: "var(--surface)" }}>
+                <div className="container mx-auto px-4 md:px-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+                            className="space-y-6"
                         >
-                            Empowering Organizations through <span className="text-foreground/30 italic pr-4">Innovation.</span>
-                        </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-xl md:text-3xl text-foreground/50 font-medium leading-relaxed max-w-4xl"
+                            <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono" style={{ color: "var(--foreground)", opacity: 0.3 }}>// OUR STORY</span>
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
+                                Started small.<br />Built to scale.
+                            </h2>
+                            <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.6 }}>
+                                RMJ IT Solutions was born out of a simple observation: educational institutions in Andhra Pradesh were managing critical data — student marks, attendance, placements — on paper and spreadsheets.
+                            </p>
+                            <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.6 }}>
+                                We built Digital Campus to change that. Today it powers thousands of student records across GPCET and RECW, and we&apos;ve since expanded into full-stack web development, mobile apps, AI systems, and cloud infrastructure for clients across multiple industries.
+                            </p>
+                            <Link href="/contact" className="inline-flex items-center gap-2 font-bold text-sm" style={{ color: "var(--brand)" }}>
+                                Work with us →
+                            </Link>
+                        </motion.div>
+
+                        {/* Logo card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+                            className="relative rounded-[32px] overflow-hidden flex items-center justify-center"
+                            style={{ background: "var(--background)", border: "1px solid var(--border)", minHeight: "320px" }}
                         >
-                            We are a technology partner dedicated to building reliable and scalable software systems that accelerate growth and improve operational efficiency across India.
-                        </motion.p>
+                            <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "#b05d41", filter: "blur(100px)", opacity: 0.12 }} />
+                            <div className="relative z-10 p-12 text-center space-y-4">
+                                <div className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                                    <Image src="/rmjit-logo.png" alt="RMJ IT" width={48} height={48} className="object-contain" />
+                                </div>
+                                <p className="font-bold text-lg tracking-tight" style={{ color: "var(--foreground)" }}>RMJ IT Solutions</p>
+                                <p className="text-xs font-mono uppercase tracking-widest" style={{ color: "var(--foreground)", opacity: 0.35 }}>Kurnool, Andhra Pradesh</p>
+                                <div className="flex items-center justify-center gap-2 pt-2">
+                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                    <span className="text-xs font-bold" style={{ color: "var(--foreground)", opacity: 0.5 }}>Active & Expanding</span>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* Visual Storytelling Section */}
-            <section className="bg-background py-10 relative">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
-                        className="relative w-full aspect-[21/9] rounded-[40px] md:rounded-[4rem] bg-surface border border-border/50 overflow-hidden group flex items-center justify-center p-10 hover:border-brand/30 transition-colors duration-1000"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                        <div className="relative z-10 w-[50%] h-full flex items-center justify-center pointer-events-none">
-                            <Image
-                                src="/rmjit-logo.png"
-                                alt="RMJ IT SOLUTIONS Excellence"
-                                fill
-                                className="object-contain opacity-50 dark:invert group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
-                            />
-                        </div>
-                    </motion.div>
+            {/* ── TIMELINE ── */}
+            <section className="container mx-auto px-4 md:px-12 py-24">
+                <div className="text-center mb-16">
+                    <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>// MILESTONES</span>
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>How we got here</h2>
                 </div>
-            </section>
 
-            {/* Core Values / Mission & Vision */}
-            <section className="bg-surface py-40 border-y border-border/50 relative overflow-hidden mt-10">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.02] dark:from-white/[0.03] to-transparent pointer-events-none" />
+                <div className="relative max-w-3xl mx-auto">
+                    {/* Vertical line */}
+                    <div className="absolute left-[18px] top-0 bottom-0 w-px" style={{ background: "var(--border)" }} />
 
-                <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-                    <div className="flex flex-col space-y-32">
-
-                        {/* Mission Block - Left Aligned */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div className="space-y-12 pl-12">
+                        {timeline.map((item, i) => (
                             <motion.div
-                                initial={{ opacity: 0, x: -40 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8 }}
-                                className="space-y-10"
+                                key={item.year}
+                                initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                                className="relative"
                             >
-                                <div className="space-y-6">
-                                    <span className="text-[11px] uppercase tracking-[0.4em] font-black text-foreground/30 font-mono">
-                                        {"// CORE OBJECTIVE"}
-                                    </span>
-                                    <h2 className="text-6xl md:text-8xl font-display font-semibold text-foreground tracking-tighter leading-[0.85]">
-                                        Our <span className="text-foreground/30 italic">Mission.</span>
-                                    </h2>
+                                {/* Dot */}
+                                <div className="absolute -left-[34px] top-1 w-4 h-4 rounded-full border-2 flex items-center justify-center"
+                                    style={{ background: "var(--background)", borderColor: "var(--brand)" }}>
+                                    <div className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--brand)" }} />
                                 </div>
-                                <p className="text-2xl md:text-3xl text-foreground/50 font-medium leading-relaxed max-w-xl">
-                                    To architect innovative IT ecosystems that synchronize organizational intelligence with digital performance, driving absolute structural transformation.
-                                </p>
-                                <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.3em] text-brand">
-                                    <Target size={16} />
-                                    PRECISION DRIVEN DELIVERY
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1 }}
-                                className="relative aspect-square lg:aspect-video rounded-[40px] bg-background border border-border/50 overflow-hidden group hover:border-brand/30 transition-colors duration-700"
-                            >
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-3/4 h-3/4 border border-border/50 rounded-full animate-[spin_20s_linear_infinite] p-8 group-hover:border-brand/20 transition-colors duration-700">
-                                        <div className="w-full h-full border border-border/30 rounded-full animate-[ping_4s_linear_infinite] opacity-20 group-hover:border-brand/50 transition-colors duration-700" />
-                                    </div>
-                                    <Target size={80} className="absolute text-foreground/10 group-hover:text-brand/50 group-hover:scale-110 transition-all duration-700" />
-                                </div>
-                            </motion.div>
-                        </div>
-
-                        {/* Vision Block - Right Aligned (Reversed) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                            <motion.div
-                                initial={{ opacity: 0, order: 1 }}
-                                whileInView={{ opacity: 1, order: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1 }}
-                                className="lg:order-2 space-y-10"
-                            >
-                                <div className="space-y-6">
-                                    <span className="text-[11px] uppercase tracking-[0.4em] font-black text-foreground/30 font-mono">
-                                        {"// FUTURE HORIZON"}
-                                    </span>
-                                    <h2 className="text-6xl md:text-8xl font-display font-semibold text-foreground tracking-tighter leading-[0.85]">
-                                        Our <span className="text-foreground/30 italic">Vision.</span>
-                                    </h2>
-                                </div>
-                                <p className="text-2xl md:text-3xl text-foreground/50 font-medium leading-relaxed max-w-xl">
-                                    To redefine the global benchmark for institutional engineering, building a future where digital infrastructure operates at the speed of human thought.
-                                </p>
-                                <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.3em] text-brand">
-                                    <Flag size={16} />
-                                    BEYOND TECHNICAL BOUNDARIES
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, x: -40, order: 2 }}
-                                whileInView={{ opacity: 1, x: 0, order: 2 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8 }}
-                                className="lg:order-1 relative aspect-square lg:aspect-video rounded-[40px] bg-background border border-border/50 overflow-hidden group hover:border-brand/30 transition-colors duration-700"
-                            >
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 blur-[100px] rounded-full group-hover:scale-150 transition-transform duration-1000" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="flex flex-col items-center gap-8">
-                                        <div className="flex gap-4">
-                                            {[1, 2, 3].map((i) => (
-                                                <div key={i} className="w-1.5 h-16 bg-foreground/20 rounded-full animate-pulse group-hover:bg-brand/50 transition-colors duration-700" style={{ animationDelay: `${i * 0.2}s` }} />
-                                            ))}
-                                        </div>
-                                        <Flag size={80} className="text-foreground/10 group-hover:text-brand/50 transition-colors duration-700" />
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* Why Us */}
-            <section className="bg-background py-40 px-6 md:px-12 lg:px-24">
-                <div className="max-w-[1440px] mx-auto">
-                    <div className="mb-24 md:text-center max-w-4xl mx-auto space-y-8">
-                        <span className="text-[11px] uppercase tracking-[0.4em] font-black text-foreground/30 font-mono">
-                            {"// THE RMJ ADVANTAGE"}
-                        </span>
-                        <h2 className="text-[clamp(3.5rem,6vw,5rem)] font-display font-semibold text-foreground leading-[0.95] tracking-tighter">
-                            Designed for scale. Built for impact.
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { title: "Expert Team", desc: "Our developers stay updated with industry trends to deliver high-performance systems.", icon: Users },
-                            { title: "Custom Solutions", desc: "Every architecture is specifically tailored to organizational needs and goals.", icon: Cpu },
-                            { title: "Results Driven", desc: "We focus heavily on measurable ROI and tangible business improvements.", icon: TrendingUp },
-                        ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="group p-12 rounded-[40px] bg-surface border border-border/50 hover:border-brand/30 transition-all duration-500 overflow-hidden relative"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <div className="relative z-10 w-16 h-16 bg-background rounded-2xl flex items-center justify-center text-foreground/50 border border-border/50 mb-8 group-hover:bg-brand/10 group-hover:text-brand group-hover:border-brand/30 transition-colors duration-500">
-                                    <item.icon size={28} />
-                                </div>
-                                <h3 className="relative z-10 text-3xl font-display font-semibold text-foreground mb-4 tracking-tight">{item.title}</h3>
-                                <p className="relative z-10 text-lg text-foreground/50 font-medium leading-relaxed">{item.desc}</p>
+                                <span className="text-[10px] font-black uppercase tracking-[0.5em] font-mono mb-2 block" style={{ color: "var(--brand)", opacity: 0.8 }}>{item.year}</span>
+                                <h3 className="text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>{item.title}</h3>
+                                <p className="text-base leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.55 }}>{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
-        </div>
+
+            {/* ── VALUES ── */}
+            <section className="w-full py-24" style={{ background: "var(--surface)" }}>
+                <div className="container mx-auto px-4 md:px-12">
+                    <div className="text-center mb-16">
+                        <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>// WHAT WE STAND FOR</span>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>Our core values</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                        {values.map((v, i) => (
+                            <motion.div
+                                key={v.title}
+                                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                                className="group p-8 rounded-[24px] relative overflow-hidden transition-all duration-500 hover:scale-[1.02]"
+                                style={{ background: "var(--background)", border: "1px solid var(--border)" }}
+                            >
+                                <div className="absolute inset-0 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                    style={{ background: "radial-gradient(circle at top left, rgba(176,93,65,0.07), transparent 70%)" }} />
+                                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 relative z-10"
+                                    style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--brand)" }}>
+                                    {v.icon}
+                                </div>
+                                <h3 className="text-lg font-bold mb-2 relative z-10" style={{ color: "var(--foreground)" }}>{v.title}</h3>
+                                <p className="text-sm leading-relaxed relative z-10" style={{ color: "var(--foreground)", opacity: 0.55 }}>{v.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ── TEAM ── */}
+            <section className="container mx-auto px-4 md:px-12 py-24">
+                <div className="text-center mb-16">
+                    <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-4" style={{ color: "var(--foreground)", opacity: 0.3 }}>// THE TEAM</span>
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>The people behind it</h2>
+                </div>
+                <div className="flex flex-wrap justify-center gap-6">
+                    {team.map((member, i) => (
+                        <motion.div
+                            key={member.name}
+                            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                            className="group flex flex-col items-center gap-3 p-8 rounded-[20px] w-52 hover:scale-[1.04] transition-transform duration-300"
+                            style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+                        >
+                            <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-bold"
+                                style={{ background: member.color }}>
+                                {member.initials}
+                            </div>
+                            <div className="text-center">
+                                <p className="font-bold text-sm" style={{ color: "var(--foreground)" }}>{member.name}</p>
+                                <p className="text-[11px] font-mono uppercase tracking-wider mt-0.5" style={{ color: "var(--foreground)", opacity: 0.4 }}>{member.role}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            {/* ── CTA ── */}
+            <section className="container mx-auto px-4 md:px-12 pb-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                    className="rounded-[36px] p-14 md:p-20 text-center relative overflow-hidden"
+                    style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+                >
+                    <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "#b05d41", filter: "blur(150px)", opacity: 0.12 }} />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: "#3150aa", filter: "blur(130px)", opacity: 0.1 }} />
+                    <div className="relative z-10">
+                        <span className="text-[10px] font-black uppercase tracking-[0.55em] font-mono block mb-6" style={{ color: "var(--foreground)", opacity: 0.3 }}>// LET&apos;S BUILD TOGETHER</span>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6" style={{ color: "var(--foreground)", letterSpacing: "-1.5px" }}>
+                            Ready to transform<br />your organization?
+                        </h2>
+                        <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: "var(--foreground)", opacity: 0.5 }}>
+                            Whether you&apos;re a college looking to go digital or an enterprise needing custom software — let&apos;s talk.
+                        </p>
+                        <div className="flex flex-wrap items-center justify-center gap-5">
+                            <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-block">Get in Touch</Link>
+                            <Link href="/products" className="flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all"
+                                style={{ color: "var(--foreground)", opacity: 0.6 }}>
+                                Explore Products <span>→</span>
+                            </Link>
+                        </div>
+                    </div>
+                </motion.div>
+            </section>
+
+        </main>
     );
 }
