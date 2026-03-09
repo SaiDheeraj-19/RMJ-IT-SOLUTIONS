@@ -137,7 +137,7 @@ export default function DigitalMarketingPage() {
 
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
                         className="flex flex-wrap items-center gap-5">
-                        <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
+                        <Link href="/contact?service=Digital%20Marketing&type=other" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                             Scale My Brand <ArrowRight size={16} />
                         </Link>
                     </motion.div>

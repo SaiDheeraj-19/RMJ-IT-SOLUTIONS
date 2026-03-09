@@ -134,7 +134,7 @@ export default function AiMlPage() {
 
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
                         className="flex flex-wrap items-center gap-5">
-                        <Link href="/contact" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
+                        <Link href="/contact?service=AI%20%26%20Machine%20Learning%20Solutions&type=Custom%20Software" className="btn-glow px-10 py-4 text-base font-bold inline-flex items-center gap-3">
                             Explore AI Solutions <ArrowRight size={16} />
                         </Link>
                     </motion.div>

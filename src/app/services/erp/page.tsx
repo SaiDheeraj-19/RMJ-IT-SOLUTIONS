@@ -74,7 +74,7 @@ export default function ERPPage() {
                             We bridge the gap between Boardroom strategy and technical execution. We replace fragmented legacy tools with unified, deterministic digital infrastructure.
                         </p>
                         <Link
-                            href="/contact"
+                            href="/contact?service=ERP%20Solutions&type=ERP%20Solutions"
                             className="group inline-flex items-center gap-4 px-12 py-6 bg-surface0 text-foreground text-[11px] uppercase tracking-[0.4em] font-black rounded-full hover:bg-brand transition-all duration-500 shadow-2xl shadow-slate-900/10"
                         >
                             Initiate Structural Audit

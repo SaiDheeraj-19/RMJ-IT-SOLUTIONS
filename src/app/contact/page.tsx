@@ -1,19 +1,31 @@
 "use client";
 
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { Mail, Phone, ArrowRight, Building2, MessageSquare } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, ArrowRight, Building2, MessageSquare, CheckCircle2 } from "lucide-react";
 import { sendContactEmail } from "@/app/actions/contact";
 
-export default function ContactPage() {
+function ContactForm() {
+    const searchParams = useSearchParams();
+    const prefillService = searchParams.get("service") || "";
+    const prefillType = searchParams.get("type") || "";
+    const prefillMessage = searchParams.get("message") || "";
+
     const [isPending, setIsPending] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState("");
-    const [projectType, setProjectType] = useState("");
+    const [projectType, setProjectType] = useState(prefillType);
+    const [requirements, setRequirements] = useState(prefillMessage);
+
+    useEffect(() => {
+        if (prefillType) setProjectType(prefillType);
+        if (prefillMessage) setRequirements(prefillMessage);
+    }, [prefillType, prefillMessage]);
 
     return (
         <div className="pt-32 pb-20 selection:bg-brand/10 bg-surface min-h-screen">
-            {/* Minimal High-End Hero */}
+            {/* Hero */}
             <section className="pb-20 pt-10 px-10 md:px-20">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
                     <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto mb-20">
@@ -43,7 +55,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        {/* Interactive Form */}
+                        {/* Form */}
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -51,6 +63,21 @@ export default function ContactPage() {
                             className="lg:col-span-8 p-10 md:p-16 rounded-[3rem] border shadow-2xl"
                             style={{ background: 'var(--background)', borderColor: 'var(--border)' }}
                         >
+                            {/* Pre-fill banner */}
+                            {prefillService && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -8 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="flex items-center gap-3 px-6 py-4 rounded-2xl mb-8"
+                                    style={{ background: 'var(--surface)', borderLeft: '4px solid var(--brand)', borderTop: '1px solid var(--border)', borderRight: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
+                                >
+                                    <CheckCircle2 size={18} className="text-brand flex-shrink-0" />
+                                    <p className="text-sm font-bold" style={{ color: 'var(--foreground)', opacity: 0.8 }}>
+                                        Enquiring about: <span className="text-brand">{prefillService}</span>
+                                    </p>
+                                </motion.div>
+                            )}
+
                             {isSuccess ? (
                                 <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
                                     <div className="w-20 h-20 bg-brand/10 text-brand rounded-[2rem] flex items-center justify-center mb-4">
@@ -62,31 +89,35 @@ export default function ContactPage() {
                                     </p>
                                     <button
                                         onClick={() => setIsSuccess(false)}
-                                        className="mt-8 px-8 py-4 bg-surface border rounded-2xl text-sm font-bold uppercase tracking-widest text-foreground hover:bg-white hover:text-brand transition-all"
+                                        className="mt-8 px-8 py-4 bg-surface border rounded-2xl text-sm font-bold uppercase tracking-widest text-foreground hover:text-brand transition-all"
                                         style={{ borderColor: 'var(--border)' }}
                                     >
                                         Send Another
                                     </button>
                                 </div>
                             ) : (
-                                <form action={async (formData) => {
-                                    setIsPending(true);
-                                    setError("");
-                                    try {
-                                        const res = await sendContactEmail(formData);
-                                        if (res?.error) setError(res.error);
-                                        else setIsSuccess(true);
-                                    } catch (err) {
-                                        setError("Something went wrong. Please try again.");
-                                    } finally {
-                                        setIsPending(false);
-                                    }
-                                }} className="space-y-10">
+                                <form
+                                    action={async (formData) => {
+                                        setIsPending(true);
+                                        setError("");
+                                        try {
+                                            const res = await sendContactEmail(formData);
+                                            if (res?.error) setError(res.error);
+                                            else setIsSuccess(true);
+                                        } catch {
+                                            setError("Something went wrong. Please try again.");
+                                        } finally {
+                                            setIsPending(false);
+                                        }
+                                    }}
+                                    className="space-y-10"
+                                >
                                     {error && (
                                         <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-500 text-sm font-bold text-center">
                                             {error}
                                         </div>
                                     )}
+
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                         <div className="space-y-3">
                                             <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Full Name</label>
@@ -111,6 +142,7 @@ export default function ContactPage() {
                                             />
                                         </div>
                                     </div>
+
                                     <div className="space-y-3">
                                         <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Type</label>
                                         <div className="relative">
@@ -122,10 +154,14 @@ export default function ContactPage() {
                                                 style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
                                             >
                                                 <option value="">Select a project type...</option>
+                                                <option value="iOS Application Development">iOS Application Development</option>
+                                                <option value="Android Application Development">Android Application Development</option>
                                                 <option value="Web Application Development">Web Application Development</option>
                                                 <option value="Mobile Application">Mobile Application</option>
                                                 <option value="Custom Software">Custom Software</option>
                                                 <option value="Digital Campus">Digital Campus</option>
+                                                <option value="Security & Performance Optimization">Security &amp; Performance Optimization</option>
+                                                <option value="ERP Solutions">ERP Solutions</option>
                                                 <option value="other">Other (describe below)...</option>
                                             </select>
                                             <ArrowRight size={20} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-foreground/70 pointer-events-none" />
@@ -141,17 +177,21 @@ export default function ContactPage() {
                                             />
                                         )}
                                     </div>
+
                                     <div className="space-y-3">
                                         <label className="text-xs font-black uppercase tracking-widest text-foreground/70 pl-4">Project Details</label>
                                         <textarea
                                             rows={5}
                                             name="requirements"
                                             required
+                                            value={requirements}
+                                            onChange={(e) => setRequirements(e.target.value)}
                                             placeholder="Tell us about your goals, timeline, and requirements..."
                                             className="w-full border rounded-3xl px-6 py-6 font-bold outline-none transition-all resize-none"
                                             style={{ background: 'var(--surface)', color: 'var(--foreground)', borderColor: 'var(--border)' }}
                                         />
                                     </div>
+
                                     <button type="submit" disabled={isPending} className="w-full py-6 bg-brand text-foreground rounded-2xl font-black uppercase tracking-[0.2em] text-sm group relative overflow-hidden transition-all shadow-xl hover:shadow-brand/30 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed">
                                         <span className="relative z-10 flex items-center justify-center gap-4">
                                             {isPending ? "Sending..." : "Send Message"} {!isPending && <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />}
@@ -161,7 +201,7 @@ export default function ContactPage() {
                             )}
                         </motion.div>
 
-                        {/* Direct Contact Cards */}
+                        {/* Contact Cards */}
                         <motion.div
                             initial={{ opacity: 0, x: 40 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -193,7 +233,15 @@ export default function ContactPage() {
                         </motion.div>
                     </div>
                 </div>
-            </section >
-        </div >
+            </section>
+        </div>
+    );
+}
+
+export default function ContactPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-surface pt-32 flex items-center justify-center"><div className="w-8 h-8 border-2 border-brand border-t-transparent rounded-full animate-spin" /></div>}>
+            <ContactForm />
+        </Suspense>
     );
 }

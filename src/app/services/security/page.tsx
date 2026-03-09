@@ -74,7 +74,7 @@ export default function SecurityPage() {
                             A fast system is only useful if it&apos;s secure. We optimize your infrastructure for peak performance while building a fortress around your institutional data.
                         </p>
                         <Link
-                            href="/contact"
+                            href="/contact?service=Security+%26+Performance+Optimization&type=Security+%26+Performance+Optimization"
                             className="group inline-flex items-center gap-3 px-10 py-5 bg-brand text-white text-xs uppercase tracking-[0.2em] font-bold rounded-full hover:bg-[#1a1a1a] transition-all duration-300 shadow-xl"
                         >
                             Get Security Audit
