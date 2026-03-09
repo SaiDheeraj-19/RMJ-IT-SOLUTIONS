@@ -228,19 +228,20 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* ── Massive visible wordmark ── */}
-                <div className="relative my-2 select-none overflow-hidden">
+                {/* ── Massive wordmark ── */}
+                <div className="relative select-none overflow-hidden border-t" style={{ borderColor: "var(--border)" }}>
                     <motion.h2
                         initial={{ opacity: 0, y: 60 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                        className="text-[clamp(5rem,18vw,24rem)] font-black tracking-tighter leading-none text-center py-4"
+                        className="text-[clamp(5rem,18vw,24rem)] font-black tracking-tighter leading-none text-center py-8"
                         style={{
                             fontFamily: "var(--font-display)",
-                            background: "linear-gradient(135deg, rgba(176,93,65,0.55) 0%, rgba(245,151,104,0.38) 50%, rgba(176,93,65,0.2) 100%)",
+                            background: "linear-gradient(135deg, #b05d41 0%, #f59768 40%, #e8855a 70%, #b05d41 100%)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
+                            opacity: 0.7,
                         }}
                     >
                         RMJ IT
@@ -248,48 +249,59 @@ export default function Footer() {
                 </div>
 
                 {/* ── Bottom bar ── */}
-                <div
-                    className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6"
-                >
-                    {/* Copyright */}
-                    <p
-                        className="text-[10px] font-bold uppercase tracking-[0.15em] text-center md:text-left"
-                        style={{ color: "var(--foreground)", opacity: 0.28 }}
-                    >
-                        © 2026 RMJ IT Solutions Pvt. Ltd. — All rights reserved.
-                    </p>
+                <div className="border-t pt-6 pb-2" style={{ borderColor: "var(--border)" }}>
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-5">
 
-                    {/* Tagline */}
-                    <p
-                        className="text-[10px] font-black uppercase tracking-[0.3em] font-mono hidden md:block"
-                        style={{ color: "var(--foreground)", opacity: 0.18 }}
-                    >
-                        {"// Engineering Digital Infrastructure That Scales"}
-                    </p>
+                        {/* Left — copyright + location */}
+                        <div className="flex flex-col gap-1 text-center md:text-left">
+                            <p className="text-[11px] font-bold tracking-widest uppercase"
+                                style={{ color: "var(--foreground)", opacity: 0.55 }}>
+                                © 2026 RMJ IT Solutions Pvt. Ltd.
+                            </p>
+                            <p className="text-[10px] font-semibold tracking-wider"
+                                style={{ color: "var(--foreground)", opacity: 0.3 }}>
+                                Kurnool, Andhra Pradesh — India
+                            </p>
+                        </div>
 
-                    {/* Socials */}
-                    <div className="flex items-center gap-3">
-                        {socials.map((s, i) => (
-                            <Link
-                                key={i}
-                                href={s.href}
-                                aria-label={s.label}
-                                className="w-9 h-9 rounded-xl border flex items-center justify-center transition-all duration-300 hover:border-brand hover:text-brand hover:scale-110"
-                                style={{
-                                    borderColor: "var(--border)",
-                                    color: "var(--foreground)",
-                                    opacity: 0.45,
-                                }}
-                                onMouseEnter={(e) => {
-                                    (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-                                }}
-                                onMouseLeave={(e) => {
-                                    (e.currentTarget as HTMLAnchorElement).style.opacity = "0.45";
-                                }}
-                            >
-                                <s.icon size={15} />
-                            </Link>
-                        ))}
+                        {/* Center — tagline */}
+                        <div className="flex items-center gap-3 hidden md:flex">
+                            <span className="w-6 h-px" style={{ background: "var(--brand)", opacity: 0.5 }} />
+                            <p className="text-[10px] font-black uppercase tracking-[0.35em] font-mono"
+                                style={{ color: "var(--brand)", opacity: 0.7 }}>
+                                Engineering Digital Infrastructure That Scales
+                            </p>
+                            <span className="w-6 h-px" style={{ background: "var(--brand)", opacity: 0.5 }} />
+                        </div>
+
+                        {/* Right — socials */}
+                        <div className="flex items-center gap-2">
+                            {socials.map((s, i) => (
+                                <Link
+                                    key={i}
+                                    href={s.href}
+                                    aria-label={s.label}
+                                    className="w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 hover:border-brand hover:text-brand hover:scale-110"
+                                    style={{
+                                        borderColor: "var(--border)",
+                                        color: "var(--foreground)",
+                                        opacity: 0.5,
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
+                                        (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--brand)";
+                                        (e.currentTarget as HTMLAnchorElement).style.color = "var(--brand)";
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        (e.currentTarget as HTMLAnchorElement).style.opacity = "0.5";
+                                        (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--border)";
+                                        (e.currentTarget as HTMLAnchorElement).style.color = "var(--foreground)";
+                                    }}
+                                >
+                                    <s.icon size={14} />
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
