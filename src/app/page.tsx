@@ -320,7 +320,7 @@ export default function Home() {
       {/* ── WHY CHOOSE US ── */}
       <section className="relative z-10 container mx-auto px-4 md:px-12 pt-40 pb-20 fade-up">
         <div className="text-center mb-20">
-          <span className="text-[11px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--foreground)', opacity: 0.3 }}>{"// THE RMJ ADVANTAGE"}</span>
+          <span className="text-[13px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--brand)' }}>THE RMJ ADVANTAGE</span>
           <h2 className="text-4xl md:text-[60px] font-bold tracking-tight mb-6" style={{ color: 'var(--foreground)' }}>Why choose us?</h2>
           <p className="text-xl max-w-2xl mx-auto" style={{ color: 'var(--foreground)', opacity: 0.5 }}>We combine expertise, customization, and results-driven strategies to give you the best value.</p>
         </div>

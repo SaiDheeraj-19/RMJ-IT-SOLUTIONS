@@ -128,8 +128,8 @@ export default function Navbar() {
                                             style={{ background: "var(--background)", borderColor: "var(--border)" }}
                                         >
                                             <div className="p-3">
-                                                <p className="text-[9px] uppercase tracking-[0.5em] font-black font-mono px-3 py-2 mb-1"
-                                                    style={{ color: "var(--foreground)", opacity: 0.35 }}>{`// Our Services`}</p>
+                                                <p className="text-[11px] uppercase tracking-[0.4em] font-black font-mono px-3 py-2 mb-1"
+                                                    style={{ color: "var(--brand)" }}>OUR SERVICES</p>
                                                 <div className="grid grid-cols-2 gap-1">
                                                     {serviceItems.map((item) => (
                                                         <Link key={item.name} href={item.href}
