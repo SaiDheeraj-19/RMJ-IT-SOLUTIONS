@@ -82,7 +82,7 @@ export default function Navbar() {
 
             {/* Desktop Top-Left Logo */}
             <Link href="/" className="hidden md:flex items-center gap-2.5 z-[70] pointer-events-auto">
-                <Image src="/rmjit.png" alt="RMJ IT Solutions" width={88} height={88} className="object-contain" />
+                <Image src="/rmjit.png" alt="RMJ IT Solutions" width={120} height={120} className="object-contain" />
                 <span className="text-lg font-black tracking-tight" style={{ color: 'var(--foreground)', opacity: 0.95 }}>RMJ IT</span>
             </Link>
 
