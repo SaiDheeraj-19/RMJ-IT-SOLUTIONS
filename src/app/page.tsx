@@ -267,63 +267,72 @@ export default function Home() {
           <div className="relative z-20 flex-1 w-full max-w-[580px] min-h-[460px] flex items-center justify-center">
             <div className="grid grid-cols-3 gap-4" style={{ transform: 'rotate(-5deg) scale(1.05)' }}>
 
-              {/* Row 1: GSAP | Vercel | Figma */}
+              {/* Row 1: React | Next.js | Node.js */}
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(40px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(136,211,100,0.12), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/gsap.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="GSAP" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(97,218,251,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" className="w-10 h-10 relative z-10" alt="React" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>React</span>
                 </div>
               </div>
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(24px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(147,51,234,0.15), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/vercel.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="Vercel" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%)' }} />
+                  <img src="https://cdn.simpleicons.org/nextdotjs/ffffff" className="w-10 h-10 relative z-10" alt="Next.js" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Next.js</span>
                 </div>
               </div>
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(-40px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(249,115,22,0.12), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/figma.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="Figma" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(104,160,99,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" className="w-10 h-10 relative z-10" alt="Node.js" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Node.js</span>
                 </div>
               </div>
 
-              {/* Row 2: Notion | React | Hostinger */}
+              {/* Row 2: Python | Docker | TensorFlow */}
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(16px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/notion.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="Notion" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(55,118,171,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" className="w-10 h-10 relative z-10" alt="Python" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Python</span>
                 </div>
               </div>
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(-16px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(6,182,212,0.15), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/react.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="React" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(25,150,210,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" className="w-10 h-10 relative z-10" alt="Docker" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Docker</span>
                 </div>
               </div>
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(8px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(176,93,65,0.15), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/hostinger.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="Hostinger" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(255,110,64,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" className="w-10 h-10 relative z-10" alt="TensorFlow" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>TensorFlow</span>
                 </div>
               </div>
 
-              {/* Row 3: AWS | Blender | Hotjar */}
+              {/* Row 3: AWS | PostgreSQL | Figma */}
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(52px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
                   <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(249,168,37,0.12), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/aws.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="AWS" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" className="w-10 h-10 relative z-10" alt="AWS" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>AWS</span>
                 </div>
               </div>
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(48px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(234,88,12,0.15), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/blender.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="Blender" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(51,103,145,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-10 h-10 relative z-10" alt="PostgreSQL" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>PostgreSQL</span>
                 </div>
               </div>
               <div className="relative h-28 w-28 group/card" style={{ transform: 'translateY(-32px)' }}>
-                <div className="relative h-full w-full rounded-2xl border flex items-center justify-center transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(255,70,70,0.1), transparent 70%)' }} />
-                  <img src="https://www.refractweb.com/techs/hotjar.svg" className="w-12 h-12 relative z-10 tech-icon-white" alt="Hotjar" />
+                <div className="relative h-full w-full rounded-2xl border flex flex-col items-center justify-center gap-2 transition-transform duration-500 hover:scale-105" style={{ background: 'var(--surface-soft)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(circle at center, rgba(162,89,255,0.15), transparent 70%)' }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" className="w-10 h-10 relative z-10" alt="Figma" />
+                  <span className="text-[9px] font-bold opacity-50 relative z-10" style={{ color: 'var(--foreground)' }}>Figma</span>
                 </div>
               </div>
 
