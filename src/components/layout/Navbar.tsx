@@ -82,8 +82,8 @@ export default function Navbar() {
 
             {/* Desktop Top-Left Logo */}
             <Link href="/" className="hidden md:flex items-center gap-2.5 z-[70] pointer-events-auto">
-                <Image src="/rmjit.png" alt="RMJ IT Solutions" width={72} height={72} className="object-contain" />
-                <span className="text-base font-black tracking-tight" style={{ color: 'var(--foreground)', opacity: 0.95 }}>RMJ IT</span>
+                <Image src="/rmjit.png" alt="RMJ IT Solutions" width={88} height={88} className="object-contain" />
+                <span className="text-lg font-black tracking-tight" style={{ color: 'var(--foreground)', opacity: 0.95 }}>RMJ IT</span>
             </Link>
 
             {/* Mobile Logo */}
@@ -98,7 +98,7 @@ export default function Navbar() {
 
                 <Link href="/" className="flex-shrink-0">
                     <div className="flex items-center gap-2 px-5 h-9 rounded-full rmjit-pill cursor-pointer active:scale-95 transition-transform">
-                        <span className="leading-none font-black tracking-tight text-white text-[16px]">RMJ IT</span>
+                        <span className="leading-none font-black tracking-tight text-white text-[18px]">RMJ IT</span>
                     </div>
                 </Link>
 

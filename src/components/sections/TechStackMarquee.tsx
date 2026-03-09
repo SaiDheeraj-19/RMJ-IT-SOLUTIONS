@@ -51,8 +51,8 @@ export default function TechStackMarquee() {
 
             {/* Label */}
             <p
-                className="text-center text-[9px] font-black uppercase tracking-[0.6em] mb-7 font-mono"
-                style={{ color: "var(--foreground)", opacity: 0.2 }}
+                className="text-center text-[11px] font-black uppercase tracking-[0.6em] mb-7 font-mono"
+                style={{ color: "var(--foreground)", opacity: 0.6 }}
             >
                 Technologies &amp; Tools We Work With
             </p>

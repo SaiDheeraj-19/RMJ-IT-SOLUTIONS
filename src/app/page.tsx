@@ -70,7 +70,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-text-line leading-[1.6] max-w-md font-normal" style={{ color: 'var(--foreground)', opacity: 0.55, fontSize: 'clamp(1rem, 1.5vw, 1.15rem)' }}>
-            A technology partner building reliable, scalable systems — from Campus ERP to custom web applications. Based in Kurnool, Andhra Pradesh.
+            A technology partner building reliable, scalable systems from Campus ERP to custom web applications. Based in Kurnool, Andhra Pradesh.
           </p>
 
           <div className="flex items-center gap-5 pt-2 hero-text-line">
@@ -96,8 +96,8 @@ export default function Home() {
       {/* ── TRUSTED BY & STAKEHOLDERS ── */}
       <section className="relative z-10 w-full py-8">
         <div className="container mx-auto px-4 md:px-12">
-          <p className="text-center text-[9px] font-black uppercase tracking-[0.7em] mb-6 font-mono"
-            style={{ color: 'var(--foreground)', opacity: 0.2 }}>
+          <p className="text-center text-[11px] font-black uppercase tracking-[0.6em] mb-6 font-mono"
+            style={{ color: 'var(--foreground)', opacity: 0.6 }}>
             Trusted By &amp; Stakeholders
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10">
@@ -125,7 +125,7 @@ export default function Home() {
       {/* ── CORE CAPABILITIES ── */}
       <section id="capabilities" className="relative z-10 container mx-auto px-4 md:px-12 pt-48 pb-20">
         <div className="text-center mb-20 max-w-5xl mx-auto fade-up">
-          <span className="text-[11px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--foreground)', opacity: 0.3 }}>{"// OUR SERVICES"}</span>
+          <span className="text-[13px] uppercase tracking-[0.4em] font-black font-mono mb-6 block" style={{ color: 'var(--brand)' }}>OUR SERVICES</span>
           <h2 className="text-5xl md:text-[72px] font-bold tracking-tight mb-8 leading-[1.05]" style={{ color: 'var(--foreground)' }}>The full spectrum of<br />core capabilities</h2>
           <p className="text-xl text-center leading-[1.35] mb-14 font-medium uppercase tracking-tight max-w-3xl mx-auto" style={{ color: 'var(--foreground)', opacity: 0.5 }}>
             We replace the need for multiple vendors. From brand strategy to custom software, we build the entire ecosystem your business runs on.
