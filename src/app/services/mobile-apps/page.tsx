@@ -228,7 +228,7 @@ export default function MobileAppsPage() {
                 <div className="max-w-[1440px] mx-auto">
                     <div className="mb-16">
                         <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Platform-Agnostic Capabilities`}</p>
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-1.5px" }}>
+                        <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-1px" }}>
                             What we bring to<br />both platforms.
                         </h2>
                     </div>
@@ -257,7 +257,7 @@ export default function MobileAppsPage() {
             <section className="px-6 md:px-12 lg:px-24 py-24" style={{ background: "var(--background)" }}>
                 <div className="max-w-[1440px] mx-auto">
                     <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Our Delivery Process`}</p>
-                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-20" style={{ letterSpacing: "-1.5px" }}>
+                    <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground mb-14" style={{ letterSpacing: "-1px" }}>
                         Concept to App Store<br />in structured sprints.
                     </h2>
                     <div className="relative">
@@ -278,7 +278,7 @@ export default function MobileAppsPage() {
                                         <div className="w-3 h-3 rounded-full bg-brand" />
                                     </div>
                                     <div className="col-span-2 md:col-span-1">
-                                        <span className="text-4xl font-black tabular-nums text-foreground/10">{step.num}</span>
+                                        <span className="text-3xl font-black tabular-nums text-foreground/10">{step.num}</span>
                                     </div>
                                     <div className="col-span-10 md:col-span-4">
                                         <h3 className="text-xl font-black tracking-tight text-foreground">{step.title}</h3>
@@ -312,7 +312,7 @@ export default function MobileAppsPage() {
                         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
                             <div>
                                 <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// Ready to Build`}</p>
-                                <h2 className="text-4xl md:text-6xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-2px" }}>
+                                <h2 className="text-3xl md:text-4xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-1px" }}>
                                     Let&apos;s ship your<br />mobile app.
                                 </h2>
                             </div>

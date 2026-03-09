@@ -172,7 +172,7 @@ export default function SecurityPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.08 }}
                                 className="text-center md:text-left">
-                                <div className="text-3xl md:text-4xl font-black tracking-tight text-brand mb-1"
+                                <div className="text-2xl md:text-3xl font-black tracking-tight text-brand mb-1"
                                     style={{ letterSpacing: "-1px" }}>{s.value}</div>
                                 <div className="text-xs font-black uppercase tracking-widest text-foreground mb-0.5">{s.label}</div>
                                 <div className="text-xs text-foreground/40 font-medium">{s.sub}</div>
@@ -188,7 +188,7 @@ export default function SecurityPage() {
                 <div className="max-w-[1440px] mx-auto">
                     <div className="mb-16">
                         <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-4">{`// What We Harden`}</p>
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-1.5px" }}>
+                        <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" style={{ letterSpacing: "-1px" }}>
                             Zero-friction speed.<br />Zero-compromise security.
                         </h2>
                     </div>
@@ -234,7 +234,7 @@ export default function SecurityPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono text-brand mb-6">{`// Our Philosophy`}</p>
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-8"
+                            <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground mb-6"
                                 style={{ letterSpacing: "-1.5px" }}>
                                 Security and speed<br />are not a trade-off.
                             </h2>
@@ -279,7 +279,7 @@ export default function SecurityPage() {
                                         style={{ borderColor: "rgba(176,93,65,0.2)" }}>
                                         <div className="text-[10px] font-black uppercase tracking-[0.4em] font-mono mb-2"
                                             style={{ color: "rgba(176,93,65,0.6)" }}>{item.label}</div>
-                                        <div className="text-4xl font-black tracking-tight"
+                                        <div className="text-2xl md:text-3xl font-black tracking-tight"
                                             style={{ color: "var(--brand)", letterSpacing: "-1px" }}>{item.value}</div>
                                     </div>
                                 ))}
@@ -319,7 +319,7 @@ export default function SecurityPage() {
                             <div>
                                 <p className="text-[10px] uppercase tracking-[0.5em] font-black font-mono mb-4"
                                     style={{ color: "rgba(255,255,255,0.6)" }}>{`// Request an Audit`}</p>
-                                <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white"
+                                <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white"
                                     style={{ letterSpacing: "-2px" }}>
                                     Is your system<br />truly secure?
                                 </h2>
