@@ -4,7 +4,7 @@ import { ArrowLeft, Cookie, ShieldCheck, Settings, Info, Ban, FileText } from "l
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Cookie Policy | RMJ IT Solutions',
+    title: 'Cookie Policy | TechBro Solutions',
     description: 'Information about how we use cookies to improve your experience.',
 };
 
@@ -77,7 +77,7 @@ export default function CookiePolicyPage() {
                             </div>
                             <div className="prose prose-slate max-w-none text-foreground/70 leading-relaxed">
                                 <p>
-                                    We use cookies to distinguish you from other users of our website and to provide a browsing experience that is unique to you. Cookies are used by RMJ IT Solutions so that our website can remember what you have done whilst browsing our website, for instance, your log-in details and your preferences.
+                                    We use cookies to distinguish you from other users of our website and to provide a browsing experience that is unique to you. Cookies are used by TechBro Solutions so that our website can remember what you have done whilst browsing our website, for instance, your log-in details and your preferences.
                                 </p>
                             </div>
                         </div>
@@ -152,7 +152,7 @@ export default function CookiePolicyPage() {
                             </div>
                             <div className="prose prose-slate max-w-none text-foreground/70 leading-relaxed space-y-4">
                                 <p>
-                                    By using the RMJ IT Solutions website on a computer or mobile device, you agree to our Privacy and Cookies policy and consent to our use of cookies.
+                                    By using the TechBro Solutions website on a computer or mobile device, you agree to our Privacy and Cookies policy and consent to our use of cookies.
                                 </p>
                                 <p>
                                     However, most browsers allow you to refuse cookies. You may block our cookies by activating the setting on your browser that allows you to refuse the setting of all or some cookies. You can find out more about cookies and how to delete and control them on <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-brand underline hover:text-brand/80">www.aboutcookies.org</a> or click help in your browser menu.
@@ -165,9 +165,9 @@ export default function CookiePolicyPage() {
 
                         {/* Changes to Policy */}
                         <div id="policy-changes" className="scroll-mt-32">
-                            <h2 className="text-xl font-bold text-foreground mb-4">How RMJ IT Solutions can change the Cookie Policy</h2>
+                            <h2 className="text-xl font-bold text-foreground mb-4">How TechBro Solutions can change the Cookie Policy</h2>
                             <p className="text-foreground/70 leading-relaxed">
-                                RMJ IT Solutions may from time to time update this policy. The date of issue will be indicated by the date on the top of this policy. Changes in technology, legislation, and authorities’ guidance may require us to inform you of the activities we undertake where it affects your privacy rights. You should check this page occasionally to ensure you are familiar with any changes.
+                                TechBro Solutions may from time to time update this policy. The date of issue will be indicated by the date on the top of this policy. Changes in technology, legislation, and authorities’ guidance may require us to inform you of the activities we undertake where it affects your privacy rights. You should check this page occasionally to ensure you are familiar with any changes.
                             </p>
                         </div>
 

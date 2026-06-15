@@ -24,13 +24,13 @@ export default function ProblemSection() {
                     />
                     <div className="space-y-6 text-xl text-[#606060] leading-relaxed max-w-4xl">
                         <p>
-                            RMJ IT Solutions Pvt Ltd is a technology company focused on building reliable and scalable software systems for businesses and educational institutions.
+                            TechBro Solutions Pvt Ltd is a technology company focused on building reliable and scalable software systems for businesses and educational institutions.
                         </p>
                         <p>
                             Our mission is to provide innovative IT solutions that help organizations streamline operations, improve productivity, and achieve digital transformation.
                         </p>
                         <p>
-                            We work closely with our clients to understand their goals, challenges, and technical requirements, allowing us to design customized solutions that deliver measurable results. With a skilled team of developers and designers, RMJ IT Solutions combines modern technologies with industry best practices to build high-quality digital platforms.
+                            We work closely with our clients to understand their goals, challenges, and technical requirements, allowing us to design customized solutions that deliver measurable results. With a skilled team of developers and designers, TechBro Solutions combines modern technologies with industry best practices to build high-quality digital platforms.
                         </p>
                     </div>
                 </div>

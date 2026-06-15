@@ -4,8 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Security Disclosure Policy | RMJ IT Solutions',
-    description: 'Guidelines for reporting security vulnerabilities to RMJ IT Solutions.',
+    title: 'Security Disclosure Policy | TechBro Solutions',
+    description: 'Guidelines for reporting security vulnerabilities to TechBro Solutions.',
 };
 
 export default function SecurityDisclosurePage() {
@@ -31,10 +31,10 @@ export default function SecurityDisclosurePage() {
                     <div className="space-y-4">
                         <h2 className="text-2xl font-display font-bold text-foreground">Reporting Vulnerabilities</h2>
                         <p className="text-lg text-foreground/70 leading-relaxed">
-                            If you believe you have discovered a security vulnerability in an RMJ IT Solutions application or infrastructure, we ask that you report it to us as soon as possible. We will verify the issue and take steps to address it.
+                            If you believe you have discovered a security vulnerability in an TechBro Solutions application or infrastructure, we ask that you report it to us as soon as possible. We will verify the issue and take steps to address it.
                         </p>
                         <p className="text-lg text-foreground/70 leading-relaxed">
-                            Please email your findings to <a href="mailto:security@rmjit.com" className="text-brand font-bold hover:underline">security@rmjit.com</a>.
+                            Please email your findings to <a href="mailto:security@techbro.com" className="text-brand font-bold hover:underline">security@techbro.com</a>.
                         </p>
                     </div>
 
@@ -44,10 +44,10 @@ export default function SecurityDisclosurePage() {
                             We pledge not to pursue legal action against researchers who:
                         </p>
                         <ul className="list-disc pl-5 space-y-3 text-lg text-foreground/70 leading-relaxed marker:text-brand">
-                            <li>Engage in testing of systems/research without harming RMJ IT Solutions or its customers.</li>
+                            <li>Engage in testing of systems/research without harming TechBro Solutions or its customers.</li>
                             <li>Engage in vulnerability testing within the scope of our vulnerability disclosure program.</li>
                             <li>Test on products without affecting customers, or receive permission/consent from customers before engaging in vulnerability testing against their devices/software.</li>
-                            <li>Adhere to the laws of their location and the location of RMJ IT Solutions.</li>
+                            <li>Adhere to the laws of their location and the location of TechBro Solutions.</li>
                             <li>Refrain from disclosing vulnerability details to the public before a mutually agreed-upon timeframe expires.</li>
                         </ul>
                     </div>
@@ -58,7 +58,7 @@ export default function SecurityDisclosurePage() {
                             <strong>In Scope:</strong>
                         </p>
                         <ul className="list-disc pl-5 space-y-2 text-lg text-foreground/70 leading-relaxed marker:text-brand">
-                            <li>*.rmjit.com</li>
+                            <li>*.techbro.com</li>
                             <li>RMJ IT public-facing APIs</li>
                         </ul>
                         <p className="text-lg text-foreground/70 leading-relaxed mt-4">

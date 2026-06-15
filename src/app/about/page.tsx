@@ -45,7 +45,7 @@ const values = [
 ];
 
 const timeline = [
-    { year: "2018", title: "Founded in Kurnool", desc: "RMJ IT Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
+    { year: "2018", title: "Founded in Kurnool", desc: "TechBro Solutions was started with a clear mission: bring enterprise-grade digital infrastructure to institutions in Andhra Pradesh." },
     { year: "2021", title: "GPCET & RECW Partnership", desc: "G. Pullaiah College of Engineering & Technology and Ravindra College of Engineering for Women simultaneously adopted our Digital Campus platform — digitising student records, marks, attendance, placements, and accreditation reports.", link1: { label: "View GPCET →", href: "/partners/gpcet" }, link2: { label: "View RECW →", href: "/partners/recw" } },
     { year: "2023", title: "Ecosystem Growth", desc: "Expanded our academic footprint, adding advanced analytical modules and new college deployments across the state." },
     { year: "2024", title: "Full-Stack Expansion", desc: "Expanded into mobile app development, AI integrations, and cloud infrastructure services for enterprise clients." },
@@ -72,7 +72,7 @@ export default function AboutPage() {
                     className="block text-[11px] font-black uppercase tracking-[0.55em] font-mono mb-6"
                     style={{ color: "var(--brand)" }}
                 >
-                    {"// ABOUT RMJ IT SOLUTIONS"}
+                    {"// ABOUT TECHBRO SOLUTIONS"}
                 </motion.span>
 
                 <motion.h1
@@ -89,7 +89,7 @@ export default function AboutPage() {
                     className="text-xl max-w-2xl leading-relaxed mb-12 font-medium"
                     style={{ color: "var(--foreground)", opacity: 0.55 }}
                 >
-                    RMJ IT Solutions is a Kurnool-based technology company building modern software for colleges, businesses, and enterprises across Andhra Pradesh and beyond.
+                    TechBro Solutions is a Kurnool-based technology company building modern software for colleges, businesses, and enterprises across Andhra Pradesh and beyond.
                 </motion.p>
 
 
@@ -108,7 +108,7 @@ export default function AboutPage() {
                                 Started small.<br />Built to scale.
                             </h2>
                             <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.6 }}>
-                                RMJ IT Solutions was born out of a simple observation: educational institutions in Andhra Pradesh were managing critical data — student marks, attendance, placements — on paper and spreadsheets.
+                                TechBro Solutions was born out of a simple observation: educational institutions in Andhra Pradesh were managing critical data — student marks, attendance, placements — on paper and spreadsheets.
                             </p>
                             <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)", opacity: 0.6 }}>
                                 We built Digital Campus to change that. Today it powers thousands of student records across GPCET and RECW, and we&apos;ve since expanded into full-stack web development, mobile apps, AI systems, and cloud infrastructure for clients across multiple industries.
@@ -127,9 +127,9 @@ export default function AboutPage() {
                             <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "#b05d41", filter: "blur(100px)", opacity: 0.12 }} />
                             <div className="relative z-10 p-12 text-center space-y-4">
                                 <div className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
-                                    <Image src="/rmjit-logo.png" alt="RMJ IT" width={48} height={48} className="object-contain" />
+                                    <Image src="/techbro-logo.png" alt="RMJ IT" width={48} height={48} className="object-contain" />
                                 </div>
-                                <p className="font-bold text-lg tracking-tight" style={{ color: "var(--foreground)" }}>RMJ IT Solutions</p>
+                                <p className="font-bold text-lg tracking-tight" style={{ color: "var(--foreground)" }}>TechBro Solutions</p>
                                 <p className="text-xs font-mono uppercase tracking-widest" style={{ color: "var(--foreground)", opacity: 0.35 }}>Kurnool, Andhra Pradesh</p>
                                 <div className="flex items-center justify-center gap-2 pt-2">
                                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />

@@ -10,7 +10,7 @@ export default function InfiniteScrollBanner() {
             <div className="max-w-[1600px] mx-auto px-6 md:px-12">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center">
                     <span className="text-sm md:text-base font-mono font-bold text-foreground uppercase tracking-[0.2em]">
-                        RMJ IT Solutions
+                        TechBro Solutions
                     </span>
 
                     <span className="hidden md:block text-foreground/70 font-mono text-sm">{"///"}</span>

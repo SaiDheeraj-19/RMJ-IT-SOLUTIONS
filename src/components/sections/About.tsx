@@ -26,7 +26,7 @@ export default function About() {
                             />
                             <div className="space-y-8">
                                 <p className="text-xl text-foreground/70 font-medium leading-relaxed max-w-xl">
-                                    RMJ IT Solutions is a technology-driven company dedicated to helping businesses and educational institutions adopt digital solutions that improve efficiency, productivity, and decision-making.
+                                    TechBro Solutions is a technology-driven company dedicated to helping businesses and educational institutions adopt digital solutions that improve efficiency, productivity, and decision-making.
                                 </p>
                                 <p className="text-lg text-foreground/70 font-medium leading-relaxed max-w-xl">
                                     Our team focuses on building scalable, reliable, and user-friendly software systems tailored to the unique needs of each organization. We aim to provide innovative technology solutions that help our clients adapt to a rapidly evolving digital world.

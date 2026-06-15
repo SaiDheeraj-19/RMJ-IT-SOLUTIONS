@@ -22,20 +22,20 @@ export default function TermsOfUse() {
                         </h1>
                         <div className="text-stone-500 space-y-8 text-lg leading-relaxed">
                             <p>
-                                By accessing and using the website of RMJ IT SOLUTIONS, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use our website.
+                                By accessing and using the website of TECHBRO SOLUTIONS, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use our website.
                             </p>
 
                             <div>
                                 <h2 className="text-2xl font-display font-bold text-[#1a1a1a] mb-4">1. Acceptance of Terms</h2>
                                 <p>
-                                    These Terms of Use govern your access to and use of rmjit.com. By using the site, you acknowledge that you have read, understood, and agreed to be bound by these terms.
+                                    These Terms of Use govern your access to and use of techbro.com. By using the site, you acknowledge that you have read, understood, and agreed to be bound by these terms.
                                 </p>
                             </div>
 
                             <div>
                                 <h2 className="text-2xl font-display font-bold text-[#1a1a1a] mb-4">2. Intellectual Property</h2>
                                 <p>
-                                    All content on this website, including text, graphics, logos, images, and software, is the property of RMJ IT SOLUTIONS or its content suppliers and is protected by international copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works from this content without express written permission.
+                                    All content on this website, including text, graphics, logos, images, and software, is the property of TECHBRO SOLUTIONS or its content suppliers and is protected by international copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works from this content without express written permission.
                                 </p>
                             </div>
 
@@ -54,7 +54,7 @@ export default function TermsOfUse() {
                             <div>
                                 <h2 className="text-2xl font-display font-bold text-[#1a1a1a] mb-4">4. Limitation of Liability</h2>
                                 <p>
-                                    RMJ IT SOLUTIONS shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our website or services. While we strive for accuracy, we do not guarantee that the information on the site is error-free or complete.
+                                    TECHBRO SOLUTIONS shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our website or services. While we strive for accuracy, we do not guarantee that the information on the site is error-free or complete.
                                 </p>
                             </div>
 

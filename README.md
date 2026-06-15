@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="public/rmjit-logo.png" width="200" alt="RMJ IT Solutions Logo" />
+  <img src="public/techbro-logo.png" width="200" alt="TechBro Solutions Logo" />
 </p>
 
-<h1 align="center">RMJ IT SOLUTIONS</h1>
+<h1 align="center">TECHBRO SOLUTIONS</h1>
 <p align="center"><strong>Engineering Digital Infrastructure That Scales.</strong></p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 ## Overview
 
-**RMJ IT Solutions** is a full-service IT company website built with a premium, modern design system. The platform showcases services ranging from mobile application development to AI/ML, cloud solutions, ERP systems, cybersecurity, and digital marketing — all with a cinematic, light-first UI and smooth micro-animations.
+**TechBro Solutions** is a full-service IT company website built with a premium, modern design system. The platform showcases services ranging from mobile application development to AI/ML, cloud solutions, ERP systems, cybersecurity, and digital marketing — all with a cinematic, light-first UI and smooth micro-animations.
 
 > Built for Performance. Designed for Impact.
 
@@ -252,11 +252,11 @@ Or connect the GitHub repo directly to Vercel for automatic CI/CD on every push 
 ---
 
 <p align="center">
-  <img src="public/Company-cuate.svg" width="360" alt="RMJ IT Solutions" />
+  <img src="public/Company-cuate.svg" width="360" alt="TechBro Solutions" />
 </p>
 
 <p align="center">
-  <b>RMJ IT SOLUTIONS PVT. LTD.</b><br/>
+  <b>TechBro Solutions Pvt. Ltd.</b><br/>
   <i>Enabling Education · Empowering Tech</i><br/><br/>
   Developed & maintained by <b>R. Sai Dheeraj</b>
 </p>

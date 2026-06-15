@@ -14,7 +14,7 @@ export default function Preloader() {
         return () => clearTimeout(timer);
     }, []);
 
-    const words = "RMJ IT SOLUTIONS".split(" ");
+    const words = "TECHBRO SOLUTIONS".split(" ");
 
     return (
         <AnimatePresence>

@@ -60,7 +60,7 @@ export default function CTASection() {
             {/* Massive Bottom Text */}
             <div className="w-full relative mt-20 leading-none whitespace-nowrap overflow-hidden flex justify-center pb-0 mb-[-5%]">
                 <h1 className="text-[clamp(8rem,15vw,20rem)] font-display font-bold tracking-tighter text-transparent" style={{ WebkitTextStroke: '2px rgba(245,151,104,0.4)' }}>
-                    RMJ IT SOLUTIONS
+                    TECHBRO SOLUTIONS
                 </h1>
             </div>
         </section>

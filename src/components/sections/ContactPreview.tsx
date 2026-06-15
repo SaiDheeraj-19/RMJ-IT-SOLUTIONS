@@ -13,9 +13,9 @@ const contactDetails = [
     },
     {
         label: "Email Inquiry",
-        value: "support@rmjit.com",
+        value: "support@techbro.com",
         icon: Mail,
-        href: "mailto:support@rmjit.com"
+        href: "mailto:support@techbro.com"
     },
     {
         label: "Headquarters",

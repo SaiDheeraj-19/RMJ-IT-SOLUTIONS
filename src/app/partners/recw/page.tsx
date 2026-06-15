@@ -89,7 +89,7 @@ export default function RecwPage() {
                     <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
                         className="text-xl md:text-2xl max-w-2xl leading-relaxed mb-10"
                         style={{ color: "var(--foreground)", opacity: 0.6 }}>
-                        RECW, Kurnool — a JNTUA-affiliated women&apos;s engineering college — partnered with RMJ IT Solutions in 2021 to implement our Digital Campus ERP, replacing paper-based systems with a secure, outcome-based digital education management platform.
+                        RECW, Kurnool — a JNTUA-affiliated women&apos;s engineering college — partnered with TechBro Solutions in 2021 to implement our Digital Campus ERP, replacing paper-based systems with a secure, outcome-based digital education management platform.
                     </motion.p>
 
                     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}

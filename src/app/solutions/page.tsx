@@ -204,7 +204,7 @@ const industries: Industry[] = [
         accentText: "text-teal-600",
         tagline: "Maximum compute. Proven reliability.",
         description:
-            "RMJ IT Solutions delivers HPC systems for organizations that need strong computing power for research, simulations, data processing, and engineering workloads. We design and deploy servers, workstations, and storage systems using reliable, certified hardware.",
+            "TechBro Solutions delivers HPC systems for organizations that need strong computing power for research, simulations, data processing, and engineering workloads. We design and deploy servers, workstations, and storage systems using reliable, certified hardware.",
         solutions: [
             "HPC Server & Workstation Deployment",
             "Research & Simulation Computing",
@@ -282,7 +282,7 @@ export default function SolutionsPage() {
                             className="max-w-xl space-y-6"
                         >
                             <p className="text-lg text-foreground/70 font-medium leading-relaxed">
-                                At RMJ IT Solutions, we build practical technology solutions for businesses in different industries.
+                                At TechBro Solutions, we build practical technology solutions for businesses in different industries.
                                 We work closely with our clients to understand their needs and create systems that help them run their operations smoothly.
                             </p>
                             <p className="text-lg text-foreground/70 font-medium leading-relaxed">

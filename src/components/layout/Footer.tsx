@@ -127,7 +127,7 @@ export default function Footer() {
                         <div className="space-y-6">
                             {/* Wordmark */}
                             <div className="inline-flex items-center gap-3">
-                                <div className="rmjit-pill px-5 py-2.5 rounded-full">
+                                <div className="techbro-pill px-5 py-2.5 rounded-full">
                                     <span className="text-white font-black tracking-tight text-base leading-none">RMJ IT</span>
                                 </div>
                                 <div
@@ -153,7 +153,7 @@ export default function Footer() {
                         {/* Contact info */}
                         <div className="space-y-4">
                             <a
-                                href="mailto:support@rmjit.com"
+                                href="mailto:support@techbro.com"
                                 className="flex items-center gap-3 group w-fit"
                                 style={{ color: "var(--foreground)", opacity: 0.5 }}
                             >
@@ -164,7 +164,7 @@ export default function Footer() {
                                     <Mail size={13} />
                                 </div>
                                 <span className="text-xs font-bold tracking-wide group-hover:opacity-100 transition-opacity">
-                                    support@rmjit.com
+                                    support@techbro.com
                                 </span>
                             </a>
                             <div
@@ -243,7 +243,7 @@ export default function Footer() {
                             opacity: 0.55,
                         }}
                     >
-                        RMJ IT SOLUTIONS
+                        TECHBRO SOLUTIONS
                     </motion.p>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -264,7 +264,7 @@ export default function Footer() {
                         <div className="flex flex-col gap-1 text-center md:text-left">
                             <p className="text-[11px] font-bold tracking-widest uppercase"
                                 style={{ color: "var(--foreground)", opacity: 0.55 }}>
-                                © 2026 RMJ IT Solutions Pvt. Ltd.
+                                © 2026 TechBro Solutions Pvt. Ltd.
                             </p>
                             <p className="text-[10px] font-semibold tracking-wider"
                                 style={{ color: "var(--foreground)", opacity: 0.3 }}>

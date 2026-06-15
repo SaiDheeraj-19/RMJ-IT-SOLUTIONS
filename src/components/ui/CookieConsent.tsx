@@ -26,7 +26,7 @@ export default function CookieConsent() {
     useEffect(() => {
         const mountTimer = setTimeout(() => setIsMounted(true), 0);
 
-        const savedConsent = localStorage.getItem("rmjit_cookie_consent");
+        const savedConsent = localStorage.getItem("techbro_cookie_consent");
         if (!savedConsent) {
             const timer = setTimeout(() => setIsOpen(true), 1500);
             return () => { clearTimeout(timer); clearTimeout(mountTimer); };
@@ -52,8 +52,8 @@ export default function CookieConsent() {
             preferences,
             timestamp: new Date().toISOString()
         };
-        localStorage.setItem("rmjit_cookie_consent", JSON.stringify(consentData));
-        window.dispatchEvent(new Event("rmjit_consent_updated"));
+        localStorage.setItem("techbro_cookie_consent", JSON.stringify(consentData));
+        window.dispatchEvent(new Event("techbro_consent_updated"));
         setIsOpen(false);
         setShowPreferences(false);
     };

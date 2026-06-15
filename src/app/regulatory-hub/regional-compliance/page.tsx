@@ -4,7 +4,7 @@ import { IndianRupee, ShieldAlert, Globe, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: 'Regional Compliance Addendums | RMJ IT Solutions',
+    title: 'Regional Compliance Addendums | TechBro Solutions',
     description: 'Detailed compliance frameworks for India (DPDP), USA (CCPA), and Europe (GDPR).',
 };
 
@@ -36,7 +36,7 @@ export default function RegionalCompliancePage() {
                         </div>
                         <div className="prose prose-slate max-w-none text-foreground/70 leading-relaxed">
                             <p>
-                                RMJ IT Solutions is fully compliant with the Digital Personal Data Protection (DPDP) Act, 2023. Our infrastructure ensures that personal data of Indian citizens is processed with explicit consent and for legitimate purposes only.
+                                TechBro Solutions is fully compliant with the Digital Personal Data Protection (DPDP) Act, 2023. Our infrastructure ensures that personal data of Indian citizens is processed with explicit consent and for legitimate purposes only.
                             </p>
                             <ul className="list-disc pl-5 space-y-2 mt-4 marker:text-brand">
                                 <li><strong>Consent Management:</strong> All data collection forms include explicit, itemized consent checkboxes.</li>
@@ -89,7 +89,7 @@ export default function RegionalCompliancePage() {
                         <div className="flex flex-col sm:flex-row gap-6">
                             <div>
                                 <span className="text-xs font-bold uppercase tracking-widest text-foreground/70 block mb-1">Email</span>
-                                <a href="mailto:legal@rmjit.com" className="text-brand font-bold hover:underline">legal@rmjit.com</a>
+                                <a href="mailto:legal@techbro.com" className="text-brand font-bold hover:underline">legal@techbro.com</a>
                             </div>
                             <div>
                                 <span className="text-xs font-bold uppercase tracking-widest text-foreground/70 block mb-1">Hotline</span>

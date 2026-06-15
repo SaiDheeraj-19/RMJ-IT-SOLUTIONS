@@ -37,7 +37,7 @@ export async function sendContactEmail(formData: FormData) {
                         </blockquote>
                     </div>
                     <p style="font-size: 12px; color: #999; margin-top: 40px;">
-                        This email was sent automatically from rmjit.com via Resend.
+                        This email was sent automatically from techbro.com via Resend.
                     </p>
                 </div>
             `,

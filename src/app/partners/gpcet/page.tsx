@@ -89,7 +89,7 @@ export default function GpcetPage() {
                     <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
                         className="text-xl md:text-2xl max-w-2xl leading-relaxed mb-10"
                         style={{ color: "var(--foreground)", opacity: 0.6 }}>
-                        GPCET, Kurnool — a JNTUA-affiliated engineering college — became one of RMJ IT Solutions&apos; first major institutional clients in 2021, adopting our Digital Campus ERP platform to fully digitise their academic and administrative operations.
+                        GPCET, Kurnool — a JNTUA-affiliated engineering college — became one of TechBro Solutions&apos; first major institutional clients in 2021, adopting our Digital Campus ERP platform to fully digitise their academic and administrative operations.
                     </motion.p>
 
                     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}

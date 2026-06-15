@@ -82,12 +82,12 @@ export default function Navbar() {
 
             {/* Desktop Top-Left Logo */}
             <Link href="/" className="hidden md:flex items-center gap-2.5 z-[70] pointer-events-auto">
-                <Image src="/rmjit.png" alt="RMJ IT Solutions" width={120} height={120} className="object-contain" />
+                <Image src="/techbro.png" alt="TechBro Solutions" width={120} height={120} className="object-contain" />
             </Link>
 
             {/* Mobile Logo */}
             <Link href="/" className="md:hidden z-[70] relative pointer-events-auto">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full rmjit-pill">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full techbro-pill">
                     <span className="leading-none font-bold text-sm text-white tracking-tight">RMJ IT</span>
                 </div>
             </Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
             <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex bg-white/5 backdrop-blur-md border border-white/5 border-b-white/20 rounded-full p-2 items-center gap-8 shadow-xl shadow-black/10 pointer-events-auto">
 
                 <Link href="/" className="flex-shrink-0">
-                    <div className="flex items-center gap-2 px-5 h-9 rounded-full rmjit-pill cursor-pointer active:scale-95 transition-transform">
+                    <div className="flex items-center gap-2 px-5 h-9 rounded-full techbro-pill cursor-pointer active:scale-95 transition-transform">
                         <span className="leading-none font-black tracking-tight text-white text-[18px]">RMJ IT</span>
                     </div>
                 </Link>
@@ -205,7 +205,7 @@ export default function Navbar() {
                         style={{ background: 'var(--background)', borderColor: 'var(--border)' }}>
 
                         <div className="flex items-center justify-between">
-                            <Image src="/rmjit.png" alt="RMJ IT" width={32} height={32} className="object-contain logo-animated" />
+                            <Image src="/techbro.png" alt="RMJ IT" width={32} height={32} className="object-contain logo-animated" />
                             <button onClick={toggleTheme} className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-foreground/70">
                                 {isDark ? <Sun size={16} /> : <Moon size={16} />}
                             </button>

@@ -387,8 +387,8 @@ export default function Home() {
             {/* Animated logo */}
             <div className="relative z-10">
               <Image
-                src="/rmjit.png"
-                alt="RMJ IT Solutions"
+                src="/techbro.png"
+                alt="TechBro Solutions"
                 width={220}
                 height={220}
                 className="object-contain drop-shadow-2xl logo-animated"

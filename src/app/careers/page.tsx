@@ -68,7 +68,7 @@ export default function CareersPage() {
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <a
-                                href="mailto:careers@rmjit.com"
+                                href="mailto:careers@techbro.com"
                                 className="inline-flex items-center gap-3 px-10 py-5 bg-surface0 text-foreground text-[10px] uppercase tracking-[0.2em] font-black rounded-full hover:bg-brand transition-all duration-500"
                             >
                                 Send your CV <Mail size={16} />
@@ -95,7 +95,7 @@ export default function CareersPage() {
                             We value precision over speed, and architecture over patchwork.
                         </h3>
                         <p className="text-lg text-foreground/70 leading-relaxed font-medium mb-10">
-                            At RMJ IT Solutions, you&apos;ll work on mission-critical systems where reliability is the primary metric. We offer an environment that respects deep work and engineering rigour.
+                            At TechBro Solutions, you&apos;ll work on mission-critical systems where reliability is the primary metric. We offer an environment that respects deep work and engineering rigour.
                         </p>
                         <ul className="space-y-4">
                             {[

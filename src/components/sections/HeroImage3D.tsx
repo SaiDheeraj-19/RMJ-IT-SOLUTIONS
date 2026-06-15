@@ -69,7 +69,7 @@ export default function HeroImage3D() {
                 {/* Hero illustration */}
                 <Image
                     src="/company-cuate.svg"
-                    alt="RMJ IT Solutions — Technology Partner"
+                    alt="TechBro Solutions — Technology Partner"
                     width={580}
                     height={580}
                     className="object-contain relative z-10 filter drop-shadow-xl"

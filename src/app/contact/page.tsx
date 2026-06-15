@@ -211,7 +211,7 @@ function ContactForm() {
                             {[
                                 { title: "Headquarters", icon: Building2, desc: "86/326-2 Doctors Colony, Revenue Ward No 86, Kurnool, AP – 518002" },
                                 { title: "Direct Phone", icon: Phone, desc: "+91 86397 56899", link: "tel:+918639756899" },
-                                { title: "Email Address", icon: Mail, desc: "support@rmjit.com", link: "mailto:support@rmjit.com" }
+                                { title: "Email Address", icon: Mail, desc: "support@techbro.com", link: "mailto:support@techbro.com" }
                             ].map((card, idx) => (
                                 <div key={idx} className="p-8 rounded-[2.5rem] border shadow-lg group transition-colors"
                                     style={{ background: 'var(--background)', borderColor: 'var(--border)' }}>

@@ -104,7 +104,7 @@ export default function ContactSection() {
                         {[
                             { title: "Headquarters", icon: Building2, desc: "86/326-2 Doctors Colony, Revenue Ward No 86, Kurnool, AP – 518002" },
                             { title: "Direct Phone", icon: Phone, desc: "+91 86397 56899", link: "tel:+918639756899" },
-                            { title: "Email Address", icon: Mail, desc: "support@rmjit.com", link: "mailto:support@rmjit.com" }
+                            { title: "Email Address", icon: Mail, desc: "support@techbro.com", link: "mailto:support@techbro.com" }
                         ].map((card, idx) => (
                             <div key={idx} className="bg-white p-7 rounded-[2rem] border border-slate-200 shadow-md shadow-slate-200/40 group hover:border-brand/30 transition-colors">
                                 <div className="w-12 h-12 bg-surface rounded-2xl flex items-center justify-center text-brand mb-5 group-hover:bg-brand group-hover:text-foreground transition-colors">

@@ -26,25 +26,25 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RMJ IT Solutions — Engineering Digital Infrastructure That Scales",
+  title: "TechBro Solutions — Engineering Digital Infrastructure That Scales",
   description: "We architect and build digital systems for educational institutions, mid-size enterprises, and startups. Specialized in ERP, Cloud Infrastructure, and Custom Web Applications. Based in Kurnool, Andhra Pradesh.",
   keywords: ["Digital Infrastructure Engineering", "Campus ERP development", "Custom Web Applications", "Cloud Infrastructure Setup India", "IT Consulting Kurnool", "Scalable Software Systems"],
-  authors: [{ name: "RMJ IT SOLUTIONS" }],
+  authors: [{ name: "TECHBRO SOLUTIONS" }],
   robots: "index, follow",
   alternates: {
-    canonical: "https://rmjit.com",
+    canonical: "https://techbro.com",
   },
   openGraph: {
-    title: "RMJ IT Solutions — Engineering Digital Infrastructure That Scales",
+    title: "TechBro Solutions — Engineering Digital Infrastructure That Scales",
     description: "Architecting scalable digital systems for institutions and growth-focused businesses. No fluff, just engineering.",
     type: "website",
-    url: "https://rmjit.com",
-    siteName: "RMJ IT Solutions",
+    url: "https://techbro.com",
+    siteName: "TechBro Solutions",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RMJ IT Solutions — Digital Systems Engineering",
+    title: "TechBro Solutions — Digital Systems Engineering",
     description: "We replace fragmented tools with engineered infrastructure designed for performance and scalability.",
   },
   icons: {
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "RMJ IT SOLUTIONS",
-  "url": "https://rmjit.com",
-  "logo": "https://rmjit.com/rmjit-logo.png",
+  "name": "TECHBRO SOLUTIONS",
+  "url": "https://techbro.com",
+  "logo": "https://techbro.com/techbro-logo.png",
   "description": "Engineering digital infrastructure and scalable systems for institutions.",
   "address": {
     "@type": "PostalAddress",

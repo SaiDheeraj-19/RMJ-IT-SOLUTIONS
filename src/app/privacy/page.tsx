@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
                         </h1>
                         <div className="text-stone-500 space-y-8 text-lg leading-relaxed">
                             <p>
-                                At RMJ IT SOLUTIONS, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you visit our website or use our services.
+                                At TECHBRO SOLUTIONS, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you visit our website or use our services.
                             </p>
 
                             <div>

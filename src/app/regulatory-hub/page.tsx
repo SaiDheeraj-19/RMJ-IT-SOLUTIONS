@@ -4,7 +4,7 @@ import { Shield, FileCheck, Globe2, Lock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: 'Regulatory & Compliance Hub | RMJ IT Solutions',
+    title: 'Regulatory & Compliance Hub | TechBro Solutions',
     description: 'Our centralized repository for compliance standards, certifications, and legal frameworks.',
 };
 

@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Accessibility Statement | RMJ IT Solutions',
+    title: 'Accessibility Statement | TechBro Solutions',
     description: 'Our commitment to digital inclusion and accessibility standards.',
 };
 
@@ -31,7 +31,7 @@ export default function AccessibilityPage() {
                     <div className="space-y-4">
                         <h2 className="text-2xl font-display font-bold text-foreground">Our Commitment</h2>
                         <p className="text-lg text-foreground/70 leading-relaxed">
-                            RMJ IT Solutions is dedicated to making our website and digital services usable by all people, including those with disabilities. We are continuously working to improve the user experience for everyone and apply the relevant accessibility standards.
+                            TechBro Solutions is dedicated to making our website and digital services usable by all people, including those with disabilities. We are continuously working to improve the user experience for everyone and apply the relevant accessibility standards.
                         </p>
                     </div>
 
@@ -59,10 +59,10 @@ export default function AccessibilityPage() {
                     <div className="space-y-4">
                         <h2 className="text-2xl font-display font-bold text-foreground">Feedback & Contact</h2>
                         <p className="text-lg text-foreground/70 leading-relaxed">
-                            We welcome your feedback on the accessibility of the RMJ IT Solutions website. If you encounter any barriers or have suggestions for improvement, please contact us:
+                            We welcome your feedback on the accessibility of the TechBro Solutions website. If you encounter any barriers or have suggestions for improvement, please contact us:
                         </p>
                         <ul className="list-none space-y-2 text-lg text-foreground/70 leading-relaxed mt-4">
-                            <li><strong className="text-foreground">Email:</strong> accessibility@rmjit.com</li>
+                            <li><strong className="text-foreground">Email:</strong> accessibility@techbro.com</li>
                             <li><strong className="text-foreground">Phone:</strong> +91 8639756899</li>
                         </ul>
                         <p className="text-base text-foreground/70 mt-4 italic">

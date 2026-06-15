@@ -8,7 +8,7 @@ export default function GoogleAnalytics() {
 
     useEffect(() => {
         const checkConsent = () => {
-            const savedConsent = localStorage.getItem("rmjit_cookie_consent");
+            const savedConsent = localStorage.getItem("techbro_cookie_consent");
             if (savedConsent) {
                 const { preferences } = JSON.parse(savedConsent);
                 setHasConsent(preferences.performance || preferences.analytics);
@@ -17,8 +17,8 @@ export default function GoogleAnalytics() {
 
         checkConsent();
 
-        window.addEventListener("rmjit_consent_updated", checkConsent);
-        return () => window.removeEventListener("rmjit_consent_updated", checkConsent);
+        window.addEventListener("techbro_consent_updated", checkConsent);
+        return () => window.removeEventListener("techbro_consent_updated", checkConsent);
     }, []);
 
     if (!hasConsent) return null;
